@@ -184,7 +184,7 @@ game.OnControlPressed({'Gift', function()
     --return print(IsGameStateEligible("Spawn",game.EnemyData["NPC_Persephone_Hub_StoryExpansion"].ActivateRequirements))
     --return Destroy({ Ids = GetIdsByType({ Name = "NPC_Persephone_Hub_StoryExpansion"}) }) --SetupStoryResetObject()
     --GameState.TextLinesRecord.StoryExpansionSurfaceFlashback01 = nil
-    return mod.SpawnMegaera()
+    return mod.ChooseFoodOptions()
     --mod.SpawnMegaera()--print(GameState.TextLinesRecord["StoryExpansionFreeingPersephoneDialogue"] )
 end})
 

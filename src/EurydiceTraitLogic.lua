@@ -6,6 +6,7 @@ modutil.mod.Path.Wrap("ChooseLoot", function(base, excludeLootNames, forceLootNa
     for k, trait in pairs( CurrentRun.Hero.Traits ) do
         if trait.StoryExpansionEurydiceForceGod and RandomChance(0.3) and not Contains(excludeLootNames, trait.StoryExpansionEurydiceForceGod) then
             output = LootData[trait.StoryExpansionEurydiceForceGod]
+            thread( InCombatText, CurrentRun.Hero.ObjectId, "ForceBoonKeepsakeActivated", 2.0, { PreDelay = 1.0, LuaKey = "TempTextData", LuaValue = trait } )
         end
     end
     end
@@ -38,6 +39,7 @@ modutil.mod.Path.Wrap("CreateStackLoot", function(base, args)
 		args.StackNum = args.StackNum + trait.StoryExpansionTemporaryPomLevelBonus
         trait.RemainingUses = trait.RemainingUses - 1
         UpdateTraitNumber(trait)
+        thread( InCombatText, CurrentRun.Hero.ObjectId, "ForceBoonKeepsakeActivated", 2.0, { PreDelay = 1.0, LuaKey = "TempTextData", LuaValue = trait } )
         end
         if trait.RemainingUses <= 0 then
             RemoveTraitData( CurrentRun.Hero, trait, { SkipActivatedTraitUpdate = IsEmpty( trait.Elements ) } )
@@ -97,6 +99,7 @@ modutil.mod.Path.Wrap("IsSecretDoorEligible", function(base, currentRun, current
     if not output and HeroHasTrait(gods.GetInternalBoonName("EurydiceFoodSecretDoorTrait")) then
         local trait = GetHeroTrait(gods.GetInternalBoonName("EurydiceFoodSecretDoorTrait"))
         if RandomChance(trait.StoryExpansionSecretDoorChance* GetTotalHeroTraitValue( "LuckMultiplier", { IsMultiplier = true } )) and IsGameStateEligible( currentRoom, NamedRequirementsData.ForceSecretDoorRequirements ) then
+            thread( InCombatText, CurrentRun.Hero.ObjectId, "ForceBoonKeepsakeActivated", 2.0, { PreDelay = 1.0, LuaKey = "TempTextData", LuaValue = trait } )
             return true
         end
     end
@@ -119,6 +122,10 @@ function mod.AwardKudosForBoss(trait, args)
     args = args or {}
     if args.KudosAmount then
         AddResource("CosmeticsPoints", args.KudosAmount, trait.Name)
+    end
+    if HeroHasTrait(gods.GetInternalBoonName("EurydiceFoodBossKudosTrait")) then
+        local newTrait = GetHeroTrait(gods.GetInternalBoonName("EurydiceFoodBossKudosTrait"))
+        thread( InCombatText, CurrentRun.Hero.ObjectId, "ForceBoonKeepsakeActivated", 2.0, { PreDelay = 1.0, LuaKey = "TempTextData", LuaValue = newTrait } )
     end
 end
 
@@ -160,5 +167,4 @@ function mod.GrantRandomElementSelection(args, traitData)
 		elementsAdded = elementsAdded + 1
 		essenceToAdd = GetRandomValue(eligibleEssence)
 	end
-
 end

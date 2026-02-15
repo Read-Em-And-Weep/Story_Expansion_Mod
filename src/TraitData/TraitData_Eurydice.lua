@@ -875,7 +875,7 @@ gods.CreateBoon({
     },
     customStatLine = {
         ID = "StoryExpansionSecretDoorChanceDisplay1",
-        displayName = "{!Icons.Bullet}{#PropertyFormat}Additional {$Keywords.HealthGate} Chance{#Prev} Every Room:",
+        displayName = "{!Icons.Bullet}{#PropertyFormat}Additional {$Keywords.HealthGate} Chance {#Prev} per Room:",
         description = "{#UpgradeFormat}{$TooltipData.ExtractData.Chance:P}",
     },
     StatLines =
