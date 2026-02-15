@@ -1,15 +1,5 @@
-# Mod name
+# Story Expansion Mod
 
-Hades II mod allowing to do some super duper thing.
+Revamp the story of Hades II! Now, travel down into the Underworld to rescue your trapped family members, and have them aid you in the fight against Chronos.
 
-## Features
-
-- Wow.
-- Much cool.
-  - Very doge.
-
-## Install
-
-- Do this.
-- Do that.
-  - Nope, not that.
+Very much in progress!
