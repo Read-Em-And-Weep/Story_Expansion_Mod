@@ -69,9 +69,85 @@ OverwriteTableKeys( EncounterData,
 			},
 		},
 	},
+	PatroclusStoryExpansionRandomEvent2 =
+	{
+        Name = "PatroclusStoryExpansionRandomEvent2",
+        InheritFrom = { "NonCombat" },
+
+		DisableTraps = true,
+		NextRoomResumeMusic = true,
+		BlockMaxBonusRewards = true,
+
+
+		GameStateRequirements =
+		{
+			{
+			Path = { "GameState", "RoomsEntered", "I_Boss01" },
+			Comparison = ">=",
+			Value = 1,
+			},
+			{
+				PathFalse = {"CurrentRun", "RoomsEntered", "I_Boss01"},
+			},
+			{
+				SumPrevRuns = 4,
+				Path = { "SpawnRecord", "NPC_Patroclus_Field_StoryExpansion" },
+				Comparison = "<=",
+				Value = 0,
+			},
+			NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing",  },
+		},
+
+		RequireNotRoomReward = { "Boon", "SpellDrop", "Devotion", "HermesUpgrade", "WeaponUpgrade", "StackUpgrade", "TalentDrop", "Story" },
+
+		MaxAppearancesThisBiome = 1,
+		UnthreadedEvents = {},
+		StartRoomUnthreadedEvents =
+		{
+			{
+				FunctionName = "SimulateCombatDestruction",
+				Args =
+				{
+					DecalNames = { "BloodSplatGroundRandom", },
+					DecalsMin = 50,
+					DecalsMax = 100,
+					DecalRadius = 30,
+					DestroyBreakablesMin = 5,
+					DestroyBreakablesMax = 10,
+				},
+			},
+			{
+				FunctionName = _PLUGIN.guid ..".SpawnPatroclusForRandomEvents",
+				Args =
+				{
+					PreferredSpawnPointGroup = "BonusRewardSpawnPoints",
+					PreferredSpawnPoint = "LootPoint",
+					CheckRewardPointsUsed = true,
+				}
+			},
+					{ FunctionName = "SpawnRoomReward" },
+		},
+		RequireMinPlayerDistance = 300,
+
+		SetupEvents =
+		{
+			{
+				FunctionName = "EraseRoomKeys",
+				Args =
+				{
+					EraseKeys =
+					{
+						"FishingPointSuccess",
+						"ExorcismPointSuccess",
+					},
+				},
+			},
+		},
+	},
 })
 
-mod.AddEncounterToEncounterSet("PatroclusStoryExpansionRandomEvent", mod.ICombatRooms, 4)
+mod.AddEncounterToEncounterSet("PatroclusStoryExpansionRandomEvent", mod.ICombatRooms, 2)
+mod.AddEncounterToEncounterSet("PatroclusStoryExpansionRandomEvent2", mod.ICombatRooms, 4)
 
 
 

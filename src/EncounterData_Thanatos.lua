@@ -125,10 +125,10 @@ for encounterName, encounterData in pairs(mod.ThanatosEncounters) do
     game.EncounterData[encounterName] = encounterData
 end
 
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatN", mod.NCombatRooms, 3)
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatO", mod.OCombatRooms, 3)
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatP", mod.PCombatRooms, 3)
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatQ", mod.QCombatRooms, 3)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatN", mod.NCombatRooms, 2)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatO", mod.OCombatRooms, 2)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatP", mod.PCombatRooms, 2)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatQ", mod.QCombatRooms, 2)
 
 table.insert(NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, "ThanatosStoryExpansionCombatN")
 table.insert(NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, "ThanatosStoryExpansionCombatO")

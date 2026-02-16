@@ -211,6 +211,15 @@ game.OnControlPressed({'Gift', function()
     --mod.SpawnMegaera()--print(GameState.TextLinesRecord["StoryExpansionFreeingPersephoneDialogue"] )
 end})
 
+function mod.CountInList(list, value)
+    local count = 0
+    for k, entry in ipairs(list) do
+        if entry == value then
+            count = count + 1
+        end
+    end
+    return count
+end
 
 
 function mod.FlipAValue() -- DEBUG

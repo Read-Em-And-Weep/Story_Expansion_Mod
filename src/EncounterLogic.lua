@@ -96,7 +96,7 @@ mod.ICombatRooms = {
 		"I_Combat24",
 }
 mod.NCombatRooms = {
-"N_Combat01",
+		"N_Combat01",
 		"N_Combat02",
 		"N_Combat03",
 		"N_Combat04",
@@ -184,9 +184,11 @@ function mod.AddEncounterToEncounterSet(encounterName, rooms, repeats)
 	repeats = repeats or 1
 	for key, roomName in ipairs(rooms) do
 		if RoomData[roomName] then
+		if not Contains(RoomData[roomName].LegalEncounters, encounterName) then
 		for v = 1, repeats, 1 do
 			table.insert(RoomData[roomName].LegalEncounters, encounterName)
 		end
+	end
 	end
 	end
 end
