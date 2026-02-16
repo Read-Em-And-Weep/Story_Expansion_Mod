@@ -554,7 +554,7 @@ gods.CreateBoon({
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
-    		StoryExpansionCommonToHeroicChance = 0.15,
+    		StoryExpansionCommonToHeroicChance = 0.10,
     },
     ExtractValues =
 		{

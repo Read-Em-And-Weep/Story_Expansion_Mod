@@ -103,6 +103,10 @@ modutil.mod.Path.Wrap("IsSecretDoorEligible", function(base, currentRun, current
             return true
         end
     end
+    if output == true and HeroHasTrait(gods.GetInternalBoonName("EurydiceFoodSecretDoorTrait")) then
+        local trait = GetHeroTrait(gods.GetInternalBoonName("EurydiceFoodSecretDoorTrait"))
+        thread( InCombatText, CurrentRun.Hero.ObjectId, "ForceBoonKeepsakeActivated", 2.0, { PreDelay = 1.0, LuaKey = "TempTextData", LuaValue = trait } )
+    end
     return output
 end)
 

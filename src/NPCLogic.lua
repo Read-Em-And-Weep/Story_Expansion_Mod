@@ -11,6 +11,7 @@ import 'NPCData/NPCData_Eurydice.lua'
 import 'NPCData/NPCData_Asterius.lua'
 import 'NPCData/NPCData_Theseus.lua'
 import 'NPCData/NPCData_Hypnos.lua'
+import 'NPCData/NPCData_Sisyphus.lua'
 
 --[[modutil.mod.Path.Wrap("DeathAreaRoomTransition", function(base, source, args)
   base(source, args)
@@ -136,6 +137,7 @@ function mod.SpawnCharacter(characterName)
     end
 
     CheckAvailableTextLines(newUnit)
+    SetAvailableUseText(newUnit)
 end
 
 function mod.SpawnCharacterAtMe(characterName)
@@ -178,15 +180,38 @@ function mod.SpawnCharacterAtMe(characterName)
     return newUnit
 end
 
+function mod.SpawnFieldSisyphus()
+    local sisyphusData =  DeepCopyTable(game.EnemyData["NPC_Sisyphus_Field_StoryExpansion"])
+    if not sisyphusData.StoryExpansionMapData then return end
+    local currentRoom = CurrentRun.CurrentRoom
+    if not currentRoom then return end
+    if not sisyphusData.StoryExpansionMapData[currentRoom.Name] then return end
+    local sisyphus = mod.PlaceNPCAtId({}, "NPC_Sisyphus_Field_StoryExpansion",sisyphusData.StoryExpansionMapData[currentRoom.Name] )
+    SetAvailableUseText(sisyphus)
+    MapState.RoomRequiredObjects[sisyphus.ObjectId] = sisyphus
+    if currentRoom.Name == "I_Story01" then
+        mod.DestroyCerberus()
+    end
+end
+
+function mod.DestroyCerberus()
+    local cerberusId = GetClosestUnitOfType({ Id = CurrentRun.Hero.ObjectId, DestinationName = "NPC_Cerberus_Field_01" })
+    Destroy({Ids = {cerberusId}})
+end
+
+
 game.OnControlPressed({'Gift', function()
 	--return mod.SpawnCharacterAtMe("NPC_Patroclus_Field_StoryExpansion")
     --return mod.HandleThanatosSpawn(CurrentRun.CurrentRoom.Encounter, {})
     --return print(IsGameStateEligible("Spawn",game.EnemyData["NPC_Persephone_Hub_StoryExpansion"].ActivateRequirements))
     --return Destroy({ Ids = GetIdsByType({ Name = "NPC_Persephone_Hub_StoryExpansion"}) }) --SetupStoryResetObject()
     --GameState.TextLinesRecord.StoryExpansionSurfaceFlashback01 = nil
-    return mod.ChooseFoodOptions()
+    return --mod.SpawnFieldSisyphus()--mod.SpawnCharacterAtMe("NPC_Sisyphus_Field_StoryExpansion")
+    --mod.SpawnCharacterAtMe("NPC_Hypnos_Field_StoryExpansion")
     --mod.SpawnMegaera()--print(GameState.TextLinesRecord["StoryExpansionFreeingPersephoneDialogue"] )
 end})
+
+
 
 function mod.FlipAValue() -- DEBUG
     if GameState.TextLinesRecord.HypnosFinalDreamMeeting01 then
@@ -220,7 +245,9 @@ function mod.PlaceNPCAtId(eventSource, characterName, args)
         local gazeTarget = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = spawnPointId, OffsetX = args.GazeTarget.X, OffsetY = args.GazeTarget.Y })
         AngleTowardTarget({ Id = newUnit.ObjectId, DestinationId = gazeTarget })
     end
+    if not args.SkipTextSetUp then
     CheckAvailableTextLines(newUnit)
+    end
     return newUnit
 end
 
@@ -292,10 +319,12 @@ end
 
 function mod.TheseusAndMinotaurKeepsakeSpawn(args)
     args = args or {}
-    local asterius = mod.PlaceNPCAtId({},"NPC_Minotaur_Field_01_StoryExpansion", {SpawnId = (SelectLootSpawnPoint(CurrentRun.CurrentRoom) or CurrentRun.Hero.ObjectId)})
+    local asterius = mod.PlaceNPCAtId({},"NPC_Minotaur_Field_01_StoryExpansion", {SpawnId = (SelectLootSpawnPoint(CurrentRun.CurrentRoom) or CurrentRun.Hero.ObjectId), SkipTextSetUp = true})
     SetAlpha({ Id = asterius.ObjectId, Fraction = 0, Duration = 0.1 })
-    local theseus = mod.PlaceNPCAtId({},"NPC_Theseus_Field_01_StoryExpansion",{SpawnId = (SelectLootSpawnPoint(CurrentRun.CurrentRoom) or CurrentRun.Hero.ObjectId)})
+    UseableOff({Id = {asterius.ObjectId}})
+    local theseus = mod.PlaceNPCAtId({},"NPC_Theseus_Field_01_StoryExpansion",{SpawnId = (SelectLootSpawnPoint(CurrentRun.CurrentRoom) or CurrentRun.Hero.ObjectId), SkipTextSetUp = true})
     SetAlpha({ Id = theseus.ObjectId, Fraction = 0, Duration = 0.1 })
+    UseableOff({Id = {theseus.ObjectId}})
     asterius.SummonedByKeepsake = true
     theseus.SummonedByKeepsake = true
 

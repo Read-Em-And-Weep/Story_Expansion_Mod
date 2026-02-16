@@ -44,7 +44,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_46",
     displayName = "Witch's Mark Max",
-    description = "Your {$Keywords.Omega} deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipDamageBonus:P} {#Prev}damage.",
+    description = "Your {$Keywords.Omega} deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipBonus:P} {#Prev}damage.",
 ExtraFields = {
     		RemainingUses = 6,
 		UsesAsEncounters = true,

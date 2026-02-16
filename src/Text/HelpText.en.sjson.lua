@@ -123,6 +123,11 @@ local newHelpTextData = {
       Description = "Prince of the Underworld",
     },
     {
+      Id = "NPC_Sisyphus_Field_StoryExpansion",
+      DisplayName = "Sisyphus",
+      Description = "Free Soul",
+    },
+    {
       Id = "StoryExpansionUnknownMaleSpeaker",
       DisplayName = "???",
       Description = "Unknown Male Speaker",

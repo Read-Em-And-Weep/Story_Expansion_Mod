@@ -25,7 +25,6 @@ gods.CreateBoon({
 			Epic = "Frame_Keepsake_Rank3",
 			Heroic = "Frame_Keepsake_Rank4",
 		},
-        Slot = "Assist",
         ShowInHUD = true,
         HideInRunHistory = true,
             BlockInRunRarify = true,

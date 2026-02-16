@@ -14,6 +14,7 @@
 
 EncounterSets.EncounterEventsStoryExpansionTheseusMinotaurCombat = {
 		{ FunctionName = _PLUGIN.guid .. ".HandleNaturalTheseusMinotaurSpawn" },
+        {FunctionName = _PLUGIN.guid.. "TheseusMinotaurAngleToHero"},
 		{ FunctionName = "EncounterAudio" },
 		{ FunctionName = "BeginHeraclesEncounter" },
 		{ FunctionName = "HandleEnemySpawns" },

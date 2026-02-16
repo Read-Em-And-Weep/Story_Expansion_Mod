@@ -51,6 +51,50 @@ mod.HypnosNPCData = {
 			--"DusaIdleInhouseFidgetHairFlick__Bink",
 		},
 },
+    NPC_Hypnos_Field_StoryExpansion = {
+        InheritFrom = {"NPC_Neutral"},
+        Name = "NPC_Hypnos_Field_StoryExpansion",
+        
+		AnimOffsetZ = 0,
+		ExcludeFromDamageDealtRecord = true,
+		PreEventFunctionName = "AngleNPCToHero",
+
+        UpgradeScreenOpenSound = "/SFX/WeaponUpgradeHammerDrop2",
+		UpgradeSelectedSound = "/SFX/HammerBoonChoice",
+		UpgradeAcquiredAnimation = "MelinoeEquip",
+		UpgradeAcquiredAnimationDelay = 1.2,
+
+		Portrait = "Portrait_Thanatos_Default_01",
+		MenuTitle = "StoryExpansionPatroclusChoiceMenu_Title",
+		BoonInfoTitleText = "Codex_BoonInfo_Icarus",
+		FlavorTextIds =
+		{
+			"StoryExpansionPatroclusChoiceMenu_FlavorText01",
+		},
+
+        Traits =
+		{
+			gods.GetInternalBoonName("ImprovedTemporaryEmptySlotDamageTrait"),
+			gods.GetInternalBoonName("ImprovedTemporaryImprovedExTrait"),
+			gods.GetInternalBoonName("ImprovedLimitedSwapTraitDrop"),
+			gods.GetInternalBoonName("ImprovedTemporaryImprovedDefenseTrait"),
+			gods.GetInternalBoonName("ImprovedTemporaryMoveSpeedTrait"),
+			gods.GetInternalBoonName("ImprovedTemporaryDoorHealTrait"),
+			gods.GetInternalBoonName("ImprovedLastStandDrop"),
+			gods.GetInternalBoonName("ImprovedResourcesDrops"),
+			gods.GetInternalBoonName("ImprovedTemporaryBoonRarityTrait"),
+
+		},
+        InteractTextLineSets =
+		{
+		    ModdedThanChat01Placeholder =
+			{
+				UseableOffSource = true,
+				{ Cue = "/VO/Zagreus_0176",
+					Text = "All right, Little Sister, let's give these Shades of Elysium a match to remember!" },
+			},
+        }
+    },
 }
 
 for newNPCName, newNPCData in pairs(mod.HypnosNPCData) do

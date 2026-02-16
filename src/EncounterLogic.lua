@@ -636,10 +636,12 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 	SetPlayerInvulnerable( "HeraclesSpawnPresentation" )
 		AddInputBlock({ Name = "HeraclesSpawnPresentation" })
 
-	PanCamera({ Ids = theseus.ObjectId, Duration = 1.5, EaseIn = 0.05, EaseOut = 0.03 })
-	LockCamera({Ids = theseus.ObjectId, Duration = 1.5})
-	PlaySound({ Name = "/Leftovers/World Sounds/MapZoomSlow" })
-	PlaySound({ Name = "/Leftovers/SFX/GoalScoredNEW" })
+		local target = SpawnObstacle({Name = "InvisibleTarget", DestinationId = theseus.ObjectId, OffsetY = 20 })
+	
+		AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
+	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
+
+	MoveHeroToRoomPosition({ MoverId = heroId, DestinationId = target, DisableCollision = false, Speed = 500 })
 
 	AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
@@ -661,11 +663,15 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 
 	ShowCombatUI("HeraclesIntro")
 
-	LockCamera({ Id = CurrentRun.Hero.ObjectId, Duration = 1.25 })
-	PlaySound({ Name = "/Leftovers/World Sounds/MapZoomSlow" })
-
 	SetPlayerVulnerable( "HeraclesSpawnPresentation" )
 
 	SetupAI(theseus )
 	SetupAI(minotaur)
+end
+
+function mod.TheseusMinotaurAngleToHero()
+
+	--LockCamera({ Id = CurrentRun.Hero.ObjectId, Duration = 1.25 })
+	--PlaySound({ Name = "/Leftovers/World Sounds/MapZoomSlow" })
+
 end
