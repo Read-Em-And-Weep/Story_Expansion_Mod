@@ -4,6 +4,7 @@ import 'Keepsakes/KeepsakeData_Achilles.lua'
 import 'Keepsakes/KeepsakeData_Orpheus.lua'
 import 'Keepsakes/KeepsakeData_Dusa.lua'
 import 'Keepsakes/KeepsakeData_Nyx.lua'
+import 'Keepsakes/KeepsakeData_Sisyphus.lua'
 import 'Keepsakes/KeepsakeData_Patroclus.lua'
 import 'Keepsakes/KeepsakeData_Theseus.lua'
 import 'Keepsakes/KeepsakeData_Minotaur.lua'
@@ -427,3 +428,51 @@ modutil.mod.Path.Wrap("DamageEnemy", function(base, victim, triggerArgs)
 	
 	return base(victim, triggerArgs)
 end)
+
+modutil.mod.Path.Wrap("EquipKeepsake", function(base, heroUnit, traitName, args)
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionDecayingDamageProtectionKeepsake") then
+		args = args or {}
+		local unit = heroUnit or CurrentRun.Hero
+		traitName = traitName or GameState.LastAwardTrait
+			local rarity = args.ForceRarity or GetRarityKey(GetKeepsakeLevel( traitName ))
+		local traitData = AddTrait( unit, traitName, rarity, args)
+		if traitData == nil then
+		return
+	end
+	if not CurrentRun.Hero.IsDead then
+		CurrentRun.TraitCache[traitName] = CurrentRun.TraitCache[traitName] or 1
+	end
+
+	if args.AddToCache then
+		table.insert( CurrentRun.KeepsakeCache, traitName )
+	end
+		traitData.CurrentStoryExpansionProtection = traitData.InitialStoryExpansionProtection
+		UpdateTraitNumber(traitData)
+		return
+	end
+	return base(heroUnit, traitName,args)
+end)
+
+modutil.mod.Path.Wrap("EndEncounterEffects", function(base, currentRun, currentRoom, currentEncounter)
+	if not currentRoom.SkipRoomsPerUpgrade then
+		for k, traitData in ipairs( CurrentRun.Hero.Traits ) do
+				if traitData.CurrentStoryExpansionProtection and traitData.CurrentStoryExpansionProtection < 1 then
+					traitData.CurrentStoryExpansionProtection = traitData.CurrentStoryExpansionProtection + traitData.DecayRate
+					if traitData.CurrentStoryExpansionProtection >= 1 then
+						traitData.CustomTrayText = traitData.ZeroBonusTrayText
+						traitData.CurrentStoryExpansionProtection = 1
+						ReduceTraitUses( traitData, { Force = true })
+						thread( mod.DecayingDamageKeepsakeExpiredPresentation )
+					end
+					UpdateTraitNumber(traitData)
+				end
+			end
+	end
+	return base(currentRun, currentRoom, currentEncounter)
+end)
+
+function mod.DecayingDamageKeepsakeExpiredPresentation()
+	PlaySound({ Name = "/SFX/WrathOver", Id = CurrentRun.Hero.ObjectId })
+	thread( PlayVoiceLines, HeroVoiceLines.KeepsakeExpiredVoiceLines, true )
+	thread( InCombatTextArgs, { TargetId = CurrentRun.Hero.ObjectId, Text = "StoryExpansionDecayingDamageProtectionKeepsakeExpired", Duration = 1.3, PreDelay = 0.2 } )
+end

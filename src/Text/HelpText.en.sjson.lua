@@ -169,6 +169,10 @@ local newHelpTextData = {
       DisplayName = "{#CombatTextHighlightFormat}Gossamer Blade Lost{#Prev}!",
     },
     {
+      Id = "StoryExpansionDecayingDamageProtectionKeepsakeExpired",
+      DisplayName = "{#CombatTextHighlightFormat}Bouldy Jr.{#Prev} Expired!"
+    },
+    {
       Id = "Chthonic",
       DisplayName = "{#HeroicFormat}Chthonic{#Prev}",
       Description = "{$Keywords.Duo} blessings with the power of an Olympian god and Hades, offered to those favored by both.",

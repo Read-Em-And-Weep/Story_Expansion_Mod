@@ -1458,22 +1458,6 @@ end
 --TODO: add important dialogue to forceWalkRequirements so you're not forced to walk at Palace
 --TODO: go through important dialogue to see what needs to be changed to fit new story, and what requirements need to be updated
 
-
-ResourceData.HadesSpearPoints.RevealGameStateRequirements = 
-{
-	{
-				PathTrue = { "GameState", "TextLinesRecord", "ZeusPalaceMeeting09" },
-			},
-}
-
-ResourceData.HadesSpearPoints.CostRevealRequirements = 
-{
-	{
-				PathTrue = { "GameState", "TextLinesRecord", "ZeusPalaceMeeting09" },
-			},
-}
-
-
 NamedRequirementsData.NearTrueEnding = {
 		{
 			PathTrue = { "GameState", "WorldUpgrades", "WorldUpgradeTimeStop" },

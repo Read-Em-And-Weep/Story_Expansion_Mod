@@ -638,12 +638,12 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 	SetPlayerInvulnerable( "HeraclesSpawnPresentation" )
 		AddInputBlock({ Name = "HeraclesSpawnPresentation" })
 
-		local target = SpawnObstacle({Name = "InvisibleTarget", DestinationId = theseus.ObjectId, OffsetY = 20 })
-	
+		local target = SpawnObstacle({Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = 20 })
+		local target2 = SpawnObstacle({Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = 40 })
 		AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 
-	MoveHeroToRoomPosition({ MoverId = heroId, DestinationId = target, DisableCollision = false, Speed = 500 })
+	thread(PanCamera,{ Id = theseus.ObjectId, Duration = 0.5, EaseIn = 0, EaseOut = 0.1 })
 
 	AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
@@ -654,6 +654,7 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 
 	wait( 0.1, RoomThreadName )
 	wait( 0.5, RoomThreadName )
+	wait(1.5)
 
 	ProcessTextLines( theseus, theseus.BossIntroTextLineSets )
 

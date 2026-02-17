@@ -39,7 +39,6 @@ gods = mods["zannc-GodsAPI"].auto()
 ---@module 'ReadEmAndWeep-More_Elemental_Boons_Mod' 
 elementalinfusion = mods["ReadEmAndWeep-More_Elemental_Boons_Mod"]
 
-
 ---@module 'config'
 config = chalk.auto 'config.lua'
 -- ^ this updates our `.cfg` file in the config folder!

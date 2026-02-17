@@ -28,6 +28,12 @@ local newTraitTextData = {
       DisplayName = "Pom Porridge",
       InheritFrom = "BaseBoonMultiline",
       Description = "The next {$TooltipData.RemainingUses} {$Keywords.PomNoPlural} you claim will offer more {$Keywords.PomLevel}",
+    },
+    {
+      Id = "StoryExpansionDecayingDamageProtectionKeepsake_Tray",
+      InheritFrom = "BaseBoonMultiline",
+      DisplayName = "Bouldy Jr.",
+      Description = "Take {#UpgradeFormat}-{$TooltipData.ExtractData.CurrentBonus}% {#Prev}damage, but lose {#BoldFormatGraft}{$TooltipData.ExtractData.DecayRate}% {#Prev}of this bonus after each {$Keywords.EncounterAlt}.",
     }
 }
 

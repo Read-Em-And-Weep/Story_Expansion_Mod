@@ -10,7 +10,7 @@ gods.CreateKeepsake({
     },
 
     Keepsake = {
-        displayName = "Stone Heart",
+        displayName = "Painted Heart",
         description = "Gain {#UpgradeFormat}+{$TooltipData.ExtractData.MaxHealthIncrease}{#Prev}{!Icons.HealthUp} this night.",
         signoffMax = "From {#AwardMaxFormat}Dusa{#Prev}{!Icons.ObjectiveSeparatorDark}Through duty, strength and perseverance, one can succeed.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
