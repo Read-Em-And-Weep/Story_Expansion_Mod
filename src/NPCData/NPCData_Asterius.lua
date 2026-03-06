@@ -69,9 +69,9 @@ AIWanderDistance = 0,
 
 
 		InteractTextLineSets = {
-        StoryExpansionPostCombatTheseus01 =
+        PlaceholderStoryExpansionPostCombatTheseus01 =
 			{
-                Name = "StoryExpansionPostCombatTheseus01",
+                Name = "PlaceholderStoryExpansionPostCombatTheseus01",
                 Partner = "NPC_Theseus_Field_01_StoryExpansion",
 				PlayOnce = true,
 				UseableOffSource = true,
@@ -136,6 +136,6 @@ end
 
 NarrativeData.NPC_Minotaur_Field_01_StoryExpansion = {
     InteractTextLinePriorities = {
-        "StoryExpansionPostCombatMinotaur01",
+        --"StoryExpansionPostCombatMinotaur01",
     }
 }

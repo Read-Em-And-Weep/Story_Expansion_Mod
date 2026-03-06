@@ -53,7 +53,7 @@ OverwriteTableKeys(EncounterData,
 				Comparison = ">=",
 				Value = 2,
 			},
-			--NamedRequirements = { "NoRecentFieldNPCEncounter" },
+			NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			NamedRequirementsFalse = { "StandardPackageBountyActive","HecateMissing" },
 		},
 
@@ -168,9 +168,9 @@ table.insert(EncounterSets.GEncountersDefault, "TheseusMinotaurStoryExpansionCom
 
 
 mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF", mod.FCombatRooms, 2)
-mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF2", mod.FCombatRooms, 4)
+mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF2", mod.FCombatRooms, 2)
 mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG", mod.GCombatRooms, 2)
-mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG2", mod.GCombatRooms, 4)
+mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG2", mod.GCombatRooms, 2)
 
 
 table.insert(NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, "TheseusMinotaurStoryExpansionCombatF")

@@ -19,6 +19,7 @@ import 'Animations/NPC_General_VFX.sjson.lua'
 import 'StoryResetData.lua'
 import 'WeaponLogic.lua'
 import 'WorldUpgradeData.lua'
+import 'CodexData.lua'
 
 modutil.mod.Path.Wrap("SetupMap", function(base)
 	game.LoadPackages({ Name ="ReadEmAndWeep-Story_ExpansionGUI" })

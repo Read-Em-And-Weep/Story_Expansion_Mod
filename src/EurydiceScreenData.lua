@@ -63,7 +63,7 @@ ScreenData.StoryExpansionFoodScreen =
 		Order =
 		{
 			"BackgroundTint",
-			"ShopBackground",
+			"FoodShopBackground",
 			"ShopBackgroundEurydice",
 			"ActionBarBackground",
 			"TitleText",
@@ -82,7 +82,7 @@ ScreenData.StoryExpansionFoodScreen =
 			Color = {0.15, 0.15, 0.15, 0.85}
 		},
 
-		ShopBackground = 
+		FoodShopBackground = 
 		{
 			AnimationName = "WellShopIn",
 			GroupName = "Combat_Menu_Backing", 

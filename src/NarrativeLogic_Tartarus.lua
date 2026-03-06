@@ -1356,23 +1356,19 @@ function mod.PlayDeathRestorationVoiceLines()
     SetVolume({Id = narration1, Value = 0}) 
     wait(12.5)
     AudioState.ActiveSpeechIds[narration1] = nil
-    print("pass 1")
     local narration2 = PlaySpeech({ Name = "/VO/Storyteller_0517", Queue = nil, SubtitleColor = Color.NarratorVoice, UseSubtitles = true, Actor = nil })
     SetVolume({Id = narration2, Value = 0})
         wait(10.5)
-        print("pass 2")
             AudioState.ActiveSpeechIds[narration2] = nil
 
     local narration3 = PlaySpeech({ Name = "/VO/Storyteller_0524", Queue = nil, SubtitleColor = Color.NarratorVoice, UseSubtitles = true, Actor = nil })
     SetVolume({Id = narration3, Value = 0})
-    print("pass 3")
      wait(4.7)
             AudioState.ActiveSpeechIds[narration3] = nil
 
     local narration4 = PlaySpeech({ Name = "/VO/Storyteller_0525", Queue = nil, SubtitleColor = Color.NarratorVoice, UseSubtitles = true, Actor = nil })
     SetVolume({Id = narration4, Value = 0})
     AudioState.ActiveSpeechIds[narration4] = nil
-    print("pass 4")
 end
 
 GlobalVoiceLines.DeathAreaRestorationVoiceLines =

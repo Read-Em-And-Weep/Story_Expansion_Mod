@@ -21,6 +21,7 @@ OverwriteTableKeys( EncounterData,
 				PathFalse = {"CurrentRun", "RoomsEntered", "I_Boss01"},
 			},
 			NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing",  },
+			NamedRequirements = { "NoRecentFieldNPCEncounter" },
 		},
 
 		RequireNotRoomReward = { "Boon", "SpellDrop", "Devotion", "HermesUpgrade", "WeaponUpgrade", "StackUpgrade", "TalentDrop", "Story" },
@@ -96,6 +97,7 @@ OverwriteTableKeys( EncounterData,
 				Value = 0,
 			},
 			NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing",  },
+			NamedRequirements = { "NoRecentFieldNPCEncounter" },
 		},
 
 		RequireNotRoomReward = { "Boon", "SpellDrop", "Devotion", "HermesUpgrade", "WeaponUpgrade", "StackUpgrade", "TalentDrop", "Story" },
@@ -147,7 +149,7 @@ OverwriteTableKeys( EncounterData,
 })
 
 mod.AddEncounterToEncounterSet("PatroclusStoryExpansionRandomEvent", mod.ICombatRooms, 2)
-mod.AddEncounterToEncounterSet("PatroclusStoryExpansionRandomEvent2", mod.ICombatRooms, 4)
+mod.AddEncounterToEncounterSet("PatroclusStoryExpansionRandomEvent2", mod.ICombatRooms, 2)
 
 
 

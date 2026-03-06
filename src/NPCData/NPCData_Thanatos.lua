@@ -45,7 +45,7 @@ mod.ThanatosNPCData = {
 				{ Cue = "/VO/Zagreus_0176",
 					Text = "All right, Little Sister, let's give these Shades of Elysium a match to remember!" },
 			},
-			InteractWithZag = {
+			PlaceholderInteractWithZag = {
         Partner = "NPC_Zagreus_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",
@@ -75,7 +75,7 @@ mod.ThanatosNPCData = {
 					Text = "Best watch your mouth or I shall seal it shut! You may continue dwelling on a past you were not witness to, or you may do what is expected of Nyx's daughters. Or whatever Eris is up to! Your choice." },
 					
     },
-	InteractWithMeg = {
+	PlaceholderInteractWithMeg = {
                 Partner = "NPC_Megaera_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",
@@ -105,7 +105,7 @@ mod.ThanatosNPCData = {
 					Text = "Best watch your mouth or I shall seal it shut! You may continue dwelling on a past you were not witness to, or you may do what is expected of Nyx's daughters. Or whatever Eris is up to! Your choice." },
 					
     },
-	InteractWithAchilles = {
+	PlaceholderInteractWithAchilles = {
                 Partner = "NPC_Achilles_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",
@@ -135,7 +135,7 @@ mod.ThanatosNPCData = {
 					Text = "Best watch your mouth or I shall seal it shut! You may continue dwelling on a past you were not witness to, or you may do what is expected of Nyx's daughters. Or whatever Eris is up to! Your choice." },
 					
     },
-	InteractWithDusa = {
+	PlaceholderInteractWithDusa = {
                 Partner = "NPC_Dusa_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",
@@ -166,7 +166,7 @@ mod.ThanatosNPCData = {
 					Text = "Best watch your mouth or I shall seal it shut! You may continue dwelling on a past you were not witness to, or you may do what is expected of Nyx's daughters. Or whatever Eris is up to! Your choice." },
 					
     },
-	InteractWithNyx = {
+	PlaceholderInteractWithNyx = {
                 Partner = "NPC_Nyx_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",
@@ -197,7 +197,7 @@ mod.ThanatosNPCData = {
 					Text = "Best watch your mouth or I shall seal it shut! You may continue dwelling on a past you were not witness to, or you may do what is expected of Nyx's daughters. Or whatever Eris is up to! Your choice." },
 					
     },
-	InteractWithOrpheus = {
+	PlaceholderInteractWithOrpheus = {
                 Partner = "NPC_Orpheus_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",
@@ -228,7 +228,7 @@ mod.ThanatosNPCData = {
 					Text = "Best watch your mouth or I shall seal it shut! You may continue dwelling on a past you were not witness to, or you may do what is expected of Nyx's daughters. Or whatever Eris is up to! Your choice." },
 					
     },
-	InteractWithPersephone = {
+	PlaceholderInteractWithPersephone = {
                 Partner = "NPC_Persephone_Hub_StoryExpansion",
 				PlayOnce = true,
 				UseText = "UseListenNPC",

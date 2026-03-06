@@ -93,8 +93,8 @@ mod.TheseusNPCData = {
           }, 
         },
 		InteractTextLineSets = {
-        	StoryExpansionPostCombatTheseus01 = {
-                Name = "StoryExpansionPostCombatTheseus01",
+        	PlaceholderStoryExpansionPostCombatTheseus01 = {
+                Name = "PlaceholderStoryExpansionPostCombatTheseus01",
                 Partner = "NPC_Minotaur_Field_01_StoryExpansion",
 				UseText = "NPCUseTextTalk",
 				PreBlockSpecialInteract = true,

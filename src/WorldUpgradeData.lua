@@ -37,6 +37,45 @@ WorldUpgradeData.WorldUpgradeTimeStop.Cost = {
 	MixerMythic = 1,
 }
 
+Incantations.addIncantation({
+    Id = "StoryExpansionWorldUpgradeUnlockEurydice",
+    Name = {
+        en = "Calling to a Muse"
+    },
+    Description = {
+        en = "Send out a beacon targeted at Orpheus's muse, Eurydice. May she be welcomed at the Crossroads, if she is capable of taking up the invitation."
+    },
+    FlavorText = {
+        en = "Not being able to look back at your love is perhaps the greatest tragedy of all."
+    },
+    WorldUpgradeData = {
+        AlwaysRevealImmediately = true,
+        Icon = "ReadEmAndWeep-Story_ExpansionGUI\\CauldronItems\\cauldron_eurydiceunlock",
+		Cost =
+		{
+			GiftPoints = 2,
+            PlantHWheat = 2,
+			MixerFBoss = 1,
+		},
+        GameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansion_OrpheusUnlocksEurydice02" },
+			},
+    },
+    IncantationVoiceLines =
+		{
+			{
+				PreLineWait = 0.3,
+				{ Cue = "/VO/Melinoe_1080", Text = "{#Emph}Hear me, O Shades, on my authority: \n {#Emph}Give my demand all due priority." },
+			},
+		},
+        RevealReactionVoiceLines = {
+            { GlobalVoiceLines = "CauldronReactionVoiceLines" },
+        },
+
+    }
+})
 --TODO: Update Unlock Requirements for the two upgrades
 
 --[[Incantations to add

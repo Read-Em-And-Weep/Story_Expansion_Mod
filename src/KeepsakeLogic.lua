@@ -434,21 +434,20 @@ modutil.mod.Path.Wrap("EquipKeepsake", function(base, heroUnit, traitName, args)
 		args = args or {}
 		local unit = heroUnit or CurrentRun.Hero
 		traitName = traitName or GameState.LastAwardTrait
-			local rarity = args.ForceRarity or GetRarityKey(GetKeepsakeLevel( traitName ))
-		local traitData = AddTrait( unit, traitName, rarity, args)
+		local rarity = args.ForceRarity or GetRarityKey(GetKeepsakeLevel(traitName))
+		local traitData = AddTrait(unit, traitName, rarity, args)
 		if traitData == nil then
-		return
-	end
-	if not CurrentRun.Hero.IsDead then
-		CurrentRun.TraitCache[traitName] = CurrentRun.TraitCache[traitName] or 1
-	end
+			return
+		end
+		if not CurrentRun.Hero.IsDead then
+			CurrentRun.TraitCache[traitName] = CurrentRun.TraitCache[traitName] or 1
+		end
 
-	if args.AddToCache then
-		table.insert( CurrentRun.KeepsakeCache, traitName )
-	end
+		if args.AddToCache then
+			table.insert(CurrentRun.KeepsakeCache, traitName)
+		end
 		traitData.CurrentStoryExpansionProtection = traitData.InitialStoryExpansionProtection
 		UpdateTraitNumber(traitData)
-		return
 	end
 	return base(heroUnit, traitName,args)
 end)

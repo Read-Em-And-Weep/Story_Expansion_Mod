@@ -685,6 +685,26 @@ if elementalinfusion then
 			{
 				PathTrue = { "CurrentRun", "Hero", "ExtraElementalBoonsDominantElementByCount" },
 			},
+            {
+                    Path = { "CurrentRun", "Hero", "Elements", "Fire" },
+                    Comparison = ">=",
+                    Value = 1,
+                },
+                {
+                    Path = { "CurrentRun", "Hero", "Elements", "Earth" },
+                    Comparison = ">=",
+                    Value = 1,
+                },
+                {
+                    Path = { "CurrentRun", "Hero", "Elements", "Air" },
+                    Comparison = ">=",
+                    Value = 1,
+                },
+                {
+                    Path = { "CurrentRun", "Hero", "Elements", "Water" },
+                    Comparison = ">=",
+                    Value = 1,
+                },
         },
         		IsElementalTrait = true,
 		BlockStacking = true,

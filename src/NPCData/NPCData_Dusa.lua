@@ -110,7 +110,7 @@ mod.DusaNPCData = {
 					Text = "Well it is a dream of a sort. It's a magick dream that I've created to free you after Chronos invaded the House and captured its members." },
 { 
 					Portrait = "StoryExpansion_Dusa_Empathetic",
-					Text = "Chr-Chronos? In the House of Hades? But the Olympians slew him eons ago! How is it possible that he's risen again? And what has happened to the other members of the House?" },
+					Text = "Chr-Chronos? In the House of Hades? But the Olympians slew him eons ago! H-How is it possible that he's risen again? And what has happened to the other members of the House?" },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Vulnerable_01",

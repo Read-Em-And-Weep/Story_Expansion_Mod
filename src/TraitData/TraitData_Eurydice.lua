@@ -1118,10 +1118,10 @@ gods.CreateBoon({
     description =
     "Any {$Keywords.GodBoonPlural} you find have an increased chance to include {$Keywords.Legendary} blessings.",
     RarityLevels = {
-        Common = { Multiplier = 1},
+        Common = { Multiplier = 2},
         Rare = { Multiplier = 3 },
-        Epic = { Multiplier = 5},
-        Heroic = { Multiplier= 7},
+        Epic = { Multiplier = 4},
+        Heroic = { Multiplier= 5},
     },
     ExtraFields = {
 		RarityBonus =

@@ -33,6 +33,11 @@ local newHelpTextData = {
       Description = "Carefree Muse",
     },
     {
+      Id = "NPC_Eurydice_Hub_StoryExpansion",
+      DisplayName = "Eurydice",
+      Description = "Carefree Muse",
+    },
+    {
       Id = "NPC_Hypnos_Hub_StoryExpansion",
       DisplayName = "Hypnos",
       Description = "Sleep Incarnate",
@@ -179,7 +184,7 @@ local newHelpTextData = {
     },
     {
       Id = "StoryExpansionFreeNPC",
-      DisplayName = "{I} Free From Chronos"
+      DisplayName = "{I} Free"
     },
     {
       Id = "StoryExpansionWorldUpgradeSaveChronos",

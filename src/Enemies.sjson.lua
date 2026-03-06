@@ -606,6 +606,31 @@ local newSJSONEnemyData = {
         }
     },
     {
+        Name = "NPC_Eurydice_Hub_StoryExpansion",
+        InheritFrom = "BaseReadEmAndWeepNPC",
+        CosmeticRotationSpeed = 280.0,
+        DisplayInEditor = true,
+        NoAllegiance = true,
+        Thing =
+        {
+            AttachedAnim = "MedusaShadow",
+            EditorOutlineDrawBounds = false,
+            Graphic = "StoryExpansionEurydiceIdle",
+            Tallness = 180.0,
+            Interact =
+            {
+                Distance = 200.0
+            },
+            Points = {
+                { X = 4, Y = 12 },
+          { X = 43, Y = -7 },
+          { X = -13, Y = -35 },
+          { X = -52, Y = -16 },
+            },
+        SubtitleColor = { Red=0.145, Green=0.486, Blue=1.000, Alpha=1.0 }
+        }
+    },
+    {
         Name = "NPC_Hypnos_Hub_StoryExpansion",
         InheritFrom = "BaseReadEmAndWeepNPC",
         CosmeticRotationSpeed = 280.0,

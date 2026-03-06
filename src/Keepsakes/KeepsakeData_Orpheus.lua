@@ -37,8 +37,9 @@ gods.CreateKeepsake({
     },
 
     customGiftData = {
-		maxRequirement = {PathTrue = { "GameState", "TextLinesRecord", "EurydiceGift08" },},
-		minRequirement = {PathTrue = { "GameState", "TextLinesRecord", "DemeterGift01" },},
+        customName = "NPC_Orpheus_Hub_StoryExpansion",
+		maxRequirement = {PathTrue = { "GameState", "TextLinesRecord", "StoryExpansion_OrpheusTaverna02" },},
+		minRequirement = {PathTrue = { "GameState", "TextLinesRecord", "StoryExpansion_OrpheusGift01" },},
 	},
 
 })

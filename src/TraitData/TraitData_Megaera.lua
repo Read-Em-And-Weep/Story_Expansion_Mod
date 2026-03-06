@@ -550,11 +550,11 @@ gods.CreateBoon({
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\gods_pride",
     displayName = "Blessing of Heroism",
-    description = "You may be offered {$Keywords.Heroic} {$Keywords.GodBoonPlural} {#UpgradeFormat} 10% {#Prev} of the time this night.",
+    description = "You may be offered {$Keywords.Heroic} {$Keywords.GodBoonPlural} {#UpgradeFormat} 15% {#Prev} of the time this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
-    		StoryExpansionCommonToHeroicChance = 0.10,
+    		StoryExpansionCommonToHeroicChance = 0.15,
     },
     ExtractValues =
 		{

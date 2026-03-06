@@ -218,7 +218,7 @@ function mod.HandleFoodSelection( screen, button )
 	AddTraitToHero({ TraitData = upgradeData, SkipQuestStatusCheck = true, SkipAddToHUD = true})
     GameState.StoryExpansionLastFoodChosen = upgradeData
 
-		SetAnimation({ Name = "WellShopOut", DestinationId = screen.Components.ShopBackground.Id })
+		SetAnimation({ Name = "WellShopOut", DestinationId = screen.Components.FoodShopBackground.Id })
 		mod.CloseFoodScreen( screen, button )
         	CurrentRun.CurrentRoom.StoryExpansionFoodScreen.Buttons = {}
 
@@ -290,6 +290,7 @@ function mod.ChooseFoodOptions()
             --table.insert(CurrentRun.StoryExpansionFoodOptionsRarities, chosenFood[2])
         end
     end
+	-- TODO: Adjust this function to include priorityOptions, so I can prioritise certain foods being unlocked with story progress
 end
 
 function mod.EquipAllFoods() --Debug

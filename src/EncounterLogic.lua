@@ -643,7 +643,7 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 		AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 
-	thread(PanCamera,{ Id = theseus.ObjectId, Duration = 0.5, EaseIn = 0, EaseOut = 0.1 })
+	thread(PanCamera,{ Id = theseus.ObjectId, Duration = 5, EaseIn = 0, EaseOut = 0.1 })
 
 	AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
