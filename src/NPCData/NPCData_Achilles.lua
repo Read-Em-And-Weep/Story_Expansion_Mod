@@ -38,11 +38,292 @@ mod.AchillesNPCData = {
         LoadPackages = { "Achilles", "BiomeIHouse"},
 
 		InteractTextLineSets = {
-        ModdedThanChat01Placeholder =
-			{
+        StoryExpansion_AchillesChat01 = {
+				Name = "StoryExpansion_AchillesChat01",
 				UseableOffSource = true,
-				{ Cue = "/VO/Zagreus_0176",
-					Text = "All right, Little Sister, let's give these Shades of Elysium a match to remember!" },
+				{
+					Text = "I've not the faintest doubt you can do this."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat02 = {
+				Name = "StoryExpansion_AchillesChat02",
+				UseableOffSource = true,
+				{
+					Text = "When faced with danger, remember your training and stay calm. Losing yourself to anger does no good, lass."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat03 = {
+				Name = "StoryExpansion_AchillesChat03",
+				UseableOffSource = true,
+				{
+					Text = "Go forth, lass, and do what you must."
+				},
+				GameStateRequirements = {
+
+				},
+			},
+			StoryExpansion_AchillesChat04 = {
+				Name = "StoryExpansion_AchillesChat04",
+				UseableOffSource = true,
+				{
+					Text = "What's it going to be this time, Your Royal Majesty?"
+				},
+			},
+			StoryExpansion_AchillesChat05 = {
+				Name = "StoryExpansion_AchillesChat05",
+				UseableOffSource = true,
+				{
+					Text = "I'll be keeping an eye on things here while you're gone. Should take some stress off your mind, eh lass?"
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat06 = {
+				Name = "StoryExpansion_AchillesChat06",
+				UseableOffSource = true,
+				{
+					Text = "Not much point tarrying on longer than you must, lass. I know you have places to be."
+				},
+				GameStateRequirements = {
+
+				},
+			},
+			StoryExpansion_AchillesChat07 = {
+				Name = "StoryExpansion_AchillesChat07",
+				UseableOffSource = true,
+				{
+					Text = "I'd teach you something if I could, lass, but I have little experience in using magick."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat08 = {
+				Name = "StoryExpansion_AchillesChat08",
+				UseableOffSource = true,
+				{
+					Text = "Fight as though you've but one life to live. Were you not a child of Hades, that might well be true."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat09 = {
+				Name = "StoryExpansion_AchillesChat09",
+				UseableOffSource = true,
+				{
+					Text = "Experience is the greatest teacher, lass."
+				},
+				GameStateRequirements = {
+
+				},
+			},
+			StoryExpansion_AchillesChat10= {
+				Name = "StoryExpansion_AchillesChat10",
+				UseableOffSource = true,
+				{
+					Text = "Get back out and finish what you started, lass."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat11= {
+				Name = "StoryExpansion_AchillesChat11",
+				UseableOffSource = true,
+				{
+					Text = "Mistakes are opportunities for learning, lass. Be glad you get the chance to grow from them."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat12= {
+				Name = "StoryExpansion_AchillesChat11",
+				UseableOffSource = true,
+				{
+					Text = "I have your back. No matter what."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat13= {
+				Name = "StoryExpansion_AchillesChat13",
+				UseableOffSource = true,
+				{
+					Text = "Ready yourself, lass, and give it another attempt."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat14= {
+				Name = "StoryExpansion_AchillesChat14",
+				UseableOffSource = true,
+				{
+					Text = "There's nothing you cannot achieve. I'm sure of it."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat15= {
+				Name = "StoryExpansion_AchillesChat15",
+				UseableOffSource = true,
+				{
+					Text = "Do not throw away your life as I did mine, lass. We rarely get a second chance."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat16= {
+				Name = "StoryExpansion_AchillesChat16",
+				UseableOffSource = true,
+				{
+					Text = "You have this, lass. The Fates be damned."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat17 = {
+				Name = "StoryExpansion_AchillesChat17",
+				UseableOffSource = true,
+				{
+					Text = "You have a good heart, lass. Keep listening to it."
+				},
+				GameStateRequirements = {
+					{
+					}
+				},
+			},
+			StoryExpansion_AchillesChat18 = {
+				Name = "StoryExpansion_AchillesChat18",
+				UseableOffSource = true,
+				{
+					Text = "I've decided not to join Patroclus this night, lass. He has his duty in clearing out Tartarus, while I have a duty here."
+				},
+				GameStateRequirements = {
+					{
+						PathTrue = {"GameState", "TextLinesRecord", "Placeholder"}
+					}
+				},
+			},
+			StoryExpansion_AchillesChat19 = {
+				Name = "StoryExpansion_AchillesChat19",
+				UseableOffSource = true,
+				{
+					Text = "Patroclus tells me you've been enjoying his pilfered goods, lass. He's always been good at finding the little joys in tragedy."
+				},
+				GameStateRequirements = {
+					{
+						PathTrue = {"GameState", "TextLinesRecord", "Placeholder"}
+					}
+				},
+			},
+			StoryExpansion_AchillesChat20 = {
+				Name = "StoryExpansion_AchillesChat20",
+				UseableOffSource = true,
+				{
+					Text = "I think I might sneak out from my post tonight to top up Patroclus's supplies. Though seeing him is my real goal, lass."
+				},
+				GameStateRequirements = {
+					{
+						PathTrue = {"GameState", "TextLinesRecord", "Placeholder"}
+					}
+				},
+			},
+			StoryExpansion_AchillesChat21 = {
+				Name = "StoryExpansion_AchillesChat21",
+				UseableOffSource = true,
+				{
+					Text = "My oath binds me in defense to the House of Hades. Regardless of whether you make your home here or there, lass, I am here to guard you."
+				},
+				GameStateRequirements = {
+					{
+					},
+				},
+			},
+			StoryExpansion_AchillesChat22 = {
+				Name = "StoryExpansion_AchillesChat22",
+				UseableOffSource = true,
+				{
+					Text = "I tended to use swords and spears while I was alive. Unfortunately, lass, I cannot provide advice for your arms."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat23 = {
+				Name = "StoryExpansion_AchillesChat23",
+				UseableOffSource = true,
+				{
+					Text = "Go forth, lass, and conquer. May the Muses sing of your fury."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat24 = {
+				Name = "StoryExpansion_AchillesChat24",
+				UseableOffSource = true,
+				{
+					Text = "Look out for Patroclus for me, would you lass? I can't handle losing him again."
+				},
+				GameStateRequirements = {
+					{
+						PathTrue = {"GameState", "TextLinesRecord", "Placeholder"}
+					}
+				},
+			},
+			StoryExpansion_AchillesChat25 = {
+				Name = "StoryExpansion_AchillesChat25",
+				UseableOffSource = true,
+				{
+					Text = "If you can, lass, convince Patroclus to return to the Crossroads. We have no place in fighting wars meant for gods."
+				},
+				GameStateRequirements = {
+					{
+						PathTrue = {"GameState", "TextLinesRecord", "Placeholder"}
+					}
+				},
+			},
+			StoryExpansion_AchillesChat26 = {
+				Name = "StoryExpansion_AchillesChat26",
+				UseableOffSource = true,
+				{
+					Text = "Hit hard and fast, lass."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat27 = {
+				Name = "StoryExpansion_AchillesChat27",
+				UseableOffSource = true,
+				{
+					Text = "May you have my swiftness to dodge your enemies."
+				},
+				GameStateRequirements = {
+				},
+			},
+			StoryExpansion_AchillesChat28 = {
+				Name = "StoryExpansion_AchillesChat28",
+				UseableOffSource = true,
+				{
+					Text = "May Nike grant you victory on your next pillaging, lass."
+				},
+				GameStateRequirements = {
+
+				},
 			},
     },	
 	},

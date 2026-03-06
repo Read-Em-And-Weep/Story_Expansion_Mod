@@ -330,7 +330,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat17",
 				UseableOffSource = true,
 				{
-					Text = "You look like you haven't eaten since you were here last!"
+					Text = "You look like you haven't eaten since you were here last! We better fix that now, right hon?"
 				},
 				GameStateRequirements = {
 					{
