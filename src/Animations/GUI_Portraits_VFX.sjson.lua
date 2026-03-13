@@ -204,7 +204,7 @@ local newAnimations = {
       FilePath = "ReadEmAndWeep-Story_ExpansionGUI\\Portraits_Eurydice_01",
       InheritFrom = "Portrait_Base_01",
       Scale = 0.95,
-      OffsetY = 40,
+      OffsetY = -50,
       OffsetX = -90,
     },
     {
@@ -214,7 +214,7 @@ local newAnimations = {
       Scale = 0.95,
       EndFrame = 1,
       StartFrame = 1,
-      OffsetY = 40,
+      OffsetY =-50,
       OffsetX = -90,
     },
     {
