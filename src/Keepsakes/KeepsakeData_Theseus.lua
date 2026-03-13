@@ -1,4 +1,4 @@
-if not gods.IsKeepsakeRegistered("StoryExpansionBoonRarityBoostKeepsake") then
+--[[if not gods.IsKeepsakeRegistered("StoryExpansionBoonRarityBoostKeepsake") then
 gods.CreateKeepsake({
     characterName = "Theseus",
     internalKeepsakeName = "StoryExpansionBoonRarityBoostKeepsake",
@@ -50,4 +50,4 @@ gods.CreateKeepsake({
 	},
 
 })
-end
+end]]

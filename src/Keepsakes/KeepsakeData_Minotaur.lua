@@ -1,6 +1,6 @@
 if not gods.IsKeepsakeRegistered("StoryExpansionAllySummonKeepsake") then
 gods.CreateKeepsake({
-    characterName = "Asterius",
+    characterName = "Theseus and Asterius",
     internalKeepsakeName = "StoryExpansionAllySummonKeepsake",
 
     RarityLevels = {
@@ -11,9 +11,9 @@ gods.CreateKeepsake({
     },
 
     Keepsake = {
-        displayName = "Bull Horn",
+        displayName = "Stuffed Bull",
         description = "The next time you lose a {!Icons.ExtraChanceMisc}, summon {#BoldFormat} Theseus {#Prev} and {#BoldFormat} Asterius {#Prev} to join the fight to deal at most {$TooltipData.RemainingUses} damage before leaving.",
-        signoffMax = "From {#AwardMaxFormat}Asterius{#Prev}{!Icons.ObjectiveSeparatorDark}Morality must be learnt, but reformation can always be possible.",
+        signoffMax = "From {#AwardMaxFormat}Theseus and Asterius{#Prev}{!Icons.ObjectiveSeparatorDark}Morality must be learnt, but reformation can always be possible.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
     },
 
