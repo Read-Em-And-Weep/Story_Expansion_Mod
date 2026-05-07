@@ -401,6 +401,7 @@ modutil.mod.Path.Wrap("GetExpectedMaxMana", function(base)
 	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) then
 		return math.min(50, expectedMaxMana)
 	end
+	return expectedMaxMana
 end)
 
 function mod.TryKeepsakeTheseusAndAsteriusSpawn(functionArgs, triggerArgs)
