@@ -726,7 +726,7 @@ gods.CreateBoon({
 			{
                 Source = "StoryExpansionHephaestusBossArmourTrait",
 					Delay = 0.75,
-					BaseAmount = 50,
+					BaseAmount = 75,
 					ReportValues = 
 					{ 
 						ReportedArmor = "BaseAmount",
@@ -761,7 +761,7 @@ gods.CreateBoon({
 
 	requirements = {OneFromEachSet = {LinkedTraitData.ApolloCoreTraits,{gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake"),gods.GetInternalBoonName("StoryExpansionChthonicBoonKeepsakePermanent")}}},
 	displayName = "Healing Dissection",
-	description = "Whenever you kill a foe, restore some {!Icons.Health}, {#UpgradeFormat} 20% {#Prev} of the time.",
+	description = "Whenever you kill a foe, restore some {!Icons.Health}, {#UpgradeFormat} 30% {#Prev} of the time.",
 	StatLines = {"EncounterHealStatDisplay1"},
 	ExtraFields = {
 		OnEnemyDeathFunction = 
@@ -770,7 +770,7 @@ gods.CreateBoon({
 			FunctionArgs = 
 			{
 				HealAmount = 2,
-                Chance = 0.2,
+                Chance = 0.3,
                 ReportValues = { ReportedHeal = "HealAmount" }
 			},
 		},
