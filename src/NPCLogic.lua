@@ -134,7 +134,7 @@ function mod.SpawnCharacter(characterName)
         local gazeTarget = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = spawnPointId, OffsetX = game
         .EnemyData[characterName].GazeTarget.X, OffsetY = game.EnemyData[characterName].GazeTarget.Y })
         AngleTowardTarget({ Id = newUnit.ObjectId, DestinationId = gazeTarget })
-        Destory({Id = gazeTarget})
+        Destroy({Id = gazeTarget})
     end
     if game.EnemyData[characterName].Scale then
         SetScale({Id = newUnit.ObjectId, Fraction = game.EnemyData[characterName].Scale})

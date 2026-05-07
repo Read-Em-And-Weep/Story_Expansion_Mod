@@ -120,23 +120,23 @@ mod.CombinedShrineUpgradeOrder = {
 }
 
 function mod.FlipShrineScreenToNew(screen, button)
-    local idsToDestory = {}
+    local idsToDestroy = {}
     local components = screen.Components
     for index, upgradeName in ipairs( mod.OldShrineUpgradeOrder ) do
         local upgradeData = MetaUpgradeData[upgradeName]
 		local maxRank = GetShrineUpgradeMaxRank( upgradeData )
         		if maxRank > 0 then
-                    table.insert(idsToDestory, components["ItemBacking"..index].Id)
-                    table.insert(idsToDestory, components["ItemHighlight"..index].Id)
-                    table.insert(idsToDestory, components["ItemButton"..index].Id)
-                    table.insert(idsToDestory, components["NextRankBacking"..index].Id)
-                    table.insert(idsToDestory, components["ItemButton"..index].Id)
+                    table.insert(idsToDestroy, components["ItemBacking"..index].Id)
+                    table.insert(idsToDestroy, components["ItemHighlight"..index].Id)
+                    table.insert(idsToDestroy, components["ItemButton"..index].Id)
+                    table.insert(idsToDestroy, components["NextRankBacking"..index].Id)
+                    table.insert(idsToDestroy, components["ItemButton"..index].Id)
                     for rank = 1, maxRank do
-                        table.insert(idsToDestory, components["RankPips"..rank..index].Id)
+                        table.insert(idsToDestroy, components["RankPips"..rank..index].Id)
                     end
                 end
     end
-    Destroy({Ids = idsToDestory})
+    Destroy({Ids = idsToDestroy})
 
 	local itemLocationX = screen.ItemStartX
 	local itemLocationY = screen.ItemStartY
@@ -313,23 +313,23 @@ screen.NumItems = 0
 end
 
 function mod.FlipShrineScreenToOld(screen, button)
-    local idsToDestory = {}
+    local idsToDestroy = {}
     local components = screen.Components
     for index, upgradeName in ipairs( mod.NewShrineUpgradeOrder ) do
         local upgradeData = MetaUpgradeData[upgradeName]
 		local maxRank = GetShrineUpgradeMaxRank( upgradeData )
         		if maxRank > 0 then
-                    table.insert(idsToDestory, components["ItemBacking"..index].Id)
-                    table.insert(idsToDestory, components["ItemHighlight"..index].Id)
-                    table.insert(idsToDestory, components["ItemButton"..index].Id)
-                    table.insert(idsToDestory, components["NextRankBacking"..index].Id)
-                    table.insert(idsToDestory, components["ItemButton"..index].Id)
+                    table.insert(idsToDestroy, components["ItemBacking"..index].Id)
+                    table.insert(idsToDestroy, components["ItemHighlight"..index].Id)
+                    table.insert(idsToDestroy, components["ItemButton"..index].Id)
+                    table.insert(idsToDestroy, components["NextRankBacking"..index].Id)
+                    table.insert(idsToDestroy, components["ItemButton"..index].Id)
                     for rank = 1, maxRank do
-                        table.insert(idsToDestory, components["RankPips"..rank..index].Id)
+                        table.insert(idsToDestroy, components["RankPips"..rank..index].Id)
                     end
                 end
     end
-    Destroy({Ids = idsToDestory})
+    Destroy({Ids = idsToDestroy})
 
 	local itemLocationX = screen.ItemStartX
 	local itemLocationY = screen.ItemStartY
