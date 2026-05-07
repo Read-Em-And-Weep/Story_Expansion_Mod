@@ -323,13 +323,13 @@ NPC_Thanatos_Field_StoryExpansion = {
 		Traits =
 		{ 
 			gods.GetInternalBoonName("ThanatosFocusDeathDefianceTrait"),
-			gods.GetInternalBoonName("ThanatosInstantKillTrait"),
+			gods.GetInternalBoonName("ThanatosDoubleDamageFinishTrait"),
 			gods.GetInternalBoonName("ThanatosFasterAttackTrait"),
 			gods.GetInternalBoonName("ThanatosOldKeepsakeTrait"),
 			gods.GetInternalBoonName("ThanatosPerfectClearBonusRewardTrait"),
 			gods.GetInternalBoonName("ThanatosPerfectCritTrait"),
 			gods.GetInternalBoonName("ThanatosDodgeSpellTrait"),
-			gods.GetInternalBoonName("ThanatosPrimeDamageTrait"),
+			--gods.GetInternalBoonName("ThanatosPrimeDamageTrait"),
 			gods.GetInternalBoonName("ThanatosDamageOnKillTrait"),
 			gods.GetInternalBoonName("ThanatosSummonShadeMercTrait"),
 			gods.GetInternalBoonName("ThanatosIncomingOutcomingCritTrait"),

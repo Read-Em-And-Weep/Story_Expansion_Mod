@@ -77,10 +77,10 @@ mod.TheseusNPCData = {
             },
             {
                 UsePlayerSource = true,
-                Text = "I am Melinoë, daughter of Hades on a quest to slay Chronos. If you are the Champions of Elysium, then you must be... Sir Theseus and Sir Asterius?",
+                Text = "I am Melinoë, Daughter of Hades on a quest to slay Chronos. If you are the Champions of Elysium, then you must be... Sir Theseus and Sir Asterius?",
             },
             {
-                Text = "How refreshing for a member of the House of Hades to properly show respect! Not at all like that fiend of a Prince, right Asterius?",
+                Text = "How refreshing for a member of the House of Hades to properly show respect. Not at all like that fiend of a Prince, right Asterius?",
             },
             {
                 Source = "NPC_Minotaur_Field_01_StoryExpansion",
@@ -90,7 +90,7 @@ mod.TheseusNPCData = {
             {
                 Text = "Right you are as always, dearest Asterius! You — aid us in dealing with these foes and we may reward you for your efforts.",
             },
-          }, 
+          },
         },
 		InteractTextLineSets = {
         	PlaceholderStoryExpansionPostCombatTheseus01 = {

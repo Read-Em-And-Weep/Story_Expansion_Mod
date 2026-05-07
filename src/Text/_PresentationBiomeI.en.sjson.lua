@@ -1,4 +1,4 @@
-local textFile = rom.path.combine(rom.paths.Content(), 'Game/Text/en/_PresentationBiomeI.en.sjson')
+--[[local textFile = rom.path.combine(rom.paths.Content(), 'Game/Text/en/_PresentationBiomeI.en.sjson')
 
 sjson.hook(textFile, function(data)
   for _, entry in ipairs(data.Texts) do
@@ -12,6 +12,6 @@ sjson.hook(textFile, function(data)
         entry.DisplayName = "{#Emph}...and soon, the House grew more like how it used to be. But then, a summons from Olympus arrived, and the Princess knew her stay had reached its end..."
     end
   end
-end)
+end)]]
 
 

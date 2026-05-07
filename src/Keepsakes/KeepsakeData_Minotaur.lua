@@ -13,7 +13,7 @@ gods.CreateKeepsake({
     Keepsake = {
         displayName = "Stuffed Bull",
         description = "The next time you lose a {!Icons.ExtraChanceMisc}, summon {#BoldFormat} Theseus {#Prev} and {#BoldFormat} Asterius {#Prev} to join the fight to deal at most {$TooltipData.RemainingUses} damage before leaving.",
-        signoffMax = "From {#AwardMaxFormat}Theseus and Asterius{#Prev}{!Icons.ObjectiveSeparatorDark}Morality must be learnt, but reformation can always be possible.",
+        signoffMax = "From {#AwardMaxFormat}Theseus and Asterius{#Prev}{!Icons.ObjectiveSeparatorDark}To do nothing while others suffer is tantamount to enabling the suffering itself.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
     },
 
@@ -47,7 +47,6 @@ gods.CreateKeepsake({
 		},
 
         RemainingUses = {BaseValue = 10000}
-        --update Decay manually in description
     },
 
     ExtractValues = {
@@ -66,11 +65,3 @@ gods.CreateKeepsake({
 
 })
 end
-
-modutil.mod.Path.Wrap("FormatExtractedValue", function(base,value,extractData)
-if extractData.Format and extractData.Format == "StoryExpansionFoodRarity" then
-    local table = {"StoryExpansionTasty","StoryExpansionAppetizing", "StoryExpansionYummy", "StoryExpansionDelicious"}
-    return "{$Keywords." ..table[value].."}"
-end
-return base(value, extractData)
-end)

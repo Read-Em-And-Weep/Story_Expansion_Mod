@@ -6,11 +6,25 @@ import 'Keepsakes/KeepsakeData_Dusa.lua'
 import 'Keepsakes/KeepsakeData_Nyx.lua'
 import 'Keepsakes/KeepsakeData_Sisyphus.lua'
 import 'Keepsakes/KeepsakeData_Patroclus.lua'
---import 'Keepsakes/KeepsakeData_Theseus.lua'
 import 'Keepsakes/KeepsakeData_Minotaur.lua'
+import 'Keepsakes/KeepsakeData_Ariadne.lua'
+import 'Keepsakes/KeepsakeData_Pasiphae.lua'
+import 'Keepsakes/KeepsakeData_Arke.lua'
 import 'Keepsakes/KeepsakeData_Eurydice.lua'
 import 'Keepsakes/KeepsakeData_Hypnos.lua'
 import 'Keepsakes/KeepsakeData_Hades.lua'
+
+modutil.mod.Path.Wrap("CanFreeSwapKeepsakes", function(base)
+	if ( CurrentHubRoom ~= nil and CurrentHubRoom.KeepsakeFreeSwap ) then return true end
+	if not CurrentRun or CurrentRun.CurrentRoom then return false end
+	return base()
+end)
+
+modutil.mod.Path.Wrap( "KeepsakeScreenClose", function(base, screen, button )
+	CurrentRun = CurrentRun or {}
+	CurrentRun.CurrentRoom = CurrentRun.CurrentRoom or {}
+	return base(screen, button)
+end)
 
 modutil.mod.Path.Wrap("HandleUpgradeChoiceSelection", function(base, screen, button, args)
     if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionBoonRarityBoostKeepsake")) and (button.LootData.GodLoot or button.LootData.TreatAsGodLootByShops) then
@@ -75,6 +89,10 @@ function mod.KeepsakeRewardRandomConsumables(unit, args)
 				"EmptyMaxHealthShopItem",
 				"HealDropRange",
                 "MetaCurrencyRange",
+				"MetaCardPointsCommonRange",
+				"MemPointsCommonRange",
+				"SeedMysteryRange",
+				"MetaCurrencyRange",
 				"MetaCardPointsCommonRange",
 				"MemPointsCommonRange",
 				"SeedMysteryRange",
@@ -192,7 +210,10 @@ function mod.GrantRandomFoodOfRarity(args)
 	if game.CurrentHubRoom and game.CurrentHubRoom.Name == "Hub_PreRun" then
         return
     end
-
+	CurrentRun = CurrentRun or {}
+	CurrentRun.CurrentRoom = CurrentRun.CurrentRoom or {}
+	CurrentRun.CurrentRoom.RoomCreations = CurrentRun.CurrentRoom.RoomCreations or {}
+	CurrentRun.RoomCreations = CurrentRun.RoomCreations or {}
 	args = args or {}
 	args.Rarity = args.Rarity or 1
 	local rarityTable = {"Common", "Rare", "Epic", "Heroic"}
@@ -364,13 +385,7 @@ local currentTraits = ShallowCopyTable( CurrentRun.Hero.Traits )
 return base(args)
 end)
 
-modutil.mod.Path.Wrap("GetExpectedMaxMana", function(base)
-	local expectedMaxMana = base()
-	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) then
-		return math.min(50, expectedMaxMana)
-	end
-	return expectedMaxMana
-end)
+-- Hypnos has been moved to TraitLogic_Shrine
 
 modutil.mod.Path.Wrap("TriggerPostBossEvents", function(base, eventSource,args)
 	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) and IsTraitActive( gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) then
@@ -378,6 +393,13 @@ modutil.mod.Path.Wrap("TriggerPostBossEvents", function(base, eventSource,args)
 		ReduceTraitUses(trait,{ Force = true })
 		trait.CustomName = trait.ZeroBonusTrayText
 		ValidateMaxMana()
+	end
+end)
+
+modutil.mod.Path.Wrap("GetExpectedMaxMana", function(base)
+	local expectedMaxMana = base()
+	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) then
+		return math.min(50, expectedMaxMana)
 	end
 end)
 
@@ -474,4 +496,34 @@ function mod.DecayingDamageKeepsakeExpiredPresentation()
 	PlaySound({ Name = "/SFX/WrathOver", Id = CurrentRun.Hero.ObjectId })
 	thread( PlayVoiceLines, HeroVoiceLines.KeepsakeExpiredVoiceLines, true )
 	thread( InCombatTextArgs, { TargetId = CurrentRun.Hero.ObjectId, Text = "StoryExpansionDecayingDamageProtectionKeepsakeExpired", Duration = 1.3, PreDelay = 0.2 } )
+end
+
+modutil.mod.Path.Wrap("ReserveMana", function(base,amount, source)
+    base(amount, source)
+    if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionPrimeDamageKeepsake")) then
+        local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionPrimeDamageKeepsake"))
+        trait.CurrentBonusDamage = 1 + trait.StoryExpansionMaxPrimedManaMultiplier*(CurrentRun.Hero.MaxMana - GetHeroMaxAvailableMana())
+        UpdateTraitNumber(trait)
+    end
+end)
+
+
+modutil.mod.Path.Wrap("CalculateBaseDamageAdditions", function(base, attacker, victim, triggerArgs)
+    local damageAddition = base(attacker, victim, triggerArgs)
+	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionBonusPowerKeepsake")) then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionBonusPowerKeepsake"))
+		if CheckCooldown("StoryExpansionBonusPowerKeepsake", trait.Cooldown) then
+			TraitUIActivateTrait(trait, {Duration = trait.Cooldown})
+			damageAddition = damageAddition + trait.StoryExpansionKeepsakeBonusPower
+			thread(mod.BonusPowerKeepsakeCooldown, {Cooldown = trait.Cooldown})
+		end
+	end
+    return damageAddition
+end)
+
+
+function mod.BonusPowerKeepsakeCooldown(traitArgs)
+    wait(traitArgs.Cooldown, RoomThreadName)
+    	PlaySound({ Name = "/SFX/WrathOver", Id = CurrentRun.Hero.ObjectId })
+			thread( InCombatTextArgs, { TargetId = CurrentRun.Hero.ObjectId, Text = "StoryExpansionRechargedBonusPowerKeepsake", Duration = 1, PreDelay = 0 } )
 end

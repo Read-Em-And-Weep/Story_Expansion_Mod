@@ -11,7 +11,7 @@ gods.CreateKeepsake({
 
     Keepsake = {
         displayName = "Scythe Pin",
-        description = "While you have at least one {!Icons.ExtraChanceMisc}, {#BoldFormatGraft}Thanatos {#Prev}may appear once this night with at least {#AltUpgradeFormat}{$TooltipData.ExtractData.RarityValue} {#Prev}{$Keywords.GodBoonPluralNoTooltip}.",
+        description = "While you have at least one empty {!Icons.ExtraChanceMisc}, {#BoldFormatGraft}Thanatos {#Prev}may appear once this night with at least {#AltUpgradeFormat}{$TooltipData.ExtractData.RarityValue} {#Prev}{$Keywords.GodBoonPluralNoTooltip}.",
         signoffMax = "From {#AwardMaxFormat}Thanatos{#Prev}{!Icons.ObjectiveSeparatorDark}Death comes for all mortals, yet only few immortals are capable of cultivating a close bond with him.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
     },
@@ -30,12 +30,7 @@ gods.CreateKeepsake({
 		{
 			GameStateRequirements = 
 			{
-				{
-					Path = { "CurrentRun", "Hero", "LastStands" },
-					UseLength = true,
-					Comparison = ">=",
-					Value = 1,
-				},
+				NamedRequirements = { "MissingLastStand", },
 				{
 					Path = { "CurrentRun", "BiomeDepthCache" },
 					Comparison = ">=",

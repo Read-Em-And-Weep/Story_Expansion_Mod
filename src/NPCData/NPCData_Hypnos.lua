@@ -1,3 +1,5 @@
+-- TO DO: Rework this for actual dream dive stuff
+
 mod.HypnosNPCData = {
     NPC_Hypnos_Hub_StoryExpansion = {
 		Name = "NPC_Hypnos_Hub_StoryExpansion",

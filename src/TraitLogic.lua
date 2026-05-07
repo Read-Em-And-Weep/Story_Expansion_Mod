@@ -181,15 +181,26 @@ modutil.mod.Path.Wrap("CalculateCritChance", function(base, attacker, victim, we
     return chance
 end)
 
+modutil.mod.Path.Wrap("CalculateDoubleDamageChance", function(base, attacker, victim, weaponData, triggerArgs)
+	triggerArgs.DdChance = base(attacker, victim, weaponData, triggerArgs)
 
-modutil.mod.Path.Wrap("ReserveMana", function(base,amount, source)
+	if HeroHasTrait(gods.GetInternalBoonName("ThanatosDoubleDamageFinishTrait")) and ((attacker and attacker == CurrentRun.Hero) and (victim and victim ~= CurrentRun.Hero))then
+		local trait = GetHeroTrait(gods.GetInternalBoonName("ThanatosDoubleDamageFinishTrait"))
+		if victim.Health and victim.MaxHealth and (victim.Health/victim.MaxHealth) <= trait.StoryExpansionTargetLowHealthThreshold then
+			addDdMultiplier( {}, trait.StoryExpansionTargetLowHealthChance, triggerArgs )
+		end
+	end
+	return triggerArgs.DdChance
+end)
+
+--[[modutil.mod.Path.Wrap("ReserveMana", function(base,amount, source)
     base(amount, source)
     if HeroHasTrait(gods.GetInternalBoonName("ThanatosPrimeDamageTrait")) then
         local trait = GetHeroTrait(gods.GetInternalBoonName("ThanatosPrimeDamageTrait"))
         trait.CurrentBonusDamage = 1 + trait.StoryExpansionMaxPrimedManaMultiplier*(CurrentRun.Hero.MaxMana - GetHeroMaxAvailableMana())
         UpdateTraitNumber(trait)
     end
-end)
+end)]]
 
 function mod.DoDamageAllEnemies(unit, args)
 for id, enemy in pairs( ShallowCopyTable( ActiveEnemies ) ) do
@@ -241,6 +252,7 @@ function mod.RemoveAllOfElement(elementToLose)
 		end
 	end
 	if trait.AddAllElements then
+		trait.Elements = trait.Elements or {}
 		local elements = {"Fire", "Water", "Earth", "Air", "Aether"}
 		for key, element in ipairs(elements) do
 			if element ~= elementToLose then

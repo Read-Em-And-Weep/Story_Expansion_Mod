@@ -208,7 +208,7 @@ function mod.TimeTravelSetUp()
                     PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0, UseChronosSound = false },
                                         					PortraitExitAnimation = "Portrait_Mel_Intense_01_Exit",
                     PostLineFunctionName = _PLUGIN.guid..".BedroomToChronosSanctumPresentation",
-					Text = "{#Emph} With the collection of entropy and the banishment of monstrosity, I call upon the power to pierce time. May my bonds link me to the present, my enemy link me to the past and my spear to the future. Let me change the Fates' designs! Dissolution of Time!{#Prev}" },
+					Text = "{#Emph} With the collection of entropy and the banishing of monstrosity, I call upon the power to pierce time. May my bonds link me to the present, my enemy link me to the past and my spear to the future. Let me change the Fates' designs! Dissolution of Time!{#Prev}" },
                 { Cue = "/VO/Chronos_0967",
 					Source = "NPC_Chronos_Story_01",
 					Portrait = "Portrait_Chronos_Averted_01",
@@ -258,7 +258,7 @@ function mod.TimeTravelSetUp()
 				{
 					Source = "NPC_Chronos_Story_01",
 					Portrait = "Portrait_Chronos_Averted_01",
-					Text = "If necessary, {#Emph}yes{#Prev}, of {#Emph}course! {#Prev}Your father and his brothers surely have already poisoned you and your entire generation against me! You would not have travelled back in time if you had not been. Strike, Granddaughter, and make hateful your heart." },
+					Text = "If necessary, {#Emph}yes{#Prev}, of {#Emph}course! {#Prev}Your father and his brothers surely have already poisoned you and your entire generation against me! You would not have travelled back in time if you had not been. Strike true, Granddaughter, and make hateful your heart." },
 
 				{ 
 					Portrait = "Portrait_Mel_Intense_01",
@@ -674,7 +674,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								PreLineThreadedFunctionName = "PlayEmoteAnimFromSource", PreLineThreadedFunctionArgs = { Emote = "None", Portrait = "Portrait_Mel_Intense_01", WaitTime = 5.85 },
 
-								Text = "Headmistress, you... you don't remember... because you weren't able to serve as a conduit for the spell. As for you, Chronos! Who am I now to you...?" },
+								Text = "Headmistress, you... you don't remember... because you weren't a part of the spell. As for you, Chronos! Who am I now to you...?" },
 
 							{ Cue = "/VO/Chronos_1465",
 								PreLineWait = 0.5,
@@ -686,7 +686,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
                                 Source = "NPC_Hecate_01",
 								SecretMusicActiveStems = { "Bass" },
 
-								Text = "All that you see is what you wrought in your hate, Titan! Melinoë, there must be something wrong. If our incantation were successful, he would be gone, not merely weakened with false memories." },
+								Text = "All that you see is what you wrought, Titan! Melinoë, there must be something wrong. If our incantation were successful, he would be gone, not merely weakened with false memories." },
 
                             { 
 								UsePlayerSource = true,
@@ -712,7 +712,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								Text = "A better past...? {#Emph}Nonsense! {#Prev}None of it occurred! Nothing has {#Emph}changed! {#Prev}You should be {#Emph}gone{#Prev}, Titan...! Not flooded with false memories!" },
 
-							{ 
+							{ Cue = "/VO/MelinoeField_5147",
 								UsePlayerSource = true,
 								Portrait = "Portrait_Mel_Vulnerable_01",
 								PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
@@ -720,7 +720,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								SecretMusicMutedStems = { "Drums" },
 
-								Text = "...All these memories that sprang to his mind... I remember them as well. A life I could have lived... had the Titan never struck. A life we created by choosing to forgive." },
+								Text = "...All these memories that sprang to his mind... I remember them as well. A life I could have lived... had the Titan never struck." },
 
 							{ Cue = "/VO/Chronos_1467",
 								Source = "NPC_Chronos_01",
@@ -750,9 +750,9 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								SecretMusicMutedStems = { "Drums" },
 
-								Text = "Wait, please Headmistress, let me prove this to you...! Chronos! Grandfather. I am giving you one last chance here, as I did in the past time. Make your choice. Will you be ruled by hate, or love?" },
+								Text = "Wait, please Headmistress. Chronos deserves to face the full judgement of the House of Hades for his crimes." },
 
-                            							{
+--[[                    							{
 								Source = "NPC_Chronos_01",
 								Portrait = "Portrait_Chronos_Confused_01",
 								-- Emote = "PortraitEmoteFiredUp",
@@ -775,7 +775,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								PortraitExitAnimation = "Portrait_Mel_Proud_01_Exit",
 								SecretMusicMutedStems = { "Drums" },
 
-								Text = "That's the thing I've learnt about forgiveness. It is not up to you whether you recieve it. Nothing you've taken is lost forever; I've reclaimed my family, gave myself another childhood, and found a new purpose outside of vengeance. I'm now offering you the same opportunity." },
+								Text = "That's the thing I've learnt about forgiveness. It is not up to you whether you recieve it. Nothing you've taken from me was lost forever; I've reclaimed my family, gave myself another childhood, and found a new purpose outside of vengeance. I'm now offering you the same opportunity." },
 
                             {
 								Source = "NPC_Chronos_01",
@@ -793,7 +793,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								SecretMusicMutedStems = { "Drums" },
 
-								Text = "Join your power with mine now and summon our family together. It's not just me that requires an apology after all." },
+								Text = "Join your power with mine now and summon our family together. It's not just me that requires an apology after all." },]]
 
 							{ 
 								Source = "NPC_Hecate_01",
@@ -803,21 +803,28 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								Text = "Melinoë, you {#Emph} cannot {#Prev} be indulging in this {#Emph} foolishness{#Prev}! Do your duty, and {#Emph} finish him off!" },
 
-
-
 							{ 
 								Emote = "PortraitEmoteSurprise",
 								Source = "NPC_Chronos_01",
 								Portrait = "Portrait_Chronos_Confused_01",
-								PortraitExitAnimation = "Portrait_Chronos_Confused_01_Exit",
+						
+
+								Text = "{#Emph}<Gasp> {#Prev}Our family...? They... why, Hades remains bound as yet! I had him bound... for all this time, and had intended on recapturing Persephone and Zagreus. What have I done...?" },
+
+							                            							{ 
+								UsePlayerSource = true,
+								Portrait = "Portrait_Mel_Intense_01",
+								PreLineAnim = "Melinoe_Defiant", PreLineAnimTarget = "Hero",
+							PortraitExitAnimation = "Portrait_Mel_Intense_01_Exit",
 								PostLineFunctionName = _PLUGIN.guid..".SummonFamilyMembers",
 								PostLineRemoveContextArt = true,
 
 								SecretMusicActiveStems = { "Guitar", },
 								SecretMusicMutedStems = { "Bass" },
 
-								Text = "{#Emph}<Gasp> {#Prev}Our family...? They... why, Hades remains bound as yet! I had him bound... for all this time, and had intended on recapturing Persephone and Zagreus. What have I done...?" },
-                                
+								Text = "Join your power with mine now and summon our family together so that you may face justice. It's not just me that requires an apology after all." },
+
+
 
 							{ Cue = "/VO/Hades_0403",
 								Emote = "PortraitEmoteFiredUp",
@@ -836,7 +843,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								Source = "NPC_Persephone_01",
 								Portrait = "Portrait_Persephone_Queen_Joyful_01",
 								PortraitExitAnimation = "Portrait_Persephone_Queen_Joyful_01_Exit",
-								Text = "Melinoë...! You're alright! When you cast your incantation and we were inundated with memories of another life, we feared the worst." },
+								Text = "Melinoë...! You're alright! When we lost contact with you after your incantation, we feared the worst. Not to mention the strange memories we all experienced." },
 
 							{ 
 								PreLineWait = 0.35,
@@ -850,7 +857,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								PreLineAnim = "Melinoe_Defiant", PreLineAnimTarget = "Hero",
 
 
-								Text = "He stands before you now, does he not? I thought about what you said, and the king he used to be, and I could not let our family continue down that path." },
+								Text = "He stands before you now, does he not? Though I would hesitate to say I {#Emph} spared {#Prev} him... more captured him for Lord Hades to pass judgement on. I thought about what you said, and the king he used to be, and I could not let our family continue down that path of vengeance." },
 
 
 							{ 
@@ -862,7 +869,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								SecretMusicActiveStems = { "Guitar", },
 								SecretMusicMutedStems = { "Drums", "Bass" },
 
-								Text = "I beg you reconsider and give me {#Emph}death! {#Prev}Go on and send me to the blasted void, already! {#Emph}You{#Prev}, Son, or that witch, or {#Emph}you{#Prev}, Granddaughter, one of you! I have lost my wife, my kingdom, and now my family! You long for a world without me — it is {#Emph}yours! " },
+								Text = "I beg you reconsider and give me {#Emph}death! {#Prev}Go on and send me to the blasted void, already! {#Emph}You{#Prev}, Son, or that witch, or {#Emph}you{#Prev}, Granddaughter, one of you! I have lost my wife, my throne, and now my family! You long for a world without me — it is {#Emph}yours!" },
 
 							{ 
 								Source = "NPC_Zagreus_01",
@@ -878,7 +885,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 
 								-- SecretMusicActiveStems = { "Drums" },
 
-								Text = "I {#Emph}took {#Prev}this place, Zagreus. And {#Emph}ruined {#Prev}it! You need not advocate for me again. You never knew my real self. Merely a... {#Emph}possibility{#Prev}, and nothing more. And you, Melinoë... to think I... put you through all this. Take your vengeance." },
+								Text = "I {#Emph}took {#Prev}this place, Zagreus. And {#Emph}ruined {#Prev}it! You need not advocate for me. You never knew my real self. Merely a... {#Emph}possibility{#Prev}, and nothing more. And you, Melinoë... to think I... put you through all this. Take your vengeance." },
 
 							{
 								UsePlayerSource = true,
@@ -887,7 +894,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								Portrait = "Portrait_Mel_Intense_01",
 								SecretMusic = "/Music/MusicPlayer/PersephoneThemeMusicPlayer",
 
-								Text = "I have already forgiven you, Grandfather. This guilt is a greater punishment than any I would be willing to give. Our family's had enough for now. Who else recalls what happened? Memories, as vivid as any you hold dear, but of a separate life we might have lived...!" },
+								Text = "Your sentence is not up to you, Chronos. Your judgement is forthcoming. But first... who else recalls what happened? Memories, as vivid as any you hold dear, but of a separate life we might have lived...!" },
 
 							{ Cue = "/VO/Persephone_0133",
 								Source = "NPC_Persephone_01",
@@ -900,7 +907,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								Portrait = "Portrait_Hades_Chained_02",
 								Source = "NPC_Hades_Story_01",
 								PreLineWait = 0.5,
-								Text = "...I, too, remember now. That Father was with us, after a time-travelling version of Melinoë brought him to us. Yet all the while... I have been a prisoner. {#Emph}His {#Prev}prisoner, {#Emph}here {#Prev}in this time of ours..." },
+								Text = "...I, too, remember now. That Father was with us, after a time-travelling visage of Melinoë brought him to us. Yet all the while... I have been a prisoner. {#Emph}His {#Prev}prisoner, {#Emph}here {#Prev}in this time of ours..." },
 
 							{ Cue = "/VO/HecateField_0431",
 								Source = "NPC_Hecate_01",
@@ -987,36 +994,95 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								PreLineAnim = "HecateHubGreet",
 								PreLineAnimTarget = 774366, -- Hecate
 
-								ExitPortraitImmediately = true,
-								PostLineFunctionName = _PLUGIN.guid..".BeginTimeCollapse",
-
 								PreLineWait = 0.85,
 
 								Text = "...I did no more than was my charge, O King and Queen. And I remain, as ever, at your service.... Well then, Melinoë... what now...?" },
+							{ Cue = "/VO/MelinoeField_5152",
+								UsePlayerSource = true,
+								Emote = "PortraitEmoteFiredUp",
+								Portrait = "Portrait_Mel_Intense_01",
+								ExitPortraitImmediately = true,
+								PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+								PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
 
-							{ 
-								Source = "NPC_Zagreus_01",
-								Portrait = "Portrait_ZagPresent_Unwell_01",
+								Text = "Now we must decide the sentence for the Titan's crimes. My Lord Father, whose judgement is renowned the Underworld over, what is your verdit?" },
 
-								PreLineWait = 2.5,
-                                SecretMusic = "/Music/MusicHadesReset3_MC",
 
-								Text = "What was that? And what is going on? What are these strange fissures?" },
-
-                            { 
-								Source = "NPC_Hecate_01",
-								PreLineWait = 1.0,
-								PreLineAnim = "Hecate_Hub_Scoff",
-								PreLineAnimTarget = 774366, -- Hecate
 								
+							{ Cue = "/VO/Hades_0406",
+								Portrait = "Portrait_Hades_Chained_02",
+								ExitPortraitImmediately = true,
+								Source = "NPC_Hades_Story_01",
+								PreLineWait = 0.35,
 
-								Text = "...Time Rifts. I knew you were up to something, Chronos! Cease this infernal magick {#Emph} now!" },
-                            { 
+								Text = "...For all you call me just, I believe I am blind when it comes to my own family. It was my decision to originally oppose Father, and that brought his vengeance upon you. My daughter, as the one who was hurt the most, it is only fair that you should decide Chronos's fate." },
+
+{
+								Source = "NPC_Chronos_01",
+								Portrait = "Portrait_Chronos_Confused_01",
+								-- Emote = "PortraitEmoteFiredUp",
+
+								-- SecretMusicMutedStems = { "Drums" },
+
+								Text = "What I've done is unforgivable, Melinoë. I took your family, your childhood, and forced you into vengeance. I beg of you to end this suffering now, and send me into the abyss decisively." },
+								
+														{ 
+								UsePlayerSource = true,
+								Portrait = "Portrait_Mel_Proud_01",
+								PreLineAnim = "Melinoe_Defiant", PreLineAnimTarget = "Hero",
+								PortraitExitAnimation = "Portrait_Mel_Proud_01_Exit",
+								
+								SecretMusicMutedStems = { "Drums" },
+
+								Text = "I'm afraid I cannot completely forgive you, at least not at this moment. But I can offer you a second chance. Nothing you've taken from me was lost forever; I've reclaimed my family, given myself another childhood, and found a new purpose outside of vengeance. I'm now offering you the same opportunity." },
+
+															{ 
+								Source = "NPC_Persephone_01",
+								PreLineWait = 0.85,
+								Portrait = "Portrait_Persephone_Queen_Apprehensive_01",
+								ExitPortraitImmediately = true,
+								PreLineAnim = "Persephone_DismissQuick_Start",
+								PostLineFunctionName = "HadesOfficialDecree",
+								PreLineAnimTarget = 774443,
+
+								Text = "Are you sure, Melinoë? If you decide to spare Chronos, then you will bear some responsibility should he turn again." },
+
+								{ 
+								UsePlayerSource = true,
+								Portrait = "Portrait_Mel_Proud_01",
+								PreLineAnim = "Melinoe_Defiant", PreLineAnimTarget = "Hero",
+								PortraitExitAnimation = "Portrait_Mel_Proud_01_Exit",
+								SecretMusicMutedStems = { "Drums" },
+
+								Text = "Someone needs to extend the hand of trust to him. I have a feeling he will have many apologies left to give, and I for one look forward to rebuilding my relationship with Grandfather in this life. After he makes it up to me, of course." },
+
+															{ 
+								Source = "NPC_Zagreus_01",
+								Portrait = "Portrait_ZagPresent_Default_01",
+								Text = "He can start with the restoration of this House, for one thing. He owes me for destroying all the decorations I invested in this place. What do we say, Mother, Father? Should we grant Melinoë's request?" },
+															{ Cue = "/VO/Persephone_0135",
+								Source = "NPC_Persephone_01",
+								Portrait = "Portrait_Persephone_Queen_01",
+								PreLineAnim = "Persephone_Greet_Full",
+								PreLineAnimTarget = 774443,
+								PreLineWait = 0.5,
+								Text = "...Granted! We're not finished with you, Chronos. They say Time heals all wounds. Prove it." },
+
+							{ Cue = "/VO/Hades_0407",
+								Portrait = "Portrait_Hades_Chained_01",
+								Source = "NPC_Hades_Story_01",
+								PreLineWait = 0.5,
+								Text = "...Granted. But only this one chance. By the grace of the Princess of the Underworld." },
+
+							{ Cue = "/VO/Chronos_1472",
 								Source = "NPC_Chronos_01",
 								Portrait = "Portrait_Chronos_Confused_01",
 								-- PostLineRemoveContextArt = true,
-								Text = "They certainly carry the magick of time in them, but they are not my work. These rifts are unstable and destructive. I know not their origin." },
-							{ 
+								ExitPortraitImmediately = true,
+								PreLineWait = 0.8,
+								Text = "...You would... permit me such a chance? But I cannot change what already occurred... cannot undo the unforgivable decisions I have made." },
+
+							{ Cue = "/VO/MelinoeField_5154",
 								UsePlayerSource = true,
 								Portrait = "Portrait_Mel_Default_01",
 								AngleId = 560366,
@@ -1024,96 +1090,32 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 								PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
 								PostLineAnim = "MelTalkBrooding01ReturnToIdle", PostLineAnimTarget = "Hero",
 
-								Text = "{#Emph} Dissolution of Time... {#Prev} I tore the veil of time asunder and rewove it, but the cut still occurred." },
-{ 
-								Source = "NPC_Chronos_01",
-								Portrait = "Portrait_Chronos_Confused_01",
-								-- PostLineRemoveContextArt = true,
-                                
-								Text = "...Time is malleable, yes, and tolerates stretching, twisting, bending and even stopping. It does not permit reversal. If you ripped through time without repairing it, it would continue in a path of destruction." },
+								Text = "You're Time itself. We're not demanding you move backward. We're demanding you move forward." },
 
-							{ 
-								Source = "NPC_Persephone_01",
-								Portrait = "Portrait_Persephone_Queen_Apprehensive_01",
-								PreLineWait = 0.5,
-								Text = "Time is rebelling to destroy itself? Please tell me this situation is not as bad as it sounds." },
-                            { 
-								Source = "NPC_Hecate_01",
-								PreLineAnim = "Hecate_Hub_Scoff",
-								PreLineAnimTarget = 774366, -- Hecate
-								
-
-								Text = "If what the Titan claims is true, this is nothing less than a cataclysm. Left untreated, the destruction of Time could well cause the unravelling of all that is." },
-
-
-							{ 
-								Portrait = "Portrait_Hades_Chained_01",
-								Source = "NPC_Hades_Story_01",
-                                ExitPortraitImmediately = true,
-								Text = "Then we must not let it remain untreated. Witch of the Crossroads, in your experience, is there anything we can do to prevent such an eventuality? Some incantation or enchantment that we can perform?" },
-                            { 
-								Source = "NPC_Hecate_01",
-								PreLineWait = 0.25,
-
-								Text = "I... Lord Hades, though my knowledge of magick is advanced, I know of no way to prevent the unmaking of Time, only ideas on how to survive it. Even these would only be available to Melinoë and myself." },
-{ 
-								Source = "NPC_Zagreus_01",
-								Portrait = "Portrait_ZagPresent_Defiant_01",
-
-								Text = "So that's it? The end of Time and everything else? There is truly nothing else we can do?" },
-
-							{ 
+							{ Cue = "/VO/Chronos_1527",
 								Source = "NPC_Chronos_01",
 								Portrait = "Portrait_Chronos_Confused_01",
 								-- PostLineRemoveContextArt = true,
 								ExitPortraitImmediately = true,
 								PreLineWait = 0.8,
-								Text = "Perhaps nothing that you can do. But I am the Titan of Time. I can hold the fraying ends of Time together to prevent any more decay." },
+								Text = "To move forward... that is all I have ever known. Then I shall make time... both for this House... and everything." },
 
-							{ 
-								UsePlayerSource = true,
-								Portrait = "Portrait_Mel_Vulnerable_01",
-								AngleId = 560366,
-								AngleTowardTargetId = 774365,
-								PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
-								PostLineAnim = "MelTalkBrooding01ReturnToIdle", PostLineAnimTarget = "Hero",
-								Text = "That power... you would have to give up your form... Grandfather, you've finally gained a family and you're already leaving it behind? Surely there is some other way that does not require us losing you!" },
-							{ 
-								Source = "NPC_Chronos_01",
-								Portrait = "Portrait_Chronos_Confused_01",
-								-- PostLineRemoveContextArt = true,
-								ExitPortraitImmediately = true,
-                                PostLineFunctionName = _PLUGIN.guid..".ChronosSacrifice",
+							EndFunctionName = "DeathAreaRestorationPresentation",
+							EndFunctionArgs =
+							{
+								Conversations =
+								{
+									"ZagreusTrueEnding01",
+									"CerberusTrueEnding01",
+									"PersephoneTrueEnding01",
+									"AchillesTrueEnding01",
+									"HadesTrueEnding01",
+									"SeleneTrueEnding01",
+								},
+							},
 
 
-								Text = "There are very few beings in the world who would have offered forgiveness after all that I have taken from you. Let me finally choose to be kind and repay you." },
-							{ 
-								UsePlayerSource = true,
-								Portrait = "Portrait_Mel_Vulnerable_01",
-								AngleId = 560366,
-								AngleTowardTargetId = 774365,
-                                PreLineWait = 1.2,
-                                SecretMusic = "/Music/MusicPlayer/Iris/EndThemeACOUSTICMusicPlayer",
-                                
-								Text = "Grandfather...!" },
-{ 
-								UsePlayerSource = true,
-                                PreLineWait = 0.8,
-								Portrait = "Portrait_Mel_Vulnerable_01",
-								AngleId = 560366,
-								AngleTowardTargetId = 774365,
-                                ExitPortraitImmediately = true,
-
-								Text = "He's gone. I can feel it. He descended into the abyss of Time at the cost of his physical form." },
-                                
-                            { 
-								Source = "NPC_Hades_Story_01",
-								Portrait = "Portrait_Hades_Chained_02",
-                                PreLineWait = 0.8,
-
-								Text = "Father truly was capable of change in the end. It is a shame that it had to come at so high a cost." },
-
-                                { 
+--[[                                { 
 								Source = "NPC_Hecate_01",
 								ExitPortraitImmediately = true,
 
@@ -1161,7 +1163,7 @@ EncounterData.Story_DeathAreaRestored.UnthreadedEvents = {
 									"HadesTrueEnding01",
 									"SeleneTrueEnding01",
 								},
-							},
+							},]]
 						},
 						-- the story continues in FamilyRescuePresentation & TrueEnding02
 					},
@@ -1249,7 +1251,7 @@ function mod.ChronosSacrifice()
     CreateDialogueBackground()
 end
 
-function mod.DeathAreaRestorationPresentation(source, args )
+--[[function mod.DeathAreaRestorationPresentation(source, args )
 
 	args = args or {}
 
@@ -1323,7 +1325,7 @@ function mod.DeathAreaRestorationPresentation(source, args )
 
 	waitUnmodified( 2.0 )
 
-end
+end]]
 
 function mod.DeathAreaRestorationIllustrationPresentation()
     	local illustrationId = CreateScreenObstacle({ Name = "BlankObstacle", Group = "Combat_Menu_Overlay", Animation = "StoryExpansionHouseRenovation", X = ScreenCenterX + 960, Y = ScreenCenterY, Alpha = 0.0 })
@@ -1371,26 +1373,6 @@ function mod.PlayDeathRestorationVoiceLines()
     AudioState.ActiveSpeechIds[narration4] = nil
 end
 
-GlobalVoiceLines.DeathAreaRestorationVoiceLines =
-{
-	{
-		PreLineWait = 0.45,
-		PlayOverTextLines = true,
-		AllowTalkOverTextLines = true,
-		Source = { LineHistoryName = "NPC_Hades_01", SubtitleColor = Color.HadesVoice },
-
-		{ Cue = "/VO/Hades_0382", Text = "Then be so kind as to get these chains off me, so we can get to work!" },
-	},
-	--[[{
-		PreLineWait = 3.55,
-		Source = { LineHistoryName = "Speaker_Homer", SubtitleColor = Color.NarratorVoice, SpeechParams = {Chipmunk = 0.33} },
-
-		{ Cue = "/VO/Storyteller_0523", Text = "{#Emph}And so, the Princess of the Dead remained in the House of Hades with her rescued family members, to aid in the recovery of however much was not forever lost.", TextLimit = 300, NoTarget = false },
-		{ Cue = "/VO/Storyteller_0517", PreLineWait = 1.25, Text = "{#Emph}The rightful Underworld King and Queen were swift to organize this relatively painless task, and Shades of the Dead still loyal to their cause answered the call.", TextLimit = 300, NoTarget = false },
-		{ Cue = "/VO/Storyteller_0524",PreLineWait = 1.25, Text = "{#Emph}They all picked up many pieces of the past...", NoTarget = false },
-		{Cue = "/VO/Storyteller_0525",  PreLineWait = 1.25, Text = "{#Emph}...and soon, the House grew more like how it used to be. But then, a summons from Olympus arrived, and the Princess knew her stay had reached its end...", TextLimit = 300, NoTarget = false },
-	},]]
-}
 
 
 EnemyData.NPC_Zagreus_01.InteractTextLineSets = {
@@ -1421,22 +1403,17 @@ EnemyData.NPC_Zagreus_01.InteractTextLineSets = {
 
 				{ 
 					Portrait = "Portrait_ZagPresent_Empathetic_01",
-					Text =  "I can't leave behind all the friends I made there, or my little sister! Speaking of, have you made any progress on the incantation to save Grandfather?" },
+					Text =  "I can't leave behind all the friends I made there, or my little sister! But we'll have to find a way to cross paths on each of our journeys through the Underworld." },
 
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
 					Portrait = "Portrait_Mel_Empathetic_01",
-                    ExitPortraitImmediately = true,
-					Text = "I've got a strong base for it, but I can't figure out a few of the required reagents. I fear I need more experience to discover it." },
-                {
-					PostLineThreadedFunctionName = "DisplayInfoToast",
-					PostLineFunctionArgs = { Duration = 2, Title = "WorldUpgradeAdded", Text = "StoryExpansionWorldUpgradeSaveChronos" },
-				},
+
+					Text = "Of that I have no doubt. I'm eager to test myself against you, Brother, and see whether the stories I've heard of your combat abilities are true." },
 				{ 
 					-- Portrait = "Portrait_Zag_Serious_01",
-                    PreLineWait = 2,
-					Text = "I'm sure you'll work it out. Besides, we have plenty of things of things to occupy ourselves with in the meantime. Hypnos still sleeps, the Underworld is still in disarray, and many members of the House are still missing." },
+					Text = "And I look forward to ending your nights early! But until then, we have plenty of things of things to occupy ourselves with in the meantime. Hypnos still sleeps, the Underworld is still in disarray, and many members of the House are still missing." },
 
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -1502,7 +1479,8 @@ EnemyData.NPC_Achilles_01.InteractTextLineSets = {
 
 EnemyData.NPC_Hades_02.InteractTextLineSets.HadesTrueEnding01 = {
 	Name = "HadesTrueEnding01",			
-    PlayOnce = true,
+    				Partner = "NPC_Chronos_02",
+				PlayOnce = true,
 				UseableOffSource = true,
 				UseText = "UseNPC",
 				StatusAnimation = false, -- played via script
@@ -1517,24 +1495,51 @@ EnemyData.NPC_Hades_02.InteractTextLineSets.HadesTrueEnding01 = {
 					BlockChatting = true,
 				},
 
+								{ Cue = "/VO/Hades_0408",
+					Text = "...When I was having difficulties with my son... sometimes I thought of you, Father. I could not fathom having had more children to contend with all at once." },
+
+				{ Cue = "/VO/Chronos_1474",
+					Source = "NPC_Chronos_02",
+					Speaker = "NPC_Chronos_01",
+					-- PreLineAnim = "NPC_Chronos_Enlightened_Greet",
+					PreLineAnimTarget = 774458, -- Chronos
+					-- PreLineAnimTarget = 774366, -- Hecate
+					Text = "Yes, well... I was not terribly successful at contending with you lot, now, was I? Particularly Zeus... to think that I shall see him and the others again soon." },
+
+				{ 
+					Text = "I can make no assurances about how you shall be received. These dreamlike memories we share did not reach Mount Olympus, it seems. But Zeus does have my full report. It will be up to Melinoë to advocate for you once more." },
+
+				{ Cue = "/VO/Chronos_1475",
+					Source = "NPC_Chronos_02",
+					Speaker = "NPC_Chronos_01",
+					PreLineAnim = "NPC_Chronos_Enlightened_Greet",
+					PreLineAnimTarget = 774458, -- Chronos
+					-- PreLineAnimTarget = 774366, -- Hecate
+					Text = "Surely a ringing endorsement! But I merely jest. If Time can be so cruel, then it is only fitting for his children to be much the same. Would you not agree, Granddaughter?" },
 
 				{ UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Default_01",
-					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
-					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "Father? You seem troubled. Tell me what is on your mind so I may take some of the burden." },
-				
-                    {
-					Text = "Through all of our searching and repair of the Underworld, we still have found no trace of the Fates or the missing Furies. With Father gone, we have no way of narrowing down the search." },
+					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "We may have more in common than we'd like to admit. But in any event, Lord Uncle Zeus asked you to come alone. Only the Fates now know what lies in store... although there's still no sign of them, the Furies or the other missing members of the House, even with Nyx's aid?" },
 
-                    { UsePlayerSource = true,
+				{ Cue = "/VO/Chronos_1476",
+					Source = "NPC_Chronos_02",
+					Speaker = "NPC_Chronos_01",
+					PreLineWait = 0.35,
+					Text = "None. I cast them into the abyss. Had I known precisely where, they would have known how to get back. Yet if my hypothesis about such possibilities as we experienced is correct... we may find them." },
+
+				{ Cue = "/VO/MelinoeField_5167", UsePlayerSource = true,
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
 
-					Text = "That is worrying, but I hypothesize that we should be able to find them. I believe that the Fated List may provide us some guidance as to the location of the Fates. As for the rest of the House, if our current methods are not providing results, then we may need to change them." },
+					Text = "We shall. And I look forward to testing this hypothesis. Perhaps we'll all learn something about ourselves." },
 
-				{ 
-					Text = "We may be doomed to live forever... but we need not be bound to our old ways. You have shown us all that we are capable of growth and change, Daughter, and that is a lesson we must not forget." },
+				{ Cue = "/VO/Chronos_1477",
+					Source = "NPC_Chronos_02",
+					Speaker = "NPC_Chronos_01",
+					PreLineWait = 0.35,
+					Text = "Would that we could! Gods and Titans may be doomed to live forever... but we need not be bound to our old ways." },
 						
 				{ Cue = "/VO/MelinoeField_5168", UsePlayerSource = true,
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
@@ -1544,27 +1549,39 @@ EnemyData.NPC_Hades_02.InteractTextLineSets.HadesTrueEnding01 = {
 
 					Text = "Indeed. {#Emph}Erm{#Prev}, Father...? Thank you for all your hospitality. It gladdens me to see you doing well." },
 
-				{ 
+				{ Cue = "/VO/Hades_0410",
 					PreLineAnim = "Hades_Unchained_Hello",
 					Portrait = "Portrait_LordHades_Averted_01",
-					Text = "I would not be if not for you, Daughter. I trust that we shall see each other again soon. " },
+					Text = "I would not be if not for you, Daughter. I trust that we shall see each other again soon. And perhaps even you, Father." },
 
-				{ UsePlayerSource = true,
+				{ Cue = "/VO/Chronos_1478",
+					Source = "NPC_Chronos_02",
+					Speaker = "NPC_Chronos_01",
+					PreLineWait = 0.35,
+					PreLineAnim = "NPC_Chronos_Enlightened_Explaining",
+					PreLineAnimTarget = 774458, -- Chronos
+					Text = "Likewise, Hades. At least this House is mostly to your preference again. Beyond these halls, of course, much more is to be done." },
+
+				{ Cue = "/VO/MelinoeField_5169", UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
 					PostLineFunctionName = "DeathAreaRestoredUpdateHallwayBlocks",
-					Text = "Yes, well... Father, I wish you the best with the ongoing Underworld renovations. Though I cannot stay, my chariot is here." },
+					Text = "Yes, well... Father, I wish you the best with the ongoing Underworld renovations. As for us, our chariot is here." },
 				EndVoiceLines =
 				{
 					{
 						PreLineWait = 0.35,
+						ObjectType = "NPC_Chronos_02",
+						{ Cue = "/VO/Chronos_1027", Text = "That it is. I am prepared." },
+					},
+					{
+						PreLineWait = 0.45,
 						ObjectType = "NPC_Hades_02",
 
 						{ Cue = "/VO/Hades_0251", Text = "Shadows conceal you." },
 					},
-				},
-}
+				},}
 
 EnemyData.NPC_Selene_01.InteractTextLineSets.SeleneTrueEnding01 = {
         Name = "SeleneTrueEnding01",				
@@ -1652,7 +1669,7 @@ EnemyData.NPC_Selene_01.InteractTextLineSets.SeleneTrueEnding01 = {
 					UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
 					PortraitExitAnimation = "Portrait_Mel_Proud_01_Exit",
-					PostLineFunctionName = _PLUGIN.guid .. ".EnsembleRidersEnterPresentation",
+					PostLineFunctionName = "EnsembleRidersEnterPresentation",
 					Text = "I must say, I did not expect that we could ever draw you down this far, Sister Selene. I thought perhaps not even Headmistress could in all her experience!" },
 
 				{ Cue = "/VO/Selene_0374",
@@ -1661,7 +1678,7 @@ EnemyData.NPC_Selene_01.InteractTextLineSets.SeleneTrueEnding01 = {
 
 				{ 
 					Source = "NPC_Hecate_01",
-					Text = "Come, Melinoë, for all the reasons that Selene says. It's a long ride back to the Crossroads." },
+					Text = "Come, Melinoë, for all the reasons that Selene says. It's a long ride back to the Crossroads. We have a delivery that we must make, besides." },
 
 				{ Cue = "/VO/MelinoeField_3903",
 					UsePlayerSource = true,
@@ -1791,7 +1808,7 @@ EnemyData.NPC_Persephone_01.InteractTextLineSets.PersephoneTrueEnding01 =
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "While Chronos may have stopped the destruction of Time, it appears he was not able to repair the tears already made. I plan to slip into these, into a time and world where I was not able to subdue Chronos and Typhon, correcting these possibilities and closing the rifts. I was born for this role." },
+					Text = "It appears I was a bit hasty when casting the Dissolution of Time. Travelling back in time seemed to rip reality itself. I plan to slip into these gashes, into a world where I was not able to subdue Chronos and Typhon, correcting these possibilities and closing the rifts. I was born for this role." },
 
 				{ 
 					Portrait = "Portrait_Persephone_Queen_01",
@@ -1813,9 +1830,12 @@ EnemyData.NPC_Persephone_01.InteractTextLineSets.PersephoneTrueEnding01 =
 					PreLineAnim = "Persephone_DismissA_Start",
 					PostLineAnim = "Persephone_DismissB_End",
                     ExitPortraitImmediately = true,
+					PostLineThreadedFunctionName = "DisplayInfoToast",
+					PostLineFunctionArgs = { Duration = 2, Title = "WorldUpgradeAdded", Text = "StoryExpansionWorldUpgradeCloseRifts" },
 
-					Text = "Melinoë, what happened is {#Emph} not {#Prev} your fault. We all agreed to your plan. You've done more than anyone else as repentance." },
-				{ 
+
+					Text = "Melinoë, what happened is {#Emph} not {#Prev} your fault, and you alone do not need to handle this burden. We all agreed to your plan, and we are all willing to aid you in your journey. However long it takes." },
+				{ Cue = "/VO/MelinoeField_5160",
 					UsePlayerSource = true,
 					-- Portrait = "Portrait_Mel_Pleased_01",
 					Portrait = "Portrait_Mel_Vulnerable_01",
@@ -1823,7 +1843,7 @@ EnemyData.NPC_Persephone_01.InteractTextLineSets.PersephoneTrueEnding01 =
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
 
-					Text = "Thank you, Mother. But if there is even a chance of rescuing Grandfather this way, I need to attempt it. All this is going to be an adjustment, though, isn't it? Even if I'll see you all again soon." },
+					Text = "All this is going to be an adjustment, though, isn't it? Even if I'll see you all again soon." },
 
 
 
@@ -1844,50 +1864,7 @@ EnemyData.NPC_Persephone_01.InteractTextLineSets.PersephoneTrueEnding01 =
 				},
 }
 
-function mod.EnsembleRidersEnterPresentation( source )
 
-	local hecateId = GetClosestUnitOfType({ Id = CurrentRun.Hero.ObjectId, DestinationName = "NPC_Hecate_Story_01" })
-	local hecate = ActiveEnemies[hecateId]
-	if hecate ~= nil then
-		Destroy({ Id = hecate.ChatBubbleId })
-	end
-
-
-	SetGoalAngle({ Id = hecateId, Angle = 160 })
-
-	SetAnimation({ DestinationId = ScreenAnchors.DialogueBackgroundId, Name = "DialogueBackgroundOut" })
-
-	waitUnmodified( 0.1 )
-	Destroy({ Id = ScreenAnchors.DialogueBackgroundId })
-
-	-- teleport in Hecate
-	SetAlpha({ Id = hecateId, Fraction = 0.0, Duration = 0.35 })
-
-	wait( 0.5, RoomThreadName )
-	SecretMusicPlayer( "/Music/ArtemisTheme_MC" )
-
-	Teleport({ Id = hecateId, DestinationId = 555692 })
-	SetAnimation({ Name = "HecateHubGreet", DestinationId = hecateId })
-	CreateAnimation({ Name = "HecateTeleportFxFront", DestinationId = hecateId, Group = "FX_Standing_Add" })
-	SetAlpha({ Id = hecateId, Fraction = 1.0, Duration = 0.2 })
- 
-	wait( 1.0, RoomThreadName )
-end
-
-EncounterData.Story_EndCredits.StartRoomUnthreadedEvents =
-		{
-			{
-				FunctionName = "GenericPresentation",
-				Args =
-				{
-					LoadVoiceBanks = { "Artemis", "Apollo", "Selene" },
-					LoadPackages = { "Artemis", "Hecate","Apollo", "Selene" },
-				},
-			},
-			{
-				FunctionName = "SetupEndingCredits",
-			},
-		}
 
 EncounterData.Story_EndCredits.UnthreadedEvents =
 		{
@@ -1930,9 +1907,40 @@ EncounterData.Story_EndCredits.UnthreadedEvents =
 								Portrait = "Portrait_Hec_Default_01",
 								PreLineWait = 0.75,
 								PortraitExitAnimation = "Portrait_Hec_Default_01_Exit",
-								PostLineFunctionName = _PLUGIN.guid..".TwinsEntrancePresentation",
 								Text = "I have no doubt you would have achieved your aims with or without my aid, Melinoë. It does no good to dwell on hypotheticals. Let us instead celebrate our victory and this beautiful night.",
 							},
+
+							{ Cue = "/VO/Selene_0379",
+								PreLineWait = 0.25,
+								Source = "NPC_Selene_01",
+								Portrait = "Portrait_Selene_InPerson_01",
+									Text = "...If I may briefly interrupt, we have arrived at our initial destination, everyone. Olympus is not far from here." },
+
+							{ Cue = "/VO/Chronos_1028",
+								PreLineWait = 0.35,
+								Source = "NPC_Chronos_02",
+								Speaker = "NPC_Chronos_01",
+								Text = "...I do appreciate the ride upon your gleaming chariot, O Moon; but it is time for me to go. Perhaps my conversations with Hades have prepared me to face my other sons..." },
+
+							{ Cue = "/VO/MelinoeField_5172", UsePlayerSource = true,
+								Text = "We've informed Lord Uncle Zeus of what happened, and given our recommendations, though he'll have many questions for you. And ought to be expecting you by now. Remember the chance you've been given, Grandfather." },
+
+							{ Cue = "/VO/Chronos_1479_B",
+								Source = "NPC_Chronos_02",
+								Speaker = "NPC_Chronos_01",
+
+								Text = "Time cannot forget, and ought never to be late. May Zeus at least permit me to assist you from here on, knowing there were real possibilities this all could have gone worse." },
+
+							{ Cue = "/VO/MelinoeField_5218_B", UsePlayerSource = true,
+								Text = "To think that the entire flow of Time has fractured because of what occurred..." },
+
+							{ Cue = "/VO/Chronos_1528",
+								Source = "NPC_Chronos_02",
+								Speaker = "NPC_Chronos_01",
+								PortraitExitAnimation = "Portrait_Chronos_Default_02_Exit",
+								PostLineFunctionName = "TwinsEntrancePresentation",
+
+								Text = "I would liken it more to a moment of self-discovery on my part! Despite my advanced age, it seems I did not know all that there is to know about myself. But then again... who does? Now, farewell. And thank you, Granddaughter." },
 
 							-- Twins Enter
 							{ Cue = "/VO/MelinoeField_3907", UsePlayerSource = true,
@@ -1940,25 +1948,26 @@ EncounterData.Story_EndCredits.UnthreadedEvents =
 								Portrait = "Portrait_Mel_Pleased_01",
 								Text = "Lord Apollo! And Lady Artemis!" },
 
-							{ 
+							{ Cue = "/VO/Apollo_0204",
 								Source = "NPC_Apollo_Story_01",
 								Portrait = "Portrait_Apollo_InPerson_01",
-								Text = "It's a beautiful night, Lady Selene! And {#Emph}you {#Prev}must be the esteemed Witch of the Crossroads! You've trained my cousin very well indeed, to have brought down Typhon and redeemed Chronos with nary a scratch!" },
+								Text = "It's a beautiful night, Lady Selene! And {#Emph}you {#Prev}must be the esteemed Witch of the Crossroads! You've trained my cousin very well indeed, to have brought Chronos to our heights, still in one piece!" },
 
-							{ 
+							{ Cue = "/VO/Artemis_0382",
 								Source = "NPC_Artemis_01",
-								Text = "Fine, Apollo, I was incorrect for once, no need to boast. Melinoë, I may have wagered that you'd cut the Titan to ribbons sooner than forgive him." },
+								Text = "Fine, Apollo, I was incorrect for once, no need to boast. Melinoë, I may have wagered that you'd cut the Titan to ribbons sooner than you'd bring him here." },
 
-							{  UsePlayerSource = true,
+							{ Cue = "/VO/MelinoeField_3908", UsePlayerSource = true,
 								Portrait = "Portrait_Mel_Proud_01",
 								PreLineThreadedFunctionName = "PlayEmoteAnimFromSource", PreLineThreadedFunctionArgs = { Emote = "PortraitEmoteSurprise", Portrait = "Portrait_Mel_Hesitant_01", WaitTime = 6.5 },
-								Text = "I know it's unimaginable, but I truly believe that he has changed. And I intend to prove it to you, and the rest of Olympus. Speaking of, why are you here... rather than celebrating at your House?" },
+								Text = "I know it's unimaginable, but he came here willingly. And Lord Zeus wanted to speak to him in private. Wait, does that mean... you were kicked out of your {#Emph}house?" },
 
-							{
+							{ Cue = "/VO/Apollo_0205",
 								PostLineFunctionName = "CreditsSecretMusicOff",
 								Source = "NPC_Apollo_Story_01",
 								Portrait = "Portrait_Apollo_InPerson_01",
-								Text = "Well we consider it a Palace, but we thought we'd take some of the celebration to you! Besides, we've been appointed to escort you to the Crossroads as a symbol of our family's unity, and come bearing a gift. Shall we be off?" },
+								Text = "Well we consider it a Palace, but, {#Emph}erm... {#Prev}no! No, we've been appointed to escort you to the Crossroads as a symbol of our family's unity, and come bearing a gift. Shall we be off?" },
+
 
 							EndVoiceLines =
 							{
@@ -2001,42 +2010,22 @@ EncounterData.Story_EndCredits.UnthreadedEvents =
 		}
     
 
-function mod.TwinsEntrancePresentation( source )
-
-	waitUnmodified( 0.1 )
-	SetAnimation({ DestinationId = ScreenAnchors.DialogueBackgroundId, Name = "DialogueBackgroundOut" })
-	waitUnmodified( 0.1 )	
-	Destroy({ Id = ScreenAnchors.DialogueBackgroundId })
-	thread( PlayVoiceLines, GlobalVoiceLines.ChronosExitReactionVoiceLines )
-	wait(0.5)
-
-	local notifyName = "ChariotAnimationComplete"
-	NotifyOnAnimationTimeRemaining({ Id = source.ObjectId, Animation = "Horse_FlyingIdle_Chronos_Idle", Remaining = 0.032, Notify = notifyName, Timeout = 10 })
-	waitUntil( notifyName )
-
-	SetAnimation({ Name = "Horse_FlyingIdle_Twins_In", DestinationId = source.ObjectId })
-	PlayVoiceLines( GlobalVoiceLines.TwinsEntranceVoiceLines )
-
-	waitUnmodified( 4, RoomThreadName )
-
-	waitUnmodified( 0.5 )
-	CreateDialogueBackground()
-
-end
-
-HeroVoiceLines.StoryExpansionCorrectedNextStopPostTrueEndingVoiceLines = {
-		{
-			PreLineWait = 0.85,
-			TriggerCooldowns = { Name = "MelinoeAnyQuipSpeech" },
-
-			{ Cue = "/VO/Melinoe_5741", Text = "Only question is where to begin.",},
-			-- { Cue = "/VO/Melinoe_5672", Text = "Grandfather should be somewhere up ahead..." },
-			-- { Cue = "/VO/Melinoe_5671", Text = "Let's see how this goes...", PreLineWait = 1.0 },
-		},
-	}
-
-for i, entry in ipairs(HubRoomData.Hub_PreRun.ThreadedEvents) do
-	if entry.FunctionName == "PreRunCameraPresentation" and entry.Args and entry.Args.PanVoiceLines then
-entry.Args.PanVoiceLines = HeroVoiceLines.StoryExpansionCorrectedNextStopPostTrueEndingVoiceLines
-	end
-end
+--TODO: Change Tartarus Ending
+--[[
+	Ideas:
+	- Don't do the Chronos Sacrifice. Too complicated of an idea (keep it simple)
+	- Have Hades and Persephone place the 'burden'/autonomy of deciding what happens to Chronos
+	on Mel. Have her decide to forgive him, but they also tell her that she needs to take responsibility
+	- Hades says that he will abstain from the decision, since when he last made a decision about Chronos, it brought about suffering
+	- Chronos will need to repent, and 'I have a feeling he has many more apologies left to give'
+	- Underworld stands in support of Mel's decision, but she will need to convince Olympus to do the same
+		Can do small plotlines with each god for their forgiveness
+	- Can have a new incantation, Freeing of Time, which frees Chronos from his enslavement to Olympus
+	after everyone forgives
+	- I do want some sort of incantation unlocked at the end of the game to give some guide - maybe a teleport to the House?
+	nah I think that should come later after a visit from a character
+			Maybe a Stabilising of Time? Seal the rifts into other possibilities, so that you only need to
+			intervene/enter them if you want to
+		Can do both ideas, Persephone/Hecate gives you the first incantation, Zag gives the second
+			
+]]

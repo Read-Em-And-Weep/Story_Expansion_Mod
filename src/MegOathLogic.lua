@@ -347,6 +347,8 @@ function mod.EquipRivals(args)
 	end
 end
 
+
+--MegaeraBlessingStackUpgradeBoost in TraitLogic_Shrine
 modutil.mod.Path.Wrap("CreateStackLoot", function(base, args)
 	args = args or {}
 	if args.StackNum == nil then

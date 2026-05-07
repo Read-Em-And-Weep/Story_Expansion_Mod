@@ -42,6 +42,9 @@ elementalinfusion = mods["ReadEmAndWeep-More_Elemental_Boons_Mod"]
 ---@module 'zannc-GodsAPI-auto'
 Incantations = mods["BlueRaja-IncantationsAPI"]
 
+ZagreusJourney = mods['NikkelM-Zagreus_Journey']
+
+
 ---@module 'config'
 config = chalk.auto 'config.lua'
 -- ^ this updates our `.cfg` file in the config folder!

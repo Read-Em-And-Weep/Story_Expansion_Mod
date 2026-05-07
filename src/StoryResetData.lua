@@ -3,6 +3,8 @@ table.insert(HubRoomData.Hub_Main.StartUnthreadedEvents, 1, {FunctionName = "Act
 
 modutil.mod.Path.Wrap("DeathAreaRoomTransition", function(base, source, args)
   base(source, args)
+  GameState.TextLinesRecord.InspectHadesFountain02 = true
+  Activate({ Id = 742624 })
   SetupStoryResetObject()
 end)
 

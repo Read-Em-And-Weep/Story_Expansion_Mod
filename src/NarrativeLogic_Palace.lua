@@ -308,7 +308,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PreLineAnim = "Zeus_Explaining",
-					Text = "My dear wife is busy reinvigorating the defensive spells holding our Palace secure. After you told her about your visions from the aether gate, she's become obsessed with finding any flaw in the enchantment." },
+					Text = "My dear wife is busy revitalising the defensive spells holding our Palace secure. After you told her about your visions from the aether gate, she's become obsessed with finding any flaw in the enchantment." },
 
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -326,7 +326,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PreLineAnim = "Zeus_Explaining",
-					Text = "Rhea is...my mother. She's been missing since my brothers and I stood up against our father. We always worried that Chronos had done something to her in revenge for us claiming the throne, but we had no evidence." },
+					Text = "Rhea is...my mother, and your Grandmother. She's been missing since my brothers and I stood up against our father. We always worried that Chronos had done something to her in revenge for us claiming the throne, but we had no evidence." },
 
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -439,7 +439,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Text = "My visions have told me that her life force was sapped due to a hateful curse placed on her from Ouranos — a curse so strong not even Mother Night could break it. Apparently, Chronos and Rhea concealed this information from you to stop you worrying." },
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
-					Text = "A terrible curse sapping her strength? That is a destiny I wouldn't wish on even Chronos. At least knowing her fate may bring us peace now." },
+					Text = "A terrible curse sapping her strength? That is a destiny I wouldn't even wish on Chronos. At least knowing her fate may bring us peace now." },
 
 				EndVoiceLines =
 				{
@@ -474,13 +474,13 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					-- PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
 					-- PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
 					PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
-					Text = "Melinoë, it is excellent to welcome you to our palace once more. It has been a long time since my Lord Husband and I have been able to greet you together." },
+					Text = "Melinoë, it is excellent to welcome you to our palace once more. It has been a long time since my Lord Husband and I have been able to recieve you together." },
 
 				{ UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "Queen Hera, King Zeus, surely I have entered these halls often enough to not require a special welcome? Of course, seeing you is always welcome." },
+					Text = "Queen Hera, King Zeus, surely I have entered these halls often enough to not require a special welcome? Of course, seeing you is always delightful." },
 
 				{ 
 					PreLineAnim = "Zeus_Explaining",
@@ -546,7 +546,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "King Zeus, I'm afraid I have found out what happened to your mother Rhea, and I fear it was not a good end." },
+					Text = "King Zeus, I'm afraid I have found out what happened to your mother Rhea, and I fear it was not a pleasing end." },
 
 				{ 
 					PreLineAnim = "Zeus_Explaining",
@@ -557,7 +557,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
                 Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "When there was no way to break the curse, Chronos beseeched Almight Chaos for a cure. To cure Rhea, he transformed her into a being of pure hatred and monstrosity." },
+					Text = "When there was no way to break the curse, Chronos beseeched Almight Chaos for a cure. To save Rhea, he transformed her into a being of pure hatred and monstrosity." },
 
 				{ 
 					Text = "You mean to say that our most foe... Typhon... is Rhea transformed? He gave up her form in order for her to survive?" },
@@ -570,6 +570,8 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
             { 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
+					PortraitExitAnimation = "Portrait_Hera_InPerson_01_Exit",
+					ExitPortraitImmediately = true,
 					-- PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
 					-- PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
 					Text = "That... I... Husband... I am truly sorry. I only knew your mother briefly but she was a beautiful light. Remember her as she was, and not what she became." },
@@ -657,11 +659,11 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
 					Text = "King Zeus, I must inform you as well, that along with Typhon's death, the essence of your mother Rhea was unravelled as well." },
 				{ 
-					Text = "...We had expected as much, niece. While unfortunate, it brings me peace knowing that she will no longer suffer as a being of pure anger." },
+					Text = "...We had expected as much, niece. While unfortunate, it brings me comfort knowing that she will no longer suffer as a being of pure anger." },
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "Perhaps in a nicer world, we could have freed her from the transformation, but as it were, we had already reconciled with the idea of losing Rhea." },
+					Text = "Perhaps in a nicer world, we could have freed her from the transformation, but as it were, we had already made peace with the idea of losing Rhea." },
 				{  UsePlayerSource = true,
                 Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
@@ -685,7 +687,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Mel_Empathetic_01",
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "If you have not believe in me, King Zeus and Queen Hera, then perhaps Typhon would have been here in my stead. So thank you all... and now an even greater victory is within reach." },
+					Text = "If you had not believed in me, King Zeus and Queen Hera, then perhaps Typhon would have been here in my stead. So thank you all... and now an even greater victory is within reach." },
 
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
@@ -701,6 +703,142 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 
 					Text = "You have done very well, Melinoë, and we Olympians owe you a debt. The Titan's forces may grow far more desperate now, a possibility for which we ought prepare. We shall lend you all the strength we can for your own final assault." },
 				EndGlobalVoiceLines = "ZeusSendOffVoiceLines",
+			},
+			ZeusPalacePostTrueEnding01 =
+			{
+				Name = "ZeusPalacePostTrueEnding01",
+				PlayOnce = true,
+				UseableOffSource = true,
+				Partner = "NPC_Chronos_02",
+				StatusAnimation = false,
+				UseText = "UseListenNPC",
+				InteractDistance = 350,
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "GameState", "ReachedTrueEnding" },
+					},
+				},
+				OnQueuedFunctionName = "CheckDistanceTriggerThread",
+				OnQueuedFunctionArgs = PresetEventArgs.ZeusHeraFinalGreeting,
+				OnQueuedThreadedFunctionName = "SetupZeusHeraFinalInteraction",
+
+				{
+					Portrait = "Portrait_Zeus_InPerson_01",
+					PreLineAnim = "Zeus_Greet",
+					Text = "Out of respect for all you have done for us, I have stayed my hand from striking Chronos for now. Make your case for why we should not deal with him permanently." },
+				{  UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Vulnerable_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
+
+					PreLineThreadedFunctionName = "PlayEmoteAnimFromSource", PreLineThreadedFunctionArgs = { Emote = "None", Portrait = "Portrait_Mel_Default_01", WaitTime = 3 },
+
+					Text = "King Zeus, Queen Hera... our family has been torn apart by vengeance for far to long. It was hate and revenge that first lead to Chronos being destroyed, and then him unleashing his rage on Olympus. Let choose to move for forgiveness, and reunite our family." },
+								{
+					Portrait = "Portrait_Hera_InPerson_01",
+					Source = "NPC_Hera_Story_01",
+					PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
+					Text = "Melinoë, dear, you must be jesting. Surely you are not asking us to set an active threat to our rule free, {#Emph} simply because {#Prev} he is my husband's blood? And without any form of assurance against him striking again, or punishment either?" },
+
+							{ UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Vulnerable_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
+
+					Text = "I am not so naïve as to believe you would do so without a second agenda. I need Grandfather's aid to close the rifts I made with the Dissolution of Time." },
+
+				
+					{
+					Source = "NPC_Chronos_02",
+					PreLineAnim = "NPC_Chronos_Enlightened_Explaining",
+					PreLineAnimTarget = 798319,
+					Text = "Although the Typhon with whom you already clashed is gone, there could have been certain circumstances under which the Princess failed and the world remained in conflict. One fewer {#Emph}now{#Prev}, of course!" },
+
+				{ Cue = "/VO/Zeus_0290",
+					Portrait = "Portrait_Zeus_InPerson_01",
+					PreLineAnim = "Zeus_Greet",
+					Text = "And how many of these circumstances {#Emph}are {#Prev}there, would you say, Father? For we cannot expect Melinoë to battle to our mountaintop for all eternity..." },
+
+				{
+					Source = "NPC_Chronos_02",
+					PreLineWait = 0.35,
+					Text = "There still remain many of these gashes in Time, which may begin to leak into our world if we do not deal with them. But how {#Emph}many {#Prev}there are required, I unfortunately cannot calculate..." },
+
+				{ Cue = "/VO/Hera_0210",
+					Portrait = "Portrait_Hera_InPerson_Displeased_01",
+					Source = "NPC_Hera_Story_01",
+					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
+					Text = "And why not? Perhaps if we persuaded you sufficiently, Titan, you'd be inclined to answer in a more-straightforward way." },
+
+				{
+					Source = "NPC_Chronos_02",
+					PreLineAnim = "NPC_Chronos_Enlightened_Explaining",
+					PreLineAnimTarget = 798319,
+					Text = "I have but recently learned of these possibilities myself. Time is flowing freely forth, for the most part; my granddaughter merely can ensure that there are no obstructions of concern, by slaying her foes in these alternate possibilities." },
+
+				{UsePlayerSource = true,
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "And I would see to that, however long it takes. But I have some better news. I sensed the remenants of Rhea in Typhon, and I believe she can be saved." },
+				{
+					Source = "NPC_Chronos_02",
+					PreLineThreadedFunctionArgs = { Emote = "PortraitEmoteSurprise", Portrait = "Portrait_Chronos_Default_02", WaitTime = 0.2 },
+					Text = "Rhea... but I thought that Ouranos's curse had no cure?" },
+				{UsePlayerSource = true,
+					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkBrooding01ReturnToIdle", PostLineAnimTarget = "Hero",
+					PostLineThreadedFunctionName = "DisplayInfoToast",
+					PostLineFunctionArgs = { Duration = 2, Title = "WorldUpgradeAdded", Text = "StoryExpansionWorldUpgradeSaveRhea" },
+					Text = "While Ouranos's curse may have required Almighty Chaos's power to heal, it is not the Sky's power that turned her into Typhon. Chaos's curses are always temporary, and after harnessing the power of the Dissolution of Time, I am confident that I can reverse her transformation." },
+				{
+					Portrait = "Portrait_Zeus_InPerson_01",
+					PreLineAnim = "Zeus_Explaining",
+					Text = "...we shall give you a chance, Melinoë and Father. But just a single one." },
+				{
+					Portrait = "Portrait_Hera_InPerson_01",
+					Source = "NPC_Hera_Story_01",
+					PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
+					Text = "Do not celebrate just yet, Chronos. We are not simply letting you go free. You will swear yourself into a slave bond to us, and we shall bind your very being to it." },
+				{UsePlayerSource = true,
+				Portrait = "Portrait_Mel_Intense_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "Queen Hera! Such a thing is excessively cruel, even against Grandfather." },
+				
+					{
+					Source = "NPC_Chronos_02",
+					PostLineFunctionName = _PLUGIN.guid .. ".DoSlaveBondSwear",
+					PortraitExitAnimation = "NPC_Chronos_02",
+					ExitPortraitImmediately = true,
+					Text = "...Very well. I, Chronos, Titan of Time, do swear myself to Olympus, and put my entire self and soul at their discretion. May they do what they wish with me." },
+
+
+				{
+					Portrait = "Portrait_Zeus_InPerson_01",
+					PreLineAnim = "Zeus_Explaining",
+					Text = "Well it appears that it's decided! I imagine you'll have to search far to find powerful enough reagents for restoring Mother. But due to matters of security, our Palace henceforth is to be sealed off." },
+
+				{
+					Portrait = "Portrait_Hera_InPerson_01",
+					Source = "NPC_Hera_Story_01",
+
+					Text = "Melinoë, perhaps when your mother resumes her yearly travels here, you may come visit again. Or whenever you restore Rhea to her rightful form." },
+				{UsePlayerSource = true,
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "I'd love that, Queen Hera and King Zeus. I spent so long trying to restore my family below, that I forgot about the family I had up here. I want to stay close to you all." },
+
+				{ Cue = "/VO/Hera_0211",
+					Portrait = "Portrait_Hera_InPerson_01",
+					Source = "NPC_Hera_Story_01",
+					PreLineWait = 0.35,
+					PostLineFunctionName = "ActivateApollo",
+					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
+
+					Text = "We've been such awful hosts to you, my dear. We never intended for any of this to occur! But we have pledged you our support before, and you shall have it for as long as you require. Even if we bicker over it now and again." },
+				EndGlobalVoiceLines = "ZeusSendOffVoiceLines",
+				EndFunctionName = "RestoreDemeterInteraction",
 			},
             ZeusPalaceMeetingRepeatable01 =
 			{
@@ -910,17 +1048,19 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "This may be a strange thing to ask, but you were around for his reign. In my visions, Chronos appears to be a much kinder ruler than the cruel Titan I have encountered now. What was the world like under the Usurper's authority?" },
+					Text = "This may be a strange thing to ask, but you were around for his reign... in my visions, Chronos appears to be a much kinder ruler than the cruel Titan I have encountered now. What was the world like under the Usurper's authority?" },
 
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
-					Text = "...This is a difficult topic to talk about Melinoë, especially considering I am the current Queen. I have a responsibility to maintain our sovereignty." },
+					Text = "...This is a difficult topic to talk about Melinoë, especially since I am the current Queen. I have a responsibility to maintain our sovereignty." },
 
 
                 {  UsePlayerSource = true,
                     Portrait = "Portrait_Mel_Pleased_01",
+					PortraitExitAnimation = "Portrait_Mel_Pleased_01_Exit",
+					ExitPortraitImmediately = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
 					Text = "Queen Hera, as the Princess of the Underworld, I'm hardly just one of your subjects. You can be honest with me." },
@@ -929,6 +1069,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
+					PreLineWait = 0.25,
 					Text = "In my youth, he was not evil, at least perhaps not in the way that you think. We were looked after, but we had little freedom. Nymphs danced the same every day, mortals lived in ignorant lethargy, trees grew on schedule, and deities performed their duties with no passion or love. It was a world banal in its perfection." },
 
 				{ 
@@ -941,7 +1082,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
-					Text = "Then when we gods grew older, Chronos must have become bored of ruling such a world because he stopped paying it attention. The Fates decreed then that the world was rightfully ours, and we ushered forward an age marked by freedom and passion." },
+					Text = "Then when we gods grew older, Chronos must have become bored of ruling such a world because he stopped paying it attention and it fell apart. The Fates decreed then that the world was rightfully ours, and we ushered forward an age marked by freedom and passion." },
 
 { 
 					UsePlayerSource = true,
@@ -995,7 +1136,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "Unfortunately, it appears that he is recovering his strength from the last time my Lord Husband slew him. We fear that Chronos is utilising his control of time to strengthen the monster further." },
+					Text = "Unfortunately, it appears that he is recovering his all the lost strength from the time my Lord Husband first slew him. We fear that Chronos is utilising his control of time to strengthen the monster further." },
 
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -1005,14 +1146,14 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "That is worrying news, Melinoë. While my protections on Olympus may hold, they cannot do so forever. Especially not against the kind of assult Typhon brings every night." },
+					Text = "That is worrying news, Melinoë. While my protections on Olympus are strong, we cannot hold our palace forever. Especially not against the kind of assult Typhon brings every night." },
 
 
                 {  UsePlayerSource = true,
                     Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "And we cannot end Chronos's rule of the underworld until his pet monster has been toppled. Fitting that Time would engage in a war of attrition." },
+					Text = "And we cannot end Chronos's rule of the Underworld until his pet monster has been toppled. Fitting that Time would engage in a war of attrition." },
 
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
@@ -1029,7 +1170,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
                 { 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "This 'contingency plan' of my sons involves creating a strong weapon fuelled by Olympian magick to destroy Typhon permanently, as well as the mountain we stand on and much of the surrounding countryside. Keep fighting still, Melinoë, so that we may claim a more elegant victory with your magick." },
+					Text = "This 'contingency plan' of my sons involves creating a strong weapon fuelled by Olympian magick to destroy Typhon permanently, as well as the mountain we stand on and much of the surrounding countryside. Keep fighting still, Melinoë, so that your magick may claim us a more elegant victory." },
 
 				EndVoiceLines =
 				{
@@ -1115,6 +1256,26 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
                 PlayOnce = true,
 				UseableOffSource = true,
                 Partner = "NPC_Zeus_Story_01",
+            },
+			ZeusPalacePostTrueEnding01 = 
+			{
+				Name = "ZeusPalacePostTrueEnding01",
+                PlayOnce = true,
+				UseableOffSource = true,
+                Partner = "NPC_Zeus_Story_01",
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "GameState", "TyphonDefeatedWithStormStop" },
+					},
+					{
+						PathTrue = { "GameState", "WorldUpgradesAdded", "WorldUpgradeStormStop" },
+					},
+					-- stopgap just in case
+					{
+						PathFalse = { "GameState", "ReachedTrueEnding" },
+					},
+				},
             },
 }
 
@@ -1349,7 +1510,7 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "Sick of your singing? You would have to be much worse for me to tire of it." },
+					Text = "Sick of your singing? You would have to be infinitely worse for me to ever tire of it." },
 
 				{ 
 					Portrait = "Portrait_Apollo_InPerson_01",
@@ -1476,7 +1637,7 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 								{ 
 					PreLineWait = 0.35,
 					Portrait = "Portrait_Apollo_InPerson_Serious_01",
-					Text = "Cousin, I'm afraid I have no healing power left in me to close your wounds." },
+					Text = "Cousin, I'm afraid I have little healing power left in me to ease your wounds." },
 
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
@@ -1588,6 +1749,70 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 						{ Cue = "/VO/MelinoeField_3870", Text = "On it." },
 					},
 					{ GlobalVoiceLines = "ApolloSendOffVoiceLines" },
+				},
+			},
+			ApolloPalacePostTrueEnding01 =
+			{
+				Name = "ApolloPalacePostTrueEnding01",
+				PlayOnce = true,
+				UseableOffSource = true,
+				InitialGiftableOffSource = true,
+				GiftableOffSource = true,
+				GameStateRequirements =
+				{
+					{
+						Path = { "CurrentRun", "CurrentRoom", "UseRecord" },
+						HasAny = { "NPC_Zeus_Story_01", "NPC_Chronos_02" },
+					},
+					{
+						PathTrue = { "GameState", "ReachedTrueEnding" },
+					},
+				},
+
+				{
+					PreLineWait = 0.35,
+					Portrait = "Portrait_Apollo_InPerson_01",
+					Text = "Soon we also won't be letting anybody in from the outside. We've had no sign of Dionysus still, and our new guest has drawn most of the attention. But we ought to be feasting in your name as far as I'm concerned, sunshine. Surely you have time for a quick celebration before you leave?" },
+
+				{ UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Proud_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+                PostLineFunctionName = _PLUGIN.guid..".CelebrationSounds",
+					Text = "As it's the last time I'll be able to visit, I suppose I might as well wish goodbye to everyone properly. Just a quick celebration, though, mind you!" },
+				{ UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Proud_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "... and so I think I will miss the company from my visits most of all, though I'm not sure I could truly get used to the relaxing atmosphere here. I find myself constantly requiring something to do. Speaking of, we do need to find a place for this grandfather of ours. Do you think Lord Uncle Zeus will ever be able to forgive him?" },
+
+
+				{
+					Portrait = "Portrait_Apollo_InPerson_Serious_01",
+					Text = "Neither Father nor Stepmother are well-known for their forgiveness, so Grandfather has a hard road ahead of him. Though you're the stubborn type that may be able to get through to them. You truly think our grandfather has changed?" },
+
+				{ Cue = "/VO/MelinoeField_3921", UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Empathetic_01",
+					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "I think he has a different outlook on things, yes. As for me, sounds like I may not be able to return anytime soon. This place truly is beyond compare, and with each visit you've made me feel welcome. Thank you for that and everything." },
+
+				{ 
+					Portrait = "Portrait_Apollo_InPerson_01",
+					Text = "Oh, come on, it's all of us who should be thanking you, and quite profusely I should add. Anyhow, not like this is a permanent farewell. I'm sure you'll find some reason or another to visit us here at some point, Cousin!",
+					PostLineFunctionName = "ResumeApolloSinging",
+					PostLineThreadedFunctionName = "ActivatePalaceExitPoint",
+				},
+				EndVoiceLines =
+				{
+					{
+						PreLineWait = 0.4,
+						UsePlayerSource = true,
+						RequiredMinElapsedTime = 2,
+
+						{ Cue = "/VO/MelinoeField_3922", Text = "All right." },
+					},
+					-- { GlobalVoiceLines = "ApolloSendOffVoiceLines" },
 				},
 			},
             ApolloPalacePostZeusChat01 =
@@ -1873,7 +2098,7 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
         {
             PreLineAnim = "Demeter_Scoff",
             Text =
-            "It has grown more difficult as of late to steal control of the storm back from Typhon. To be honest, with how strong the monster has been getting, the only thing preventing the palace being destroyed is the reprieve you bring by striking him down."
+            "It has grown more difficult as of late to steal control of the storm back from Typhon. To be honest, with how strong the monster has been getting, the only thing preventing the palace being destroyed may be the reprieve you bring by striking him down."
         },
 
         {
@@ -1888,7 +2113,7 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
         },
         {
             Text =
-            "Granddaughter, you are our greatest hope of surviving this war, and do not let anyone tell you otherwise. Myself, and all of my family, would gladly give every drop of power we could to ensure your success."
+            "Granddaughter, you are our greatest hope of surviving this war, and do not let anyone tell you otherwise. Myself, and all of my family, are prepared to give every drop of power we can spare to ensure your success."
         },
         {
             UsePlayerSource = true,
@@ -1951,7 +2176,7 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
         {
             PreLineAnim =  "Demeter_Moved",
             Text =
-            "Rhea was kind to Hestia, Hera and I when our father Hyperion was cruel. She took us in when no other titan would give us anything."
+            "Rhea was kind to Hestia, Hera and I when our father Hyperion was cruel. She took us in when no other Titan would give us anything."
         },
         {
             UsePlayerSource = true,
@@ -1968,7 +2193,7 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
             UsePlayerSource = true,
             Portrait = "Portrait_Mel_Vulnerable_01",
             Text =
-            "From what I've learnt from shades, we are must closer to mortals in our love and loss than we would like to admit. May we never feel such loss again."
+            "From what I've learnt from shades, our emotions bring us closer to mortals than we would like to admit. May we never feel such loss again."
         },
 
         EndVoiceLines =
@@ -2029,6 +2254,122 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
 					},
 				},
 			},
+			DemeterPalacePostTrueEnding01 =
+			{
+				Name = "DemeterPalacePostTrueEnding01",
+				PlayOnce = true,
+				UseableOffSource = true,
+				InitialGiftableOffSource = true,
+				GiftableOffSource = true,
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "GameState", "ReachedTrueEnding" },
+					},
+				},
+				OnQueuedFunctionName = "CheckDistanceTriggerThread",
+				OnQueuedFunctionArgs = PresetEventArgs.DemeterGreeting,
+				OnQueuedThreadedFunctionName = "BlockDemeterInteraction",
+
+				{ Cue = "/VO/MelinoeField_4323", UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Vulnerable_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "We did it, Grandmother! You've fought so hard for me... for all of us. But, it must be difficult, to see Chronos again." },
+
+				{ Cue = "/VO/Demeter_0203",
+					PreLineAnim = "Demeter_Scoff",
+					-- PreLineAnim = "Demeter_Moved",
+					Portrait = "Portrait_Demeter_InPerson_01",
+					Text = "I shall not dignify him with so much as a passing glance, Melinoë. The Titan would have reached a different end were it for me to decide, but... I'm grateful that the outcome was not worse." },
+
+				{ Cue = "/VO/MelinoeField_4324", UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Empathetic_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "From what I gathered, this may be farewell for a while. At least face-to-face! I'll still be seeing you most nights, if you'll be able to keep aiding me by Boon." },
+
+				{ Cue = "/VO/Demeter_0204",
+					Portrait = "Portrait_Demeter_InPerson_01",
+					PreLineAnim = "Demeter_Moved",
+					Text = "Of course. And there shall come a time again when your mother shall be visiting us half the year. Perhaps then you may come along, once every few seasons at least." },
+
+				{
+					PostLineThreadedFunctionName = "DisplayInfoToast",
+					PostLineFunctionArgs = { Duration = 3, Title = "RecipeAdded", Text = "WorldUpgradeAmbrosia" },
+				},
+
+				EndVoiceLines =
+				{
+					{
+						PreLineWait = 0.4,
+						ObjectType = "NPC_Demeter_Story_01",
+
+						{ Cue = "/VO/Demeter_0281", Text = "Oh, and here... to keep you warm." },
+					},
+					{
+						PreLineWait = 0.4,
+						UsePlayerSource = true,
+
+						{ Cue = "/VO/MelinoeField_5019", Text = "Grandmother, is this for me? Thank you..." },
+						-- { Cue = "/VO/MelinoeField_4325", Text = "I would like that." },
+					},
+				},
+			},
+			-- variant for StoryReset that doesn't provide ambrosia recipe
+			DemeterPalacePostTrueEnding01_B =
+			{
+				Name = "DemeterPalacePostTrueEnding01_B",
+				PlayOnce = true,
+				UseableOffSource = true,
+				InitialGiftableOffSource = true,
+				GiftableOffSource = true,
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "GameState", "ReachedTrueEnding" },
+					},
+					{
+						PathTrue = { "GameState", "TextLinesRecord", "DemeterPalacePostTrueEnding01" },
+					},
+				},
+				OnQueuedFunctionName = "CheckDistanceTriggerThread",
+				OnQueuedFunctionArgs = PresetEventArgs.DemeterGreeting,
+				OnQueuedThreadedFunctionName = "BlockDemeterInteraction",
+
+				{ Cue = "/VO/MelinoeField_4323", UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Vulnerable_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "We did it, Grandmother! You've fought so hard for me... for all of us. But, it must be difficult, to see Chronos again." },
+
+				{ Cue = "/VO/Demeter_0203",
+					PreLineAnim = "Demeter_Scoff",
+					-- PreLineAnim = "Demeter_Moved",
+					Portrait = "Portrait_Demeter_InPerson_01",
+					Text = "I shall not dignify him with so much as a passing glance, Melinoë. The Titan would have reached a different end were it for me to decide, but... I'm grateful that the outcome was not worse." },
+
+				{ Cue = "/VO/MelinoeField_4324", UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Empathetic_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
+					Text = "From what I gathered, this may be farewell for a while. At least face-to-face! I'll still be seeing you most nights, if you'll be able to keep aiding me by Boon." },
+
+				{ Cue = "/VO/Demeter_0204",
+					Portrait = "Portrait_Demeter_InPerson_01",
+					PreLineAnim = "Demeter_Moved",
+					Text = "Of course. And there shall come a time again when your mother shall be visiting us half the year. Perhaps then you may come along, once every few seasons at least." },
+
+				EndVoiceLines =
+				{
+					{
+						PreLineWait = 0.4,
+						UsePlayerSource = true,
+
+						{ Cue = "/VO/MelinoeField_4325", Text = "I would like that." },
+					},
+				},
+			},
 }
 
 
@@ -2073,6 +2414,7 @@ NarrativeData.NPC_Apollo_Story_01.InteractTextLinePriorities = {
 "ApolloPalaceMeeting08",
 "ApolloPalaceMeeting09",
 "ApolloPalaceAboutTyphonDeath01",
+"ApolloPalacePostTrueEnding01",
 }
 
 function mod.CanSpawnHeraAtPalace()
@@ -2561,10 +2903,10 @@ EncounterData.Story_Palace_01.StartRoomUnthreadedEvents = {
 						"ZeusPalaceMeeting04_B",
 						"ZeusPalaceAboutTyphonDeath01",
                         "DemeterPalaceFirstMeeting",
-"DemeterPalaceMeeting02",
-"DemeterPalaceMeeting03",
-"DemeterPalaceMeeting04",
-"DemeterPalaceAboutTyphonDeath01",
+						"DemeterPalaceMeeting02",
+						"DemeterPalaceMeeting03",
+						"DemeterPalaceMeeting04",
+						"DemeterPalaceAboutTyphonDeath01",
 						"DemeterPalacePostTrueEnding01",
 						"DemeterPalacePostTrueEnding01_B",
 						"DemeterPalaceAboutTyphonDeath01",
@@ -2599,3 +2941,81 @@ EncounterData.Story_Palace_01.StartRoomUnthreadedEvents = {
 			]]--
 		}
 --TODO: FIRST POSTGAME CLEAR (IDK What that will look like yet)
+
+function mod.DoSlaveBondSwear()
+	AdjustFullscreenBloom({ Name = "DesaturatedLight", Duration = 0.9 })
+	CreateAnimation({ Name = "CauldronFullscreenDarken", UseScreenLocation = true, OffsetX = ScreenCenterX, OffsetY = ScreenCenterY, ScaleX = ScreenScaleX, ScaleY = ScreenScaleY })
+	ShakeScreen({ Speed = 300, Distance = 4, Duration = 1.0, FalloffSpeed = 1000 })
+	PlaySound({ Name = "/Leftovers/Menu Sounds/EmoteAscendedArthurChoir" })
+	thread( DoRumble, { { ScreenPreWait = 0.02, LeftFraction = 0.13, Duration = 1.0 }, } )
+	--FocusCamera({ Fraction = 0.875, Duration = sceneDuration * 0.6 , ZoomType = "Ease"  })
+	
+	-- play voiceline
+	PlaySound({ Name = "/SFX/Menu Sounds/HadesTextDisappearFade" })
+
+	thread( mod.SlaveBondPresentation )
+	thread( DisplayInfoBanner, nil, {
+		TitleText = "StoryExpansionSlaveBond",
+		TitleTextOffsetX = 81,
+		LangTitleTextOffsetX = {	
+			{ Code = "el", Value = 0 },
+			{ Code = "ja", Value = 0 },
+			{ Code = "ko", Value = 0 },
+			{ Code = "ru", Value = 0 },
+			{ Code = "uk", Value = 0 },
+		},
+		Color = Color.Gold,
+		TextColor = Color.White,
+		TextOffsetY = 20,
+		TitleFont = "SpectralSCLightTitling",
+		SubtitleFont = "SpectralSCLightTitling",
+		AnimationName = "LocationBackingIrisSmallIn",
+		AnimationOutName = "LocationBackingIrisSmallOut",
+		Layer = "ScreenOverlay",
+		AdditionalAnimation = "GodHoodRays",
+		} )
+
+	-- restore the scene
+	AdjustFullscreenBloom({ Name = "Off", Duration = 3.0 })
+	AdjustColorGrading({ Name = "Frozen", Duration = 23 * 0.8 })
+
+end
+
+function mod.SlaveBondPresentation()
+	local args = {}
+	AdjustColorGrading({ Name = "HadesBloodstone", Duration = 0.2 })
+	-- AdjustFullscreenBloom({ Name = "WeaponAspect", Duration = 0.2 })
+	PlaySound({ Name = "/SFX/Menu Sounds/CauldronSpellCompleteNova", Id = CurrentRun.Hero.ObjectId })
+
+	ScreenAnchors.FullscreenAlertFxAnchor = CreateScreenObstacle({ Name = "BlankObstacle", Group = "Events", X = ScreenCenterX, Y = ScreenCenterY })
+
+	CreateAnimation({ Name =  "CauldronFullscreenDarken", UseScreenLocation = true, OffsetX = ScreenCenterX * 0.5, OffsetY = ScreenCenterY * 0.5, ScaleX = ScreenScaleX, ScaleY = ScreenScaleY, Group  = "Combat_Menu" })
+
+	local interactVignette = CreateAnimation({ Name = "CauldronCastVignette", DestinationId = ScreenAnchors.FullscreenAlertFxAnchor })
+	DrawScreenRelative({ Id = interactVignette })
+
+
+	local fullscreenAlertDisplacementFx = SpawnObstacle({ Name = "FullscreenAlertDisplace", Group = "FX_Displacement", DestinationId = ScreenAnchors.FullscreenAlertFxAnchor })
+	SetScaleX({ Id = fullscreenAlertDisplacementFx, Fraction = ScreenScaleX, Duration = 0 })
+	SetScaleY({ Id = fullscreenAlertDisplacementFx, Fraction = ScreenScaleY, Duration = 0 })
+	DrawScreenRelative({ Id = fullscreenAlertDisplacementFx })
+
+	CreateAnimation({ Name = "FullscreenAlertColorInvert", Group = "FX_Add_Top", DestinationId = 588175 })
+
+	ShakeScreen({ Speed = 600, Distance = 9, FalloffSpeed = 2000, Duration = 0.3 })
+	thread( DoRumble, { { ScreenPreWait = 0.02, RightFraction = 0.35, Duration = 0.30 }, } )
+
+	wait( 0.3 )
+
+	AdjustColorGrading({ Name = "Thanatos", Duration = 1.0 })
+	AdjustFullscreenBloom({ Name = "CauldronCastBloom", Duration = 0.2 })
+	ShakeScreen({ Speed = 800, Distance = 3, FalloffSpeed = 5000, Duration = 1.3 })
+	thread( DoRumble, { { ScreenPreWait = 0.1, LeftFraction = 0.17, Duration = 1.4 }, } )
+
+	wait( 1.1 )
+
+	AdjustColorGrading({ Name = "Off", Duration = 1.8 })
+	AdjustFullscreenBloom({ Name = "Off", Duration = 1.8 })
+	SetAlpha({ Id = fullscreenAlertDisplacementFx, Fraction = 0, Duration = 1.45 })
+	thread( DestroyOnDelay, { fullscreenAlertDisplacementFx }, 1.0 )
+end

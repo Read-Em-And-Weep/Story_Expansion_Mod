@@ -1,6 +1,6 @@
---[[if not gods.IsKeepsakeRegistered("StoryExpansionBoonRarityBoostKeepsake") then
+if not gods.IsKeepsakeRegistered("StoryExpansionBoonRarityBoostKeepsake") then
 gods.CreateKeepsake({
-    characterName = "Theseus",
+    characterName = "Ariadne",
     internalKeepsakeName = "StoryExpansionBoonRarityBoostKeepsake",
 
     RarityLevels = {
@@ -11,9 +11,9 @@ gods.CreateKeepsake({
     },
 
     Keepsake = {
-        displayName = "Rescued Merchandise",
+        displayName = "Woven Pendant",
         description = "Every {$Keywords.GodBoon} you claim has a {#UpgradeFormat} {$TooltipData.ExtractData.EpicPercent:P} {#Prev} to be {$Keywords.Epic}, but you lose {#PenaltyFormat} -20% {#Prev} with each {$Keywords.GodBoonNoTooltip}.",
-        signoffMax = "From {#AwardMaxFormat}Theseus{#Prev}{!Icons.ObjectiveSeparatorDark}To do nothing while others suffer is tantamount to enabling the suffering itself.",
+        signoffMax = "From {#AwardMaxFormat}Ariadne{#Prev}{!Icons.ObjectiveSeparatorDark}Hope for the best, but always plan for the worst.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
     },
 
@@ -50,4 +50,4 @@ gods.CreateKeepsake({
 	},
 
 })
-end]]
+end

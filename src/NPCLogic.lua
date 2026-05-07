@@ -134,6 +134,7 @@ function mod.SpawnCharacter(characterName)
         local gazeTarget = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = spawnPointId, OffsetX = game
         .EnemyData[characterName].GazeTarget.X, OffsetY = game.EnemyData[characterName].GazeTarget.Y })
         AngleTowardTarget({ Id = newUnit.ObjectId, DestinationId = gazeTarget })
+        Destory({Id = gazeTarget})
     end
     if game.EnemyData[characterName].Scale then
         SetScale({Id = newUnit.ObjectId, Fraction = game.EnemyData[characterName].Scale})
@@ -173,6 +174,7 @@ function mod.SpawnCharacterAtMe(characterName)
         AngleTowardTarget({ Id = newUnit.ObjectId, DestinationId = gazeTarget })
         MapState.StoryExpansionCharacterGazeTarget = MapState.StoryExpansionCharacterGazeTarget or {}
         MapState.StoryExpansionCharacterGazeTarget[characterName] = gazeTarget
+        Destroy({Id = gazeTarget})
     end
     if game.EnemyData[characterName].Scale then
         SetScale({Id = newUnit.ObjectId, Fraction = game.EnemyData[characterName].Scale})
@@ -188,7 +190,7 @@ function mod.SpawnFieldSisyphus()
     local sisyphusData =  DeepCopyTable(game.EnemyData["NPC_Sisyphus_Field_StoryExpansion"])
     if not sisyphusData.StoryExpansionMapData then return end
     local currentRoom = CurrentRun.CurrentRoom
-    if not currentRoom then return end
+    if not currentRoom or not currentRoom.Name then return end
     if not sisyphusData.StoryExpansionMapData[currentRoom.Name] then return end
     local sisyphus = mod.PlaceNPCAtId({}, "NPC_Sisyphus_Field_StoryExpansion",sisyphusData.StoryExpansionMapData[currentRoom.Name] )
     SetAvailableUseText(sisyphus)
@@ -239,6 +241,7 @@ end
 
 
 function mod.FlipAValue() -- DEBUG
+--GameState.RoomsEntered.Dream_Intro = 1
     --[[if GameState.ReachedTrueEnding then
         GameState.ReachedTrueEnding = nil
     else
@@ -274,6 +277,7 @@ function mod.PlaceNPCAtId(eventSource, characterName, args)
     if args.GazeTarget then
         local gazeTarget = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = spawnPointId, OffsetX = args.GazeTarget.X, OffsetY = args.GazeTarget.Y })
         AngleTowardTarget({ Id = newUnit.ObjectId, DestinationId = gazeTarget })
+        Destroy({Id = gazeTarget})
     end
     if not args.SkipTextSetUp then
     CheckAvailableTextLines(newUnit)

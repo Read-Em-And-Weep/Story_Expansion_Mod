@@ -132,6 +132,7 @@ wait(1.5)
     CheckAvailableTextLines( enemy )
 	SetAvailableUseText( enemy )
 	RemoveInteractBlock( enemy, "HeraclesPostCombat" )
+	Destroy({Id = moveToId})
 end
 
 NarrativeData.NPC_Minotaur_Field_01_StoryExpansion = {

@@ -1,0 +1,2 @@
+-- Randomises a "target god", their boon will have increased rarity chance/more levels, then will target a new random god
+-- Maybe it's only active if not Fates Whims

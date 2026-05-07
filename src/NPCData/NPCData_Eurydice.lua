@@ -44,7 +44,8 @@ mod.EurydiceNPCData = {
 		Groups = { "NPCs" },
 
 		GiftTextLineSets = {
-			StoryExpansion_EurydiceTestTaverna01 =
+			--StoryExpansion_EurydiceGift04 needs to be added, currently a prerequisite for the quality food upgrade incantation
+			--[[StoryExpansion_EurydiceTestTaverna01 =
 			{
 				-- To work properly, the conversation needs to be split into three parts (before transition, in Hub_Main and in Hub_PreRun). Done with postline functions
 				Name = "StoryExpansion_EurydiceTestTaverna01",
@@ -79,7 +80,7 @@ mod.EurydiceNPCData = {
 					PostLineFunctionName = _PLUGIN.guid..".EurydiceTavernaStartPresentation",
 					Text = "{#Emph}Oh{#Prev}, I, certainly, why, I don't see why not. I mean, it's not as though I've got something to do that isn't that." },
 
-				--[[{
+				{
 					SkipContextArt = true,
 					PreLineFunctionName = _PLUGIN.guid..".LoadEurydiceandHeroPackages",
 					PreLineWait = 0.35,
@@ -155,12 +156,54 @@ mod.EurydiceNPCData = {
 						UsePlayerSource = true,
 						{ Cue = "/VO/Melinoe_0769", Text = "Of course." },
 					},
-				},]]
+				},
 
-			},
+			},]]
 		},
 
 		InteractTextLineSets = {
+			StoryExpansion_EurydiceUnlocksEurydiceImprove =
+			{
+				Name = "StoryExpansion_EurydiceUnlocksEurydiceImprove",
+				PlayOnce = true,
+				UseableOffSource = true,
+
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "GameState", "TextLinesRecord", "StoryExpansion_EurydiceGift04" },
+					},
+					{
+						PathFalse = { "GameState", "WorldUpgradesAdded", "StoryExpansionWorldUpgradeUpgradeEurydice", }
+					},
+				},
+				{
+					"You know, it's a shame you didn't get to taste my food back when I lived in Asphodel. Those feasts were a work of art."
+				},
+				{ UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Empathetic_01",
+					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
+					Text = "I've always thought the meals you've been making me are very tasty! I can't imagine them being any better." },
+				{ 
+					Text = "Oh you're as big a flatterer as your brother, Melinoë. But in Asphodel, I had access to fresh and premium ingredients I grew myself, and unfortunately the quality of them here is just not the same." },
+									{ UsePlayerSource = true,
+					Portrait = "Portrait_Mel_Proud_01",
+					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
+					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
+																												PostLineThreadedFunctionName = "DisplayInfoToast",
+					PostLineFunctionArgs = { Duration = 2, Title = "WorldUpgradeAdded", Text = "StoryExpansionWorldUpgradeUpgradeEurydice" },
+
+					Text = "Premium ingredients... now that may be something I can fix..." },
+				EndVoiceLines =
+				{
+					{
+						PreLineWait = 0.4,
+						UsePlayerSource = true,
+						{ Cue = "/VO/MelinoeField_0153", Text = "Let's try it." },
+					},
+				},
+			},
         StoryExpansion_EurydiceChat01 = {
 				Name = "StoryExpansion_EurydiceChat01",
 				UseableOffSource = true,
@@ -454,7 +497,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat28",
 				UseableOffSource = true,
 				{
-					Text = "You rescued me from an eternity of not getting to sing, my friend. Thank you, truly."
+					Text = "I've whipped up something delicious this time, Your Majesty. I want your opinion on them once you get back, you hear?"
 				},
 				GameStateRequirements = {
 					{

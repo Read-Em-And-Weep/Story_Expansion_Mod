@@ -28,7 +28,7 @@ gods.CreateKeepsake({
       AcquireFunctionName = _PLUGIN.guid..".KeepsakeAddMaxHealth",
 		AcquireFunctionArgs = 
 		{
-			Amount = { BaseValue = 50 },
+			Amount = { BaseValue = 30 },
 			Source = "StoryExpansionMaxHealthKeepsake",
 			ReportValues = { ReportedCount = "Amount" }
 		},

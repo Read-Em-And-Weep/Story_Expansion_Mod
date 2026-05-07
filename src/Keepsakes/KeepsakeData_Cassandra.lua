@@ -1,0 +1,1 @@
+-- Take the Nyx keepsake of Fear for damage

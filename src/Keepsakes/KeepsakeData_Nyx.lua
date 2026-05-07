@@ -1,3 +1,5 @@
+-- Rework to be increase the damage of the first hit you do (or maybe the power of the first hit)
+
 if not gods.IsKeepsakeRegistered("StoryExpansionFearForDamageKeepsake") then
 gods.CreateKeepsake({
     characterName = "Nyx",
@@ -64,7 +66,7 @@ end
 gods.CreateBoon({
     internalBoonName = "StoryExpansionFearForDamageKeepsakePermanent",
     InheritFrom = {},
-    characterName = "NPC_Nyx_Hub_StoryExpansion",
+    characterName = "Nyx",
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\AwardMenu\\Keepsake_49",

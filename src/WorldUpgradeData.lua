@@ -76,17 +76,60 @@ Incantations.addIncantation({
 
     }
 })
+Incantations.addIncantation({
+    Id = "StoryExpansionWorldUpgradeUpgradeEurydice",
+    Name = {
+        en = "Demand for Quality Ingredients"
+    },
+    Description = {
+        en = "Transform some of the ingredients for Eurydice's meals into premium versions of themselves, so that she has a chance to create dishes of increased quality."
+    },
+    FlavorText = {
+        en = "Food is only as good as the ingredients that go into it, though love and skill certainly help."
+    },
+    WorldUpgradeData = {
+        AlwaysRevealImmediately = true,
+        Icon = "ReadEmAndWeep-Story_ExpansionGUI\\CauldronItems\\cauldron_eurydiceimprove",
+		Cost =
+		{
+			MixerOBoss = 3,
+            Mixer5Common = 4,
+			SuperGiftPoints = 5,
+		},
+        GameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansion_EurydiceUnlocksEurydiceImprove" },
+			},
+            {
+                PathTrue = { "GameState", "WorldUpgradesAdded", "StoryExpansionWorldUpgradeUnlockEurydice" },
+            }
+    },
+    IncantationVoiceLines =
+		{
+			{
+				PreLineWait = 0.3,
+				{ Cue = "/VO/Melinoe_1080", Text = "{#Emph}Hear me, O Shades, on my authority: \n {#Emph}Give my demand all due priority." },
+			},
+		},
+        RevealReactionVoiceLines = {
+            { GlobalVoiceLines = "CauldronReactionVoiceLines" },
+        },
+    OnActivateFinishedFunctionName = _PLUGIN.guid .. ".RandomiseFoodRarityFromCommon"
+    }
+})
 --TODO: Update Unlock Requirements for the two upgrades
 
 --[[Incantations to add
-    - Meg appearing mid run
-    - Allow Zag to visit the surface
-    - Lower time for growth from Persephone
-    - Meg find Fury Sisters incantation
+    - Meg appearing mid run (resets)
+    - Allow Zag to visit the surface (reset)
+    - Lower time for growth from Persephone (does not reset)
+    - Meg find Fury Sisters incantation (resets)
     - Summon Eurydice
     - Eurydice food quality
     - Enable Theseus and Minotaur (sending out a signal to allied shades)
-    - A new ambrosia alternative that involves you actually making something in alchemy (like a cake!) for new relationship levels
+    - A new ambrosia alternative that involves you actually making something in alchemy (like a cake! Or Ambrosial Apple Pie) for new relationship levels (???)
+    - How does the game handle new relationship levels after uninstall?
     
     - Freeing of Time
         - Fates' String (Plotline with Zagreus, Persephone and Hades? Moros should be involved if it's to do with fate)
@@ -104,6 +147,7 @@ Incantations.addIncantation({
         - Water of Resurrection (Questline themed around gaining samples of all the Underworld rivers?)
             - Link to a purifying rivers plotline of Eurydice, or maybe this can be a Hades/Persephone plotline
         - Sacred Dream - based on a Hypnos plotline ?
+        - Maybe link it to the Freeing of Time from his bonds, after a questline about getting Hades, Poesidon and Zeus to forgive him
 
         - After doing it will require you complete a run against Rivals Typhon
 ]]

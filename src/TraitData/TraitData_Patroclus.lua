@@ -50,7 +50,7 @@ ExtraFields = {
 		UsesAsEncounters = true,
 		AddOutgoingDamageModifiers =
 		{
-			ExMultiplier = 1.75,
+			ExMultiplier = 1.65,
 			ReportValues = { ReportedWeaponMultiplier = "ExMultiplier"}
 		},
 },
@@ -146,7 +146,7 @@ ExtraFields = {
 		{
 			{
 				UnitProperty = "Speed",
-				ChangeValue = 1.2,
+				ChangeValue = 1.25,
 				ChangeType = "Multiply",
 				ReportValues = { ReportedSpeed = "ChangeValue"}
 			},

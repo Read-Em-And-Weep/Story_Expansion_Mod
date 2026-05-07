@@ -7,6 +7,7 @@ modutil.mod.Path.Wrap("ChooseLoot", function(base, excludeLootNames, forceLootNa
         if trait.StoryExpansionEurydiceForceGod and RandomChance(0.3) and not Contains(excludeLootNames, trait.StoryExpansionEurydiceForceGod) then
             output = LootData[trait.StoryExpansionEurydiceForceGod]
             thread( InCombatText, CurrentRun.Hero.ObjectId, "ForceBoonKeepsakeActivated", 2.0, { PreDelay = 1.0, LuaKey = "TempTextData", LuaValue = trait } )
+            return output
         end
     end
     end

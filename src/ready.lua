@@ -1,4 +1,6 @@
+import 'FunctionUtility.lua'
 import 'Animations/NPC_Animations.sjson.lua'
+--import 'ShrineScreenData.lua'
 import 'Enemies.sjson.lua'
 import 'TraitLogic.lua'
 import 'RoomData.lua'
@@ -13,13 +15,16 @@ import 'Animations/GUI_Screens_VFX.sjson.lua'
 import 'Animations/GUI_Portraits_VFX.sjson.lua'
 import 'Animations/GUI.sjson.lua'
 import 'Animations/GUI_VFX.sjson.lua'
-import 'Animations/NPC_Horse_Animation.sjson.lua'
+--import 'Animations/NPC_Horse_Animation.sjson.lua'
 import 'Animations/1_General_VFX.sjson.lua'
 import 'Animations/NPC_General_VFX.sjson.lua'
 import 'StoryResetData.lua'
 import 'WeaponLogic.lua'
 import 'WorldUpgradeData.lua'
 import 'CodexData.lua'
+
+
+--TODO: Replace all Placeholders
 
 modutil.mod.Path.Wrap("SetupMap", function(base)
 	game.LoadPackages({ Name ="ReadEmAndWeep-Story_ExpansionGUI" })

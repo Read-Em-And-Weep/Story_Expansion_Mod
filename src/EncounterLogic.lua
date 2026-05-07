@@ -638,19 +638,19 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 	SetPlayerInvulnerable( "HeraclesSpawnPresentation" )
 		AddInputBlock({ Name = "HeraclesSpawnPresentation" })
 
-		local target = SpawnObstacle({Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = 20 })
-		local target2 = SpawnObstacle({Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = 40 })
+		--local target = SpawnObstacle({Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = 20 })
+		--local target2 = SpawnObstacle({Name = "InvisibleTarget", DestinationId = CurrentRun.Hero.ObjectId, OffsetX = 40 })
 		AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
+	AngleTowardTarget({ Id = CurrentRun.Hero.ObjectId, DestinationId = theseus.ObjectId })
 
+	
 	thread(PanCamera,{ Id = theseus.ObjectId, Duration = 5, EaseIn = 0, EaseOut = 0.1 })
 
 	AngleTowardTarget({ Id = theseus.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 	AngleTowardTarget({ Id = minotaur.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
 
 	wait( 0.3, RoomThreadName )
-
-	AngleTowardTarget({ Id = CurrentRun.Hero.ObjectId, DestinationId = theseus.ObjectId })
 
 	wait( 0.1, RoomThreadName )
 	wait( 0.5, RoomThreadName )

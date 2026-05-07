@@ -79,34 +79,24 @@ gods.CreateBoon({
 })
 
 gods.CreateBoon({
-    internalBoonName = "ThanatosInstantKillTrait",
+    internalBoonName = "ThanatosDoubleDamageFinishTrait",
     InheritFrom = { "InPersonOlympianTrait", "AetherBoon" },
     characterName = "StoryExpansionThanatos",
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\BoonIcons\\Hades_03",
     displayName = "Sudden Death",
-    description = "When you first strike certain foes, they may be killed instantly.",
+    description = "Foes with less than {#BoldFormat}{$TooltipData.ExtractData.HealthThreshold}%{#Prev}{!Icons.EnemyHealth} may take {$TraitData.AresStatusDoubleDamageBoon.DamagePercent:F} damage.",
     RarityLevels = {
-        Common = { Multiplier = 6 },
-        Rare = { Multiplier = 8 },
-        Epic = { Multiplier = 10 },
-        Heroic = { Multiplier = 12 },
+        Common = { Multiplier = 7 },
+        Rare = { Multiplier = 12 },
+        Epic = { Multiplier = 17 },
+        Heroic = { Multiplier = 22 },
 
     },
     ExtraFields = {
-        OnEnemyDamagedAction =
-        {
-            FunctionName = "CheckSpawnZeusDamage",
-            Args =
-            {
-                Chance = { BaseValue = 0.01 },
-                Damage = 9999,
-                Vfx = "ThanatosCritFx",
-                ExcludeProjectileName = "MedeaCurse",
-                ReportValues = { ReportedChance = "Chance" },
-            }
-        },
+        StoryExpansionTargetLowHealthThreshold = 0.2,
+        StoryExpansionTargetLowHealthChance = 0.01,
         ShowInHUD = true,
 
     },
@@ -117,11 +107,17 @@ gods.CreateBoon({
     ExtractValues =
     {
         {
-            Key = "ReportedChance",
+            Key = "StoryExpansionTargetLowHealthChance",
             ExtractAs = "Chance",
             Format = "LuckModifiedPercent",
             HideSigns = true,
         },
+        {
+				Key = "StoryExpansionTargetLowHealthThreshold",
+				ExtractAs = "HealthThreshold",
+				Format = "Percent",
+				SkipAutoExtract = true
+			},
     },
 })
 
@@ -136,10 +132,10 @@ gods.CreateBoon({
     description =
     "Your {$Keywords.Attack}, {$Keywords.Special}, and {$Keywords.Cast} are faster, but you take {#AltPenaltyFormat}{$TooltipData.ExtractData.TooltipDamageCurse:P} {#Prev}damage.",
     RarityLevels = {
-        Common = { Multiplier = 1.5 },
-        Rare = { Multiplier = 2.0 },
-        Epic = { Multiplier = 2.5 },
-        Heroic = { Multiplier = 3.0 },
+        Common = { Multiplier = 1 },
+        Rare = { Multiplier = 1.5 },
+        Epic = { Multiplier = 2 },
+        Heroic = { Multiplier = 2.5 },
 
     },
     ExtraFields = {
@@ -318,9 +314,9 @@ gods.CreateBoon({
     "In every {$Keywords.RoomAlt}, your {$Keywords.Omega} may deal {$Keywords.Crit} damage. Lose this whenever you are hit.",
     RarityLevels = {
         Common = { Multiplier = 0.7 },
-        Rare = { Multiplier = 1.5 },
-        Epic = { Multiplier = 2.2 },
-        Heroic = { Multiplier = 3.0 },
+        Rare = { Multiplier = 1.0 },
+        Epic = { Multiplier = 1.3 },
+        Heroic = { Multiplier = 1.6 },
 
     },
     ExtraFields = {
@@ -374,9 +370,9 @@ gods.CreateBoon({
     description =
     "While you {$Keywords.Spell} is not completely charged, you have a chance to {$Keywords.Dodge}.",
     RarityLevels = {
-        Common = { Multiplier = 4 },
-        Rare = { Multiplier = 7 },
-        Epic = { Multiplier = 10 },
+        Common = { Multiplier = 7 },
+        Rare = { Multiplier = 9 },
+        Epic = { Multiplier = 11 },
         Heroic = { Multiplier= 13 },
 
     },
@@ -417,7 +413,7 @@ gods.CreateBoon({
     }
 })
 
-gods.CreateBoon({
+--[[gods.CreateBoon({
     internalBoonName = "ThanatosPrimeDamageTrait",
     InheritFrom = { "InPersonOlympianTrait", "AetherBoon" },
     characterName = "StoryExpansionThanatos",
@@ -484,7 +480,7 @@ gods.CreateBoon({
                 DecimalPlaces = 5,
 			}
     }
-})
+})]]
 
 gods.CreateBoon({
     internalBoonName = "ThanatosDamageOnKillTrait",

@@ -18,11 +18,12 @@ local screen = DeepCopyTable( ScreenData.StoryExpansionFoodScreen )
 	screen.ShopItemStartY = screen.ShopItemStartY + ScreenCenterNativeOffsetY
 
 	---UpdateStoreOptionsDictionary() may need to do a version of this idk yet
-
+	local flavorTexts = {"StoryExpansionFoodOffered_FlavorText01", "StoryExpansionFoodOffered_FlavorText02", "StoryExpansionFoodOffered_FlavorText03", "StoryExpansionFoodOffered_FlavorText04", "StoryExpansionFoodOffered_FlavorText05"}
+	local flavorText = RemoveRandomValue(flavorTexts)
 
 	local components = screen.Components
 	ModifyTextBox({ Id = components.TitleText.Id, Text = "UpgradeChoiceMenu_Title_StoryExpansionEurydiceFood" })
-	ModifyTextBox({ Id = components.FlavorText.Id, Text = "StoryExpansionFoodOffered_FlavorText01"})
+	ModifyTextBox({ Id = components.FlavorText.Id, Text = flavorText})
 	wait( 0.2 )
 	mod.CreateFoodButtons( screen )
 
@@ -181,7 +182,7 @@ function mod.CreateFoodButtons(screen)
 			button.Index = itemIndex
 			button.TitleId = components[purchaseButtonTitleKey].Id
 			button.OnPressedFunctionName = _PLUGIN.guid..".HandleFoodSelection"
-            --TODO ONPRESSEDFUNCTIONNAME
+            --TODO: ONPRESSEDFUNCTIONNAME
 			button.OnMouseOverFunctionName = "MouseOverWellShopButton"
 			button.OnMouseOffFunctionName = "MouseOffWellShopButton"
 			if not firstUseable then
@@ -269,6 +270,7 @@ function mod.ChooseFoodOptions()
 		if option.GameStateRequirements == nil or IsGameStateEligible(option, option.GameStateRequirements) then
 			if option.Rarity == "Common" or option.Rarity == "Rare" or option.Rarity == "Epic" or option.Rarity == "Heroic" then
                 option.Rarity = "Common"
+				if GameState.WorldUpgradesAdded.StoryExpansionWorldUpgradeUpgradeEurydice then
 				if RandomChance(0.25) then
                     option.Rarity = "Rare"
                 end
@@ -278,6 +280,7 @@ function mod.ChooseFoodOptions()
                 if RandomChance(0.05) then 
                     option.Rarity = "Heroic"
                 end
+			end
             end
             table.insert(eligibleFoods, option)
 		end
@@ -301,6 +304,24 @@ function mod.EquipAllFoods() --Debug
 		AddTraitToHero({ TraitData = traitData, SkipQuestStatusCheck = true, SkipAddToHUD = true})
 		if traitData.AcquireFunctionName then
 		thread(CallFunctionName, traitData.AcquireFunctionName, traitData.AcquireFunctionArgs, traitData)
+		end
+	end
+end
+
+function mod.RandomiseFoodRarityFromCommon()
+	for k, option in ipairs(CurrentRun.StoryExpansionFoodOptions) do
+		if option and option.Rarity and option.Rarity == "Common" then
+			if GameState.WorldUpgradesAdded.StoryExpansionWorldUpgradeUpgradeEurydice then
+				if RandomChance(0.25) then
+                    option.Rarity = "Rare"
+                end
+                if RandomChance(0.1) then
+                    option.Rarity = "Epic"
+                end
+                if RandomChance(0.05) then 
+                    option.Rarity = "Heroic"
+                end
+			end
 		end
 	end
 end

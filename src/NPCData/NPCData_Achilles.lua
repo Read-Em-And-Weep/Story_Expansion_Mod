@@ -70,7 +70,7 @@ mod.AchillesNPCData = {
 				Name = "StoryExpansion_AchillesChat04",
 				UseableOffSource = true,
 				{
-					Text = "What's it going to be this time, Your Royal Majesty?"
+					Text = "If you need to take a break, lass, I'll be right here to guard you."
 				},
 			},
 			StoryExpansion_AchillesChat05 = {
@@ -219,6 +219,7 @@ mod.AchillesNPCData = {
 						PathTrue = {"GameState", "TextLinesRecord", "Placeholder"}
 					}
 				},
+				-- Can maybe do a StartNewRun args.RunOverrides to ensure that Achilles doesn't spawn with Pat in next run, but probably too much work tbh
 			},
 			StoryExpansion_AchillesChat19 = {
 				Name = "StoryExpansion_AchillesChat19",

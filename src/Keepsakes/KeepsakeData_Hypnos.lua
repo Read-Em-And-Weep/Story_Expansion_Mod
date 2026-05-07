@@ -1,3 +1,6 @@
+-- Give this keepsake to someone else (Orion?) In it's place, add in chance for boons to have a poppy on them
+-- Poppies are invested in dreams (generated like Selene Hexes) which can provide small upgrades like instant money, rarity chance, etc.
+
 gods.CreateKeepsake({
     characterName = "Hypnos",
     internalKeepsakeName = "StoryExpansionCritOmegaKeepsake",

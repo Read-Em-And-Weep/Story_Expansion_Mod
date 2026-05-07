@@ -452,7 +452,7 @@ function mod.PlaySurfaceFlashback03(source, args)
 				{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 
-					Text = "Prometheus, I made you my advisor for your wisdom and foresight about state matters, not for you to meddle in my matters." },
+					Text = "Prometheus, I made you my advisor for your foresight about state matters, not for you to meddle in my affairs." },
 
 							{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
@@ -486,7 +486,7 @@ function mod.PlaySurfaceFlashback03(source, args)
 
 												{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansionUnknownFemaleSpeaker",
-					Text = "Does the reigning champion of this competition come here often? You'll have to ask the organisers whether or not I do. You look quite nervous, Titan King; afraid you'll lose?"},
+					Text = "Does the reigning champion come here often? You'll have to ask the organisers whether or not I do. You look quite nervous, Titan King; afraid you'll lose?"},
 { 
 					Portrait = "nil",Speaker = "StoryExpansionUnknownAnnouncer",
 					Text = "LET THE FIGHT BEGIN!",
@@ -608,22 +608,22 @@ function mod.PlaySurfaceFlashback04(source, args)
 				{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 
-					Text = "Yes, Prometheus, as I have said plenty of times since then, you taking me to meet Rhea was an excellent idea. She has certainly, {#Emph} ahem {#Prev} brightened up my life since I met her." },
+					Text = "Yes, Prometheus, as I have said plenty of times since then, you taking me to meet Rhea was an excellent idea. She has certainly, {#Emph} ahem {#Prev} brightened my life since I met her." },
 
 							{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
 
-					Text = "And not only your life, but you become a much better king since you met her. Everyone has been saying how much kinder you are now!" },
+					Text = "And not only your life, but you become a much better king since you met her. Everyone has been saying how much more considerate you are now!" },
 { 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Are you suggesting I was cruel before? I'm also not an idiot, Prometheus. What are you trying to butter me up for now?" },
+					Text = "Are you suggesting I was cruel before? I'm not an idiot, Prometheus. What are you trying to butter me up for now?" },
 							{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
 
 					Text = "Well it's to do with my newest creation. I'm finally ready to show it to you. You promise you'll be kind?"},
 					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I thought you said I was the kind king after meeting Rhea. Besides, if it was kindness you were after, you would have shown your brother. I'm known for honest feedback." },
+					Text = "I thought you said I was the benevolent king after meeting Rhea. Besides, if it was kindness you were after, you would have shown your brother. I'm known for honest feedback." },
 												{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
 
@@ -637,13 +637,13 @@ function mod.PlaySurfaceFlashback04(source, args)
 					Text = "That's just it! They don't have a single purpose. They exist to live, to change, to grow beyond our expectations of them. Isn't that limitless potential beautiful?"},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "If you say so... but what do you want me to do with them?" },
+					Text = "...If you say so... but what do you want me to do with them?" },
 															{ 
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
 					Text = "Give them a place in your kingdom. Let them live upon the land and thrive. I know that with a little help, these mortals will be able to do great things." },
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "If this is the cost of your advice and foresight, I shall gladly bare it. Know that under my kingdom, these mortals shall know no struggle or woe." },
+					Text = "{#Emph}Ha! {#Prev} If this is the cost of your advice and foresight, I shall gladly bare it. Know that under my kingdom, these mortals shall know no struggle or woe." },
 															{ 
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
 					Text = "Thank you, my king." },
@@ -744,21 +744,21 @@ function mod.PlaySurfaceFlashback05(source, args)
 							{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "{#Emph} Ha!{#Prev} I'm better at fighting than you, and you know it! This is, however, a fight of an entirely different sort." },
+					Text = "{#Emph}Ha!{#Prev} I'm better at fighting than you, and you know it! This is, however, a fight of an entirely different sort." },
 { 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "Rhea, my wife, please speak plainly. You are worrying me." },
 							{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "Well, recently I felt a new power in me. A new life. One a little like you, and a little like me."},
+					Text = "Well... recently I felt a new power in me. A new life. One a little like you, and a little like me."},
 					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "You mean to say... you are {#Emph} pregnant{#Prev}?" },
 												{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "Yes! With a little boy, none-the-less! {#Emph} Oh{#Prev}, Sandstorm, aren't you excited to pamper the prince?"},
+					Text = "Yes! With a little boy, none-the-less! {#Emph} Oh{#Prev}, Sandstorm, aren't you excited to pamper the little prince? I'm thinking the name Hades will be beautiful."},
 										{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					PreLineWait = 0.8,
@@ -769,7 +769,7 @@ function mod.PlaySurfaceFlashback05(source, args)
 					Text = "...Chronos, you cannot still can't be taking about what your father said seriously."},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I fear you see my in a much kinder light than I am. He was right about the cruel heart I have inside." },
+					Text = "I fear you see mw in a much kinder light than I am. He was right about the cruel heart I have inside." },
 															{ 
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 					Text = "We all have aspects from our parents, that we love or hate. It is what we do with these parts that matter. Stone heart or not, Sandstorm, you have been loving to me, to your subjects, and I'm sure you will be to our children. So long as you focus on the parts that matter." },
@@ -917,13 +917,13 @@ function mod.PlaySurfaceFlashback06(source, args)
 					Text = "Father? Is Mother in here? She promised she would play with us earlier." },
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I think it would be best if you leave now, boy. She is not up to playing games. Besides, do you not have duties to fulfill." },
+					Text = "I think it would be best if you leave now, boy. She is not up to playing games. Besides, do you not have your duties to fulfill?" },
 															{ 
 					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
 					Text = "I... Yes Father. I just wanted to have some fun." },
 																				{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "You are a prince of the Titan regime. Therefore you have certain responsibilities and I expect you to meet them. And please, Zeus, try to avoid bothering you mother again." },
+					Text = "You are a prince of the Titan regime. You have certain responsibilities and I expect you to meet them. And please, Zeus, try to avoid bothering you mother again." },
 																				{ 
 					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
 					Text = "...Yes, Father. I understand." },
@@ -1018,12 +1018,12 @@ function mod.PlaySurfaceFlashback07(source, args)
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
                     PreLineWait = 2.8,
 
-					Text = "Lady Nyx, thank you for coming. I would not have called you here if I was not desperate." },
+					Text = "Lady Nyx, thank you for coming. I would not have called for you were I not so hopeless." },
 
 							{
 					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
 
-					Text = "Yes, I am sure you have become desperate. Already, we forces of nature have stopped receiving the care that you promised us after deposing Ouranos. I hear Prometheus has also gotten testy about your treatment of his mortals." },
+					Text = "Yes, I am sure you are desperate. Already, we forces of nature have stopped receiving the care that you promised us after deposing Ouranos. I hear Prometheus has also gotten testy about your treatment of his mortals." },
 { 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "With due respect, O Night, I am trying my best. It has been a difficult time. I would appreciate your help with my wife, if you are able." },
@@ -1036,7 +1036,7 @@ function mod.PlaySurfaceFlashback07(source, args)
 					Text = "Oh Rhea, it hurts to see you like this. You were always so full of life. Ouranos's curse is crueller than anything I could have thought of." },
 										{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "{#Emph}Ouranos's curse... {#Prev} you mean, it's real? And Rhea's condition... it's my fault for bringing the curse down upon her? And the other parts of the curse, they are true too?" },
+					Text = "{#Emph}Ouranos's curse... {#Prev} you mean, it's real? And Rhea's condition... it's my fault for bringing my Father's curse down upon her? And the other parts of his curse, they are true too?" },
 																	{
 					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
 
@@ -1047,16 +1047,16 @@ function mod.PlaySurfaceFlashback07(source, args)
 					Text = "Choosing to love you was never a curse, Sandstorm. I would do it over again, even with the cost."},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Oh, Rhea, I would bare the cost for you if I could. Nyx, is there anything you or your children can do for her?" },
+					Text = "Oh, Rhea, I would bare any payment for you if I could. Nyx, is there anything you or your children can do for her?" },
 															{ 
 					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-					Text = "The magick of this curse is dark, hateful, and incredibly tightly woven. It is far beyond my power to break it and heal her." },
+					Text = "The magick of this curse is dark, hateful, and tightly woven. It is far beyond my power to treat." },
 																				{ 
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 					Text = "So this is the end of our story. Remember what I asked of you, Chronos. Move on from me once I'm gone." },
 																				{ 
 					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-					Text = "While there may be nothing I can do, there is one more powerful than I. I can speak on your behalf to my ancestor, but you alone must bear the cost of their boon." },
+					Text = "While there may be nothing I can do, there is one more powerful than I. I can speak on your behalf to my ancestor, but their boons will come with a cost." },
 					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "Yes. {#Emph} Yes{#Prev}! This is exactly what we were looking for! Nyx, thank you truly. When Rhea returns to herself, you will be rewarded." },
@@ -1283,19 +1283,19 @@ function mod.PlaySurfaceFlashback09(source, args)
 					Text = "Almighty Chaos, I seek your aid in unravelling Ouranos's curse on my wife, Rhea. In his dying hatred, he has taken her strength with cruel and dark magick beyond the ability of Lady Nyx to cure."},
 										{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "But not beyond my abilities to heal. I assume my descendant has already informed you that my blessings come with their own prices." },
+					Text = "But not beyond my abilities. I assume my descendant has already informed you that my blessings come with their own prices." },
 										{
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "Yes, and I am willing to pay {#Emph} anything {#Prev} for Rhea to be cured."},
 					{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "You are not the one recieving my blessing. You will not be the one to bare the associated curse." },
+					Text = "You are not the one recieving my boon. Therefore, you will not be the one to bare the associated curse." },
 										{
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "Rhea..."},
 					{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "Here is my offer. I will guarantee her survival. The curse will not sap aside any of her strength, and I will restore it. In exchange, she will be consumed by her rage and transformed into a monstrosity." },
+					Text = "Here is my offer. I will guarantee her survival. The curse will no longer sap any of her strength, and I will even restore what has already been stolen. In exchange, she will be consumed by her her darkest impulses and transformed into a monstrosity." },
 {
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					Text = "..."},
@@ -1429,7 +1429,7 @@ function mod.PlaySurfaceFlashback10(source, args)
 					Text = "Prometheus, please use your foresight and answer me honestly. Was all of this — the reviving, the fighting, the freeing of Typhon — worth it?" },
 {
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "...Yes. Though you may not see it yet, my king, I promise you that. It is worth all of the struggle in the world."},
+					Text = "...Yes. Though you may not see it yet, my king, I promise you that. I would not have advised it otherwise. The reward is worth all of the struggle in the world."},
 					{
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
 					PreLineWait = 0.8,

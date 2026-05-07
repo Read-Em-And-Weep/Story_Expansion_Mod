@@ -74,7 +74,27 @@ local newScreenTextData = {
     {
       Id = "StoryExpansionFoodOffered_FlavorText01",
       DisplayName = "good food brings people together.",
-    }
+    },
+    {
+      Id = "StoryExpansionFoodOffered_FlavorText02",
+      DisplayName = "perhaps you could one day cook as well, if only you practiced.",
+    },
+    {
+      Id = "StoryExpansionFoodOffered_FlavorText03",
+      DisplayName = "maybe it's not the dishes themselves, but the love that goes into them.",
+    },
+    {
+      Id = "StoryExpansionFoodOffered_FlavorText04",
+      DisplayName = "variety is the spice of life.",
+    },
+    {
+      Id = "StoryExpansionFoodOffered_FlavorText05",
+      DisplayName = "even though you feel full, you have room for just one bite more.",
+    },
+    {
+      Id = "StoryExpansionShrineScreen_NextPage",
+      DisplayName = "{CF} NEXT PAGE",
+    },
 }
 
 local screenTextFile = rom.path.combine(rom.paths.Content(), 'Game/Text/en/ScreenText.en.sjson')

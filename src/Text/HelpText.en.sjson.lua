@@ -162,6 +162,10 @@ local newHelpTextData = {
       DisplayName = "{#CombatTextHighlightFormat}Repaired Spearpoint Recharged{#Prev}!",
     },
     {
+      Id = "StoryExpansionRechargedBonusPowerKeepsake",
+      DisplayName = "{#CombatTextHighlightFormat}Shattered Feather Recharged{#Prev}!",
+    },
+    {
       Id = "StoryExpansionHint_ThanatosSpawnKill",
       DisplayName = "{#CombatTextHighlightFormat}Sudden Death{#Prev}!",
     },
@@ -186,9 +190,17 @@ local newHelpTextData = {
       Id = "StoryExpansionFreeNPC",
       DisplayName = "{I} Free"
     },
-    {
-      Id = "StoryExpansionWorldUpgradeSaveChronos",
-      DisplayName = "Freeing of Time",
+        {
+      Id = "StoryExpansionWorldUpgradeCloseRifts",
+      DisplayName = "Sealing of Time",
+        },
+        {
+      Id = "StoryExpansionWorldUpgradeSaveRhea",
+      DisplayName = "Freeing of Monstrosity",
+        },
+        {
+      Id = "StoryExpansionSlaveBond",
+      DisplayName = "SLAVE BOND SWORE",
         },
         {
       Id = "StoryExpansionElementalSacrificeLoss_CombatTextFire",
