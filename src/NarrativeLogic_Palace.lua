@@ -226,7 +226,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "It's my pleasure to have been of service to our family, Queen Hera, and to see the wonders of these halls once more. Perhaps we may yet permanently dissuade Typhon soon." },
+					Text = "It's my pleasure to have been of service to our family, King Zeus, and to see the wonders of these halls once more. Perhaps we may yet permanently dissuade Typhon soon." },
 
 				{ Cue = "/VO/Zeus_0279",
 					Portrait = "Portrait_Zeus_InPerson_01",
@@ -1314,7 +1314,7 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Apollo_InPerson_01",
 					Text = "Oh, anything to take our minds off of what's happening. At least you bought us a bit of reprieve so I could play again at all. Typhon is going to be back, though, isn't he...?", },
 
-				{ Cue = "/VO/MelinoeField_3832", UsePlayerSource = true,
+				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkBrooding01ReturnToIdle", PostLineAnimTarget = "Hero",
 					Text = "I'd count on that. But I am going to be back as well. For now, please bolster your defenses, and make ready for the monster's next attack. I have something to ask of you, however. When I pierced your aether gate, I saw a vision of a past time. Is that normal?" },

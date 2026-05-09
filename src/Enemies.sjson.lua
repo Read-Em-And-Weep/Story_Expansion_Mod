@@ -57,7 +57,7 @@ local newSJSONEnemyData = {
         StopGraphic = "Enemy_Zagreus_Spear_RunStop",
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Zagreus_Idle",
             GrannyModel = "ZagreusPresent_Mesh",
@@ -92,7 +92,7 @@ local newSJSONEnemyData = {
         StopGraphic = "Enemy_Zagreus_Spear_RunStop",
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Zagreus_Idle",
             GrannyModel = "ZagreusPresent_Mesh",
@@ -123,7 +123,7 @@ local newSJSONEnemyData = {
         NoAllegiance = true,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "StoryExpansionThanatosIdleInhouse",
             Tallness = 201.0,
@@ -148,7 +148,7 @@ local newSJSONEnemyData = {
         NoAllegiance = true,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "StoryExpansionThanatosIdleInhouse",
             Tallness = 201.0,
@@ -173,7 +173,7 @@ local newSJSONEnemyData = {
         NoAllegiance = true,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "StoryExpansionThanatosIdleInhouse",
             Tallness = 201.0,
@@ -200,10 +200,10 @@ local newSJSONEnemyData = {
         StartGraphic = null,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
-            Graphic = "Persephone_Idle",
             GrannyModel = "PersephoneEnding_Mesh",
+			Graphic = "Persephone_Idle",
             Interact =
             {
                 Distance = 150,
@@ -231,7 +231,7 @@ local newSJSONEnemyData = {
         StartGraphic = null,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Persephone_Idle",
             GrannyModel = "PersephoneEnding_Mesh",
@@ -262,7 +262,7 @@ local newSJSONEnemyData = {
         StartGraphic = null,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Nyx_Idle",
             GrannyModel = "Nyx_Mesh",
@@ -293,7 +293,7 @@ local newSJSONEnemyData = {
         StartGraphic = null,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Nyx_Idle",
             GrannyModel = "Nyx_Mesh",
@@ -324,7 +324,7 @@ local newSJSONEnemyData = {
         StartGraphic = null,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Achilles_Idle",
             GrannyModel = "Achilles_Mesh",
@@ -355,7 +355,7 @@ local newSJSONEnemyData = {
         StartGraphic = null,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "Achilles_Idle",
             GrannyModel = "Achilles_Mesh",
@@ -563,7 +563,7 @@ local newSJSONEnemyData = {
         NoAllegiance = true,
         Thing =
         {
-            AttachedAnim = "NPCShadow",
+            AttachedAnim = "MedusaShadow",
             EditorOutlineDrawBounds = false,
             Graphic = "StoryExpansionPatroclusIdleStanding",
             Tallness = 201.0,
@@ -767,7 +767,7 @@ local newSJSONEnemyData = {
 		},
 		Thing = 
 		{
-			AttachedAnim = "NPCShadow",
+			AttachedAnim = "MedusaShadow",
 			HighPrioritySfx = false,
 			EditorOutlineDrawBounds = false,
 			Graphic = "StoryExpansionMinotaur_Idle",
@@ -801,7 +801,7 @@ local newSJSONEnemyData = {
 		},
 		Thing = 
 		{
-			AttachedAnim = "NPCShadow",
+			AttachedAnim = "MedusaShadow",
 			HighPrioritySfx = false,
 			EditorOutlineDrawBounds = false,
 			Graphic = "StoryExpansionTheseus_Idle",
@@ -817,7 +817,32 @@ local newSJSONEnemyData = {
 				{ X = -72, Y = -12 },
             },
 		}
-	}
+	},
+    {
+        Name = "NPC_Rhea_01_StoryExpansion",
+        InheritFrom = "BaseReadEmAndWeepNPC",
+        CosmeticRotationSpeed = 300.0,
+        DisplayInEditor = true,
+        NoAllegiance = true,
+        Thing =
+        {
+            AttachedAnim = "MedusaShadow",
+            EditorOutlineDrawBounds = false,
+            Graphic = "StoryExpansionBaseNPC_Animation",
+            Tallness = 201.0,
+            Interact =
+            {
+                Distance = 200.0
+            },
+            Points = {
+                { X = 9,   Y = 20 },
+                { X = 41,  Y = 3 },
+                { X = 10,  Y = -12 },
+                { X = -22, Y = 4 },
+            },
+            SubtitleColor = { Red = 0.77, Green = 0.64, Blue = 1.0 }
+        }
+    },
 }
 
 

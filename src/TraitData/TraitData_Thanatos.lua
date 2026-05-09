@@ -102,7 +102,7 @@ gods.CreateBoon({
     },
     StatLines =
     {
-        "KillChanceStatDisplay1",
+        "DoubleDamageChanceStatDisplay1",
     },
     ExtractValues =
     {

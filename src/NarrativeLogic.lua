@@ -263,7 +263,7 @@ function mod.PlaySurfaceFlashback02(source, args)
 					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
                     												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 1.5, UseChronosSound = false },
 
-					Text = "Then I will grant you once last boon, a curse on you and your name. You shall suffer, just as you have made me suffer. You stole your mother's love from me, so too shall my curse take your love from you. Your children will end you, just as you ended me."},
+					Text = "Then I will grant you once last boon: a curse on you and your name. You shall suffer, just as you have made me suffer. You stole your mother's love from me, so too shall my curse take your love from you. Your children will end you, just as you ended me."},
 										{ 
 						PreLineWait = 0.85,
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",

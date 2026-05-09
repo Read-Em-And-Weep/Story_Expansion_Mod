@@ -186,7 +186,7 @@ mod.EurydiceNPCData = {
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
 					Text = "I've always thought the meals you've been making me are very tasty! I can't imagine them being any better." },
 				{ 
-					Text = "Oh you're as big a flatterer as your brother, Melinoë. But in Asphodel, I had access to fresh and premium ingredients I grew myself, and unfortunately the quality of them here is just not the same." },
+					Text = "Oh you have as silver a tongue as your brother, Melinoë. But in Asphodel, I had access to fresh and premium ingredients I grew myself, and unfortunately the quality of them here is just not the same." },
 									{ UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",

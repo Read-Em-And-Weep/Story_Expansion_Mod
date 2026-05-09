@@ -39,6 +39,9 @@ gods.CreateKeepsake({
 				{
 					PathFalse = { "CurrentRun", "CurrentRoom", "BlockAthenaEncounterKeepsake" }
 				},
+				{
+				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansionFreeingThanatosDialogue" },
+			},
 				NamedRequirementsFalse = { "HecateMissing" },
 			},
 			EncounterThreadedFunctions = 

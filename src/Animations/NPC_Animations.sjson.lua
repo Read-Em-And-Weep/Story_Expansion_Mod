@@ -236,6 +236,20 @@ local newAnimations = {
       },
     },
     {
+		Name = "StoryExpansionBaseNPC_Animation",
+		FilePath = "ReadEmAndWeep-Story_ExpansionGUI\\NPC_Temp_Base_01",
+		ScaleFromOwner = "Maintain",
+		AngleFromOwner = "Ignore",
+		--*ColorFromOwner = "Ignore"
+		FlipHorizontal = true,
+		EndFrame = 1,
+		NumFrames = 1,
+		StartFrame = 1,
+		Material = "Unlit",
+		OffsetY = -100.0,
+		Scale = 0.75,
+	},
+    {
       Name = "StoryExpansionOrpheusIdle",
       ChainTo = "StoryExpansionOrpheusPlaying_Start",
       FilePath = "Animations\\NPCThanatos\\IdleInhouse\\ThanatosIdleInhouse",

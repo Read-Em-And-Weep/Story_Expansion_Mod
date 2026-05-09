@@ -126,7 +126,7 @@ mod.DusaNPCData = {
 					Portrait = "Portrait_Mel_Intense_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "Yes, it seems that already Chronos is waking. Come Head Custodian Dusa, let us escape to safety.",
+					Text = "It seems that already Chronos is waking. Come Head Custodian Dusa, let us escape to safety.",
 									PostLineThreadedFunctionName = "KillHero",
 					PostLineFunctionArgs = { WaitTime = 5, MusicEndTime = 60 },},	
 					
@@ -137,9 +137,7 @@ EndVoiceLines = {
 { Cue = "/VO/Melinoe_1629", Text = "See you in the Crossroads." },
 					},
 				
-}
-
-
+},
 				}
 	}
 },

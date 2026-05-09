@@ -362,6 +362,7 @@ end)]]
 modutil.mod.Path.Wrap("LoadMap",function(base,args)
 local currentTraits = ShallowCopyTable( CurrentRun.Hero.Traits )
 	currentTraits = CollapseTableOrdered( currentTraits )
+	if currentTraits == nil then return base(args) end 
 	for i, trait in ipairs( currentTraits ) do
 		if trait.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, trait.Name) and not CanFreeSwapKeepsakes() then
 			TraitUIRemove(trait)

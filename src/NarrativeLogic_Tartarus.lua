@@ -69,7 +69,7 @@ function mod.SetUp_I_PostBoss01(eventSource, args)
 end
 
 modutil.mod.Path.Wrap("DreamBedPresentation", function(base,usee, args, user)
-    if IsGameStateEligible("IsARepeatRun", {{PathTrue = {"GameState", "TextLinesRecord", "StoryExpansionRescuingNyx"}}}) and not IsGameStateEligible("IsARepeatRun", {{PathTrue = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting09"}}}) then
+    if IsGameStateEligible("IsARepeatRun", {{PathTrue = {"GameState", "TextLinesRecord", "StoryExpansionFreeingNyxDialogue"}}}) and not IsGameStateEligible("IsARepeatRun", {{PathTrue = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting09"}}}) then
         return mod.NoStoryProgressionInUnderworld()
     elseif IsGameStateEligible("IsARepeatRun", {{PathTrue = {"GameState", "TextLinesRecord", "StoryExpansionObtainingHadesSpearPoint"}}}) and not IsGameStateEligible("IsARepeatRun", {{PathTrue = {"GameState", "WorldUpgrades", "WorldUpgradeTimeStop"}}})then
         return mod.NoStoryProgressionInUnderworld()

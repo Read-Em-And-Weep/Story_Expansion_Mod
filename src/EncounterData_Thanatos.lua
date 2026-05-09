@@ -52,6 +52,9 @@ OverwriteTableKeys(EncounterData,
             {
 				PathFalse = { "CurrentRun", "ExpiredKeepsakes", gods.GetInternalKeepsakeName("StoryExpansionSummonThanatosKeepsake") },
 			},
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansionFreeingThanatosDialogue" },
+			},
 			NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			NamedRequirementsFalse = { "StandardPackageBountyActive","HecateMissing" },
 		},
@@ -125,10 +128,10 @@ for encounterName, encounterData in pairs(mod.ThanatosEncounters) do
     game.EncounterData[encounterName] = encounterData
 end
 
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatN", mod.NCombatRooms, 2)
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatO", mod.OCombatRooms, 2)
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatP", mod.PCombatRooms, 2)
-mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatQ", mod.QCombatRooms, 2)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatN", mod.NCombatRooms, 1)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatO", mod.OCombatRooms, 1)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatP", mod.PCombatRooms, 1)
+mod.AddEncounterToEncounterSet("ThanatosStoryExpansionCombatQ", mod.QCombatRooms, 1)
 
 table.insert(NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, "ThanatosStoryExpansionCombatN")
 table.insert(NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, "ThanatosStoryExpansionCombatO")

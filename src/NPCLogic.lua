@@ -12,6 +12,7 @@ import 'NPCData/NPCData_Asterius.lua'
 import 'NPCData/NPCData_Theseus.lua'
 import 'NPCData/NPCData_Hypnos.lua'
 import 'NPCData/NPCData_Sisyphus.lua'
+import 'NPCData/NPCData_Rhea.lua'
 
 --[[modutil.mod.Path.Wrap("DeathAreaRoomTransition", function(base, source, args)
   base(source, args)
@@ -21,6 +22,7 @@ end)]]
 -- weird thing about not loading the first time (need to do a run to get them to appear maybe?)
 
 table.insert(HubRoomData.Hub_Main.StartUnthreadedEvents, {FunctionName = _PLUGIN.guid .. ".HandleHubSpawns", Args = {}})
+-- Above isn't really working when you return from a run, works from transition
 table.insert(HubRoomData.Hub_PreRun.StartUnthreadedEvents, {FunctionName = _PLUGIN.guid .. ".HandleEurydiceSpawn", Args = {}})
 
 
@@ -34,7 +36,6 @@ function mod.HandleHubSpawns()
         "NPC_Persephone_Hub_StoryExpansion",
         "NPC_Thanatos_Hub_StoryExpansion",
         "NPC_Zagreus_Hub_StoryExpansion",
-        "NPC_Hypnos_Hub_StoryExpansion",
         "NPC_Eurydice_Hub_StoryExpansion"
     }
     local compulsoryNPCs = {}
@@ -73,7 +74,7 @@ function mod.HandleHubSpawns()
         RemoveRandomValue(optionalNPCs)
         end
     end
-    if CurrentRun.StoryExpansionCompulsoryNPCsHub == nil and CurrentRun.StoryExpansionOptionalNPCsHub == nil then
+    if (CurrentRun.StoryExpansionCompulsoryNPCsHub == nil and CurrentRun.StoryExpansionOptionalNPCsHub == nil) or #CurrentRun.StoryExpansionCompulsoryNPCsHub < #compulsoryNPCs then
         CurrentRun.StoryExpansionCompulsoryNPCsHub = compulsoryNPCs
         CurrentRun.StoryExpansionOptionalNPCsHub = optionalNPCs
     end
@@ -121,9 +122,9 @@ function mod.SpawnCharacter(characterName)
         offset = { X = game.EnemyData[characterName].Offset.X, Y = game.EnemyData[characterName].Offset.Y }
     end
 
+
     newUnit.ObjectId = SpawnUnit({ Name = characterName, Group = "Standing", DestinationId = spawnPointId, OffsetX =
     offset.X, OffsetY = offset.Y })
-
 
     if not game.EnemyData[characterName].SetUpAI then
         game.SetupUnit(newUnit, CurrentRun, { IgnoreAI = true, PreLoadBinks = true, IgnoreAssert = true, })
@@ -176,6 +177,9 @@ function mod.SpawnCharacterAtMe(characterName)
         MapState.StoryExpansionCharacterGazeTarget[characterName] = gazeTarget
         Destroy({Id = gazeTarget})
     end
+    if game.EnemyData[characterName].TrackHero then
+        Track({ Ids = {newUnit.ObjectId}, DestinationIds = {CurrentRun.Hero.ObjectId} })
+    end
     if game.EnemyData[characterName].Scale then
         SetScale({Id = newUnit.ObjectId, Fraction = game.EnemyData[characterName].Scale})
     end
@@ -223,8 +227,8 @@ game.OnControlPressed({'Gift', function()
 					},})]]
     --mod.PlaceNPCAtId({},"NPC_Sisyphus_Field_StoryExpansion",{SpawnId = 558175, Offset = {X = -400, Y = 300}, GazeTarget = {X = -800, Y = 600}})
 
-    return mod.FlipAValue()--mod.SpawnFieldSisyphus()--mod.SpawnCharacterAtMe("NPC_Sisyphus_Field_StoryExpansion")
-    --mod.SpawnCharacterAtMe("NPC_Hypnos_Field_StoryExpansion")
+    return --mod.FlipAValue()--mod.SpawnFieldSisyphus()--mod.SpawnCharacterAtMe("NPC_Sisyphus_Field_StoryExpansion")
+    mod.SpawnCharacterAtMe("NPC_Rhea_01_StoryExpansion")
     --mod.SpawnMegaera()--print(GameState.TextLinesRecord["StoryExpansionFreeingPersephoneDialogue"] )
 end})
 
