@@ -14,8 +14,6 @@ mod.RheaNPCData = {
         SpecialInteractFunctionName = nil,
         CanReceiveGift = false,
 
-
-
         OnUsedFunctionName = "UseNPC",
 
 		ActivateRequirements =
@@ -40,18 +38,6 @@ mod.RheaNPCData = {
 		RepulseOnMeleeInvulnerableHit = 200,
 
 InteractTextLineSets = {
-        ModdedZagChat01 =
-			{
-				Partner = "NPC_Thanatos_Hub_StoryExpansion",
-				PlayOnce = true,
-				UseableOffSource = true,
-				UseText = "UseListenNPC",
-				BlockDistanceTriggers = true,
-				PreBlockSpecialInteract = true,
-				PostBlockSpecialInteract = true,
-				InitialGiftableOffSource = true,
-				GiftableOffSource = true,
-			},
     }
 },
 }

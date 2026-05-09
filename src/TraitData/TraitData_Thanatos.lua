@@ -491,7 +491,7 @@ gods.CreateBoon({
     boonIconPath = "GUI\\Screens\\BoonIcons\\Hades_03",
     displayName = "Death Pact",
     description =
-    "Whenever you slay a foe, damage all other aggroed foes.",
+    "Whenever you slay a foe, damage all other foes attacking you.",
     RarityLevels = {
         Common = { Multiplier = .30},
         Rare = { Multiplier = 0.40 },
