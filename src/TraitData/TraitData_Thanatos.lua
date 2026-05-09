@@ -96,7 +96,7 @@ gods.CreateBoon({
     },
     ExtraFields = {
         StoryExpansionTargetLowHealthThreshold = 0.2,
-        StoryExpansionTargetLowHealthChance = 0.01,
+        StoryExpansionTargetLowHealthChance = {BaseValue = 0.01},
         ShowInHUD = true,
 
     },
