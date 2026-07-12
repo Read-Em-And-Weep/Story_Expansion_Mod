@@ -204,7 +204,7 @@ gods.CreateBoon({
 
     },
     ExtraFields = {
-        PerfectClearDamageBonus =
+        StoryExpansionPerfectClearDamageBonus =
         {
             BaseValue = 1.01,
             SourceIsMultiplier = true,
@@ -241,7 +241,7 @@ gods.CreateBoon({
     ExtractValues =
     {
         {
-            Key = "PerfectClearDamageBonus",
+            Key = "StoryExpansionPerfectClearDamageBonus",
             ExtractAs = "Multiplier",
             DecimalPlaces = 1,
             Format = "PercentDelta",
@@ -655,6 +655,69 @@ gods.CreateBoon({
 			},
     }
 })
+
+if ZagreusJourney then
+gods.CreateBoon({
+    internalBoonName = "ThanatosButterflyOnKillTrait",
+    InheritFrom = { "InPersonOlympianTrait", "AetherBoon" },
+    characterName = "StoryExpansionThanatos",
+    BlockStacking = true,
+    reuseBaseIcons = true,
+    boonIconPath = "GUI\\Screens\\BoonIcons\\Hades_03",
+    displayName = "Kaleidoscopic Curse",
+    description =
+    "Whenever you slay a foe, summon a horde of {$TooltipData.ExtractData.Butterflies} {$Keywords.StoryExpansionButterfly}.",
+    RarityLevels = {
+        Common = { Multiplier = 8},
+        Rare = { Multiplier = 12},
+        Epic = { Multiplier = 16},
+        Heroic = { Multiplier= 20},
+
+    },
+    ExtraFields = {
+        OnEnemyDeathFunction = 
+		{
+			Name = _PLUGIN.guid..".SummonButterflies",
+			FunctionArgs = 
+			{
+				NumButterflies = 5,
+                ProjectileDamageMultiplier = {BaseValue = 1},
+                ProjectileCap = 25,
+				ReportValues = {
+					ReportedButterflies = "NumButterflies",
+                    ReportedMultiplier = "ProjectileDamageMultiplier",
+				}
+			}
+		},
+    ShowInHUD = true,
+	},
+    StatLines =
+    {
+        "StoryExpansionButterfliesSummonedStatLine",
+    },
+    customStatLine = {
+        ID = "StoryExpansionButterfliesSummonedStatLine",
+        displayName = "{!Icons.Bullet}{#PropertyFormat}Butterfly Damage:",
+        description = "{#UpgradeFormat}{$TooltipData.ExtractData.Damage}",
+    },
+    ExtractValues =
+    {
+        {
+				Key = "ReportedMultiplier",
+				ExtractAs = "Damage",
+				Format = "MultiplyByBase",
+				BaseType = "Projectile",
+				BaseName = "StoryExpansionButterflyWeapon",
+				BaseProperty = "Damage",
+			},
+            {
+                Key = "ReportedButterflies"
+                ExtractAs = "Butterflies"
+            }
+    }
+})
+
+end
 
 if elementalinfusion then
     gods.CreateBoon({

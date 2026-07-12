@@ -474,7 +474,7 @@ gods.CreateBoon({
 	ExtraFields = {
 		AddOutgoingCritModifiers = {
             ValidProjectiles = {"PoseidonEffectFont"},
-			Chance = 0.25,
+			Chance = 0.2,
 			ReportValues = { ReportedChance = "Chance"},
         }
 	},
@@ -726,7 +726,7 @@ gods.CreateBoon({
 			{
                 Source = "StoryExpansionHephaestusBossArmourTrait",
 					Delay = 0.75,
-					BaseAmount = 75,
+					BaseAmount = 100,
 					ReportValues = 
 					{ 
 						ReportedArmor = "BaseAmount",

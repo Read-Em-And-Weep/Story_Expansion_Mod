@@ -452,7 +452,59 @@ Effects =
 				CanAffectInvulnerable = true,
 			},
         },
-	}
+	},
+	{
+      Name = "StoryExpansionButterflyWeapon",
+      InheritFrom = "1_BaseProjectile",
+      DetonateGraphic = "QuickFlashEnemy",
+      Type = "HOMING",
+      Fuse = 15,
+      AffectsEnemies = true,
+      AffectsFriends = false,
+      AffectsSelf = false,
+      CheckUnitImpact = true,
+      CheckObstacleImpact = false,
+      UnlimitedUnitPenetration = false,
+      Range = 9999,
+      Speed = 200,
+      Damage = 1,
+      MaxAdjustRate = 50,
+      NumPenetrations = 0,
+      GroupName = "Standing",
+      UnpauseFx = "FlurrySpawnerBurst",
+      DissipateGraphic = "SoulSpawnerButterflyDeath",
+      InvulnerableToProjectileDefenseDuringPause = true,
+	   DieWithOwner = true,
+     DangerDistance = 0,
+      Thing = {
+        Graphic = "StoryExpansionThanatosButterfly",
+        AttachedAnim = "SoulSpawnerButterflyShadow",
+        OffsetZ = 70,
+        Grip = 999999,
+		--[[Color =
+			{
+				Red = 0,
+				Green = 1.0,
+				Blue = 1.0,
+				Opacity = 1.0,
+			},]]
+        Points =
+		{
+          {
+            X = -14,
+            Y = 0,
+          },
+          {
+            X = 10,
+            Y = 14,
+          },
+          {
+            X = 10,
+            Y = -14,
+          },
+		}
+      }
+    },
 }
 
 local projectileFile = rom.path.combine(rom.paths.Content(), 'Game/Projectiles/NPC_Projectiles.sjson')

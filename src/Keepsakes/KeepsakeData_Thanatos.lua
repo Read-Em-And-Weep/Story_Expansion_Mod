@@ -42,7 +42,7 @@ gods.CreateKeepsake({
 				{
 				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansionFreeingThanatosDialogue" },
 			},
-				NamedRequirementsFalse = { "HecateMissing" },
+				NamedRequirementsFalse = { "SurfaceRouteLockedByTyphonKill" }
 			},
 			EncounterThreadedFunctions = 
 			{

@@ -35,7 +35,7 @@ mod.NyxNPCData = {
 		AnimOffsetZ = 225,
 		Groups = { "NPCs" },
 
-        LoadPackages = { "Nyx", },
+        --LoadPackages = { "Nyx", },
 
 		InteractTextLineSets = {
         StoryExpansion_NyxChat01 = {
@@ -388,7 +388,7 @@ mod.NyxNPCData = {
 		Portrait = "Portrait_Nyx_Default_01",
 		AnimOffsetZ = 225,
 		Groups = { "NPCs" },
-		        LoadPackages = { "Nyx", },
+		    LoadPackages = { "Nyx", },
 
 
 		InteractTextLineSets = {

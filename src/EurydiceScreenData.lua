@@ -132,7 +132,7 @@ ScreenData.StoryExpansionFoodScreen =
 					{
 						-- Dummy button
 					},
-					Text = "Menu_Buy",
+					Text = "Boon_Select",
 					TextArgs = UIData.ContextualButtonFormatRight,
 				},
 				

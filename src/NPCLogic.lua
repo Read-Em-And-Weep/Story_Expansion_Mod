@@ -191,6 +191,7 @@ function mod.SpawnCharacterAtMe(characterName)
 end
 
 function mod.SpawnFieldSisyphus()
+    if CurrentRun.UseRecord.NPC_Sisyphus_Field_StoryExpansion then return end
     local sisyphusData =  DeepCopyTable(game.EnemyData["NPC_Sisyphus_Field_StoryExpansion"])
     if not sisyphusData.StoryExpansionMapData then return end
     local currentRoom = CurrentRun.CurrentRoom
@@ -201,6 +202,23 @@ function mod.SpawnFieldSisyphus()
     MapState.RoomRequiredObjects[sisyphus.ObjectId] = sisyphus
     if currentRoom.Name == "I_Story01" then
         mod.DestroyCerberus()
+    end
+end
+
+function mod.AwardSisyphusResources()
+    local biome = GetCurrentFishingBiomeName()
+    local biomePools = {F = {OreFSilver = 5, PlantFMoly = 3, PlantFNightshadeSeed = 3}, G = {OreGLime = 1,PlantGLotus = 1, PlantGCattailSeed = 1 }, 
+    H = {OreHGlassrock = 1,PlantHMyrtle = 1, PlantHWheatSeed = 1}, I = {OreIMarble = 1,PlantIShaderot = 1, PlantIPoppySeed = 1}, 
+    N = {OreNBronze = 1, PlantNMoss = 1, PlantNGarlicSeed = 1}, O = {OreOIron = 1,PlantODriftwood =1, PlantOMandrakeSeed =1}, 
+    P = {OrePAdamant = 1, PlantPIris = 1, PlantPOliveSeed = 1}}
+    local currentBiomePool = biomePools[biome]
+    if not IsEmpty(currentBiomePool) then
+        local resource = GetRandomKey(currentBiomePool)
+        local resourceAmount = currentBiomePool[resource]
+        AddResource(resource, resourceAmount, "StoryExpansionSisyphusGift")
+    end
+    if GameState.WorldUpgradesAdded.StoryExpansionWorldUpgradeSisyphusUpgrade then
+        --TODO
     end
 end
 

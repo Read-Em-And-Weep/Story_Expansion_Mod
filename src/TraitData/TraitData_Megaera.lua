@@ -38,7 +38,7 @@ gods.CreateBoon({
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\budget_cuts",
     displayName = "Oath of Independence",
-    description = "You will no longer be offered {#BoldFormat} Gain {#Prev} {$Keywords.GodBoonPlural} this night.",
+    description = "You will no longer be offered {$Keywords.StoryExpansionGainGodBoonPlural} this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
@@ -140,7 +140,7 @@ ExtraFields = {
 		}
 })
 
-gods.CreateBoon({
+--[[gods.CreateBoon({
     internalBoonName = "MegaeraOathRivals2",
     InheritFrom = {"ShopTrait"},
     characterName = "StoryExpansionMegaera",
@@ -207,7 +207,7 @@ ExtraFields = {
     ExtractValues =
 		{
 		}
-})
+})]]
 
 gods.CreateBoon({
     internalBoonName = "MegaeraOathAntiHeal",
@@ -238,7 +238,7 @@ gods.CreateBoon({
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\First_Blood",
     displayName = "Oath of Reservation",
-    description = "{$Keywords.ReserveMana} {#PenaltyFormat} 80{#Prev}{!Icons.Mana} this night.",
+    description = "{$Keywords.ReserveMana} {#PenaltyFormat} 100{#Prev}{!Icons.Mana} this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
@@ -248,7 +248,7 @@ ExtraFields = {
 			Args =
 			{
 				Name = "StoryExpansionMegaeraOathLargePrime",
-				ManaReservationCost = 80,
+				ManaReservationCost = 100,
 			},
 		},
 
@@ -289,7 +289,7 @@ gods.CreateBoon({
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Greater_Celerity",
     displayName = "Oath of Sloth",
-    description = "You will no longer be offered {#BoldFormat} Rush {#Prev} {$Keywords.GodBoonPlural} this night.",
+    description = "You will no longer be offered {$Keywords.StoryExpansionRushGodBoonPlural} this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
@@ -387,11 +387,11 @@ gods.CreateBoon({
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Golden_Touch",
     displayName = "Blessing of Riches",
-    description = "All {!Icons.Currency} you gain are worth {#UpgradeFormat} +50%. {#Prev} more this night.",
+    description = "All {!Icons.Currency} you gain are worth {#UpgradeFormat} +40%. {#Prev} more this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
-	MoneyMultiplier = { BaseValue = 1.5, 
+	MoneyMultiplier = { BaseValue = 1.4, 
 				SourceIsMultiplier = true},
     },
     ExtractValues =
@@ -485,9 +485,9 @@ gods.CreateBoon({
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\jury_duty",
     displayName = "Blessing of Power",
-    description = "{$Keywords.PomPlural} will award {#UpgradeFormat} +2 {#Prev} {$Keywords.PomLevel} this night.",
+    description = "{$Keywords.PomPlural} will award {#UpgradeFormat} +1 {#Prev} {$Keywords.PomLevel} this night.",
 ExtraFields = {
-    StackUpgradeAdditionalLevels = 2,
+    StackUpgradeAdditionalLevels = 1,
     ExcludeTraitFromLastRunBoonPool = true,
     ShowInHUD = false,
     },

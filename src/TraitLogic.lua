@@ -117,7 +117,7 @@ function mod.RestoreLastStandHealthReserve(traitData)
 end
 
 function mod.IncreaseAccumulatedDamageBonus(traitData, args)
-    traitData.AccumulatedDamageBonus = traitData.AccumulatedDamageBonus - (1-traitData.PerfectClearDamageBonus)
+    traitData.AccumulatedDamageBonus = traitData.AccumulatedDamageBonus - (1-traitData.StoryExpansionPerfectClearDamageBonus)
     if existingTraitData then
 		Flash({ Id = existingTraitData.AnchorId, Speed = 2, MinFraction = 0, MaxFraction = 0.8, Color = Color.LimeGreen, ExpireAfterCycle = true })
 		CreateAnimation({ Name = "SkillProcFeedbackFx", DestinationId = existingTraitData.AnchorId, GroupName = "Overlay" })
@@ -299,4 +299,12 @@ function mod.TransmuteElementPresentation(elementToLose, elementToGain, count)
 		Name = elementToGain,
 		Amount = count,
 	}})
+end
+
+function mod.SummonButterflies(enemy, args)
+	args = args or {}
+	local numButterflies = args.NumButterflies or 5
+	for i=1, numButterflies, 1 do
+		CreateProjectileFromUnit({ Name = "StoryExpansionButterflyWeapon", Id = CurrentRun.Hero.ObjectId, DestinationId = enemy.ObjectId, DamageMultiplier = args.ProjectileDamageMultiplier, ProjectileCap = args.ProjectileCap or 25 })
+	end
 end

@@ -286,21 +286,47 @@ local newHelpTextData = {
       Description = "Home-Cooked Meals imbued with greater-than-usual power."
     },
     {
-      Id = "StoryExpansionYummy",
-      DisplayName = "{#EpicFormat}Yummy{#Prev}",
+      Id = "StoryExpansionDelicious",
+      DisplayName = "{#EpicFormat}Delicious{#Prev}",
       Description = "Home-Cooked Meals imbued with significantly greater-than-usual power."
     },
     {
-      Id = "StoryExpansionDelicious",
-      DisplayName = "{#HeroicFormat}Delicious{#Prev}",
+      Id = "StoryExpansionDecadent",
+      DisplayName = "{#HeroicFormat}Decadent{#Prev}",
       Description = "Home-Cooked Meals imbued with ultimate power."
     },
     {
       Id = "StoryExpansionFoodRarity",
       DisplayName = "Quality",
-      Description = "{$Keywords.StoryExpansionMealPlural} sometimes have superior effects due to better and fresher ingredients, noted as {#RareFormat}Appetizing{#Prev}, {#EpicFormat}Yummy{#Prev}, and more."
+      Description = "{$Keywords.StoryExpansionMealPlural} sometimes have superior effects due to better and fresher ingredients, noted as {#RareFormat}Appetizing{#Prev}, {#EpicFormat}Delicious{#Prev}, and more."
+    },
+    {
+      Id = "BlockedByStoryExpansionThanatosCaptured_Tooltip",
+      Description = "{$Keywords.BlockedByStoryExpansionThanatosCaptured}"
+    },
+    {
+      Id = "BlockedByStoryExpansionThanatosCaptured",
+      DisplayName = "{#AltPenaltyFormat}Captured",
+      Description = "This comrade is currently captured by Chronos and so cannot offer their aid this night."
+    },
+    {
+      Id = "StoryExpansionButterfly",
+      DisplayName = "Butterflies",
+      Description = "Ephemeral creatures carrying the essence of death, which fly at foes to deal damage."
+    },
+    {
+      Id = "StoryExpansionGainGodBoonPlural",
+      DisplayName = "Gain Boons",
+      Description = "Blessings from Olympians which aid in {!Icons.Mana} recovery."
+    },
+    {
+      Id = "StoryExpansionRushGodBoonPlural",
+      DisplayName = "Rush Boons",
+      Description = "Blessings from Olympians that strongly influence your {RU} {$Keywords.Dash} or {$Keywords.Sprint}."
     },
 }
+
+
 
 local helpTextFile = rom.path.combine(rom.paths.Content(), 'Game/Text/en/HelpText.en.sjson')
 
@@ -317,9 +343,15 @@ table.insert(game.KeywordList, "StoryExpansionMeal")
 table.insert(game.KeywordList, "StoryExpansionMealPlural")
 table.insert(game.KeywordList, "StoryExpansionTasty")
 table.insert(game.KeywordList, "StoryExpansionAppetizing")
-table.insert(game.KeywordList, "StoryExpansionYummy")
 table.insert(game.KeywordList, "StoryExpansionDelicious")
+table.insert(game.KeywordList, "StoryExpansionDecadent")
 table.insert(game.KeywordList, "StoryExpansionFoodRarity")
+table.insert(game.KeywordList, "BlockedByStoryExpansionThanatosCaptured")
+table.insert(game.KeywordList, "StoryExpansionButterfly")
+table.insert(game.KeywordList, "StoryExpansionGainGodBoonPlural")
+table.insert(game.KeywordList, "StoryExpansionRushGodBoonPlural")
+
+
 ResetKeywords()
 
 sjson.hook(helpTextFile, function(data)

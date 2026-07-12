@@ -174,7 +174,7 @@ function mod.TimeTravelSetUp()
 					Text = "Chronos has captured her. We shall have to perform the incantation without her aid. Is everyone present by the cauldron to serve as anchors for the spell?" },
 										{
 					Portrait = "Portrait_ZagPresent_Default_01",Speaker = "NPC_Zagreus_Hub_StoryExpansion",
-					Text = "We're all here, Mel. I have to say, I've never been on this side of boon-based communication before."},
+					Text = "We're all here, Meli. I have to say, I've never been on this side of boon-based communication before."},
 					{ 
 					Portrait = "StoryExpansion_Thanatos_Default",Speaker = "NPC_Thanatos_Hub_StoryExpansion",
 					Text = "Our power stands ready for you to draw upon, Princess. Know you have our faith, and our hope." },
@@ -237,7 +237,7 @@ function mod.TimeTravelSetUp()
 
 				{ Portrait = "Portrait_Mel_Intense_01",
 					UsePlayerSource = true,
-					Text = "Whether or not you believe me makes no difference. Already my Father's spear has destroyed the last remains of your wife, by felling Typhon. I'm sure it can cleave Time, for all the suffering you've caused me, just as easily." },
+					Text = "Whether or not you believe me makes no difference. Already my Father's spear has destroyed the last remains of your wife, by felling Typhon. I'm sure it can cleave Time, for all the suffering you've caused, just as easily." },
 
 				{ 
 					Source = "NPC_Chronos_Story_01",
@@ -258,7 +258,7 @@ function mod.TimeTravelSetUp()
 				{
 					Source = "NPC_Chronos_Story_01",
 					Portrait = "Portrait_Chronos_Averted_01",
-					Text = "If necessary, {#Emph}yes{#Prev}, of {#Emph}course! {#Prev}Your father and his brothers surely have already poisoned you and your entire generation against me! You would not have travelled back in time if you had not been. Strike true, Granddaughter, and make hateful your heart." },
+					Text = "If necessary, {#Emph}yes{#Prev}, of {#Emph}course! {#Prev}Your father and his brothers surely have already poisoned you and your entire generation against me! You would not have travelled back in time if you had not been. Make hateful your heart, Granddaughter, and strike." },
 
 				{ 
 					Portrait = "Portrait_Mel_Intense_01",
@@ -269,7 +269,7 @@ function mod.TimeTravelSetUp()
 					Portrait = "Portrait_Mel_Default_01",
 					UsePlayerSource = true,
                     PreLineWait = 1.0,
-					Text = "No. Our family has fought, child against parent for too long. I do not hold such hate in my heart, and from what I have seen of you in the past, I don't believe you truly do either. Let us end the cycle of violence, together, {#Emph} now{#Prev}." },
+					Text = "Our family has fought, child against parent for too long. I do not hold such hate in my heart, and from what I have seen of you in the past, I don't believe you truly do either. Let us end the cycle of violence, together, {#Emph} now{#Prev}." },
 
 				{ 
 					Source = "NPC_Chronos_Story_01",
@@ -331,7 +331,7 @@ EndVoiceLines = {
 					Text = "Unfortunately not. We shall have to perform the incantation without her aid. Is everyone present by the cauldron to serve as anchors for the spell?" },
 										{
 					Portrait = "Portrait_ZagPresent_Default_01",Speaker = "NPC_Zagreus_Hub_StoryExpansion",
-					Text = "We're all here, Mel. I have to say, I've never been on this side of boon-based communication before."},
+					Text = "We're all here, Meli. I have to say, I've never been on this side of boon-based communication before."},
 					{ 
 					Portrait = "StoryExpansion_Thanatos_Default",Speaker = "NPC_Thanatos_Hub_StoryExpansion",
 					Text = "Our power stands ready for you to draw upon, Princess. Know you have our faith, and our hope." },
@@ -396,7 +396,7 @@ EndVoiceLines = {
 
 				{ Portrait = "Portrait_Mel_Intense_01",
 					UsePlayerSource = true,
-					Text = "Whether or not you believe me makes no difference. Already my Father's spear has destroyed the last remains of your wife by felling Typhon. I'm sure it can cleave Time just as easily in return for all the suffering you've caused me." },
+					Text = "Whether or not you believe me makes no difference. Already my Father's spear has destroyed the last remains of your wife, by felling Typhon. I'm sure it can cleave Time, for all the suffering you've caused, just as easily." },
 
 				{ 
 					Source = "NPC_Chronos_Story_01",
@@ -417,7 +417,7 @@ EndVoiceLines = {
 				{
 					Source = "NPC_Chronos_Story_01",
 					Portrait = "Portrait_Chronos_Averted_01",
-					Text = "If necessary, {#Emph}yes{#Prev}, of {#Emph}course! {#Prev}Your father and his brothers surely have already poisoned you and your entire generation against me! You would not have travelled back in time if you had not been. Strike, Granddaughter, and make hateful your heart." },
+					Text = "If necessary, {#Emph}yes{#Prev}, of {#Emph}course! {#Prev}Your father and his brothers surely have already poisoned you and your entire generation against me! You would not have travelled back in time if you had not been. Make hateful your heart, Granddaughter, and strike!" },
 
 				{ 
 					Portrait = "Portrait_Mel_Intense_01",
@@ -428,7 +428,7 @@ EndVoiceLines = {
 					Portrait = "Portrait_Mel_Default_01",
 					UsePlayerSource = true,
                     PreLineWait = 1.0,
-					Text = "No. Our family has fought, child against parent for too long. I do not hold such hate in my heart, and from what I have seen of you in the past, I don't believe you truly do either. Let us end the cycle of violence, together, {#Emph} now{#Prev}." },
+					Text = "Our family has fought, child against parent for too long. I do not hold such hate in my heart, and from what I have seen of you in the past, I don't believe you truly do either. Let us end the cycle of violence, together, {#Emph} now{#Prev}." },
 
 				{ 
 					Source = "NPC_Chronos_Story_01",

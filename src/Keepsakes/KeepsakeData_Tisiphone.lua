@@ -1,19 +1,19 @@
-if not gods.IsKeepsakeRegistered("StoryExpansionExtraCastMegKeepsake") then
+if not gods.IsKeepsakeRegistered("StoryExpansionExtraCastTisiphoneKeepsake") then
 gods.CreateKeepsake({
-    characterName = "Megaera",
-    internalKeepsakeName = "StoryExpansionExtraCastMegKeepsake",
+    characterName = "Tisiphone",
+    internalKeepsakeName = "StoryExpansionExtraCastTisiphoneKeepsake",
 
     RarityLevels = {
-        Common = 1.5,
-        Rare = 2.5,
-        Epic = 3.5,
+        Common = 3,
+        Rare = 3.5,
+        Epic = 4,
         Heroic = 4.5,
     },
 
     Keepsake = {
-        displayName = "Torn Whip",
-        description = "Your {$Keywords.CastSet} deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipDamageBonus:P} {#Prev} damage, and you gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
-        signoffMax = "From {#AwardMaxFormat}Megaera{#Prev}{!Icons.ObjectiveSeparatorDark}Your word should be a guarantee, lest the Furies come for you.",
+        displayName = "Haunting Bead",
+        description = "Your {$Keywords.Attack} and {$Keywords.Special} deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipDamageBonus:P} {#Prev} damage while standing in your {$Keywords.CastSet}, and you gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
+        signoffMax = "From {#AwardMaxFormat}Tisiphone{#Prev}{!Icons.ObjectiveSeparatorDark}Meeerrr..ir..noooee....Meelll..in..oeeee.",
     },
 
     Icons = {
@@ -63,19 +63,26 @@ PropertyChanges = {
                     ChangeType = "Add",
                 }
             },
-        AddOutgoingDamageModifiers =
+        AddOutgoingDamageModifiers = 
 		{
-			ValidWeaponMultiplier = { BaseValue = 1.1, SourceIsMultiplier = true },
-			ValidWeapons = WeaponSets.HeroRangedWeapons,
-			ValidProjectiles = WeaponSets.CastProjectileNames,
-			WeaponOrProjectileRequirement = true,
-			ReportValues = { ReportedMultiplier = "ValidWeaponMultiplier"}
-		},
+            ValidWeapons = WeaponSets.HeroPrimarySecondaryWeapons,
+			RequiredEffects = { "InsideCastBuff" },
+			RequiredSelfEffectsMultiplier =
+			{
+				BaseValue = 1.10,
+				SourceIsMultiplier = true,
+			},
+			
+			ReportValues = 
+			{ 
+				ReportedModifier = "RequiredSelfEffectsMultiplier" 
+			},		
+        },
     },
 
     ExtractValues = {
         {
-            Key = "ReportedMultiplier",
+            Key = "ReportedModifier",
             ExtractAs = "TooltipDamageBonus",
             Format = "PercentDelta",
         }
@@ -88,47 +95,14 @@ PropertyChanges = {
 
 })
 
-
-local hadesCastFixFile = rom.path.combine(rom.paths.Content(), 'Game/Weapons/PlayerWeapons.sjson')
-
-local hadesCastFixOrder = {
-  "Name",
-  "InheritFrom",
-  "Projectile",
-  "ShowFreeAimLine",
-  "AimLineAnimation",
-  "AutoLock",
-  "ManualAiming",
-  "IgnoreUnitChargeMultiplier",
-  "ActiveProjectileCap",
-}
-
-local hadesCastFix = {
-		Name = "WeaponCastProjectileHades",
-		InheritFrom = "WeaponCastProjectile",
-		Projectile = "ProjectileCastHades",
-		ShowFreeAimLine = true,
-		AimLineAnimation = "AuraAimLine",
-		AutoLock = true,
-		ManualAiming = false,
-		IgnoreUnitChargeMultiplier = true,
-        ActiveProjectileCap = 1,
-	}
-sjson.hook(hadesCastFixFile, function(data)
-  for _, newWeaponText in ipairs(hadesCastFix) do
-    table.insert(data.Texts, sjson.to_object(newWeaponText, hadesCastFixOrder))
-  end
-end)
-end
-
 gods.CreateBoon({
-    internalBoonName = "StoryExpansionExtraCastMegKeepsakePermanent",
+    internalBoonName = "StoryExpansionExtraCastTisiphoneKeepsakePermanent",
     InheritFrom = {},
-    characterName = "StoryExpansionMegaera",
+    characterName = "StoryExpansionTisiphone",
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\AwardMenu\\Keepsake_49",
-    displayName = "Torn Whip",
+    displayName = "Haunting Bead",
     description = "Gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
     RarityLevels = {
         Common = { Multiplier = 1.0 },

@@ -404,7 +404,7 @@ NPC_Thanatos_Field_StoryExpansion = {
 					Portrait = "Portrait_Mel_Empathetic_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "There's no need for such flattery, O Death. What I have accomplished can be solely attributed to Headmistress Hecate teachings. As to is her plan to free all the members of the House before launching our final assault." },
+					Text = "There's no need for such flattery, O Death. What I have accomplished can be solely attributed to Headmistress Hecate's teachings. As to is her plan to free all the members of the House before launching our final assault." },
 { 
 					PreLineWait = 0.85,
 					Portrait = "StoryExpansion_Thanatos_Pleased",
@@ -441,6 +441,9 @@ EndVoiceLines = {
 
 if elementalinfusion then
 	table.insert(mod.ThanatosNPCData.NPC_Thanatos_Field_StoryExpansion.Traits, gods.GetInternalBoonName("ThanatosElementalTrait"))
+end
+if ZagreusJourney then
+	table.insert(mod.ThanatosNPCData.NPC_Thanatos_Field_StoryExpansion.Traits, gods.GetInternalBoonName("ThanatosButterflyOnKillTrait"))
 end
 
 

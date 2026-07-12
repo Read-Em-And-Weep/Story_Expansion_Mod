@@ -167,10 +167,10 @@ table.insert(EncounterSets.GEncountersDefault, "TheseusMinotaurStoryExpansionCom
 table.insert(EncounterSets.GEncountersDefault, "TheseusMinotaurStoryExpansionCombatG2")]]
 
 
-mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF", mod.FCombatRooms, 2)
-mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF2", mod.FCombatRooms, 2)
-mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG", mod.GCombatRooms, 2)
-mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG2", mod.GCombatRooms, 2)
+mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF", mod.FCombatRooms, 1)
+mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatF2", mod.FCombatRooms, 1)
+mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG", mod.GCombatRooms, 1)
+mod.AddEncounterToEncounterSet("TheseusMinotaurStoryExpansionCombatG2", mod.GCombatRooms, 1)
 
 
 table.insert(NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, "TheseusMinotaurStoryExpansionCombatF")

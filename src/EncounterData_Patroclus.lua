@@ -20,6 +20,9 @@ OverwriteTableKeys( EncounterData,
 			{
 				PathFalse = {"CurrentRun", "RoomsEntered", "I_Boss01"},
 			},
+			{
+				PathFalse = {"CurrentRun", "UseRecord", "NPC_Patroclus_Field_StoryExpansion"}
+			},
 			NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing",  },
 			NamedRequirements = { "NoRecentFieldNPCEncounter" },
 		},

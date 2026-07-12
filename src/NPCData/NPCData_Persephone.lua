@@ -38,7 +38,7 @@ mod.PersephoneNPCData = mod.PersephoneNPCData or {
 		AnimOffsetZ = 225,
 		Groups = { "NPCs" },
 
-        LoadPackages = { "Persephone", "BiomeIHouse"},
+        --LoadPackages = { "Persephone", "BiomeIHouse"},
 
 		InteractTextLineSets = {
         ModdedThanChat01Placeholder =

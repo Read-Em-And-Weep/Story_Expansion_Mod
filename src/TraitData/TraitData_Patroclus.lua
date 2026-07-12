@@ -179,7 +179,7 @@ gods.CreateBoon({
 ExtraFields = {
 		RemainingUses = 3,
 		UsesAsRooms = true,
-		DoorHeal = 0.20,
+		DoorHeal = 0.15,
 		CustomStatLinesWithShrineUpgrade = 
 		{
 			ShrineUpgradeName = "HealingReductionShrineUpgrade",
@@ -189,7 +189,6 @@ ExtraFields = {
 				"HealingReductionNotice",
 			}
 		},
-
 },
 StatLines = 
 		{
@@ -257,8 +256,8 @@ ExtraFields = {
 		{
 			GodLootOnly = true,
 			Epic = 1,
-			Duo = 0.5,
-			Legendary = 0.5,
+			Duo = 0.2,
+			Legendary = 0.2,
 		},
 		RemainingUses = 1,
 },

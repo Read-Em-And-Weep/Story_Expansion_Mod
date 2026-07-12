@@ -128,6 +128,10 @@ RoomData.I_PostBoss01.ObstacleData =
 						HasAny = { "StoryExpansionSurfaceFlashback09" },
 					},
 					{
+						Path = { "GameState", "TextLinesRecord" },
+						HasAny = { "StoryExpansionRescuingNyx" },
+					},
+					{
 						PathFalse = { "GameState", "TextLinesRecord", "StoryExpansionObtainingHadesSpearPoint" },
 					},
 				},

@@ -13,15 +13,15 @@ local newTraitTextData = {
     },
     {
       Id = "StoryExpansionTraitLevel_Food2",
-      DisplayName = "{#RareFormat} ",
+      DisplayName = "{#RareFormat}Appetizing",
     },
     {
       Id = "StoryExpansionTraitLevel_Food3",
-      DisplayName = "{#EpicFormat}Yummy",
+      DisplayName = "{#EpicFormat}Delicious",
     },
     {
       Id = "StoryExpansionTraitLevel_Food4",
-      DisplayName = "{#HeroicFormat}Delicious",
+      DisplayName = "{#HeroicFormat}Decadent",
     },
     {
       Id = "StoryExpansionEurydiceFoodMorePotentPomsTrait_Tray",

@@ -1,5 +1,6 @@
--- Give this keepsake to someone else (Orion?) In it's place, add in chance for boons to have a poppy on them
+-- Give this keepsake to someone else (Orion? Maybe Telemachus? Or Prometheus) In it's place, add in chance for boons to have a poppy on them
 -- Poppies are invested in dreams (generated like Selene Hexes) which can provide small upgrades like instant money, rarity chance, etc.
+-- Actually instead have common boons having enhancements/modifiers (like grant gold/armour every x encounters, self-rarifying etc.)
 
 gods.CreateKeepsake({
     characterName = "Hypnos",

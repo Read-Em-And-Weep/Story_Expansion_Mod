@@ -1,1 +1,1 @@
--- Increased sprint speed and rush boost damage for rest of night? Upgrade Arcana? Refill DDs?
+-- Increased sprint speed and rush boon damage for rest of night? Upgrade Arcana? Refill DDs?

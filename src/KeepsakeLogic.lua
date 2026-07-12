@@ -13,6 +13,9 @@ import 'Keepsakes/KeepsakeData_Arke.lua'
 import 'Keepsakes/KeepsakeData_Eurydice.lua'
 import 'Keepsakes/KeepsakeData_Hypnos.lua'
 import 'Keepsakes/KeepsakeData_Hades.lua'
+import 'Keepsakes/KeepsakeData_Alecto.lua'
+import 'Keepsakes/KeepsakeData_Tisiphone.lua'
+
 
 modutil.mod.Path.Wrap("CanFreeSwapKeepsakes", function(base)
 	if ( CurrentHubRoom ~= nil and CurrentHubRoom.KeepsakeFreeSwap ) then return true end
@@ -20,11 +23,11 @@ modutil.mod.Path.Wrap("CanFreeSwapKeepsakes", function(base)
 	return base()
 end)
 
-modutil.mod.Path.Wrap( "KeepsakeScreenClose", function(base, screen, button )
+--[[modutil.mod.Path.Wrap( "KeepsakeScreenClose", function(base, screen, button )
 	CurrentRun = CurrentRun or {}
 	CurrentRun.CurrentRoom = CurrentRun.CurrentRoom or {}
 	return base(screen, button)
-end)
+end)]]
 
 modutil.mod.Path.Wrap("HandleUpgradeChoiceSelection", function(base, screen, button, args)
     if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionBoonRarityBoostKeepsake")) and (button.LootData.GodLoot or button.LootData.TreatAsGodLootByShops) then
@@ -210,10 +213,10 @@ function mod.GrantRandomFoodOfRarity(args)
 	if game.CurrentHubRoom and game.CurrentHubRoom.Name == "Hub_PreRun" then
         return
     end
-	CurrentRun = CurrentRun or {}
-	CurrentRun.CurrentRoom = CurrentRun.CurrentRoom or {}
-	CurrentRun.CurrentRoom.RoomCreations = CurrentRun.CurrentRoom.RoomCreations or {}
-	CurrentRun.RoomCreations = CurrentRun.RoomCreations or {}
+	local currentRun = CurrentRun or {}
+	local currentRoom = currentRun.CurrentRoom or {}
+	currentRoom.RoomCreations = currentRoom.RoomCreations or {}
+	currentRun.RoomCreations = currentRun.RoomCreations or {}
 	args = args or {}
 	args.Rarity = args.Rarity or 1
 	local rarityTable = {"Common", "Rare", "Epic", "Heroic"}
@@ -243,13 +246,23 @@ modutil.mod.Path.Wrap("UnequipKeepsake", function(base, heroUnit, traitName, arg
 	local traitUsesRemaining = nil
     if traitName == gods.GetInternalKeepsakeName("StoryExpansionMaxHealthKeepsake") then
 		local trait = GetHeroTrait(traitName)
-		if trait.AcquireFunctionName == _PLUGIN.guid..".KeepsakeAddMaxHealth" and CurrentRun.Hero.IsDead then
+		if trait and trait.AcquireFunctionName == _PLUGIN.guid..".KeepsakeAddMaxHealth" and CurrentRun.Hero.IsDead then
 			AddMaxHealth( -trait.AcquireFunctionArgs.Amount, {}, {Silent = true})
 		end
 	end
-	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
-		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastKeepsake"))
-		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastKeepsakePermanent"), Rarity =trait.Rarity }) 
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"))
+		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastMegKeepsakePermanent"), Rarity =trait.Rarity }) 
+		AddTraitToHero({ TraitData = processedData })
+	end
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"))
+		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastAlectoKeepsakePermanent"), Rarity =trait.Rarity }) 
+		AddTraitToHero({ TraitData = processedData })
+	end
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake"))
+		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastTisiphoneKeepsakePermanent"), Rarity =trait.Rarity }) 
 		AddTraitToHero({ TraitData = processedData })
 	end
 	if traitName == gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
@@ -266,7 +279,7 @@ modutil.mod.Path.Wrap("UnequipKeepsake", function(base, heroUnit, traitName, arg
 	ValidateMaxHealth()
 	ValidateMaxMana()
 
-    --[[if TraitData[traitName].Permanent and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment and Contains({gods.GetInternalKeepsakeName("StoryExpansionPerfectClearKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake")}, traitName) then
+    --[[if TraitData[traitName].Permanent and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment and Contains({gods.GetInternalKeepsakeName("StoryExpansionPerfectClearKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake")}, traitName) then
         local trait = GetHeroTrait(traitName)
         TraitUIRemove( trait )
         CurrentRun.StoryExpansionPermanentKeepsakesUsed =CurrentRun.StoryExpansionPermanentKeepsakesUsed or {} 
@@ -473,6 +486,11 @@ modutil.mod.Path.Wrap("EquipKeepsake", function(base, heroUnit, traitName, args)
 		traitData.CurrentStoryExpansionProtection = traitData.InitialStoryExpansionProtection
 		UpdateTraitNumber(traitData)
 	end
+	if Contains({gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake")}, traitName) and not CanFreeSwapKeepsakes() then
+		table.insert(CurrentRun.BlockedKeepsakes, gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"))
+		table.insert(CurrentRun.BlockedKeepsakes, gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"))
+		table.insert(CurrentRun.BlockedKeepsakes, gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake"))
+	end
 	return base(heroUnit, traitName,args)
 end)
 
@@ -529,3 +547,47 @@ function mod.BonusPowerKeepsakeCooldown(traitArgs)
     	PlaySound({ Name = "/SFX/WrathOver", Id = CurrentRun.Hero.ObjectId })
 			thread( InCombatTextArgs, { TargetId = CurrentRun.Hero.ObjectId, Text = "StoryExpansionRechargedBonusPowerKeepsake", Duration = 1, PreDelay = 0 } )
 end
+
+
+modutil.mod.Path.Wrap("CreateKeepsakeIcon", function(base,screen, components, args)
+	base(screen, components, args)
+	args = args or {}
+	local localx = args.X
+	local localy = args.Y
+	local itemIndex = args.Index
+	local upgradeData = args.UpgradeData
+	local keyAppend = args.KeyAppend or ""
+	local scale = args.Scale or 0.75
+		
+	local locked = false
+	local buttonKey = "UpgradeToggle"..itemIndex..keyAppend
+	if upgradeData.Unlocked then
+		if upgradeData.Gift == gods.GetInternalKeepsakeName("StoryExpansionSummonThanatosKeepsake") and not GameState.TextLinesRecord.StoryExpansionFreeingThanatosDialogue then
+			CreateTextBox({ 
+					Id = components[buttonKey].Id,
+					Text = "BlockedByStoryExpansionThanatosCaptured_Tooltip",
+					UseDescription = true,
+					OffsetX = 0, OffsetY = 0,
+					Color = Color.Transparent,
+				})
+			locked = true
+		end
+		local blocked = ( Contains(CurrentRun.BlockedKeepsakes, upgradeData.Gift) or ( CurrentRun.UseRecord.NPC_Athena_01 and not HeroHasTrait("AthenaEncounterKeepsake") and upgradeData.Gift == "AthenaEncounterKeepsake" ) ) 
+		local blockedByEnding = false
+		if not IsFateValid() and FatedEnableKeepsakes[upgradeData.Gift] then
+			blocked = true
+		end
+		if TraitData[upgradeData.Gift].BlockedByEnding and not IsGameStateEligible( upgradeData, { NamedRequirementsFalse = {"SurfaceRouteLockedByTyphonKill"}} ) then
+			blockedByEnding = true
+		end
+		if locked and not ((not CanFreeSwapKeepsakes() and blocked) or blockedByEnding) then 
+		components[buttonKey.."Lock"] = CreateScreenComponent({ Name = "BlankObstacle", X = localx, Y = localy, Group = "Combat_Menu_Overlay", Animation = "LockedKeepsakeIcon" })
+			SetColor({ Id = components[buttonKey].Id, Color = Color.DarkSlateGray })
+			if components[buttonKey.."Sticker"] then
+				SetColor({ Id = components[buttonKey.."Sticker"].Id, Color = Color.SlateGray })
+			end
+			components[buttonKey].OnPressedFunctionName = "BlockedKeepsakePresentation"
+			components[buttonKey].Blocked = true
+		end
+	end
+end)

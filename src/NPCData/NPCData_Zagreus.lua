@@ -33,7 +33,7 @@ mod.ZagreusNPCData = {
         Portrait = "Portrait_ZagPresent_Default_01",
 		AnimOffsetZ = 30,
 		Groups = { "NPCs" },
-		LoadPackages = { "Zagreus", "BiomeIHouse",},
+		--LoadPackages = { "Zagreus", "BiomeIHouse",},
 
 
 

@@ -37,6 +37,8 @@ WorldUpgradeData.WorldUpgradeTimeStop.Cost = {
 	MixerMythic = 1,
 }
 
+--TODO: Need to include new HelpText for CharEurydice, Orpheus, food etc.
+
 Incantations.addIncantation({
     Id = "StoryExpansionWorldUpgradeUnlockEurydice",
     Name = {
@@ -118,6 +120,86 @@ Incantations.addIncantation({
     OnActivateFinishedFunctionName = _PLUGIN.guid .. ".RandomiseFoodRarityFromCommon"
     }
 })
+Incantations.addIncantation({
+    Id = "StoryExpansionWorldUpgradeSisyphusUpgrade",
+    Name = {
+        en = "Yielding Blood from a Stone"
+    },
+    Description = {
+        en = "Enhance your relationship with Sisyphus, so that he may also offer you a {$Keywords.RunReward} when you run into him."
+    },
+    FlavorText = {
+        en = "There is much to learn from being out in the world, but much more to learn from reflecting on yourself."
+    },
+    WorldUpgradeData = {
+        AlwaysRevealImmediately = true,
+        Icon = "ReadEmAndWeep-Story_ExpansionGUI\\CauldronItems\\cauldron_eurydiceunlock",
+        --PLACEHOLDER icon
+		Cost =
+		{
+			SuperGiftPoints= 3,
+            OreIMarble = 8,
+			MixerGBoss = 2,
+		},
+        GameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "Placeholder" },
+			},
+    },
+    IncantationVoiceLines =
+		{
+			{
+				PreLineWait = 0.3,
+				{ Cue = "/VO/Melinoe_1080", Text = "{#Emph}Hear me, O Shades, on my authority: \n {#Emph}Give my demand all due priority." },
+			},
+		},
+        RevealReactionVoiceLines = {
+            { GlobalVoiceLines = "CauldronReactionVoiceLines" },
+        },
+
+    }
+})
+Incantations.addIncantation({
+    Id = "StoryExpansionWorldUpgradeMegInbetweenRegions",
+    --TODO: Set this to reset with story resetting
+    Name = {
+        en = "Preparing for a Fury's Oath"
+    },
+    Description = {
+        en = "Allow Megaera to occasionally appear in the space at the start of an Underworld {$Keywords.Biome}, offering an oath you can swear to empower you."
+    },
+    FlavorText = {
+        en = "When we do not stand by our word, we fall and are punished."
+    },
+    WorldUpgradeData = {
+        AlwaysRevealImmediately = true,
+        Icon = "ReadEmAndWeep-Story_ExpansionGUI\\CauldronItems\\cauldron_eurydiceunlock",
+        --PLACEHOLDER icon
+		Cost =
+		{
+			GiftPoints = 3,
+		},
+        GameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "Placeholder" },
+			},
+    },
+    IncantationVoiceLines =
+		{
+			{
+				PreLineWait = 0.3,
+				{ Cue = "/VO/Melinoe_1080", Text = "{#Emph}Hear me, O Shades, on my authority: \n {#Emph}Give my demand all due priority." },
+			},
+		},
+        RevealReactionVoiceLines = {
+            { GlobalVoiceLines = "CauldronReactionVoiceLines" },
+        },
+
+    }
+})
+
 --TODO: Update Unlock Requirements for the two upgrades
 
 --[[Incantations to add

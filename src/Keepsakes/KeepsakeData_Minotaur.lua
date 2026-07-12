@@ -1,3 +1,5 @@
+--TODO: Seperate out a seperate Theseus keepsake, which grants that your hex will offer godsent upgrades, and can be godsent +0/1/2 times this night?
+
 if not gods.IsKeepsakeRegistered("StoryExpansionAllySummonKeepsake") then
 gods.CreateKeepsake({
     characterName = "Theseus and Asterius",

@@ -99,43 +99,69 @@ function mod.PlaySurfaceFlashback01(source, args)
 				UseText = "StoryExpansionFreeNPC",
 				InteractDistance = 300,
 
-				{ 
+{ 
 					PreLineWait = 2.8,
 					Portrait = "StoryExpansion_Hooded_Chronos", Speaker = "StoryExpansionUnknownMaleSpeaker",
-					Text = "Mother, I am at your service, as always. Why have you called me here?" },
+					Text = "Ouranos, Father, your time is up. Mother Gaia decreed your reign to end. Step aside now or face the rightful force of your son." },
 				{
-					Portrait = "StoryExpansion_Hooded_Gaia",Speaker = "StoryExpansionUnknownFemaleSpeaker",
-                    PreLineWait = 0.5,
-					Text = "My son, tonight you fulfill your destiny. You will take this scythe and use it to kill Ouranos, the Sky Incarnate. I have tired of him and his pathetic attempts at companionship." },
+					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
+					PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.5, UseChronosSound = false },
+					Text = "You would {#Emph} dare {#Prev} raise your blade against me, Chronos? We are {#Emph} family {#Prev} and you belong to {#Emph} me{#Prev}. These oaths bind your loyalty to me and {#Emph} me {#Prev} alone." },
 				{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "StoryExpansionUnknownMaleSpeaker",
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 
-					Text = "{#Emph}Mother{#Prev}! You cannot be asking me to take up arms against my Father! Please do not ask stand against my family." },
+					Text = "{#Emph}<Scoff> {#Prev} Family is not merely inherited. You provided no home, no guidance, and let your subjects rot to pursue my mother. You are a cruel father, and an even crueller king." },
 
 							{
-					Portrait = "StoryExpansion_Hooded_Gaia",Speaker = "StoryExpansionUnknownFemaleSpeaker",
+					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
                     												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.5, UseChronosSound = false },
 
-					Text = "You {#Emph}can {#Prev}and you {#Emph}will{#Prev}. You are my creation and you {#Emph}will {#Prev} follow my commands. Or else, you will feel the full fury of the Earth." },
+					Text = "{#Emph}Ha! {#Prev} Cruel father I may be, yet you are a cruel son. My heart beats strongly in you. If you must, harden it and strike me thus, but know you will not be without retribution." },
 { 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "StoryExpansionUnknownMaleSpeaker",
-					Text = "I... I..." },
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "{#Emph}Father..." },
 
 { 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "StoryExpansionUnknownMaleSpeaker",
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 										PreLineWait = 0.8,
+								PostLineFunctionName = _PLUGIN.guid .. ".BattleSounds", ExitPortraitImmediately = true,
 
-					Text = "...I am your loyal servant, Mother. Point me towards your enemies, and I shall be your sword."},
+					Text = "I will make stony my heart. It may be the only piece of advice you've given me. Prepare yourself for a fight, and to lose."},
 
 							{
-					Portrait = "StoryExpansion_Hooded_Gaia",Speaker = "StoryExpansionUnknownFemaleSpeaker",
-                                        												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 1.5, UseChronosSound = false },
-
-					Text = "{#Emph}Oh{#Prev}, Chronos, my son, I am glad you have come around. {#Emph} Death to Ouranos {#Prev}!"},
+					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
+								ExitPortraitImmediately =true,
+					Text = "I'll admit, I thought you unable to slay me, Chronos."},
 					{ 
 						PreLineWait = 0.85,
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "{#Emph}Death to Ouranos{#Prev}..."},
+					Text = "{#Emph}Death to Ouranos{#Prev}. That was my vow to my mother, and I will enact it."},
+					{
+					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
+
+					Text = "You think yourself different from your father? Every child does.{#Emph}<Scoff> {#Prev} And you believe yourself capable of building a better world?" },
+{ 
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "I know I can, Father. After all, I am nothing like you." },
+					{
+					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
+                    												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 1.5, UseChronosSound = false },
+
+					Text = "Then I will grant you a last boon: a curse on your name. You shall suffer, just as you have made me suffer. Your love shall ruin you. Children you cherish will strike you down. When your crown turns to dust in your hands, you shall fall alone. "},
+										{ 
+						PreLineWait = 0.85,
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "The world is no longer bound to your will. Your curse means nothing when our fates are decided by us, and us alone."},
+										{
+					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
+PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 2.0, UseChronosSound = true },
+ExitPortraitImmediately = true,
+					Text = "{#Emph} Ha... {#Prev}. You are much more like me than you know. Even if my curse carries no power, it will come true. It will be a dethroning of your own making. {#Emph} Death to Chronos..."},
+										{ 
+						PreLineWait = 1.2,
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "Goodbye Father. Perhaps history will remember you more kindly than I."},
+
 
 EndVoiceLines = {
 	{
@@ -222,60 +248,53 @@ function mod.PlaySurfaceFlashback02(source, args)
 				UseText = "StoryExpansionFreeNPC",
 				InteractDistance = 300,
 
-				{ 
-					PreLineWait = 2.8,
-					Portrait = "StoryExpansion_Hooded_Chronos", Speaker = "NPC_Chronos_01",
-					Text = "Father, your time is up. Do you not hear the death knells of you reign, as decreed by Mother Gaia? Step aside now, or face the rightful force of your son." },
 				{
-					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
-					PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.5, UseChronosSound = false },
-					Text = "You would {#Emph} dare {#Prev} raise your blade against me, Chronos? We are {#Emph} family{#Prev}. Those oaths bind your loyalty to me and {#Emph} me {#Prev} alone." },
-				{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-
-					Text = "{#Emph} <Scoff> {#Prev} What good are these bonds when you have done nothing for me? You provided me no home, no guidance, and left the beings of this world you rule to rot so you could further pursue my mother. You were a cruel father, but an even crueller king." },
+                    PreLineWait = 2.8,
+					Text = "I'm no fool, Prometheus. What are you trying to flatter me into now? And why does it need to be in this field?" },
 
 							{
-					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
-                    												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.5, UseChronosSound = false },
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
 
-					Text = "If I am to be a cruel father, then you are a cruel son. I can see it in you, a heart just as black and selfish as mine. If you must, harden it and strike me thus, but know you crimes will not be without punishment." },
+					Text = "It's to do with my newest creation. I'm finally ready to show it to you. You promise you'll be kind?" },
 { 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "{#Emph}Father..." },
-
-{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-										PreLineWait = 0.8,
-								PostLineFunctionName = _PLUGIN.guid .. ".BattleSounds",
-
-					Text = "I will make stony my heart. It may be the only good piece of advice you've ever given me. Prepare yourself for a fight, and to lose."},
-
+					Text = "If you were after kindness, you would have shown your brother. I'm known for honest feedback." },
 							{
-					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
 
-					Text = "I'll admit, I did not think you would be able to slay me Chronos. This may be the most furious, and paradoxically the most proud, I have ever been of you."},
+					Text = "I call them mortals. They're like us Titans, but much weaker, and with limited lifespans."},
 					{ 
-						PreLineWait = 0.85,
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "{#Emph}Death to Ouranos{#Prev}. That was my vow to my mother, and I will enact it now."},
-					{
-					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
-                    												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 1.5, UseChronosSound = false },
+					Text = "Perhaps I'm missing something here. What is it exactly that they... {#Emph} do{#Prev}? What purpose do they serve?" },
+												{
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
 
-					Text = "Then I will grant you once last boon: a curse on you and your name. You shall suffer, just as you have made me suffer. You stole your mother's love from me, so too shall my curse take your love from you. Your children will end you, just as you ended me."},
+					Text = "They don't have a single purpose. Mortals exist to live, to change, to grow beyond our expectations. Isn't that limitless potential incredible?"},
 										{ 
-						PreLineWait = 0.85,
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "The world is no longer bound by your rule, Father. Your curse means nothing when our fates will be decided by us, and us alone."},
-										{
-					Portrait = "StoryExpansion_Hooded_Ouranos",Speaker = "StoryExpansion_NPC_Ouranos",
-PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 2.0, UseChronosSound = true },
-					Text = "{#Emph} Ha... {#Prev} You are much more like me than you know. Whether or not my curse carries power, it will come true. I see the ugliness inside of you, and it will be a downfall of your own making. {#Emph} Death to Chronos..."},
-										{ 
-						PreLineWait = 1.2,
+					Text = "But they're so… fragile. Quick to hunger, strife and death. Is that not unnecessary?" },
+																	{
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
+
+					Text = "Mortals may be fragile, but they persist and learn from it! Is that not a beauty of its own?"},
+															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Goodbye Father. May you be remembered more favourably than you were."},
+					ExitPortraitImmediately = true,
+					Text = "Their anguish is pointless. For beings this feeble, it is a simple matter to undo their scrapes." },
+															{ 
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
+					PreLineWait = 0.3,
+					Text = "If you always carry someone, my king, they'll never learn to stand. What will they learn then?" },
+															{ 
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "They will know only the peace of our Golden Age. No fear of tomorrow, hunger, or grief. Does that not satisfy you, Prometheus?" },
+															{ 
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
+					Text = "..." },
+					{ 
+					Portrait = "StoryExpansion_Hooded_Prometheus",Speaker = "Prometheus",
+					Text = "Of course, my king. That is all I can desire." },
 
 
 
@@ -441,79 +460,39 @@ function mod.PlaySurfaceFlashback03(source, args)
 				UseText = "StoryExpansionFreeNPC",
 				InteractDistance = 300,
 
-				{ 
-					PreLineWait = 2.8,
-					Portrait = "StoryExpansion_Hooded_Chronos", Speaker = "NPC_Chronos_01",
-					Text = "Prometheus, why have you brought me to this den of... {#Emph} needless violence{#Prev}? I have duties I need to be attending to; the nymphs and satyrs are still fighting, not to mention the nereids complaints about the centaurs that won't stop partying." },
 				{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-                    PreLineWait = 0.5,
-					Text = "And that is exactly {#Emph} why {#Prev} I've brought you along. You've got to find a way to relax, my king, and let out that aggression before it all bursts out of you. And besides, it's a formal wrestling tournament, not some immoral fight club." },
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansionUnknownFemaleSpeaker",
+                    PreLineWait = 2.8,
+					Text = "The world has been much more peaceful since you took over, Chronos. I'm no longer too afraid of the sky watching to frolic and explore!" },
 				{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 
-					Text = "Prometheus, I made you my advisor for your foresight about state matters, not for you to meddle in my affairs." },
+					Text = "Rhea, it's far from flawless yet, my love. The winds are too strong, and I've yet to be able to keep the plants on schedule." },
 
 							{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-
-					Text = "Trust in my foresight now, my king. I've seen something, or rather, someone, you'll find very interesting." },
-{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I'm much too busy for this Prometheus..." },
-
-{ 
-					Portrait = "nil",Speaker = "StoryExpansionUnknownAnnouncer",
-										PreLineWait = 0.8,
-
-					Text = "And she's completely stormed through the competition! Is there anyone, {#Emph} anyone{#Prev}, in the audience daring enough to take on the monster?"},
-
-							{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-
-					Text = "Over here! I've got a buddy just dying to take on the champion!"},
-					{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.2, UseChronosSound = false },
-					Text = "Prometheus! What are you doing? I didn't sign up for this!"},
-					{ 
-					Portrait = "nil",Speaker = "StoryExpansionUnknownAnnouncer",
-					Text = "And it seems like we've got a volunteer from the audience to take her on. Make way for the brave Titan who thinks he can take on the reigning conqueror!"},
-										{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineWait = 0.8,
-					Text = "{#Emph} Oh... {#Prev} Hello. I... {#Emph} um{#Prev}... don't believe we've ever met. Do you, {#Emph} uh {#Prev} come here often?"},
-
-												{
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansionUnknownFemaleSpeaker",
-					Text = "Does the reigning champion come here often? You'll have to ask the organisers whether or not I do. You look quite nervous, Titan King; afraid you'll lose?"},
-{ 
-					Portrait = "nil",Speaker = "StoryExpansionUnknownAnnouncer",
-					Text = "LET THE FIGHT BEGIN!",
-						PostLineFunctionName = _PLUGIN.guid .. ".BattleSounds",
-},
-					{ 
-					Portrait = "nil",Speaker = "StoryExpansionUnknownAnnouncer",
-					Text = "...and in expected fashion, our champion has pulled ahead and pummelled this lovely volunteer into the ground!",
-				},
-				{ 
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansionUnknownFemaleSpeaker",
-					Text = "You did well, Titan King. Not many can handle fighting me for so long. You were evasive and fast, like a sandstorm.",
-				},
-				{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I really enjoyed fighting you too. You're a {#Emph} beautiful {#Prev} fighter. I would love to... {#Emph} um... {#Prev} test myself against you again, my lady.",
-				},
-				{ 
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-					PreLineWait = 0.3,
-					Text = "{#Emph} Oh{#Prev}, you're cute. Sure, I'll fight you again. The name's Rhea, and don't you forget it Sandstorm.",
-				},
-				{ 
+
+					Text = "{#Emph} Ha! {#Prev} Only you would notice these things. Everyone else enjoys paradise, and you're already planning on improving it. Have you tried, perhaps, asking the plants nicely?" },
+{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineWait = 0.25,
-					Text = "{#Emph} Rhea...",
-				},
+					Text = "The crown is my burden. It is maintenance that keeps our paradise stable." },
+							{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+
+					Text = "And I can't imagine anyone else doing it. You've allowed us to finally breathe freely."},
+					{ 
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "My duty is easiest to manage when it is shared. It is lighter upon two heads." },
+												{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+
+					Text = "Then I will be here, if your hands are ever too small to grasp. You won't have to carry it alone."},
+															{ 
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "I know it will endure, darling, with you beside me." },
+															{ 
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					Text = "Always." },
 
 EndVoiceLines = {
 	{
@@ -602,51 +581,62 @@ function mod.PlaySurfaceFlashback04(source, args)
 				InteractDistance = 300,
 
 				{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-                    PreLineWait = 2.8,
-					Text = "So, my king, you must admit that my idea of taking you to that wrestling match all those months ago was a good one, and that you can trust my judgement." },
-				{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-
-					Text = "Yes, Prometheus, as I have said plenty of times since then, you taking me to meet Rhea was an excellent idea. She has certainly, {#Emph} ahem {#Prev} brightened my life since I met her." },
+                    PreLineWait = 2.8,
+					Text = "Is something the matter, my love? You are rather withdrawn tonight." },
 
 							{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "And not only your life, but you become a much better king since you met her. Everyone has been saying how much more considerate you are now!" },
+					Text = "…" },
+					{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+
+					Text = "Well, I'll admit there is something I must tell you." },
+					{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					PreLineWait = 0.5, ExitPortraitImmediately = true,
+					Text = "…Chronos… we're going to have a child." },
 { 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Are you suggesting I was cruel before? I'm not an idiot, Prometheus. What are you trying to butter me up for now?" },
+					PreLineWait = 0.3,
+					Text = "Rhea…? Are you… certain?" },
 							{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "Well it's to do with my newest creation. I'm finally ready to show it to you. You promise you'll be kind?"},
+					Text = "I can feel him growing. A little bit of {#Emph} you {#Prev} and a little bit of {#Emph} me{#Prev}."},
 					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I thought you said I was the benevolent king after meeting Rhea. Besides, if it was kindness you were after, you would have shown your brother. I'm known for honest feedback." },
+					Text = "…A child? Ours? …I never thought that… our own…" },
 												{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "I call them mortals. They're like us Titans, but much weaker, and with limited lifespans."},
-										{ 
+					Text = "Isn't it wonderful, Chronos?"},
+															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Perhaps I'm missing something here. What is it exactly that they... {#Emph} do{#Prev}? What is their purpose?" },
-																	{
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
+					Text = "…a little prince…" },
+															{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "That's just it! They don't have a single purpose. They exist to live, to change, to grow beyond our expectations of them. Isn't that limitless potential beautiful?"},
+					Text = "A jewel for the Titan crown! Our own son! I’m thinking of the name, Hades."},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "...If you say so... but what do you want me to do with them?" },
-															{ 
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "Give them a place in your kingdom. Let them live upon the land and thrive. I know that with a little help, these mortals will be able to do great things." },
+					Text = "A strong name indeed. Do you think he’ll have your eyes or mine?" },
+					{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+
+					Text = "There’s so much I can’t wait to show him. The stars, the wilds, the rivers… the mountains… "},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "{#Emph}Ha! {#Prev} If this is the cost of your advice and foresight, I shall gladly bare it. Know that under my kingdom, these mortals shall know no struggle or woe." },
+					Text = "There is much to prepare for… lessons to plan, ceremonies to organise, tutors to summon… " },
+					{
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+
+					Text = "We’ll manage it. For now, though, he can just be… ours."},
 															{ 
-					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "Thank you, my king." },
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "…yes, darling… our blessing." },
+					
 EndVoiceLines = {
 	{
 						PreLineWait = 0.75,
@@ -733,61 +723,64 @@ function mod.PlaySurfaceFlashback05(source, args)
 				InteractDistance = 300,
 
 				{
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
                     PreLineWait = 2.8,
-					Text = "Sandstorm, I have some {#Emph} important {#Prev} news I need to tell you. You want to prepare yourself." },
-				{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Text = "Perhaps, Poseidon, if you did not fool with you brother, you would already have mastered this move. It is not fitting of a Titan prince to disappoint. " },
 
-					Text = "Rhea, please, tell me, is everything alright? Is there someone I need to fight?" },
-
-							{
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "{#Emph}Ha!{#Prev} I'm better at fighting than you, and you know it! This is, however, a fight of an entirely different sort." },
-{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Rhea, my wife, please speak plainly. You are worrying me." },
-							{
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "Well... recently I felt a new power in me. A new life. One a little like you, and a little like me."},
 					{ 
+					Portrait = "StoryExpansion_Hooded_Poseidon",Speaker = "NPC_Poseidon_01",
+
+					Text = "But Father! We were just playing together! He did nothing wrong!" },
+
+							{
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "You mean to say... you are {#Emph} pregnant{#Prev}?" },
+
+					Text = "I did not raise you to be so defiant. Do you think I had time for play when I slew Ouranos? You shall practice until you have shown yourself competent at disarming your foes." },
+{ 
+					Portrait = "StoryExpansion_Hooded_Poseidon",Speaker = "NPC_Poseidon_01",
+					Text = "Will you watch me if I succeed?" },
+							{
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+								ExitPortraitImmediately =true,
+					Text = "If you improve, I will. After all, son, your mastery is of interest to me."},
+					{ 
+					Portrait = "StoryExpansion_Hooded_Poseidon",Speaker = "NPC_Poseidon_01",
+					PreLineWait = 0.3, ExitPortraitImmediately = true,
+					Text = "…Yes Father. I’ll be better tomorrow. I wish both you and Mother a good night." },
 												{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "Yes! With a little boy, none-the-less! {#Emph} Oh{#Prev}, Sandstorm, aren't you excited to pamper the little prince? I'm thinking the name Hades will be beautiful."},
-										{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineWait = 0.8,
-					Text = "I... Rhea... I'm not sure that'll I be a good father to him." },
-																	{
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "...Chronos, you cannot still can't be taking about what your father said seriously."},
+					PreLineWait = 1.2,
+					Text = "…Must you be so hard on them, Chronos? They are still young, after all."},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I fear you see mw in a much kinder light than I am. He was right about the cruel heart I have inside." },
+					Text = "Young and blessed with the security of the throne. We did not have such protections when we were small, my love. " },
 															{ 
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-					Text = "We all have aspects from our parents, that we love or hate. It is what we do with these parts that matter. Stone heart or not, Sandstorm, you have been loving to me, to your subjects, and I'm sure you will be to our children. So long as you focus on the parts that matter." },
-															{ 
+					Text = "Surely you can allow them some freedom? They have not been out to see the peace you’ve created. I know Poseidon longs to see the depths of the oceans." },
+					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "...Have I ever told you how wise you are, wife? I don't know how I could do this job without you. I love you." },
-															{ 
+					Text = "The world will still be there when they are fully prepared for it. Besides, if you objected so much to my discipline, why did you not intervene?" },
+					{ 
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-					Text = "I don't know what {#Emph} <cough> {#Prev} you'd do without me either. I keep this place running while you worry about the rest of the kingdom. I love you too. {#Emph} <cough>{#Prev}" },
-																				{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Are you alright? That's a nasty cough." },
-																				{ 
+					Text = "..." },
+					{ 
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-					Text = "The pregnancy has just been draining my strength. I'll be back to full strength in no time. Trust me, dear? {#Emph} <cough>{#Prev}" },
-															{ 
+					Text = "…How long do you intend to keep their childhood from them?" },
+					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Always." },
+					Text = "Until they prove themselves capable and can act appropriately. They have much to live up to, after all, and we cannot fail them." },
+					{ 
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					ExitPortraitImmediately = true,
+					Text = "Even if you had another child? You would treat them the same?" },
+					{ 
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					ExitPortraitImmediately = true, PreLineWait = 0.2,
+					Text = "I would. It does not do well to have favourites after all. That way only leads to rebellion. Is there something you mean to tell me?" },
+					{ 
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					PreLineWait = 0.7,
+					Text = "…No. Not right now." },
 
 EndVoiceLines = {
 	{
@@ -876,57 +869,53 @@ function mod.PlaySurfaceFlashback06(source, args)
 				InteractDistance = 300,
 
 				{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-                    PreLineWait = 2.8,
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+                    PreLineWait = 2.8, ExitPortraitImmediately = true,
 
-					Text = "Rhea, you haven't been getting better, have you?" },
+					Text = "Love… how long do you intend to stay by this empty cradle?" },
 
 							{
-					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "...{#Emph} <cough> {#Prev}" },
+					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					PreLineWait = 0.5, ExitPortraitImmediately = true,
+					Text = "…I never heard him cry. Before he turned as cold as stone. You at least held him. I never got the chance." },
 					{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 						PreLineWait = 0.4,
-					Text = "...To tell you the truth, no. I feel weaker every day. But I need to get up. How are the children?" },
+					Text = "…I’m sure he’s at peace wherever he is now." },
 { 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I'm not sure how much longer they will buy my excuses for your condition. Especially with it getting worse. Besides, you were always better with them than I." },
+					ExitPortraitImmediately = true,
+					Text = "Do you think he knew I loved him… before he passed? How special he was?" },
 							{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "We need to consider what we will do if my condition continues to worsen. You'll have to {#Emph} <cough> {#Prev} look after me, Zeus, Poseidon, Hades and the world. Even with your control of time, there's no way you could handle all that."},
+						
+					Text = "You cannot stay here forever, Chronos. The world needs you to maintain order."},
 					{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "No. I {#Emph} refuse {#Prev} to be placed in that position. If I have to fight Chaos themselves for that, then I will." },
+					Text = "It will wait. My son has been taken from me." },
 												{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "You couldn't even best me, so what makes you think {#Emph} <cough> {#Prev} Almighty Chaos would be more of a pushover? Be real Sandstorm, this is a decision you may have to make. If it comes down to it, I want you to forget about me."},
+					ExitPortraitImmediately = true,
+					Text = "And what of Hades and Poseidon? They grieve their brother too."},
 										{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineWait = 0.8,
-					Text = "Rhea... I can't {#Emph} ever {#Prev} do that to you." },
+					PreLineWait = 0.3, ExitPortraitImmediately = true,
+					Text = "I will not fail them as well… I cannot lose another child.  They will be safe, here with me, sheltered from the world." },
 																	{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-
-					Text = "For the sake of our children and the world, you {#Emph} can {#Prev} and you {#Emph} will{#Prev}. Now please, let me rest. It has been a {#Emph} <cough> {#Prev} draining day."},
-															{ 
-					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
-					PreLineWait = 0.85,
-					Text = "Father? Is Mother in here? She promised she would play with us earlier." },
+					PreLineWait = 0.3, ExitPortraitImmediately= true,
+					Text = "Chronos…"},
 															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "I think it would be best if you leave now, boy. She is not up to playing games. Besides, do you not have your duties to fulfill?" },
+					Text = "I’ll increase their training. Nothing will be able to stand against or hurt us." },
 															{ 
-					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
-					Text = "I... Yes Father. I just wanted to have some fun." },
-																				{ 
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					PreLineWait = 0.3, ExitPortraitImmediately = true,
+					Text = "Chronos… I’m sorry… I’ll let you grieve alone, then." },
+															{ 
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "You are a prince of the Titan regime. You have certain responsibilities and I expect you to meet them. And please, Zeus, try to avoid bothering you mother again." },
-																				{ 
-					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
-					Text = "...Yes, Father. I understand." },
+					PreLineWait = 0.5, ExitPortraitImmediately = true,
+					Text = "…Never again. Any pain, any opposition, any danger, I’ll be prepared for. I promise you, Zeus… the son I never knew." },
 
 EndVoiceLines = {
 	{
@@ -948,7 +937,7 @@ EndVoiceLines = {
 end
 
 function mod.PlaySurfaceFlashback07(source, args)
-	LoadPackages({Name = "Nyx"})
+	LoadPackages({Name = "Zeus"})
 	AddInputBlock({ Name = "LowerPalacePresentation" })
 	UseableOff({ Id = source.ObjectId })
 
@@ -1015,58 +1004,49 @@ function mod.PlaySurfaceFlashback07(source, args)
 				InteractDistance = 300,
 
 				{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
+					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
                     PreLineWait = 2.8,
 
-					Text = "Lady Nyx, thank you for coming. I would not have called for you were I not so hopeless." },
+					Text = "Mother? Is that you? How fare my brothers?" },
 
 							{
-					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "Yes, I am sure you are desperate. Already, we forces of nature have stopped receiving the care that you promised us after deposing Ouranos. I hear Prometheus has also gotten testy about your treatment of his mortals." },
+					Text = "The same as ever. It seems Chronos never intends to let them free from the palace." },
 { 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "With due respect, O Night, I am trying my best. It has been a difficult time. I would appreciate your help with my wife, if you are able." },
+					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
+					Text = "Father has been neglecting his duties to the world too. From what I’ve heard, nature itself seems discontent with him." },
 							{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 
-					Text = "{#Emph} Uh... {#Prev} Nyx... is that you?"},
+					Text = "This was not the life I meant for you, my child. When I hid you from Chronos… I thought your ‘death’ would let you grow up free."},
 					{ 
-					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-					Text = "Oh Rhea, it hurts to see you like this. You were always so full of life. Ouranos's curse is crueller than anything I could have thought of." },
+					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
+					ExitPortraitImmediately = true,
+					Text = "You freed me from him. And I will free my brothers from his cage too." },
 										{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "{#Emph}Ouranos's curse... {#Prev} you mean, it's real? And Rhea's condition... it's my fault for bringing my Father's curse down upon her? And the other parts of his curse, they are true too?" },
-																	{
-					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-
-					Text = "I cannot tell you what parts of Ouranos's curse have power, only that it is the Sky's persisting strength draining Rhea's."},
-																	{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					PreLineWait = 0.2,
+					Text = "…He grieved you, Zeus, and loved you all. I’m afraid my lie was what transformed him." },
+					{
+										Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
+					ExitPortraitImmediately = true,
 
-					Text = "Choosing to love you was never a curse, Sandstorm. I would do it over again, even with the cost."},
-															{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Oh, Rhea, I would bare any payment for you if I could. Nyx, is there anything you or your children can do for her?" },
-															{ 
-					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-					Text = "The magick of this curse is dark, hateful, and tightly woven. It is far beyond my power to treat." },
-																				{ 
+					Text = "What he is doing is not love. I will do what you cannot, Mother. Someone needs to free us all from his rule. To let us breathe freely again."},												
+					{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-					Text = "So this is the end of our story. Remember what I asked of you, Chronos. Move on from me once I'm gone." },
-																				{ 
-					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-					Text = "While there may be nothing I can do, there is one more powerful than I. I can speak on your behalf to my ancestor, but their boons will come with a cost." },
-					{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Yes. {#Emph} Yes{#Prev}! This is exactly what we were looking for! Nyx, thank you truly. When Rhea returns to herself, you will be rewarded." },
-																									{ 
-					Portrait = "Portrait_Nyx_Default_01",Speaker = "NPC_Nyx_01",
-					Text = "Do not count your blessings before you have paid, Chronos. I fear the price may be too high, even for you." },
-										{ 
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "If Rhea survives, no cost will be too great. I will give up myself, my kingdom, all I own. Perhaps I am selfish like my father in that way." },
+					PreLineWait = 0.2,
+					Text = "…Zeus, surely you do not mean…"},
+																	{
+					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
+					ExitPortraitImmediately = true,
+					Text = "Already the Fates have thrown their support behind me. Cyclopes, nymphs and satyrs stand ready. Someone must stand against him, Mother. I hope you understand."},
+															{ 
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+										PreLineWait = 0.3,
 
+					Text = "I will ensure my sons’ safety. At any cost." },
+															
 EndVoiceLines = {
 	{
 						PreLineWait = 0.75,
@@ -1165,27 +1145,27 @@ function mod.PlaySurfaceFlashback08(source, args)
 							{
 					Portrait = "Portrait_Poseidon_Default_InPerson_01",Speaker = "NPC_Poseidon_01",
 
-					Text = "Do you not hear the death knells of you reign, as decreed by Fates? Have you not heard nature screaming out for a new regime?" },
+					Text = "Do you not hear the death knells of your reign, as decreed by the Fates? Nature screams out for a new regime." },
 { 
 					Portrait = "Portrait_LordHades_01",Speaker = "NPC_LordHades_01",
-					Text = "You have rejected your duties to the beings of this world for too long. They have now stepped up and gifted us the Infernal Arms, for us to subdue you." },
+					Text = "You have rejected your duties to the beings of this world for too long, Father. They have now stepped up and gifted us the Infernal Arms, for us to subdue you." },
 							{
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 
-					Text = "You would strike against your family? After all I have done for you? Family {#Emph} shares{#Prev}, not takes."},
+					Text = "You would strike against your family? After all I have done for you and all I protected you from? Family shelters and shares, not takes."},
 					{ 
 					Portrait = "Portrait_Zeus_InPerson_01",Speaker = "NPC_Zeus_01",
-					Text = "You were never the {#Emph} sharing {#Prev} type. Your soul is cruel, Father. Already your allies stand against you." },
+					Text = "You were never the {#Emph} sharing {#Prev} type. You are callous, Father. Already your allies stand against you." },
 										{ 
 					Portrait = "Portrait_LordHades_01",Speaker = "NPC_LordHades_01",
-					Text = "For the sake of our mother and your old allies, we will offer you this one chance. We will return tomorrow, with our forces behind us. Use the rest of today to decide whether you prefer to abdicate or to perish, Father." },
+					Text = "For the sake of our mother and your old allies, we will offer you this one chance. We will return tomorrow, with our forces behind us. Use the rest of today to decide whether you prefer to abdicate or perish, Father." },
 																	{
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 1.5, UseChronosSound = false },
-					Text = "It seems Ouranos's curse was true after all. Go. I have affairs to deal with before meeting your threat tomorrow. I too urge you to reconsider. You have no idea the depths of my cruelty."},
+					Text = "It seems Ouranos's curse was true after all. I never thought you would use what I taught you against me. Go. I too urge you to reconsider. You have no idea the lengths I would go to protect what is mine."},
 										{ 
 					Portrait = "Portrait_Poseidon_Default_InPerson_01",Speaker = "NPC_Poseidon_01",
-					Text = "There is little you could do to suprise us. Enjoy your last day, Father. We will relish in our victory tomorrow." },
+					Text = "There are few savageries you could surprise us with. Choose wisely, Father. No matter what happens, this ends tomorrow, with us as the victors." },
 
 EndVoiceLines = {
 	{
@@ -1274,46 +1254,28 @@ function mod.PlaySurfaceFlashback09(source, args)
 				InteractDistance = 300,
 
 				{ 
-					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
                     PreLineWait = 2.8,
 
-					Text = "Approach, supplicant, and ask. My descendant has made a plea on your behalf, and I have been moved to listen. Respond." },
-					{
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Almighty Chaos, I seek your aid in unravelling Ouranos's curse on my wife, Rhea. In his dying hatred, he has taken her strength with cruel and dark magick beyond the ability of Lady Nyx to cure."},
+					Text = "Almighty Chaos, I thank you for your aid. Chronos has been struck down, and we could not have breached his defences without your power." },
 										{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "But not beyond my abilities. I assume my descendant has already informed you that my blessings come with their own prices." },
+					ExitPortraitImmediately = true,
+					Text = "Now you pay the price. You have taken my boon – will you take the curse?" },
 										{
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Yes, and I am willing to pay {#Emph} anything {#Prev} for Rhea to be cured."},
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					PreLineWait = 0.2,
+					Text = "…I thought I was saving everyone I loved, but I was the one who brought my fears to life. If this is the cost for my mistakes, then… yes, I will bear it."},
 					{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "You are not the one recieving my boon. Therefore, you will not be the one to bare the associated curse." },
+					Text = "Fascinating. Few are willing to shoulder the price power demands. I did not anticipate any would accept a blessing with this burden." },
 										{
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "Rhea..."},
-					{ 
-					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "Here is my offer. I will guarantee her survival. The curse will no longer sap any of her strength, and I will even restore what has already been stolen. In exchange, she will be consumed by her her darkest impulses and transformed into a monstrosity." },
-{
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					Text = "..."},
-					{
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineWait = 1.5,
-					Text = "...But she will not be harmed? Her health shall be restored?"},
-										{ 
-					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "Underneath all the anger and horror, she will be perfectly well. With how strong Ouranos's curse is, there is no other option that will save her from complete oblivion. Will you pay the price?" },
-{
-					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
-					PreLineWait = 1.5,
-					Text = "...{#Emph}Yes{#Prev}. Though she may hate it, my heart is set on saving her no matter the cost. I have paid too much to turn back."},
+					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
+					Text = "For my children, it is worth it. I stood by for too long."},
 					{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
 													PostLineFunctionName = _PLUGIN.guid .. ".TyphonSounds",
-					Text = "Very well. Let her be transformed into a true monstrosity. {#Emph} So mote it be{#Prev}." },
+					Text = "Your reasoning is of no matter. The oath has already been sworn. Transform into a being of naught but instinct. Fall, Motherhood, and rise Monstrosity." },
 
 EndVoiceLines = {
 	{
@@ -1406,30 +1368,33 @@ function mod.PlaySurfaceFlashback10(source, args)
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
                     PreLineWait = 2.8,
 
-					Text = "I may not have your powers of foresight, Prometheus, but even I can see that the end is nigh. Typhon is falling, and so too is the last remenant of my wife." },
+					Text = "I may not have your powers of foresight, Prometheus, but even I can see that the end is nigh. Typhon is falling, and so too is the last remnant of my wife." },
 					{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "It is not over until the last fighter falls, my king. Hold onto your hope and love for a little longer."},
+					Text = "Until the last fighter falls, my king, war rages. Grasp hope a little longer."},
 										{ 
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
-					Text = "I've not been your king for a while, Prometheus. And I haven't been the king you deserve for a much longer time. I'm sorry it took me so long to see that." },
+					Text = "I've not been your king for an age, Prometheus. I haven't been the king you deserve for a much greater time. It took me far too long to see that." },
 										{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "The Chronos I took with me to wrestling matches and first showed mortals to was always my king. Even when I stood with the Olympians, I would not kneel for them. I chose the kind Titan I once knew."},
+					ExitPortraitImmediately= true,
+					Text = "You were always my king. Even when I stood with the Olympians, I would not kneel for them. I chose the kind Titan I knew."},
 					{ 
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
 					PreLineWait = 0.8,
-					Text = "We've sure made a mess of things. Maybe the world would have been better off without us. At least then my wife wouldn't have had to suffer as that monster." },
+					Text = "We've sure made a mess of things. Perhaps the world would have been better off had we never ruled." },
 										{
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "We've both made mistakes, Chronos. But we've both made beautiful things too. Maybe we immortals are just as capable of growth as mortals."},
+					ExitPortraitImmediately = true,
+					Text = "We've both made mistakes, Chronos. We've both made beautiful things too. Maybe we immortals are just as capable of growth as mortals."},
 					{ 
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
 					PreLineWait = 0.8,
-					Text = "Prometheus, please use your foresight and answer me honestly. Was all of this — the reviving, the fighting, the freeing of Typhon — worth it?" },
+					Text = "Prometheus, use your foresight and answer me honestly. Was all of this — the reviving, the fighting, the freeing of Typhon — worth it?" },
 {
 					Portrait = "Portrait_Prometheus_Default_01",Speaker = "Prometheus",
-					Text = "...Yes. Though you may not see it yet, my king, I promise you that. I would not have advised it otherwise. The reward is worth all of the struggle in the world."},
+					ExitPortraitImmediately = true,
+					Text = "...Yes. Though you may not see it yet, my king, I promise you that. I would not have advised it otherwise. This future is worth all the struggle in the world."},
 					{
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
 					PreLineWait = 0.8,

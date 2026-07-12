@@ -625,6 +625,8 @@ gods.CreateBoon({
     }
 })
 
+--TODO: Do one of the random boon foods for Thanatos
+--TODO: A food that gives chance for hammers to include rank II blessings
 
 gods.CreateBoon({
     internalBoonName = "EurydiceFoodDamageForVulnerabilityTrait",
@@ -1397,10 +1399,10 @@ gods.CreateBoon({
     description =
     "Gain a random assortment of {$Keywords.AllElements} this night.",
     RarityLevels = {
-        Common = { Multiplier = 5},
-        Rare = { Multiplier = 7},
-        Epic = { Multiplier = 9},
-        Heroic = { Multiplier= 11},
+        Common = { Multiplier = 3},
+        Rare = { Multiplier = 5},
+        Epic = { Multiplier = 7},
+        Heroic = { Multiplier= 9},
     },
     ExtraFields = {
 		AcquireFunctionName = _PLUGIN.guid .. ".GrantRandomElementSelection",

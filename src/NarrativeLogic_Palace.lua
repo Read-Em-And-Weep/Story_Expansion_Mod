@@ -262,7 +262,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PreLineAnim = "Zeus_Explaining",
-					Text = "Whatever the reason for these visions, it is best that you watch them carefully. As Athena advises, one must know their enemy to the same degree they know themself to succeed in battle." },
+					Text = "Whatever the reason for these visions, it is best that you watch them carefully. As Athena advises, one must know their enemy to succeed in battle." },
 
 				{ Cue = "/VO/MelinoeField_3842", UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -313,7 +313,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "You should tell her that her magick is impeccable. Your palace's defenses are as powerful as they are ethereal. Speaking of these visions, I recieved another one now, of Chronos, Prometheus, and a Titaness called Rhea." },
+					Text = "You should tell her that her magick is impeccable. Your palace's defenses are as powerful as they are ethereal. Speaking of these visions, I recieved another one now, of Chronos and a Titaness called Rhea." },
 
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
@@ -322,11 +322,11 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
                 {  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "No, the vision only showed me how Chronos and her met. Why? Do you know this Rhea?" },
+					Text = "No, it only provided a glimse into the relationship of Chronos and her. Why? Do you know this Rhea?" },
 				{ 
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PreLineAnim = "Zeus_Explaining",
-					Text = "Rhea is...my mother, and your Grandmother. She's been missing since my brothers and I stood up against our father. We always worried that Chronos had done something to her in revenge for us claiming the throne, but we had no evidence." },
+					Text = "She is... my mother, and your Grandmother. She's been missing since my brothers and I stood up against our father. We always worried that Chronos had done something to Mother, but we had no evidence." },
 
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -374,7 +374,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "My visions have shown me of her pregnancy of my Father, but they've revealed no evil plan of Chronos's. He seems to be in love with her, and I have a hard time seeing this version of him harming her." },
+					Text = "My visions have shown me of Chronos's past, but they've yet to reveal an evil plan. He seems to truly be in love with Rhea, and I have a hard time seeing this version of him harming her." },
 
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
@@ -436,10 +436,10 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "My visions have told me that her life force was sapped due to a hateful curse placed on her from Ouranos — a curse so strong not even Mother Night could break it. Apparently, Chronos and Rhea concealed this information from you to stop you worrying." },
+					Text = "Nothing as of yet. They seem to be focused on Chronos and Rhea's relationship, or at least the deterioration of it. I'm confident these visions will reveal something eventually." },
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
-					Text = "A terrible curse sapping her strength? That is a destiny I wouldn't even wish on Chronos. At least knowing her fate may bring us peace now." },
+					Text = "Stay vigilant, Melinoë. Do not let your hand waver from seeing the past." },
 
 				EndVoiceLines =
 				{
@@ -550,17 +550,19 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 
 				{ 
 					PreLineAnim = "Zeus_Explaining",
-					Text = "My mother! I assumed she succumbed to Ouranos's curse. You mean to tell me she met a worse fate than that?" },
+					Text = "My mother! Did Chronos truly stike her down for supporting us?" },
 
 
 				{ UsePlayerSource = true,
                 Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "When there was no way to break the curse, Chronos beseeched Almight Chaos for a cure. To save Rhea, he transformed her into a being of pure hatred and monstrosity." },
+					Text = "Lady Rhea bargained with Almighty Chaos to ensure you would be victorious over Chronos. In exchange, they transformed her into a being of pure hatred and monstrosity." },
 
 				{ 
-					Text = "You mean to say that our most foe... Typhon... is Rhea transformed? He gave up her form in order for her to survive?" },
+					Text = "You mean to say that our greatest foe... Typhon... is Rhea transformed? She gave up her form in order for our success?" },
+
+
 				{ UsePlayerSource = true,
                 Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -591,7 +593,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
 					PostLineFunctionName = "ActivateApollo",
 
-					Text = "Then we better not see you in person until the incantation is complete. We shall hold the fort, while you seek for your last reagent. Good luck, Melinoë." },
+					Text = "Then we better not see you in person until the incantation is complete. We shall hold the palace, while you seek for your last reagent. Good luck, Melinoë." },
 				EndVoiceLines =
 				{
 					{
@@ -784,13 +786,13 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{
 					Source = "NPC_Chronos_02",
 					PreLineThreadedFunctionArgs = { Emote = "PortraitEmoteSurprise", Portrait = "Portrait_Chronos_Default_02", WaitTime = 0.2 },
-					Text = "Rhea... but I thought that Ouranos's curse had no cure?" },
+					Text = "Rhea... but I thought that Chaos's curse had no cure?" },
 				{UsePlayerSource = true,
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkBrooding01ReturnToIdle", PostLineAnimTarget = "Hero",
 					PostLineThreadedFunctionName = "DisplayInfoToast",
 					PostLineFunctionArgs = { Duration = 2, Title = "WorldUpgradeAdded", Text = "StoryExpansionWorldUpgradeSaveRhea" },
-					Text = "While Ouranos's curse may have required Almighty Chaos's power to heal, it is not the Sky's power that turned her into Typhon. Chaos's curses are always temporary, and after harnessing the power of the Dissolution of Time, I am confident that I can reverse her transformation." },
+					Text = "Chaos's curses are always temporary, and after harnessing the power of the Dissolution of Time, I am confident that I can reverse her transformation." },
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PreLineAnim = "Zeus_Explaining",
@@ -799,7 +801,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
-					Text = "Do not celebrate just yet, Chronos. We are not simply letting you go free. You will swear yourself into a slave bond to us, and we shall bind your very being to it." },
+					Text = "Do not celebrate just yet, Chronos. We are not simply letting you go free. You will swear yourself into a bond to us, and we shall bind your very being to it." },
 				{UsePlayerSource = true,
 				Portrait = "Portrait_Mel_Intense_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -977,7 +979,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PostLineFunctionName = "ActivateApollo",
 
-					Text = "He's gone at least for now, but he'll be back. We will not be able to hold back the storm of Ouranos's curse for much longer. Retrieve what you need from the Underworld, and do not return until then." },
+					Text = "He's gone at least for now, but he'll be back. We will not be able to hold back the storm for much longer. Retrieve what you need from the Underworld, and do not return until then." },
 				EndVoiceLines =
 				{
 					{
@@ -1043,7 +1045,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "He sends his apologies, but wise Athena called for his lightning to deal with a particularly persistant strain of Typhon's brood. If you forgive me for saying, Melinoë, you seem troubled by something. Is there some cause for concern?" },
+					Text = "He sends his apologies, but wise Athena called for his lightning to deal with a persistant strain of Typhon's brood. If you forgive me for saying, Melinoë, you seem troubled. Is there a cause for concern?" },
 
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -1070,7 +1072,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
 					PreLineWait = 0.25,
-					Text = "In my youth, he was not evil, at least perhaps not in the way that you think. We were looked after, but we had little freedom. Nymphs danced the same every day, mortals lived in ignorant lethargy, trees grew on schedule, and deities performed their duties with no passion or love. It was a world banal in its perfection." },
+					Text = "In my youth, he was not evil, at least perhaps not in the way that you think. We were looked after, but we had little freedom. Mortals lived in ignorant lethargy, trees grew on schedule, and deities performed their duties with no passion. It was a world banal in its perfection." },
 
 				{ 
 					UsePlayerSource = true,
@@ -1082,7 +1084,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
-					Text = "Then when we gods grew older, Chronos must have become bored of ruling such a world because he stopped paying it attention and it fell apart. The Fates decreed then that the world was rightfully ours, and we ushered forward an age marked by freedom and passion." },
+					Text = "When we gods grew older, Chronos became bored of ruling such a 'perfect' world. He stopped paying it attention and it fell apart. The Fates decreed then that the throne was rightfully ours, and we ushered forward an age marked by freedom and passion." },
 
 { 
 					UsePlayerSource = true,
@@ -1096,7 +1098,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
 					PostLineFunctionName = "ActivateApollo",
 
-					Text = "While our reign may not be perfect, Melinoë, it is at least one where we are able to choose our own path, rather than living the path Chronos chooses. Of course, until Chronos and Typhon are dealt with, we have few options to choose between." },
+					Text = "While our reign may not be perfect, Melinoë, it is one where we are can choose our path, rather than living the path Chronos chooses. Of course, until Chronos and Typhon are dealt with, we have limited options." },
 				EndVoiceLines =
 				{
 					{
@@ -1317,11 +1319,11 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkBrooding01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "I'd count on that. But I am going to be back as well. For now, please bolster your defenses, and make ready for the monster's next attack. I have something to ask of you, however. When I pierced your aether gate, I saw a vision of a past time. Is that normal?" },
+					Text = "I'd count on that. But I'll be back as well. I have something to ask of you, however. When I pierced your aether gate, I saw a vision of a past time. Is that normal?" },
 
                 {
 					Portrait = "Portrait_Apollo_InPerson_01",
-					Text = "I've been known to give divine strikes of inspirations, but visions like that simply from interacting with the aether gate is unheard of, even with my powers over prophecy. Seems like something Hecate would know more about, sunshine.", },
+					Text = "I've been known to give divine strikes of inspirations, but visions like that are unheard of, even with my powers over prophecy. Seems like something Hecate would know more about, sunshine.", },
 
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
@@ -1392,7 +1394,7 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 
 				},
 			},
-            			ApolloPalaceMeeting03 =
+            ApolloPalaceMeeting03 =
 			{
                 Name = "ApolloPalaceMeeting03",
 				PlayOnce = true,
@@ -1598,7 +1600,7 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkPensive01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkPensive01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "Not yet, but I expect that the incantation should be completed any day now." },
+					Text = "Not yet, but I expect that the incantation should be completed any night now." },
 
 				{ 
 					Portrait = "Portrait_Apollo_InPerson_Serious_01",
@@ -1690,7 +1692,7 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 
 				{ 
 					Portrait = "Portrait_Apollo_InPerson_Serious_01",
-					Text = "Yet I can't help but mourn what could have been. Sometimes it can be hard having to maintain morale with my music.",
+					Text = "Best to burn the infection out completely. Yet I can't help but mourn what could have been. Sometimes it can be hard having to maintain morale with my music.",
 					PostLineFunctionName = "ResumeApolloSinging",
 					PostLineThreadedFunctionName = "ActivatePalaceExitPoint",
 				},
@@ -1784,12 +1786,12 @@ EnemyData.NPC_Apollo_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "... and so I think I will miss the company from my visits most of all, though I'm not sure I could truly get used to the relaxing atmosphere here. I find myself constantly requiring something to do. Speaking of, we do need to find a place for this grandfather of ours. Do you think Lord Uncle Zeus will ever be able to forgive him?" },
+					Text = "... and so I think I will miss the company from my visits most of all, though I'm not sure I could truly get used to the relaxing atmosphere here. Speaking of, we do need to find a place for this grandfather of ours. Do you think Lord Uncle Zeus will ever be able to forgive him?" },
 
 
 				{
 					Portrait = "Portrait_Apollo_InPerson_Serious_01",
-					Text = "Neither Father nor Stepmother are well-known for their forgiveness, so Grandfather has a hard road ahead of him. Though you're the stubborn type that may be able to get through to them. You truly think our grandfather has changed?" },
+					Text = "Grandfather has a hard road ahead of him. Neither Father nor Stepmother are known for their forgiveness. Though you're the stubborn type that may be able to get through to them. You truly think our grandfather has changed?" },
 
 				{ Cue = "/VO/MelinoeField_3921", UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Empathetic_01",
@@ -2004,6 +2006,9 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
             {
                 PathTrue = { "GameState", "TextLinesRecord", "DemeterPalaceFirstMeeting" },
             },
+			{
+                PathTrue = { "GameState", "TextLinesRecord", "ZeusPalaceMeeting04" },
+            },
         },
         OnQueuedFunctionName = "CheckDistanceTriggerThread",
         OnQueuedFunctionArgs = PresetEventArgs.DemeterGreeting,
@@ -2080,6 +2085,9 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
             {
                 PathTrue = { "GameState", "TextLinesRecord", "DemeterPalaceMeeting02" },
             },
+			{
+                PathTrue = { "GameState", "TextLinesRecord", "ZeusPalaceMeeting05" },
+            },
         },
         OnQueuedFunctionName = "CheckDistanceTriggerThread",
         OnQueuedFunctionArgs = PresetEventArgs.DemeterGreeting,
@@ -2119,7 +2127,7 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
             UsePlayerSource = true,
             Portrait = "Portrait_Mel_Vulnerable_01",
             Text =
-            "Success means nothing if my family is not there beside me. Please, Grandmother, look after yourself."
+            "Success means nothing if my family is not beside me. Please, Grandmother, look after yourself."
         },
         {
             PreLineAnim =  "Demeter_Moved",
@@ -2160,9 +2168,23 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
         {
             PreLineAnim = "Demeter_Scoff",
             Text =
-            "Is it true, Granddaughter? That Typhon is actually the Titaness Rhea?"
+            "Granddaughter, what has you looking so troubled on this night?"
         },
-
+		{
+            UsePlayerSource = true,
+            Portrait = "Portrait_Mel_Vulnerable_01",
+            PreLineAnim = "MelTalkBrooding01",
+            PreLineAnimTarget = "Hero",
+            PostLineAnim = "MelTalkBrooding01ReturnToIdle",
+            PostLineAnimTarget = "Hero",
+            Text =
+            "Lady Demeter, it has been revealed to me that Rhea paid a terrible price for your victory over Chronos. She transformed herself into Typhon."
+        },
+		{
+            PreLineAnim = "Demeter_Scoff",
+            Text =
+            "Surely that cannot be true? Typhon is actually the Titaness Rhea?"
+        },
         {
             UsePlayerSource = true,
             Portrait = "Portrait_Mel_Vulnerable_01",
@@ -2176,7 +2198,7 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
         {
             PreLineAnim =  "Demeter_Moved",
             Text =
-            "Rhea was kind to Hestia, Hera and I when our father Hyperion was cruel. She took us in when no other Titan would give us anything."
+            "Rhea was kind to Hestia, Hera and I when our father Hyperion was cruel. She took us in when no other Titan gave us anything."
         },
         {
             UsePlayerSource = true,
@@ -2187,13 +2209,13 @@ EnemyData.NPC_Demeter_Story_01.InteractTextLineSets = {
         {
             PreLineAnim =  "Demeter_Moved",
             Text =
-            "None of her may truly live on in that monster, but she lives on in our hearts and her actions made us better gods. Perhaps this is what it is like to be mortal."
+            "None of her may truly live on in that monster, but she lives on in our hearts. Perhaps this is what it is like to be mortal."
         },
         {
             UsePlayerSource = true,
             Portrait = "Portrait_Mel_Vulnerable_01",
             Text =
-            "From what I've learnt from shades, our emotions bring us closer to mortals than we would like to admit. May we never feel such loss again."
+            "From what I've learnt from shades, we are closer to mortals than we would like to admit. May we never feel such loss again."
         },
 
         EndVoiceLines =
@@ -2441,7 +2463,7 @@ end
 function mod.CanSpawnZeusAtPalace()
         if IsGameStateEligible("Viewing1Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceFirstMeeting"}}}) then
             return true
-        elseif IsGameStateEligible("Viewing2Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting02"}}}) then
+         elseif IsGameStateEligible("Viewing2Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting02"}}}) then
             return true
         elseif IsGameStateEligible("Viewing3Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting03"}}}) then
             return true
@@ -2464,7 +2486,8 @@ function mod.CanSpawnDemeterAtPalace()
         elseif IsGameStateEligible("Viewing2Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting02"}}}) then
             return true
         elseif IsGameStateEligible("Viewing3Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting03"}}}) then
-            return false
+			-- TODO: Weirdly Demeter spawned here at one point in testing
+			return false
         elseif IsGameStateEligible("Viewing4Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting04"}}}) then
             return false
         elseif IsGameStateEligible("Viewing5Conv", {{PathFalse = {"GameState", "TextLinesRecord", "ZeusPalaceMeeting05"}}}) then

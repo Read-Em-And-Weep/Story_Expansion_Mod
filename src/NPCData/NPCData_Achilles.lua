@@ -35,7 +35,7 @@ mod.AchillesNPCData = {
 		AnimOffsetZ = 225,
 		Groups = { "NPCs" },
 
-        LoadPackages = { "Achilles", "BiomeIHouse"},
+        --LoadPackages = { "Achilles", "BiomeIHouse"},
 
 		InteractTextLineSets = {
         StoryExpansion_AchillesChat01 = {

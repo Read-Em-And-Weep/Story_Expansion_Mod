@@ -3,6 +3,7 @@ import 'TraitData/TraitData_Eurydice.lua'
 modutil.mod.Path.Wrap("ChooseLoot", function(base, excludeLootNames, forceLootName)
     local output = base(excludeLootNames, forceLootName)
     if forceLootName == nil then
+    if not CurrentRun.Hero.Traits then return output end
     for k, trait in pairs( CurrentRun.Hero.Traits ) do
         if trait.StoryExpansionEurydiceForceGod and RandomChance(0.3) and not Contains(excludeLootNames, trait.StoryExpansionEurydiceForceGod) then
             output = LootData[trait.StoryExpansionEurydiceForceGod]

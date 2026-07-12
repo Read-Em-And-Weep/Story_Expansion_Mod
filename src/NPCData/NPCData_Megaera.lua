@@ -50,7 +50,8 @@ PresetEventArgs["StoryExpansionMegaeraOathChoices"] = {
 				{
 				}
 			},
-		{
+		--TODO: Correct this for the new way Rivals is handled for random biomes/dream dives
+		--[[	{
 			Name = gods.GetInternalBoonName("MegaeraOathRivals2"),
 			GameStateRequirements =
 			{
@@ -127,7 +128,7 @@ PresetEventArgs["StoryExpansionMegaeraOathChoices"] = {
 					HasNone = { "I_Boss01", "Q_Boss01", "Q_Boss02", "D_Boss01"}
 				}
 			}
-		},
+		},]]
 		{
 				Name = gods.GetInternalBoonName("MegaeraOathAntiHeal"),
 				GameStateRequirements = 

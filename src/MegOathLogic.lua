@@ -302,9 +302,12 @@ function mod.DecreaseMaxGods()
 	if CurrentRun.MaxGodsPerRun then
 		CurrentRun.MaxGodsPerRun = CurrentRun.MaxGodsPerRun - 1
 	end
-	if HeroData.MaxGodsPerRun then
-		HeroData.MaxGodsPerRun = HeroData.MaxGodsPerRun - 1
+	if not CurrentRun.MaxGodsPerRun then
+		CurrentRun.MaxGodsPerRun = 3
 	end
+	--if HeroData.MaxGodsPerRun then
+	--	HeroData.MaxGodsPerRun = HeroData.MaxGodsPerRun - 1
+	--end
 end
 
 function mod.NotReachedMaxGods(args)
@@ -385,7 +388,7 @@ end)
 
 modutil.mod.Path.Wrap("SetTraitsOnLoot", function(base, lootData, args)
 	base(lootData, args)
-	if lootData.GodLoot and HeroHasTrait(gods.GetInternalBoonName("MegaeraBlessingRandomHeroicChance")) then
+	if (lootData.GodLoot or (lootData.TreatAsGodLootByShops and not lootData.BlockForceCommon)) and HeroHasTrait(gods.GetInternalBoonName("MegaeraBlessingRandomHeroicChance")) then
 		local trait = GetHeroTrait(gods.GetInternalBoonName("MegaeraBlessingRandomHeroicChance"))
 		for itemIndex, itemData in ipairs(lootData.UpgradeOptions) do
 			if (itemData.Rarity == "Common" or itemData.Rarity == "Rare" or itemData.Rarity == "Epic") and not itemData.IsElementalTrait and RandomChance(trait.StoryExpansionCommonToHeroicChance) then
@@ -398,29 +401,3 @@ end)
 function mod.AddRerolls(args)
 	AddRerolls({}, args)
 end
-
-function mod.TryMegaeraSpawn()
-	if CurrentRun.UseRecord.NPC_Megaera_Field_StoryExpansion then
-		return
-	end
-	if CurrentRun.CurrentRoom.Name == "G_Intro" then
-		if RandomChance(11/50) then --11/50
-			return mod.SpawnMegaera()
-		end
-	end
-	if CurrentRun.CurrentRoom.Name == "H_Intro" then
-		if RandomChance(11/39) then --11/39
-			return mod.SpawnMegaera()
-		end
-	end
-	if CurrentRun.CurrentRoom.Name == "I_Intro" then
-		if RandomChance(11/28) then --11/28
-			return mod.SpawnMegaera()
-		end
-	end
-	--therefore an overall 66% chance to encounter on an Underworld run
-end
-
-table.insert(RoomData.G_Intro.StartUnthreadedEvents, {FunctionName = _PLUGIN.guid..".TryMegaeraSpawn", GameStateRequirements ={NamedRequirementsFalse = { "StandardPackageBountyActive", },}})
-table.insert(RoomData.H_Intro.StartUnthreadedEvents, {FunctionName = _PLUGIN.guid..".TryMegaeraSpawn",GameStateRequirements ={NamedRequirementsFalse = { "StandardPackageBountyActive", },}})
-table.insert(RoomData.I_Intro.StartUnthreadedEvents, {FunctionName = _PLUGIN.guid..".TryMegaeraSpawn",GameStateRequirements ={NamedRequirementsFalse = { "StandardPackageBountyActive", },}})

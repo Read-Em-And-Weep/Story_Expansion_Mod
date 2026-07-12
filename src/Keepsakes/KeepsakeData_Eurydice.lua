@@ -52,7 +52,7 @@ end
 
 modutil.mod.Path.Wrap("FormatExtractedValue", function(base,value,extractData)
 if extractData.Format and extractData.Format == "StoryExpansionFoodRarity" then
-    local table = {"StoryExpansionTasty","StoryExpansionAppetizing", "StoryExpansionYummy", "StoryExpansionDelicious"}
+    local table = {"StoryExpansionTasty","StoryExpansionAppetizing", "StoryExpansionDelicious", "StoryExpansionDecadent"}
     return "{$Keywords." ..table[value].."}"
 end
 return base(value, extractData)

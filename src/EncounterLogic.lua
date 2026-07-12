@@ -196,7 +196,7 @@ end
 import 'EncounterData_Patroclus.lua'
 import 'EncounterData_Thanatos.lua'
 import 'EncounterData_TheseusAndMinotaur.lua'
-
+import 'EncounterData_BiomeStart.lua'
 
 function mod.SpawnPatroclusForRandomEvents(eventSource, args)
     	RandomSynchronize( 3 )
@@ -562,8 +562,8 @@ end
 function mod.SpawnMegaera()
 
 	
-	local thanatos = DeepCopyTable( EnemyData.NPC_Megaera_Field_StoryExpansion)
-	local spawnPointId = SelectSpawnPoint( CurrentRun.CurrentRoom, thanatos, { SpawnNearId = CurrentRun.Hero.ObjectId, SpawnRadius = 700, SpawnRadiusMin = 400 })
+	local characterUnit = DeepCopyTable( EnemyData.NPC_Megaera_Field_StoryExpansion)
+	local spawnPointId = SelectSpawnPoint( CurrentRun.CurrentRoom, characterUnit, { SpawnNearId = CurrentRun.Hero.ObjectId, SpawnRadius = 700, SpawnRadiusMin = 400 })
 	spawnPointId = spawnPointId or CurrentRun.Hero.ObjectId
 	if CurrentRun.CurrentRoom.Name == "G_Intro" then
 		spawnPointId = 410264
@@ -572,25 +572,81 @@ function mod.SpawnMegaera()
 	elseif CurrentRun.CurrentRoom.Name == "I_Intro" then
 		spawnPointId = 699326
 	end
-	thanatos.ObjectId = SpawnUnit({ Name = "NPC_Megaera_Field_StoryExpansion", Group = "Standing", DestinationId = spawnPointId })
-	thanatos.OccupyingSpawnPointId = spawnPointId
-	SetupUnit( thanatos, CurrentRun, { IgnoreAI = true, IgnorePackages = true, } )
+	characterUnit.ObjectId = SpawnUnit({ Name = "NPC_Megaera_Field_StoryExpansion", Group = "Standing", DestinationId = spawnPointId })
+	characterUnit.OccupyingSpawnPointId = spawnPointId
+	SetupUnit( characterUnit, CurrentRun, { IgnoreAI = true, IgnorePackages = true, } )
 	
 
 	
-	Track({ Ids = {thanatos.ObjectId}, DestinationIds = {CurrentRun.Hero.ObjectId} })
-	CreateAnimation({ Name = "TeleportDisappear", DestinationId = thanatos.ObjectId })
-	SetAlpha({ Id = thanatos.ObjectId, Fraction = 1.0, Duration = 0 })
+	Track({ Ids = {characterUnit.ObjectId}, DestinationIds = {CurrentRun.Hero.ObjectId} })
+	CreateAnimation({ Name = "TeleportDisappear", DestinationId = characterUnit.ObjectId })
+	SetAlpha({ Id = characterUnit.ObjectId, Fraction = 1.0, Duration = 0 })
 	
-	ProcessTextLines( thanatos, thanatos.InteractTextLineSets )
+	ProcessTextLines( characterUnit, characterUnit.InteractTextLineSets )
 
 	wait( 0.7, RoomThreadName )
 
-	CheckAvailableTextLines( thanatos )
-	SetAvailableUseText( thanatos )
-	MapState.RoomRequiredObjects[thanatos.ObjectId] = thanatos
+	CheckAvailableTextLines( characterUnit )
+	SetAvailableUseText( characterUnit )
+	MapState.RoomRequiredObjects[characterUnit.ObjectId] = characterUnit
 
-	UseableOn({ Id = thanatos.ObjectId })
+	UseableOn({ Id = characterUnit.ObjectId })
+end
+
+
+function mod.BiomeStartFriendlyEncounter(source, args)
+	if not args then return end
+	args = args or {}
+	if CurrentRun.StoryExpansionBiomeStartFriendlyEncounter then return end
+	if args.RandomSuccessChance then
+		if not RandomChance(args.RandomSuccessChance) then
+			return
+		end
+	end
+	local chosenOptions = GetRandomEligibleValueFromWeightedList(args.CharacterOptions, {})
+	CurrentRun.StoryExpansionBiomeStartFriendlyEncounter = chosenOption.Name
+	mod.SpawnBiomeStartFriendlyCharacter(source, chosenOption,args)
+end
+
+function mod.SpawnBiomeStartFriendlyCharacter(source, chosenOption, args)
+	if not chosenOption or not args then return end
+	local characterUnit = DeepCopyTable( EnemyData[chosenOption.CharacterName])
+	local spawnPointId = SelectSpawnPoint( CurrentRun.CurrentRoom, characterUnit, { SpawnNearId = CurrentRun.Hero.ObjectId, SpawnRadius = 700, SpawnRadiusMin = 400 })
+	spawnPointId = spawnPointId or CurrentRun.Hero.ObjectId
+	if args.SpawnPointId then
+		spawnPointId = args.SpawnPointId
+	end
+	local offset = {X=0,Y=0,Z=0}
+	if chosenOption.Offset then
+		offset.X = chosenOption.Offset.X
+		offset.Y = chosenOption.Offset.Y
+		offset.Z = chosenOption.Offset.z
+	end
+	characterUnit.ObjectId = SpawnUnit({ Name = chosenOption.CharacterName, Group = "Standing", DestinationId = spawnPointId, OffsetX =
+    offset.X, OffsetY = offset.Y, OffsetZ = offset.Z })
+	characterUnit.OccupyingSpawnPointId = spawnPointId
+	SetupUnit( characterUnit, CurrentRun, { IgnoreAI = true, IgnorePackages = true, } )
+	
+	if chosenOption.TrackHero then
+		Track({ Ids = {characterUnit.ObjectId}, DestinationIds = {CurrentRun.Hero.ObjectId} })
+	elseif chosenOption.GazeTarget then
+		local gazeTarget = SpawnObstacle({ Name = "InvisibleTarget", DestinationId = spawnPointId, OffsetX = chosenOption.GazeTarget.X, OffsetY = chosenOption.GazeTarget.Y })
+        AngleTowardTarget({ Id = newUnit.ObjectId, DestinationId = gazeTarget })
+        Destroy({Id = gazeTarget})
+	end
+	
+	CreateAnimation({ Name = "TeleportDisappear", DestinationId = characterUnit.ObjectId })
+	SetAlpha({ Id = characterUnit.ObjectId, Fraction = 1.0, Duration = 0 })
+	
+	ProcessTextLines( characterUnit, characterUnit.InteractTextLineSets )
+
+	wait( 0.7, RoomThreadName )
+
+	CheckAvailableTextLines( characterUnit )
+	SetAvailableUseText( characterUnit )
+	MapState.RoomRequiredObjects[characterUnit.ObjectId] = characterUnit
+
+	UseableOn({ Id = characterUnit.ObjectId })
 end
 
 function mod.MegaeraExitPresentation(source)
@@ -605,15 +661,22 @@ function mod.MegaeraExitPresentation(source)
 	MapState.RoomRequiredObjects[source.ObjectId] = nil
 end
 
-function mod.HandleNaturalTheseusMinotaurSpawn( eventSource )
+function mod.HandleNaturalTheseusMinotaurSpawn( eventSource,args )
+	local currentEncounter = eventSource
 	local currentRun = CurrentRun
 	local currentRoom = CurrentRun.CurrentRoom
-	local currentEncounter = eventSource
+	args = args or {}
+
 
 	local newTheseus = DeepCopyTable( EnemyData.NPC_Theseus_Field_01_StoryExpansion )
 	local newMinotaur = DeepCopyTable(EnemyData.NPC_Minotaur_Field_01_StoryExpansion)
-	local spawnPointId = SelectLootSpawnPoint(CurrentRun.CurrentRoom)
-	spawnPointId = spawnPointId or currentRun.Hero.ObjectId
+	local encounterData = EncounterData[eventSource.Name] or eventSource
+	local spawnNearId = currentRoom.HeroEndPoint or currentRun.Hero.ObjectId
+	if args.SpawnNearPlayer then
+		spawnNearId = currentRun.Hero.ObjectId
+	end
+	local spawnPointId = SelectSpawnPoint( currentRoom, newUnit, { SpawnNearId = spawnNearId, SpawnRadius = encounterData.NemesisSpawnRadius or 1000, SpawnRadiusMin = encounterData.NemesisSpawnRadiusMin or 500 }, { RequireLoS = true })
+	spawnPointId = spawnPointId or currentRun.Hero.ObjectId	
 	newTheseus.ObjectId = SpawnUnit({ Name = "NPC_Theseus_Field_01_StoryExpansion", Group = "Standing", DestinationId = spawnPointId })
 	newMinotaur.ObjectId = SpawnUnit({ Name = "NPC_Minotaur_Field_01_StoryExpansion", Group = "Standing", DestinationId = spawnPointId, OffsetX = -50, OffsetY = -50 })
 

@@ -3,10 +3,10 @@ gods.CreateKeepsake({
     internalKeepsakeName = "StoryExpansionCharonWellKeepsake",
 
     RarityLevels = {
-        Common = 2,
-        Rare = 3,
-        Epic = 4,
-        Heroic = 6,
+        Common = 1,
+        Rare = 2,
+        Epic = 3,
+        Heroic = 4,
     },
 
     Keepsake = {
