@@ -1,8 +1,6 @@
---TODO: Seperate out a seperate Theseus keepsake, which grants that your hex will offer godsent upgrades, and can be godsent +0/1/2 times this night?
-
 if not gods.IsKeepsakeRegistered("StoryExpansionAllySummonKeepsake") then
 gods.CreateKeepsake({
-    characterName = "Theseus and Asterius",
+    characterName = "Asterius",
     internalKeepsakeName = "StoryExpansionAllySummonKeepsake",
 
     RarityLevels = {
@@ -15,7 +13,7 @@ gods.CreateKeepsake({
     Keepsake = {
         displayName = "Stuffed Bull",
         description = "The next time you lose a {!Icons.ExtraChanceMisc}, summon {#BoldFormat} Theseus {#Prev} and {#BoldFormat} Asterius {#Prev} to join the fight to deal at most {$TooltipData.RemainingUses} damage before leaving.",
-        signoffMax = "From {#AwardMaxFormat}Theseus and Asterius{#Prev}{!Icons.ObjectiveSeparatorDark}To do nothing while others suffer is tantamount to enabling the suffering itself.",
+        signoffMax = "From {#AwardMaxFormat}Asterius{#Prev}{!Icons.ObjectiveSeparatorDark}Sometimes, all you need is for a single person to acknowledge you.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
     },
 

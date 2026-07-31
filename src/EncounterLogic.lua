@@ -718,15 +718,16 @@ function mod.NaturalTheseusMinotaurSpawnPresentation(theseus, minotaur)
 	wait( 0.1, RoomThreadName )
 	wait( 0.5, RoomThreadName )
 	wait(1.5)
+		RemoveInputBlock({ Name = "HeraclesSpawnPresentation" })
+	SetPlayerVulnerable( "HeraclesSpawnPresentation" )
 
+	if not CurrentRun.IsDreamRun then
 	ProcessTextLines( theseus, theseus.BossIntroTextLineSets )
 
-	RemoveInputBlock({ Name = "HeraclesSpawnPresentation" })
-	SetPlayerVulnerable( "HeraclesSpawnPresentation" )
 
 	local textLines = GetRandomEligibleTextLines( theseus, theseus.BossIntroTextLineSets, GetNarrativeDataValue( theseus, "BossIntroTextLinePriorities" ) )
 	PlayTextLines( theseus, textLines )
-
+	end
 	ShowCombatUI("HeraclesIntro")
 
 	SetPlayerVulnerable( "HeraclesSpawnPresentation" )

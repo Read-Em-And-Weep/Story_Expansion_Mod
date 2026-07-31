@@ -310,7 +310,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\infernal_soul",
-    displayName = "Blessing of Wisdom",
+    displayName = "Spoils of Wisdom",
     description = "Randomly draw {#UpgradeFormat} 2 {#Prev} of your inactive {$Keywords.CardPlural}, and activate them this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -339,7 +339,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Unifying_Bond",
-    displayName = "Blessing of Insight",
+    displayName = "Spoils of Insight",
     description = "Randomly draw {#UpgradeFormat} 2 {#Prev} of your active {$Keywords.CardPlural} and upgrade them this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -364,7 +364,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Dark_Regeneration",
-    displayName = "Blessing of Clarity",
+    displayName = "Spoils of Clarity",
     description = "Your next {$Keywords.TalentPoint} will grant you {#UpgradeFormat} +3 {#Prev} upgrades.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -386,7 +386,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Golden_Touch",
-    displayName = "Blessing of Riches",
+    displayName = "Spoils of Riches",
     description = "All {!Icons.Currency} you gain are worth {#UpgradeFormat} +40%. {#Prev} more this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -407,7 +407,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Stygian_Soul",
-    displayName = "Blessing of Capture",
+    displayName = "Spoils of Capture",
     description = "Gain {#UpgradeFormat} +1 {#Prev} use of your {$Keywords.CastSet} this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -464,7 +464,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\priveleged_status",
-    displayName = "Blessing of Essence",
+    displayName = "Spoils of Essence",
     description = "Gain {#UpgradeFormat} +2{#Prev}{!Icons.CurseEarth}{!Icons.CurseWater}{!Icons.CurseAir}{!Icons.CurseFire}{!Icons.CurseAether} this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -484,7 +484,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\jury_duty",
-    displayName = "Blessing of Power",
+    displayName = "Spoils of Power",
     description = "{$Keywords.PomPlural} will award {#UpgradeFormat} +1 {#Prev} {$Keywords.PomLevel} this night.",
 ExtraFields = {
     StackUpgradeAdditionalLevels = 1,
@@ -504,7 +504,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\Gods_Envy",
-    displayName = "Blessing of Cooperation",
+    displayName = "Spoils of Cooperation",
     description = "{$Keywords.GodBoonPlural} have a {#UpgradeFormat} +8% {#Prev} chance to be {$Keywords.Duo} and {$Keywords.Legendary} blessings this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -529,7 +529,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\death_defiance",
-    displayName = "Blessing of Defiance",
+    displayName = "Spoils of Defiance",
     description = "Replenish all spent {$Keywords.ExtraChanceMisc}.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -549,7 +549,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\gods_pride",
-    displayName = "Blessing of Heroism",
+    displayName = "Spoils of Heroism",
     description = "You may be offered {$Keywords.Heroic} {$Keywords.GodBoonPlural} {#UpgradeFormat} 15% {#Prev} of the time this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,
@@ -569,7 +569,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconScale = 0.8,
     boonIconPath = "ReadEmAndWeep-Story_ExpansionGUI\\fated_authority",
-    displayName = "Blessing of Control",
+    displayName = "Spoils of Control",
     description = "Gain  {#UpgradeFormat} +3 {#Prev} {!Icons.ReRollAlt} this night.",
 ExtraFields = {
     ExcludeTraitFromLastRunBoonPool = true,

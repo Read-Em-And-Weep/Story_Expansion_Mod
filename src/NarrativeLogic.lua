@@ -394,7 +394,6 @@ PlaySound({ Name = "/SFX/AthenaWrathHolyShield"})
 end
 
 function mod.PlaySurfaceFlashback03(source, args)
-	LoadPackages({Name = "Prometheus"})
 	AddInputBlock({ Name = "LowerPalacePresentation" })
 	UseableOff({ Id = source.ObjectId })
 
@@ -1045,7 +1044,7 @@ function mod.PlaySurfaceFlashback07(source, args)
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 										PreLineWait = 0.3,
 
-					Text = "I will ensure my sons’ safety. At any cost." },
+					Text = "I will ensure my sons’ safety. At all costs." },
 															
 EndVoiceLines = {
 	{
@@ -1162,7 +1161,7 @@ function mod.PlaySurfaceFlashback08(source, args)
 																	{
 					Portrait = "StoryExpansion_Hooded_Chronos",Speaker = "NPC_Chronos_01",
 					PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 1.5, UseChronosSound = false },
-					Text = "It seems Ouranos's curse was true after all. I never thought you would use what I taught you against me. Go. I too urge you to reconsider. You have no idea the lengths I would go to protect what is mine."},
+					Text = "It seems Ouranos's curse was true after all. I never thought you would use what I taught against me. Go. I too urge you to reconsider. You are no sons of mine. You have no idea the lengths I can go."},
 										{ 
 					Portrait = "Portrait_Poseidon_Default_InPerson_01",Speaker = "NPC_Poseidon_01",
 					Text = "There are few savageries you could surprise us with. Choose wisely, Father. No matter what happens, this ends tomorrow, with us as the victors." },
@@ -1257,25 +1256,25 @@ function mod.PlaySurfaceFlashback09(source, args)
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
                     PreLineWait = 2.8,
 
-					Text = "Almighty Chaos, I thank you for your aid. Chronos has been struck down, and we could not have breached his defences without your power." },
+					Text = "Almighty Chaos, I thank you for your aid. Chronos has fallen, and we could not have breached his defences without your power." },
 										{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
 					ExitPortraitImmediately = true,
-					Text = "Now you pay the price. You have taken my boon – will you take the curse?" },
+					Text = "Whether you could or could not is of little interest. Now you pay the price. You have taken my boon – will you take the curse?" },
 										{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
 					PreLineWait = 0.2,
 					Text = "…I thought I was saving everyone I loved, but I was the one who brought my fears to life. If this is the cost for my mistakes, then… yes, I will bear it."},
 					{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
-					Text = "Fascinating. Few are willing to shoulder the price power demands. I did not anticipate any would accept a blessing with this burden." },
+					Text = "Fascinating. Few accept the price power demands. I did not anticipate any would willingly surrender their own existence." },
 										{
 					Portrait = "StoryExpansion_Hooded_Rhea",Speaker = "StoryExpansion_NPC_Rhea",
-					Text = "For my children, it is worth it. I stood by for too long."},
+					Text = "For my children, it is worth it. I stood aside for too long."},
 					{ 
 					Portrait = "Portrait_Chaos_Default_01",Speaker = "NPC_Chaos_01",
 													PostLineFunctionName = _PLUGIN.guid .. ".TyphonSounds",
-					Text = "Your reasoning is of no matter. The oath has already been sworn. Transform into a being of naught but instinct. Fall, Motherhood, and rise Monstrosity." },
+					Text = "Your reasoning is of no matter. Our oath is not so easily unmade. Farewell, Motherhood. Rise, Typhon." },
 
 EndVoiceLines = {
 	{
@@ -1398,7 +1397,7 @@ function mod.PlaySurfaceFlashback10(source, args)
 					{
 					Portrait = "Portrait_Chronos_Default_01",Speaker = "NPC_Chronos_01",
 					PreLineWait = 0.8,
-					Text = "You're a good friend, Prometheus. Thank you for standing with me, until the end."},
+					Text = "You're a good friend, Prometheus. Then I will fight with all my might. Thank you for standing with me, until the end."},
 
                 }
     PlayTextLines( {Name = "Flashback", ObjectId = CurrentRun.Hero.ObjectId}, textLines, args )

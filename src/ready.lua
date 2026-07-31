@@ -22,6 +22,8 @@ import 'StoryResetData.lua'
 import 'WeaponLogic.lua'
 import 'WorldUpgradeData.lua'
 import 'CodexData.lua'
+import 'QuestData.lua'
+import 'FateManipulationLogic.lua'
 
 
 --TODO: Replace all Placeholders

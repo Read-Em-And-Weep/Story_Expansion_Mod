@@ -505,6 +505,58 @@ Effects =
 		}
       }
     },
+	{
+		Name = "StoryExpansionApolloDelayedDoomStrike",
+		InheritFrom = "1_BaseProjectile",
+		DetonateFx = "ApolloRetaliateStrike",
+		Range = 200,
+		AutoAdjustForTarget = false,
+		CheckObstacleImpact = true,
+		UnlimitedUnitPenetration = true,
+		Type = "INSTANT",
+		Damage = 1,
+		DamageRadius = 10,
+		DamageRadiusScaleX = 1.175,
+		DamageRadiusScaleY = 0.56,
+		ImpactVelocity = 0,
+		AffectsFriends = false,
+		AffectsSelf = false,
+		AffectsEnemies = true,
+		MaxVictimZ = 9999,
+		UseVulnerability = false,
+		IgnoreCoverageAngles = true,
+		ClearOnAttackEffects = false,
+		Thing =
+		{
+			Graphic = "null",
+			Color =
+			{
+				Red = 1.0,
+				Green = 1.0,
+				Blue = 1.0,
+				Opacity = 1.0,
+			},
+			Points =
+			{
+				{
+					X = 0,
+					Y = 8
+				},
+				{
+					X = 32,
+					Y = 0
+				},
+				{
+					X = 0,
+					Y = -8
+				},
+				{
+					X = -32,
+					Y = 0,
+				},
+			},
+		},
+	},
 }
 
 local projectileFile = rom.path.combine(rom.paths.Content(), 'Game/Projectiles/NPC_Projectiles.sjson')

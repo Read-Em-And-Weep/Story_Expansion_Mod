@@ -374,6 +374,18 @@ PresetEventArgs["StoryExpansionEurydiceFoodChoices"] = {
 			},
 			{
 				Type = "Trait",
+				Name = gods.GetInternalBoonName("EurydiceFoodThanatosBoonTrait"),
+				Rarity = "Common",
+				GameStateRequirements =
+				{
+                    {
+				Path = { "GameState", "TextLinesRecord" },
+				HasAny = { "Placeholder"},
+			},
+				}
+			},
+			{
+				Type = "Trait",
 				Name = gods.GetInternalBoonName("EurydiceFoodDamageForVulnerabilityTrait"),
 				Rarity = "Common",
 				GameStateRequirements =

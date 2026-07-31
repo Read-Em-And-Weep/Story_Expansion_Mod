@@ -1,0 +1,4 @@
+-- Whenever you strike a foe, gain rhythm (up to X amount)
+-- Rhythm = a boost of +1% damage to enemies, lost after not hitting an enemy after x seconds
+-- If too hard, could also be lost after taking damage
+-- Like Circe's keepsake but instead increase rarity

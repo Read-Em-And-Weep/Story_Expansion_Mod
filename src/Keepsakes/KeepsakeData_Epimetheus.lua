@@ -1,0 +1,2 @@
+-- Boost to legendary boon chance, but lose this after x hits
+-- Called Fragile Hope

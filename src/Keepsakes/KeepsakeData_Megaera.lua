@@ -4,10 +4,10 @@ gods.CreateKeepsake({
     internalKeepsakeName = "StoryExpansionExtraCastMegKeepsake",
 
     RarityLevels = {
-        Common = 1.5,
-        Rare = 2.5,
-        Epic = 3.5,
-        Heroic = 4.5,
+        Common = 2,
+        Rare = 3,
+        Epic = 4,
+        Heroic = 5,
     },
 
     Keepsake = {

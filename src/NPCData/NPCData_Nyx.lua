@@ -143,7 +143,7 @@ mod.NyxNPCData = {
 				},
 			},
 			StoryExpansion_NyxChat12= {
-				Name = "StoryExpansion_NyxChat11",
+				Name = "StoryExpansion_NyxChat12",
 				UseableOffSource = true,
 				{
 					Text = "I am well, though thank you for your remembering me, child."
@@ -168,7 +168,7 @@ mod.NyxNPCData = {
 				Name = "StoryExpansion_NyxChat14",
 				UseableOffSource = true,
 				{
-					Text = "I'm afraid I'm too busy solving the problems arisen from Chronos's usurping to be of much company tonight, Princess."
+					Text = "I am afraid I am too occupied with the troubles arisen from Chronos's usurping to be good company tonight, Princess."
 				},
 				GameStateRequirements = {
 					{
@@ -201,7 +201,7 @@ mod.NyxNPCData = {
 				Name = "StoryExpansion_NyxChat17",
 				UseableOffSource = true,
 				{
-					Text = "My children who have met you or remember you are better for it, O Melinoë, Princess."
+					Text = "Those among my children who met you are richer for it, O Melinoë, Princess."
 				},
 				GameStateRequirements = {
 					{
@@ -271,7 +271,7 @@ mod.NyxNPCData = {
 				Name = "StoryExpansion_NyxChat24",
 				UseableOffSource = true,
 				{
-					Text = "Go, my champion, and make terrified our enemies."
+					Text = "Go, my champion, and strike terror into our enemies."
 				},
 				GameStateRequirements = {
 					{
@@ -417,7 +417,7 @@ mod.NyxNPCData = {
 					Text = "You know who I am, O Night? And of what I have struggled against and done?" },
 				{
 					Portrait = "Portrait_Nyx_Default_01",
-					Text = "Though I have been trapped in Time by the Titan, much of my power has remained with the Unseen, aiding you. You have carried my strength through your incantations, the Nocturnal Arms, and the Oath of the Unseen." },
+					Text = "Though I have been trapped by the Titan, he could not completely sever my influence. I have embraced the Unseen through your incantations, the Nocturnal Arms, and the Oath. You have always carried my strength." },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Empathetic_01",
@@ -426,13 +426,13 @@ mod.NyxNPCData = {
 					Text = "Then you deserve a much greater thanks than I am currently able to give. I would have accomplished nothing without your aid." },
 { 
 					Portrait = "Portrait_Nyx_Default_01",
-					Text = "My aid would be for naught without your talent, training and determination. Now, however, I suggest we return to the Crossroads. I have many ideas for incantations to solve our problems I wish to discuss with Hecate." },
+					Text = "My aid would be for naught without your talent, training, and determination. Now, however, I suggest we return to the Crossroads. I have incantations I wish to discuss with Hecate that may unravel our hateful foe." },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "Thank you for lending me you power. I know Hecate is eager to reunite with you once more, and it will be one step closer to dealing with Chronos for good.",
+					Text = "Thank you for sharing your power. I know Hecate is eager to reunite with you once more, and it will be one step closer to dealing with Chronos for good.",
 				PostLineThreadedFunctionName = "KillHero",
 					PostLineFunctionArgs = { WaitTime = 5, MusicEndTime = 60 },},
 EndVoiceLines = {

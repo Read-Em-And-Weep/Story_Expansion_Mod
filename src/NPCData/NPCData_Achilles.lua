@@ -77,7 +77,7 @@ mod.AchillesNPCData = {
 				Name = "StoryExpansion_AchillesChat05",
 				UseableOffSource = true,
 				{
-					Text = "I'll be keeping an eye on things here while you're gone. Should take some stress off your mind, eh lass?"
+					Text = "I'll be keeping an eye on things here while you're gone. Should take some stress off your shoulders, eh lass?"
 				},
 				GameStateRequirements = {
 				},
@@ -387,10 +387,10 @@ mod.AchillesNPCData = {
 					Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "It's been a long time, longer than I'd like to admit to be honest. Even with the forces of Olympus behind us, what remains of the Chthonic gods have been unable to truly lead an assault on the House until I came of age." },
+					Text = "It's been a long time, longer than I'd like to admit to be honest. Even with the forces of Olympus behind us, we've been unable to enter Tartarus until I came of age." },
 { 
 					Portrait = "Portrait_Achilles_Default_01",
-					Text = "Lass, I'm sure you did the best you could, as everyone else did. When gods go to war, very little remains in your control. To be able to free me already shows your incredible talent." },
+					Text = "Lass, I'm sure you did the best you could, as everyone else did. When gods war, little remains in your control. To be able to free me shows your incredible talent." },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
@@ -400,7 +400,7 @@ mod.AchillesNPCData = {
 					Text = "You flatter me, Sir Achilles. But for now, I have reached the extent of my talent. We should escape before Chronos reawakens and captures you once more."},
 					{ 
 					Portrait = "Portrait_Achilles_Default_01",
-					Text = "If we have exhausted your strength, then there is no way we can make a stand now. Let us abscond to retreat and recuperate. At your leave, Princess.",
+					Text = "If you have exhausted your strength, then there is no way to make a stand now. Let us retreat to reassess and recuperate. Lead the way, Princess.",
 					PostLineThreadedFunctionName = "KillHero",
 					PostLineFunctionArgs = { WaitTime = 5, MusicEndTime = 60 },},	
 EndVoiceLines = {

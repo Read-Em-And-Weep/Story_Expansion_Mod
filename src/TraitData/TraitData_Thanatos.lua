@@ -95,7 +95,7 @@ gods.CreateBoon({
 
     },
     ExtraFields = {
-        StoryExpansionTargetLowHealthThreshold = 0.2,
+        StoryExpansionTargetLowHealthThreshold = 0.3,
         StoryExpansionTargetLowHealthChance = {BaseValue = 0.01},
         ShowInHUD = true,
 
@@ -204,6 +204,18 @@ gods.CreateBoon({
 
     },
     ExtraFields = {
+        GameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansionThanatosGrantsReward01" },
+			},
+        },
+        CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansionThanatosGrantsReward01" },
+			},
+		},
         StoryExpansionPerfectClearDamageBonus =
         {
             BaseValue = 1.01,
@@ -282,12 +294,6 @@ gods.CreateBoon({
             PerfectFunctionName = _PLUGIN.guid .. ".SummonExtraReward"
         },
         RemainingUses = { BaseValue = 1 },
-        GameStateRequirements =
-		{
-			{
-				PathTrue = { "GameState", "TextLinesRecord", "StoryExpansionThanatosGrantsReward01" },
-			},
-        }
     },
     customStatLine = {
         ID = "StoryExpansionThanatosPerfectRewardUses",
@@ -313,10 +319,10 @@ gods.CreateBoon({
     description =
     "In every {$Keywords.RoomAlt}, your {$Keywords.Omega} may deal {$Keywords.Crit} damage. Lose this whenever you are hit.",
     RarityLevels = {
-        Common = { Multiplier = 0.7 },
-        Rare = { Multiplier = 1.0 },
-        Epic = { Multiplier = 1.3 },
-        Heroic = { Multiplier = 1.6 },
+        Common = { Multiplier = 0.5 },
+        Rare = { Multiplier = 0.8 },
+        Epic = { Multiplier = 1.1 },
+        Heroic = { Multiplier = 1.4 },
 
     },
     ExtraFields = {
@@ -366,7 +372,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\BoonIcons\\Hades_03",
-    displayName = "Evasive Restraint",
+    displayName = "Borrowed Breath",
     description =
     "While you {$Keywords.Spell} is not completely charged, you have a chance to {$Keywords.Dodge}.",
     RarityLevels = {
@@ -621,7 +627,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\BoonIcons\\Hades_03",
-    displayName = "Risky Behavior",
+    displayName = "Mortal Wager",
     description =
     "You have a chance to both deal and take {$Keywords.Crit} damage.",
     RarityLevels = {
@@ -664,7 +670,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\BoonIcons\\Hades_03",
-    displayName = "Kaleidoscopic Curse",
+    displayName = "Kaleidoscopic Blight",
     description =
     "Whenever you slay a foe, summon a horde of {$TooltipData.ExtractData.Butterflies} {$Keywords.StoryExpansionButterfly}.",
     RarityLevels = {
@@ -711,7 +717,7 @@ gods.CreateBoon({
 				BaseProperty = "Damage",
 			},
             {
-                Key = "ReportedButterflies"
+                Key = "ReportedButterflies",
                 ExtractAs = "Butterflies"
             }
     }

@@ -22,7 +22,7 @@ gods.CreateKeepsake({
     },
 
     Keepsake = {
-        displayName = "Infernal Mark",
+        displayName = "Stygian Crest",
         description = "You may encounter {$Keywords.Chthonic} blessings this night. While you hold this keepsake, you have a {#UpgradeFormat} {$TooltipData.ExtractData.RarityBonus:P} {#Prev} chance to encounter {$Keywords.Duo} and {$Keywords.Chthonic} blessings.",
         signoffMax = "From {#AwardMaxFormat}Hades{#Prev}{!Icons.ObjectiveSeparatorDark}The Underworld is the ending for all mortals, and it is the ending for you too.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."
@@ -54,7 +54,7 @@ RarityBonus =
 
     customGiftData = {
 		maxRequirement = {PathTrue = { "GameState", "TextLinesRecord", "EurydiceGift08" },},
-		minRequirement = {PathTrue = { "GameState", "TextLinesRecord", "DemeterGift01" },},
+		minRequirement = {PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },},
 	},
 
 })
@@ -66,7 +66,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\AwardMenu\\Keepsake_49",
-    displayName = "Infernal Mark",
+    displayName = "Stygian Crest",
     description = "You may encounter {$Keywords.Chthonic} blessings this night.",
     RarityLevels = {
        Common =
@@ -131,12 +131,19 @@ gods.CreateCustomRarity({
     BlockInRunStacking = true,
     BlockInRunRarify = true,
     BlockMenuRarify = true,
+	StoryExpansionIsChthonicBoon = true,
     RarityLevels = {
         Duo = {
             MinMultiplier = 1,
 			MaxMultiplier = 1,
         }
     },
+	CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
     Display = {
 		CustomRarityColor = Color.BoonPatchHeroic,
         PathOverrides = {framePath = "GUI\\Screens\\BoonIconFrames\\heroic", backingPath = "GUI\\Screens\\BoonSelect\\BoonSlot_Heroic"},
@@ -171,6 +178,12 @@ gods.CreateBoon({
 		},
         ExtraPowerPerWounds = 2,
         CurrentExtraWounds = 0,
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
 	},
     customStatLine = {
         ID = "StoryExpansionCompoundingWoundsTraitStatLine",
@@ -298,6 +311,12 @@ gods.CreateBoon({
                 ReportValues = {ReportedFraction = "FractionTransferred"}
 			},
 		},
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
 	},
     customStatLine = {
         ID = "StoryExpansionKillShareBurnTraitStatLine",
@@ -378,6 +397,12 @@ gods.CreateBoon({
 			{
 				Path = { "CurrentRun", "Hero", "TraitDictionary", },
 				HasNone = { "TimedCritVulnerabilityBoon"},
+			},
+		},
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
 			},
 		},
 	},
@@ -476,7 +501,13 @@ gods.CreateBoon({
             ValidProjectiles = {"PoseidonEffectFont"},
 			Chance = 0.2,
 			ReportValues = { ReportedChance = "Chance"},
-        }
+        },
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
 	},
     customStatLine = {
         ID = "StoryExpansionCompoundingWoundsTraitStatLine_Tray",
@@ -518,7 +549,7 @@ gods.CreateBoon({
 })
 
 -- Hera
-gods.CreateBoon({
+--[[gods.CreateBoon({
 	internalBoonName = "HitchCritTrait",
 	InheritFrom = {chthonicTrait, "AetherTrait"},
 	characterName = "Hera",
@@ -570,7 +601,79 @@ gods.CreateBoon({
 				HideSigns = true,
 			},
 	}
+})]]
+
+
+gods.CreateBoon({
+	internalBoonName = "NPCAidBoon",
+	InheritFrom = {chthonicTrait, "AetherTrait"},
+	characterName = "Hera",
+	addToExistingGod = true,
+	
+	BlockStacking = true,
+
+	reuseBaseIcons = true,
+    boonIconPath = "GUI\\Screens\\BoonIcons\\Zeus_41",
+
+	requirements = {OneFromEachSet = {{ "BoonDecayBoon", "CommonGlobalDamageBoon", "OmegaHeraProjectileBoon","ElementalRarityUpgradeBoon", },{ "DamageSharePotencyBoon", "SpawnCastDamageBoon", "LinkedDeathDamageBoon","DamageShareRetaliateBoon"},{gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake"),gods.GetInternalBoonName("StoryExpansionChthonicBoonKeepsakePermanent")}}},
+	displayName = "Divine Commandment",
+	description = "Gain a random collection of {$Keywords.StoryExpansionAllyEnhancements} from various {$Keywords.StoryExpansionRunAllies}.",
+	StatLines = {"StoryExpansionAllyBoonsStatDisplay1"},
+	ExtraFields = {
+		AcquireFunctionName = _PLUGIN.guid .. ".AwardNPCBoons",
+        AcquireFunctionArgs = {
+				NumToAward = 3,
+            ReportValues = {ReportedCount = "NumToAward"},
+        },
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
+	},
+	customStatLine = {
+        ID = "StoryExpansionAllyBoonsStatDisplay1",
+        displayName = "{!Icons.Bullet}{#PropertyFormat}{$Keywords.StoryExpansionAllyEnhancements} Gained:",
+        description = "{#UpgradeFormat}{$TooltipData.StatDisplay1}",
+    },
+	ExtractValues = {
+        {
+				Key = "ReportedCount",
+				ExtractAs = "Count",
+			},
+	}
 })
+
+--TODO: UpdateThisWithAnyNewNPCs
+
+function mod.AwardNPCBoons(args, traitData)
+	args = args or {}
+	local blockedTraits = args.BlockedTraits or {EchoLastReward = true}
+	local chars = {"NPC_Arachne_01", "NPC_Artemis_Field_01", "NPC_Echo_01", "NPC_Hades_Field_01", "NPC_Medea_01", "NPC_Icarus_01", "NPC_Circe_01", "NPC_Dionysus_01", "NPC_Athena_01"}
+	local eligibleTraits = {}
+	for _, npc in ipairs(chars) do
+		for key, traitName in ipairs(EnemyData[npc].Traits) do
+			local traitData = TraitData[traitName]
+            if not blockedTraits[traitName] and traitData.GameStateRequirements == nil or IsGameStateEligible( traitData, traitData.GameStateRequirements ) then
+                table.insert(eligibleTraits, traitName)
+            end
+		end
+	end
+	local numAwarded = 0
+	local addedTraits = {}
+	while #eligibleTraits > 0 and numAwarded < args.NumToAward do
+		local chosenTrait = RemoveRandomValue(eligibleTraits)
+            local chosenTraitData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = chosenTrait, Rarity = "Common" })
+            local trait = AddTraitToHero({ TraitData = chosenTraitData, SkipQuestStatusCheck = true, SkipAddToHUD = true, FromLoot = true})
+            addedTraits[chosenTrait] = true
+			UpdateHeroTraitDictionary()
+			numAwarded = numAwarded + 1
+	end
+	thread( BoonGrantedPresentation, addedTraits, 2.0 )
+	CheckActivatedTraits( CurrentRun.Hero, { SkipPresentation = true } )
+end
+
 
 function mod.RemoveLinkEffect(victim, args)
     if not victim.ActiveEffectsAtDamageStart and not victim.ActiveEffectsAtDamageStart["DamageShareEffect"] then
@@ -610,9 +713,15 @@ gods.CreateBoon({
 			Name = _PLUGIN.guid..".CreateUrnDamage",
             Args = 
 			{
-				Multiplier = 80/200,
+				Multiplier = 60/200,
                 ReportValues = {ReportedMultiplier = "Multiplier"}
 			}
+		},
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
 		},
 	},
 	ExtractValues = {
@@ -648,7 +757,7 @@ function mod.CreateUrnDamage(triggerArgs, functionArgs)
 end
 
 -- Zeus
-gods.CreateBoon({
+--[[gods.CreateBoon({
 	internalBoonName = "ZeusBonusLevelTrait",
 	InheritFrom = {chthonicTrait, "AetherTrait"},
 	characterName = "Zeus",
@@ -669,7 +778,7 @@ gods.CreateBoon({
     customStatLine = {
         ID = "StoryExpansionZeusBonusLevelTraitStatLine",
         displayName = "{!Icons.Bullet}{#PropertyFormat}Bonus Lv. per God(dess){#Prev}:",
-        description = "{#UpgradeFormat}+3",
+        description = "{#UpgradeFormat}+2",
     },
 	ExtractValues = {
         {},
@@ -680,7 +789,7 @@ function mod.BoostZeusLevelsForUniqueGodCount()
 local traitDictionary = {}
 	local validTraits = {}
 	local buffTraits = {}
-	local totalLevels = 3*CurrentRun.Hero.UniqueGodCount
+	local totalLevels = 2*CurrentRun.Hero.UniqueGodCount
     local origTraitData = GetHeroTrait(gods.GetInternalBoonName("ZeusBonusLevelTrait"))
 	local sourceTraitData = nil
 		for i, traitData in ipairs( CurrentRun.Hero.Traits ) do
@@ -700,7 +809,121 @@ local traitDictionary = {}
 		IncreaseTraitLevel( traitData, totalLevels )
 	end
     thread( SuperSacrificePresentation, "ZeusUpgrade", "ZeusUpgrade", totalLevels)
+end]]
+
+gods.CreateBoon({
+	internalBoonName = "ZeusCastTeleportTrait",
+	InheritFrom = {chthonicTrait, "AetherTrait"},
+	characterName = "Zeus",
+	addToExistingGod = true,
+	
+	BlockStacking = true,
+
+	reuseBaseIcons = true,
+    boonIconPath = "GUI\\Screens\\BoonIcons\\Zeus_41",
+
+	requirements = {OneFromEachSet = {{"CastAnywhereBoon"},{gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake"),gods.GetInternalBoonName("StoryExpansionChthonicBoonKeepsakePermanent")}}},
+	displayName = "Fatal Bolt",
+	description = "Whenever you fire your {$Keywords.Cast} with {#BoldFormat} Lightning Lance{#Prev}, teleport to the center if it's in a valid location. Doing so grants you {$Keywords.StoryExpansionTeleportCastEffect}.",
+	StatLines = {"StoryExpansionBonusDamageStatDisplay1"},
+	ExtraFields = {
+	AddOutgoingDamageModifiers =
+		{
+			ValidWeapons = WeaponSets.HeroPrimarySecondaryWeapons,
+			RequiredEffects = { "StoryExpansionTeleportCastEffect" },
+			RequiredSelfEffectsMultiplier =
+			{
+				BaseValue = 1.45,
+				SourceIsMultiplier = true,
+			},
+			
+			ReportValues = 
+			{ 
+				ReportedDamageBonus = "RequiredSelfEffectsMultiplier" 
+			},
+		},
+		OnWeaponFiredFunctions =
+		{
+			ValidWeapons = WeaponSets.HeroNonPhysicalWeapons,
+			FunctionName = _PLUGIN.guid..".TeleportIntoCast",
+			FunctionArgs = 
+			{
+				InvulnerabilityTime = 1.5,
+				ReportValues = 
+			{ 
+				ReportedTime = "InvulnerabilityTime", 
+			},
+			}
+		},
+		PropertyChanges =
+		{
+			{
+				WeaponName = "WeaponAnywhereCast",
+                    WeaponProperty = "ManualAimingRequireValidLocation",
+                    ChangeValue = "true",
+                    ChangeType = "Absolute",
+			},
+		},
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
+	},
+    customStatLine = {
+        ID = "StoryExpansionBonusDamageStatDisplay1",
+        displayName = "{!Icons.Bullet}{#PropertyFormat}Bonus Damage While {$Keywords.Keywords.StoryExpansionTeleportCastEffect}:",
+        description = "{#UpgradeFormat}{$TooltipData.StatDisplay1}",
+    },
+	ExtractValues = {
+        {
+				Key = "ReportedDamageBonus",
+				ExtractAs = "TooltipDamage",
+				Format = "PercentDelta",
+			},
+			{
+				Key = "ReportedTime",
+				ExtractAs = "Duration",
+				DecimalPlaces = 2,
+			}
+	},
+})
+
+
+function mod.TeleportIntoCast(weaponData, functionArgs, triggerArgs)
+	if not HeroHasTrait(gods.GetInternalBoonName("ZeusCastTeleportTrait")) then return end
+	local projectileId = triggerArgs.ProjectileId
+	local tempObstacleId = SpawnObstacle({ Name = "InvisibleTarget", LocationX = triggerArgs.ProjectileX, LocationY= triggerArgs.ProjectileY })
+	local heroId = CurrentRun.Hero.ObjectId
+	if IsLocationValid({ Id = CurrentRun.Hero.ObjectId, DestinationId = tempObstacleId}) then
+		SetPlayerInvulnerable("StoryExpansionTeleportCast")
+		SetPlayerDarkside("StoryExpansionTeleportCast")
+		SetPlayerPhasing("StoryExpansionTeleportCast")
+		local dataProperties = DeepCopyTable( EffectData["StoryExpansionTeleportCastEffect"].EffectData )
+		dataProperties.Duration = functionArgs.InvulnerabilityTime
+		ApplyEffect({ DestinationId = CurrentRun.Hero.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = "StoryExpansionTeleportCastEffect", DataProperties = dataProperties })
+		Teleport({ Id = heroId, DestinationId = tempObstacleId })
+		thread(mod.RemoveTeleportInvulnerability, functionArgs.InvulnerabilityTime)
+	end
+	Destroy({Id = tempObstacleId})
 end
+
+function mod.RemoveTeleportInvulnerability(time)
+	wait(time)
+	SetPlayerVulnerable("StoryExpansionTeleportCast")
+	SetPlayerUnphasing("StoryExpansionTeleportCast")
+	SetPlayerUnDarkside("StoryExpansionTeleportCast")
+end
+
+game.EffectData.StoryExpansionTeleportCastEffect =
+	{
+		EffectName = "StoryExpansionTeleportCastEffect",
+		EffectData = 
+		{
+			Duration = 1,
+		}
+	}
 
 -- Hephaestus
 gods.CreateBoon({
@@ -732,6 +955,12 @@ gods.CreateBoon({
 						ReportedArmor = "BaseAmount",
 					}			}
 		},
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
 	},
 	ExtractValues = {
         {
@@ -747,8 +976,8 @@ function mod.AwardArmorOnLastStandUse(functionArgs, triggerArgs)
     FrameState.RequestUpdateHealthUI = true
 end
 
--- Hephaestus
-gods.CreateBoon({
+-- Apollo
+--[[gods.CreateBoon({
 	internalBoonName = "ApolloKillHealTrait",
 	InheritFrom = {chthonicTrait, "AetherTrait"},
 	characterName = "Apollo",
@@ -782,6 +1011,53 @@ gods.CreateBoon({
 				Format = "FlatHeal"
 			},
 	}
+})]]
+
+gods.CreateBoon({
+	internalBoonName = "ApolloForetoldEndTrait",
+	InheritFrom = {chthonicTrait, "AetherTrait"},
+	characterName = "Apollo",
+	addToExistingGod = true,
+	
+	BlockStacking = true,
+
+	reuseBaseIcons = true,
+    boonIconPath = "GUI\\Screens\\BoonIcons\\Zeus_41",
+
+	requirements = {OneFromEachSet = {{"ApolloWeaponBoon", "ApolloSpecialBoon",},{gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake"),gods.GetInternalBoonName("StoryExpansionChthonicBoonKeepsakePermanent")}}},
+	displayName = "Prophesied Doom",
+	description = "Whenever you hit a foe with your {$Keywords.Omega}, inflict {$Keywords.StoryExpansionForetoldEnd}.",
+	StatLines = {"StoryExpansionForetoldEndStatDisplay1"},
+	ExtraFields = {
+				OnEnemyDamagedAction = 
+		{
+			ValidWeapons = WeaponSets.HeroAllWeaponsAndSprint,	
+			FunctionName = _PLUGIN.guid..".ApplyForetoldEnd",
+			Args = 
+			{
+				EffectName = "StoryExpansionForetoldEndEffect",
+				NumStacks = 50,
+				ReportValues = {ReportedDamage = "NumStacks"}
+			},		
+		},
+		CodexGameStateRequirements =
+		{
+			{
+				PathTrue = { "GameState", "TextLinesRecord", "HadesWithPersephoneGift01" },
+			},
+		},
+	},
+	customStatLine = {
+        ID = "StoryExpansionForetoldEndStatDisplay1",
+        displayName = "{!Icons.Bullet}{#PropertyFormat}{$Keywords.StoryExpansionForetoldEnd} Inflicted per {$Keywords.Omega}:",
+        description = "{#UpgradeFormat}{$TooltipData.StatDisplay1}",
+    },
+	ExtractValues = {
+        {
+					Key = "ReportedDamage",
+					ExtractAs = "TooltipDamage",
+			},
+	}
 })
 
 function mod.HealOnKill(victim, args)
@@ -791,4 +1067,45 @@ function mod.HealOnKill(victim, args)
     local healingMultiplier = CalculateHealingMultiplier()
 	local expectedHeal = round(args.HealAmount * healingMultiplier)
     Heal(CurrentRun.Hero, {HealAmount = expectedHeal,SourceName = "ApolloKillHealTrait", Silent = false })
+end
+
+game.EffectData.StoryExpansionForetoldEndEffect =
+	{
+		Color = Color.ApolloDamageLight,
+		EffectName = "StoryExpansionForetoldEndEffect",
+
+		OnClearFunctionName = _PLUGIN.guid..".ForetoldEndConsumption",
+		EffectData = 
+		{
+			IsVulnerabilityEffect = false,
+            IgnoreName = "_PlayerUnit",
+			Duration = 2,
+		},
+	}
+
+function mod.ApplyForetoldEnd(victim, functionArgs, triggerArgs)
+	if not IsExWeapon( triggerArgs.SourceWeapon, { Combat = true }, triggerArgs ) then
+		return
+	end
+	functionArgs = ShallowCopyTable(functionArgs) or { EffectName = "StoryExpansionForetoldEndEffect", NumStacks = 1 }
+		local effectName = functionArgs.EffectName 
+	
+	if not victim then return end
+	local dataProperties = MergeAllTables({
+		EffectData[effectName].EffectData, 
+	})
+	IncrementTableValue( victim, "StoryExpansionForetoldEndEffect", functionArgs.NumStacks )
+	ApplyEffect( { DestinationId = victim.ObjectId, Id = CurrentRun.Hero.ObjectId, EffectName = effectName, DataProperties = dataProperties } )
+end
+
+function mod.ForetoldEndConsumption( triggerArgs )
+		local victim = triggerArgs.Victim
+	local effectName = triggerArgs.EffectName
+
+
+	if not victim.IsDead and victim[effectName] > 0 then
+		CreateProjectileFromUnit({ Name = "StoryExpansionApolloDelayedDoomStrike", Id = CurrentRun.Hero.ObjectId, DestinationId = victim.ObjectId, DamageMultiplier = victim["StoryExpansionForetoldEndEffect"] })
+		victim["StoryExpansionForetoldEndEffect"] = nil
+		ClearEffect({ Id = victim.ObjectId, Name = effectName })
+	end
 end

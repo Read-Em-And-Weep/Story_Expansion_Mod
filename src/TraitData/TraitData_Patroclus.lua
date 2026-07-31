@@ -212,7 +212,7 @@ gods.CreateBoon({
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_30",
     displayName = "Kiss of Styx Premium",
-    description = "Replenish {#UpgradeFormat}all {#Prev}uses of {#BoldFormatGraft}{$Keywords.ExtraChanceMisc} {#Prev}now.",
+    description = "Replenish {#UpgradeFormat}all {#Prev}spent uses of {#BoldFormatGraft}{$Keywords.ExtraChanceMisc} {#Prev}now.",
 ExtraFields = {
 		AcquireFunctionName = _PLUGIN.guid..".PatroclusRefillLastStands",
 },

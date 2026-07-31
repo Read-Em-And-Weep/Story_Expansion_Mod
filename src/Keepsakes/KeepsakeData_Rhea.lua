@@ -2,3 +2,4 @@
 -- Should be powerful, but very late game, but also very fun
 -- Could theme around the monstrosity arcana card - purge for a random arcana card, less than
 -- you can purge with Chronos
+-- At the end of every region this night, upgrade your arcana?

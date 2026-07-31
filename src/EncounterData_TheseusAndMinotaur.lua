@@ -24,6 +24,8 @@ EncounterSets.EncounterEventsStoryExpansionTheseusMinotaurCombat = {
 }
 
 
+
+-- TODO: Update requirements so that you need to have the Godsent hex conversation first
 OverwriteTableKeys(EncounterData, 
 {
     BaseTheseusMinotaurStoryExpansionCombat = {
@@ -53,7 +55,7 @@ OverwriteTableKeys(EncounterData,
 				Comparison = ">=",
 				Value = 2,
 			},
-			NamedRequirements = { "NoRecentFieldNPCEncounter" },
+			NamedRequirements = { "NoRecentFieldNPCEncounter", "SeleneDuosUnlocked" },
 			NamedRequirementsFalse = { "StandardPackageBountyActive","HecateMissing" },
 		},
 

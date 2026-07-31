@@ -10,7 +10,7 @@ import 'NPCData/NPCData_Patroclus.lua'
 import 'NPCData/NPCData_Eurydice.lua'
 import 'NPCData/NPCData_Asterius.lua'
 import 'NPCData/NPCData_Theseus.lua'
-import 'NPCData/NPCData_Hypnos.lua'
+--import 'NPCData/NPCData_Hypnos.lua'
 import 'NPCData/NPCData_Sisyphus.lua'
 import 'NPCData/NPCData_Rhea.lua'
 
@@ -207,10 +207,11 @@ end
 
 function mod.AwardSisyphusResources()
     local biome = GetCurrentFishingBiomeName()
-    local biomePools = {F = {OreFSilver = 5, PlantFMoly = 3, PlantFNightshadeSeed = 3}, G = {OreGLime = 1,PlantGLotus = 1, PlantGCattailSeed = 1 }, 
+    local biomePools = {F = {OreFSilver = 5, PlantFMoly = 3, PlantFNightshadeSeed = 3}, G = {OreGLime = 5,PlantGLotus = 1, PlantGCattailSeed = 1 }, 
     H = {OreHGlassrock = 1,PlantHMyrtle = 1, PlantHWheatSeed = 1}, I = {OreIMarble = 1,PlantIShaderot = 1, PlantIPoppySeed = 1}, 
     N = {OreNBronze = 1, PlantNMoss = 1, PlantNGarlicSeed = 1}, O = {OreOIron = 1,PlantODriftwood =1, PlantOMandrakeSeed =1}, 
     P = {OrePAdamant = 1, PlantPIris = 1, PlantPOliveSeed = 1}}
+    --TODO: Correct multipliers
     local currentBiomePool = biomePools[biome]
     if not IsEmpty(currentBiomePool) then
         local resource = GetRandomKey(currentBiomePool)
@@ -218,7 +219,7 @@ function mod.AwardSisyphusResources()
         AddResource(resource, resourceAmount, "StoryExpansionSisyphusGift")
     end
     if GameState.WorldUpgradesAdded.StoryExpansionWorldUpgradeSisyphusUpgrade then
-        --TODO
+        --TODO: implement Sisyphus offering Run Progress Upgrades in addition to resources
     end
 end
 
@@ -246,7 +247,8 @@ game.OnControlPressed({'Gift', function()
     --mod.PlaceNPCAtId({},"NPC_Sisyphus_Field_StoryExpansion",{SpawnId = 558175, Offset = {X = -400, Y = 300}, GazeTarget = {X = -800, Y = 600}})
 
     return --mod.FlipAValue()--mod.SpawnFieldSisyphus()--mod.SpawnCharacterAtMe("NPC_Sisyphus_Field_StoryExpansion")
-    mod.SpawnCharacterAtMe("NPC_Rhea_01_StoryExpansion")
+    --mod.SpawnCharacterAtMe("NPC_Rhea_01_StoryExpansion")
+    mod.OpenFateManipulationScreen()
     --mod.SpawnMegaera()--print(GameState.TextLinesRecord["StoryExpansionFreeingPersephoneDialogue"] )
 end})
 

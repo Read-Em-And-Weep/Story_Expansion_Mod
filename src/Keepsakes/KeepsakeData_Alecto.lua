@@ -11,7 +11,7 @@ gods.CreateKeepsake({
     },
 
     Keepsake = {
-        displayName = "Saw Hairclip",
+        displayName = "Sawtooth Hairclip",
         description = "Deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipDamageBonus:P} {#Prev} damage to foes in your {$Keywords.CastSet}, and you gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
         signoffMax = "From {#AwardMaxFormat}Alecto{#Prev}{!Icons.ObjectiveSeparatorDark}Sometimes, you've simply got to take foes down, just for the joy of the kill.",
     },
@@ -93,7 +93,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\AwardMenu\\Keepsake_49",
-    displayName = "Saw Hairclip",
+    displayName = "Sawtooth Hairclip",
     description = "Gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
     RarityLevels = {
         Common = { Multiplier = 1.0 },
@@ -181,3 +181,4 @@ PropertyChanges = {
 		}
 })
 
+end

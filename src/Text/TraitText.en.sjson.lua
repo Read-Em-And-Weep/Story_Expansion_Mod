@@ -36,6 +36,12 @@ local newTraitTextData = {
       Description = "Take {#UpgradeFormat}-{$TooltipData.ExtractData.CurrentBonus}% {#Prev}damage, but lose {#BoldFormatGraft}{$TooltipData.ExtractData.DecayRate}% {#Prev}of this bonus after each {$Keywords.EncounterAlt}.",
     },
     {
+      Id = "StoryExpansionGoldRarifyKeepsake_Tray",
+      InheritFrom = "BaseBoonMultiline",
+      DisplayName = "Prismatic Pouch",
+      Description = "For every {#UpgradeFormat} {$TooltipData.ExtractData.Count}{#Prev}{!Icons.Currency} you gain, {$Keywords.RarityUpgrade} a {#BoldFormat} random {$Keywords.GodBoon}{#Prev}. Currently: {$TooltipData.ExtractData.CurrentGoldCount}",
+    },
+    {
       Id = "StoryExpansionNoManaMetaUpgrade",
       DisplayName = "Vow of Naivety",
       Description = "You will have access to {#ShrinePenaltyFormat}-{$MetaUpgradeData.StoryExpansionNoManaMetaUpgrade.DisplayValue}% {#Prev}of your {!Icons.ManaUp} this night.",

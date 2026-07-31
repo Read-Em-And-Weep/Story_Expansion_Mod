@@ -313,7 +313,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "You should tell her that her magick is impeccable. Your palace's defenses are as powerful as they are ethereal. Speaking of these visions, I recieved another one now, of Chronos and a Titaness called Rhea." },
+					Text = "You should tell her that her magick is impeccable. Your palace's defenses are as powerful as they are ethereal. Speaking of these visions, I received another one now, of Chronos and a Titaness called Rhea." },
 
 				{
 					Portrait = "Portrait_Zeus_InPerson_01",
@@ -369,7 +369,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Zeus_InPerson_01",
 					PreLineAnim = "Zeus_Explaining",
-					Text = "I could hardly let me niece face against Typhon alone, or let our palace be destroyed! It is always a pleasure to aid you in battle. Forgive me for asking, but have you recieved any more news of my mother?" },
+					Text = "I could hardly let me niece face against Typhon alone, or let our palace be destroyed! It is always a pleasure to aid you in battle. Forgive me for asking, but have you received any more news of my mother?" },
 
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -474,7 +474,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					-- PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
 					-- PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
 					PreLineAnim = "Hera_Greet", PreLineAnimTarget = 723554,
-					Text = "Melinoë, it is excellent to welcome you to our palace once more. It has been a long time since my Lord Husband and I have been able to recieve you together." },
+					Text = "Melinoë, it is excellent to welcome you to our palace once more. It has been a long time since my Lord Husband and I have been able to receive you together." },
 
 				{ UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
@@ -703,7 +703,7 @@ EnemyData.NPC_Zeus_Story_01.InteractTextLineSets = {
 					Source = "NPC_Hera_Story_01",
 					PostLineFunctionName = "ActivateApollo",
 
-					Text = "You have done very well, Melinoë, and we Olympians owe you a debt. The Titan's forces may grow far more desperate now, a possibility for which we ought prepare. We shall lend you all the strength we can for your own final assault." },
+					Text = "You have done very well, Melinoë, and we Olympians owe you a debt. The Titan's forces may grow far more desperate now, a possibility for which we ought prepare. We shall lend you the strength we can for your own final assault." },
 				EndGlobalVoiceLines = "ZeusSendOffVoiceLines",
 			},
 			ZeusPalacePostTrueEnding01 =
@@ -1034,7 +1034,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "And here you come triumphant once again, dearest Melinoë! Careful that you do not do so too often, or else my Lord Husband may become jealous of your success." },
+					Text = "And here you come triumphant once again, dearest Melinoë! Careful that you do not do so too often, or else my Lord Husband may grow jealous of your success." },
 
 				{  UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
@@ -1072,7 +1072,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
 					PreLineWait = 0.25,
-					Text = "In my youth, he was not evil, at least perhaps not in the way that you think. We were looked after, but we had little freedom. Mortals lived in ignorant lethargy, trees grew on schedule, and deities performed their duties with no passion. It was a world banal in its perfection." },
+					Text = "In my youth, he was not tyrannical, at least perhaps not in the way that you think. We were looked after, but we had little freedom. Mortals lived in ignorant lethargy, trees grew on schedule, and deities performed their duties with no passion. It was a world banal in its perfection." },
 
 				{ 
 					UsePlayerSource = true,
@@ -1138,7 +1138,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "Unfortunately, it appears that he is recovering his all the lost strength from the time my Lord Husband first slew him. We fear that Chronos is utilising his control of time to strengthen the monster further." },
+					Text = "Unfortunately, it appears that he is recovering his all the lost strength from the time my Lord Husband first slew him. We fear that Chronos is utilising his powers to strengthen the monster further." },
 
 				{  UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -1148,7 +1148,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 				{ 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "That is worrying news, Melinoë. While my protections on Olympus are strong, we cannot hold our palace forever. Especially not against the kind of assult Typhon brings every night." },
+					Text = "That is worrying news, Melinoë. While my protections on Olympus are strong, my husband cannot hold our palace forever. Especially not against the kind of assult Typhon brings every night." },
 
 
                 {  UsePlayerSource = true,
@@ -1161,7 +1161,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
 					PreLineAnim = "Hera_Pensive", PreLineAnimTarget = 723554,
-					Text = "Melinoë, take heart that I have complete faith in your ability to defeat Typhon. If this goes on much longer, however, I fear I shall have to tell Hephaestus and Ares to begin preparing our contingency plan." },
+					Text = "Melinoë, take heart that at least I have complete faith in your ability to defeat Typhon. If this goes on much longer, however, I fear we shall have to tell Hephaestus and Ares to begin our contingency plan." },
 
 				{ 
 					UsePlayerSource = true,
@@ -1172,7 +1172,7 @@ EnemyData.NPC_Hera_Story_01.InteractTextLineSets = {
                 { 
 					Portrait = "Portrait_Hera_InPerson_01",
 					Source = "NPC_Hera_Story_01",
-					Text = "This 'contingency plan' of my sons involves creating a strong weapon fuelled by Olympian magick to destroy Typhon permanently, as well as the mountain we stand on and much of the surrounding countryside. Keep fighting still, Melinoë, so that your magick may claim us a more elegant victory." },
+					Text = "This 'contingency plan' involves a weapon fuelled by enough Olympian power to destroy Typhon and much of the surrounding countryside. Keep fighting still, Melinoë, so that your magick may claim a more elegant victory." },
 
 				EndVoiceLines =
 				{

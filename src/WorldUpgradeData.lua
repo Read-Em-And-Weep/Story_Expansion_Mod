@@ -123,7 +123,7 @@ Incantations.addIncantation({
 Incantations.addIncantation({
     Id = "StoryExpansionWorldUpgradeSisyphusUpgrade",
     Name = {
-        en = "Yielding Blood from a Stone"
+        en = "Drawing Blood from a Stone"
     },
     Description = {
         en = "Enhance your relationship with Sisyphus, so that he may also offer you a {$Keywords.RunReward} when you run into him."

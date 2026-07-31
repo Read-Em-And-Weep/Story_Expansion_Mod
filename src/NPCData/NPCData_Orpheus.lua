@@ -58,7 +58,7 @@ mod.OrpheusNPCData = {
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
 					Text = "Musician Orpheus! Here, take this Nectar as a token of my deep appreciation for your service to the House of Hades." },
 				{ 
-					Text = "It is you that should be thanked for saving us from the Titan. You cannot be this kind without any retribution on my part. May this gift serve you well." },
+					Text = "It is you who should be thanked for saving us from the Titan. Such kindness cannot go unanswered. May this gift serve you well." },
 			},
 			StoryExpansion_OrpheusGift02 = {
 				Name = "StoryExpansion_OrpheusGift02",
@@ -75,13 +75,13 @@ mod.OrpheusNPCData = {
 					},
 				},
 								{ 
-					Text = "This is amazing, my friend. Is this truly meant for me? You are ever so kind, Melinoë." },
+					Text = "This is amazing, my friend. Is this truly meant for me? You are ever so kind, Melinoe." },
 
 				{  UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Pleased_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "Of course it’s for you, Orpheus! For all the joy your presence brings me." },
+					Text = "Of course it’s for you, Orpheus! For all the warmth and joy you bring the shades of the Crossroads." },
 			},
 			StoryExpansion_OrpheusGift03 = {
 				Name = "StoryExpansion_OrpheusGift03",
@@ -101,9 +101,9 @@ mod.OrpheusNPCData = {
 					Portrait = "Portrait_Mel_Pleased_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "Have another Nectar, Orpheus. I wanted to thank you for all of your encouragement." },
+					Text = "Here's another Nectar, Orpheus. I wanted to thank you for all of your encouragement." },
 				{ 
-					Text = "My gratitude is yours for thinking of me once again, Melinoë. I’m very obliged for such a genuine and thankful gift." },
+					Text = "My gratitude is yours for thinking of me once again, Melinoë. I’m very obliged for such a genuine and thankful gesture." },
 			},
 			StoryExpansion_OrpheusGift04 = {
 				Name = "StoryExpansion_OrpheusGift04",
@@ -126,7 +126,7 @@ mod.OrpheusNPCData = {
 					Portrait = "Portrait_Mel_Pleased_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "It’s a way for me to show my appreciation. I’m sure he thought you deserved it as much as I believe so." },
+					Text = "It’s a way for me to show my appreciation. I’m sure he thought you deserved it as much as I do." },
 			},
 			StoryExpansion_OrpheusTaverna01 =
 			{
@@ -171,7 +171,7 @@ mod.OrpheusNPCData = {
 					PostLineRemoveContextArt = true,
 					Portrait = "StoryExpansion_Orpheus_Default",
 					PortraitExitAnimation = "StoryExpansion_Orpheus_Default_Exit",
-					Text = "{#Emph}Oh{#Prev}, I, certainly, why, I don't see why not. I mean, it's not as though I've got something to do that isn't that." },
+					Text = "{#Emph}Oh{#Prev}, I, certainly, ...why, I don't see why not. I mean, it's not as though I've got something to do other than that." },
 
 				{
 					SkipContextArt = true,
@@ -184,7 +184,7 @@ mod.OrpheusNPCData = {
 					Portrait = "Portrait_Mel_Empathetic_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelTalkExplaining01ReturnToIdle", PostLineAnimTarget = "Hero",
-					Text = "Do you feel inspired by them? I could always approach them and ask whether they would be willing to perform a duet with you. I’m sure the Crossroads would love to hear a piece performed by both of you." },
+					Text = "Do you feel inspired by them? I could always approach them and ask whether they would be willing to perform a duet with you. I’m sure the Crossroads would love to hear a piece by both of you." },
 
 				{ 
 					SkipContextArt = true,
@@ -424,7 +424,7 @@ mod.OrpheusNPCData = {
 				Name = "StoryExpansion_OrpheusChat02",
 				UseableOffSource = true,
 				{
-					Text = "My muse tells me you have quite an appetite, Melinoë. Though knowing the quality of her cooking, I can hardly judge."
+					Text = "My muse tells me you have quite an appetite, Melinoë. Though knowing the quality of her cooking, who could blame you?"
 				},
 				GameStateRequirements = {
 					{
@@ -503,7 +503,7 @@ mod.OrpheusNPCData = {
 				Name = "StoryExpansion_OrpheusChat09",
 				UseableOffSource = true,
 				{
-					Text = "I'll confess I feel a bit self-conscious about being an musician unable to sing and play. I hope you never feel the same, my friend."
+					Text = "I'll confess I feel a bit self-conscious about being a musician unable to sing and play. I hope you never feel the same, my friend."
 				},
 				GameStateRequirements = {
 					{
@@ -534,7 +534,7 @@ mod.OrpheusNPCData = {
 				},
 			},
 			StoryExpansion_OrpheusChat12= {
-				Name = "StoryExpansion_OrpheusChat11",
+				Name = "StoryExpansion_OrpheusChat12",
 				UseableOffSource = true,
 				{
 					Text = "Nice speaking with you, Melinoë."
@@ -581,7 +581,7 @@ mod.OrpheusNPCData = {
 				Name = "StoryExpansion_OrpheusChat16",
 				UseableOffSource = true,
 				{
-					Text = "Be strong out there, my friend, OK?"
+					Text = "Be strong out there, my friend."
 				},
 				GameStateRequirements = {
 					{
@@ -815,7 +815,7 @@ mod.OrpheusNPCData = {
 					Text = "I'm sorry you had to see that, Orpheus. I have been fighting to free the members of the House for my whole life and I apologise for not being able to rescue you sooner." },
 { 
 					Portrait = "StoryExpansion_Orpheus_Default",
-					Text = "...Has anyone ever told you that you have your mother's chin, as well as the same fire in your eyes? You have your father's stubborness too." },
+					Text = "...Has anyone ever told you that you have your mother's chin, as well as the same fire in your eyes?" },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
@@ -835,7 +835,7 @@ mod.OrpheusNPCData = {
 					
 					{ 
 					Portrait = "StoryExpansion_Orpheus_Default",
-					Text = "Take me away, goddess, to a place where we may be safe from the terrible Titan who assaulted our home.",
+					Text = "Take me away, goddess, to a place where we may be safe from the terrible Titan who assaulted our home. Whatever is next, I shall follow your lead.",
 					PostLineThreadedFunctionName = "KillHero",
 					PostLineFunctionArgs = { WaitTime = 5, MusicEndTime = 60 },},	
 EndVoiceLines = {

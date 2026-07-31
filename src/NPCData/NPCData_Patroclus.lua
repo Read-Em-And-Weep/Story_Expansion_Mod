@@ -152,6 +152,23 @@ mod.PatroclusNPCData = {
 			"StoryExpansionPatroclusChoiceMenu_FlavorText01",
 		},
 
+		SetupEvents =
+		{
+			{
+				FunctionName = "SilenceForDreamRun",
+				Args =
+				{
+					ForceTextLines = "StoryExpansionPatroclusDreamRun",
+				},
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "CurrentRun", "IsDreamRun" },
+					},
+				},
+			},
+		},
+
         Traits =
 		{
 			gods.GetInternalBoonName("ImprovedTemporaryEmptySlotDamageTrait"),
@@ -200,6 +217,21 @@ mod.PatroclusNPCData = {
 				{ Cue = "/VO/Icarus_0004",
 					Portrait = "Portrait_Mel_Vulnerable_01",
 					Text = "Bit late for that, Meli! Anyway, I've kept you for too long, but let me give you something I've been working on before I go — and these all work. I swear!" },
+				PrePortraitExitFunctionName = _PLUGIN.guid .. ".PatroclusBenefitChoice",
+				PrePortraitExitFunctionArgs = PresetEventArgs.StoryExpansionPatroclusBenefitChoices,
+			},
+			StoryExpansionPatroclusDreamRun =
+			{
+				UseableOffSource = true,
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "CurrentRun", "IsDreamRun" },
+					},
+				},
+
+				{ SkipDialogue = true, PostLineWait = 0, InputDelay = 0, BoxAnimation = "BlankObstacle", BoxExitAnimation = "Blank" },
+
 				PrePortraitExitFunctionName = _PLUGIN.guid .. ".PatroclusBenefitChoice",
 				PrePortraitExitFunctionArgs = PresetEventArgs.StoryExpansionPatroclusBenefitChoices,
 			},

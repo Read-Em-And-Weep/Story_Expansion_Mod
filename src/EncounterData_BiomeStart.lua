@@ -44,13 +44,13 @@ table.insert(RoomData.G_Intro.StartUnthreadedEvents,
                     {
                         PathFalse = {"CurrentRun", "UseRecord", "NPC_Megaera_Field_StoryExpansion"}
                     },
-                }
+                },
                 Weight = 1
                 --TrackHero = false,
                 --GazeTarget = {X = 0, Y = 0},
             }
         }
-    }
+    },
      GameStateRequirements ={
         NamedRequirementsFalse = { "StandardPackageBountyActive", },
         {
@@ -79,13 +79,13 @@ table.insert(RoomData.H_Intro.StartUnthreadedEvents,
                     {
                         PathFalse = {"CurrentRun", "UseRecord", "NPC_Megaera_Field_StoryExpansion"}
                     },
-                }
+                },
                 Weight = 1
                 --TrackHero = false,
                 --GazeTarget = {X = 0, Y = 0},
             }
         }
-    }
+    },
      GameStateRequirements ={
         NamedRequirementsFalse = { "StandardPackageBountyActive", },
         {
@@ -114,13 +114,13 @@ table.insert(RoomData.I_Intro.StartUnthreadedEvents,
                     {
                         PathFalse = {"CurrentRun", "UseRecord", "NPC_Megaera_Field_StoryExpansion"}
                     },
-                }
+                },
                 Weight = 1
                 --TrackHero = false,
                 --GazeTarget = {X = 0, Y = 0},
             }
         }
-    }
+    },
     GameStateRequirements ={
         NamedRequirementsFalse = { "StandardPackageBountyActive", },
         {

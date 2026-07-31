@@ -4,10 +4,10 @@ gods.CreateKeepsake({
     internalKeepsakeName = "StoryExpansionBoonRarityBoostKeepsake",
 
     RarityLevels = {
-        Common = 3,
-        Rare = 5,
-        Epic = 7,
-        Heroic = 9,
+        Common = 5,
+        Rare = 7,
+        Epic = 9,
+        Heroic = 12,
     },
 
     Keepsake = {

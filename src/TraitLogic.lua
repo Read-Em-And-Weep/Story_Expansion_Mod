@@ -303,8 +303,10 @@ end
 
 function mod.SummonButterflies(enemy, args)
 	args = args or {}
+	LoadPackages({Name = "RoomManagerModsNikkelMHadesBiomes", IgnoreAssert = true})
 	local numButterflies = args.NumButterflies or 5
 	for i=1, numButterflies, 1 do
-		CreateProjectileFromUnit({ Name = "StoryExpansionButterflyWeapon", Id = CurrentRun.Hero.ObjectId, DestinationId = enemy.ObjectId, DamageMultiplier = args.ProjectileDamageMultiplier, ProjectileCap = args.ProjectileCap or 25 })
+		local projectileId = CreateProjectileFromUnit({ Name = "StoryExpansionButterflyWeapon", Id = CurrentRun.Hero.ObjectId, DestinationId = enemy.ObjectId, DamageMultiplier = args.ProjectileDamageMultiplier, ProjectileCap = args.ProjectileCap or 25, FireFromTarget = true, OffsetX = RandInt(-5,5), OffsetY = RandInt(-5,5), RandAngle = RandomInt(1,360) })
+		SetColor({ Id = projectileId, Color = Color.DarkBlue })
 	end
 end

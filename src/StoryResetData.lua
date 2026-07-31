@@ -1,4 +1,3 @@
--- TODO: Implement "always available reset" (e.g. spawing the object into the Crossroads)
 table.insert(HubRoomData.Hub_Main.StartUnthreadedEvents, 1, {FunctionName = "Activate", Args = {Ids = {742624}}})
 
 modutil.mod.Path.Wrap("DeathAreaRoomTransition", function(base, source, args)
@@ -73,10 +72,10 @@ local newStoryResetData = {
 }
 
 -- TODO: implement WorldUpgrades to reset into StoryResetData
-    -- any world upgrades specific to the plot progression
+    -- any world upgrades specific to the plot progression (e.g. Meg appearing etc.)
 
 -- TODO: implement Quests to reset into StoryResetData
-    -- Quests linked to story progression i.e. Hypnos stuff
+    -- Quests linked to story progression i.e. Meg stuff etc.
 
 -- TODO: implement Resources (?) to reset into StoryResetData
 

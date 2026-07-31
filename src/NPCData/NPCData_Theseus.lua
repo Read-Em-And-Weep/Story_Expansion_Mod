@@ -172,6 +172,16 @@ function mod.TheseusPostCombat(enemy)
 UseableOn({ Id = enemy.ObjectId })
 UseableOn({ Id = enemy.ObjectId })
 UseableOn({ Id = enemy.ObjectId })
+
+	if CurrentRun.IsDreamRun then
+		MapState.RoomRequiredObjects[enemy.ObjectId] = nil
+			wait( 0.2 )
+			if CheckRoomExitsReady( CurrentRun.CurrentRoom ) then
+				UnlockRoomExits( CurrentRun, CurrentRun.CurrentRoom )
+			end
+		mod.TheseusAndMinotaurExit()
+	end
+
     ProcessTextLines( enemy, enemy.InteractTextLineSets )
     wait(0.5)
 	CheckAvailableTextLines( enemy )

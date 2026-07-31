@@ -12,7 +12,7 @@ gods.CreateKeepsake({
 
     Keepsake = {
         displayName = "Haunting Bead",
-        description = "Your {$Keywords.Attack} and {$Keywords.Special} deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipDamageBonus:P} {#Prev} damage while standing in your {$Keywords.CastSet}, and you gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
+        description = "Your {$Keywords.Attack} and {$Keywords.Special} deal {#UpgradeFormat}{$TooltipData.ExtractData.TooltipDamageBonus:P} {#Prev} damage while you are standing in your {$Keywords.CastSet}, and you gain an {#BoldFormat}additional {#Prev} use of your {$Keywords.CastSet} for the rest of this night.",
         signoffMax = "From {#AwardMaxFormat}Tisiphone{#Prev}{!Icons.ObjectiveSeparatorDark}Meeerrr..ir..noooee....Meelll..in..oeeee.",
     },
 
@@ -189,4 +189,4 @@ PropertyChanges = {
 			},
 		}
 })
-
+end

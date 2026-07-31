@@ -182,7 +182,6 @@ function mod.CreateFoodButtons(screen)
 			button.Index = itemIndex
 			button.TitleId = components[purchaseButtonTitleKey].Id
 			button.OnPressedFunctionName = _PLUGIN.guid..".HandleFoodSelection"
-            --TODO: ONPRESSEDFUNCTIONNAME
 			button.OnMouseOverFunctionName = "MouseOverWellShopButton"
 			button.OnMouseOffFunctionName = "MouseOffWellShopButton"
 			if not firstUseable then
@@ -293,7 +292,7 @@ function mod.ChooseFoodOptions()
             --table.insert(CurrentRun.StoryExpansionFoodOptionsRarities, chosenFood[2])
         end
     end
-	-- TODO: Adjust this function to include priorityOptions, so I can prioritise certain foods being unlocked with story progress
+	-- TODO: Adjust this function to include priorityOptions, so I can prioritise certain foods being unlocked with story progress?
 end
 
 function mod.EquipAllFoods() --Debug

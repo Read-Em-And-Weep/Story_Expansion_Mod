@@ -63,7 +63,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Armored Bakclava",
+    displayName = "Armored Baklava",
     description =
     "{$Keywords.GodBoonPlural} are {#UpgradeFormat}30% {#Prev}more likely to be from {#BoldFormat}Hephaestus {#Prev} tonight. {#BoldFormat}{$Keywords.GodBoonPlural} of Hephaestus {#Prev}are also more likely to include {$Keywords.Rare} blessings.",
     RarityLevels = {
@@ -225,7 +225,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Fisherman's Basket",
+    displayName = "Storm-Tossed Catch",
     description =
     "{$Keywords.GodBoonPlural} are {#UpgradeFormat}30% {#Prev}more likely to be from {#BoldFormat}Poseidon {#Prev} tonight. {#BoldFormat}{$Keywords.GodBoonPlural} of Poseidon {#Prev}are also more likely to include {$Keywords.Rare} blessings.",
     RarityLevels = {
@@ -303,7 +303,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Harvest Granita",
+    displayName = "First-Harvest Granita",
     description =
     "{$Keywords.GodBoonPlural} are {#UpgradeFormat}30% {#Prev}more likely to be from {#BoldFormat}Demeter {#Prev} tonight. {#BoldFormat}{$Keywords.GodBoonPlural} of Demeter {#Prev}are also more likely to include {$Keywords.Rare} blessings.",
     RarityLevels = {
@@ -381,7 +381,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Brilliant-Beaming Bougatsa",
+    displayName = "Beaming Bougatsa",
     description =
     "{$Keywords.GodBoonPlural} are {#UpgradeFormat}30% {#Prev}more likely to be from {#BoldFormat}Apollo {#Prev} tonight. {#BoldFormat}{$Keywords.GodBoonPlural} of Apollo {#Prev}are also more likely to include {$Keywords.Rare} blessings.",
     RarityLevels = {
@@ -546,7 +546,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Huntress's Delight",
+    displayName = "Huntress's Venison",
     description =
     "This night, you will gain a random {#BoldFormat} blessing of Artemis {#Prev} that you are eligible for.",
     RarityLevels = {
@@ -589,7 +589,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Dionysian Amphora, Olympiad II",
+    displayName = "Dionysian Vintage, Olympiad II",
     description =
     "This night, you will gain a random {#BoldFormat} blessing of Dionysus {#Prev} that you are eligible for.",
     RarityLevels = {
@@ -625,7 +625,49 @@ gods.CreateBoon({
     }
 })
 
---TODO: Do one of the random boon foods for Thanatos
+gods.CreateBoon({
+    internalBoonName = "EurydiceFoodThanatosBoonTrait",
+    InheritFrom = { gods.GetInternalBoonName("EurydiceFoodBaseTrait")},
+    characterName = "StoryExpansionEurydice",
+    BlockStacking = true,
+    reuseBaseIcons = true,
+    boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
+    displayName = "Butterfly Fries",
+    description =
+    "This night, you will gain a random {#BoldFormat} blessing of Thanatos {#Prev} that you are eligible for.",
+    RarityLevels = {
+        Common = { Multiplier = 1},
+        Rare = { Multiplier = 2 },
+        Epic = { Multiplier = 3},
+        Heroic = { Multiplier= 4},
+    },
+    ExtraFields = {
+		AcquireFunctionName = _PLUGIN.guid .. ".FoodBuffAcquireRandomBoonOfGod",
+        AcquireFunctionArgs = {
+            Rarity = {BaseValue = 1},
+            God = "NPC_Thanatos_Field_StoryExpansion",
+            ReportValues = {BlessingRarityBonus = "Rarity"},
+        },
+        DelayedRunStartPresentation = 
+		{
+			FunctionName = _PLUGIN.guid .. ".RunStartEurydiceFoodBoonAcquiredPresentation",
+		},
+    },
+    StatLines =
+    {
+        "StoryExpansionBonusBoonRarityStatDisplay1",
+    },
+    ExtractValues =
+    {
+        {
+				Key = "BlessingRarityBonus",
+				ExtractAs = "RarityValue",
+				Format = "Rarity",
+				SkipAutoExtract = true,
+			},
+    }
+})
+
 --TODO: A food that gives chance for hammers to include rank II blessings
 
 gods.CreateBoon({
@@ -681,7 +723,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Arrow-Speared Squid",
+    displayName = "Trickshot Squid",
     description =
     "Any damage you deal this night may be {$Keywords.Crit}.",
     RarityLevels = {
@@ -730,7 +772,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Enchanting Pudding",
+    displayName = "Witch's Delight",
     description =
     "This night, activate {#BoldFormatGraft}{$ConstantsData.Two} {#Prev}random inactive {#BoldFormatGraft}Arcana Cards{#Prev}.",
     RarityLevels = {
@@ -900,7 +942,7 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Nourishing Caramels",
+    displayName = "Ichor-Glazed Caramels",
     description =
     "You will have more {!Icons.HealthUp} this night.",
     RarityLevels = {
@@ -946,14 +988,14 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Mystic Candies",
+    displayName = "Hag's Bonbons",
     description =
     "You will have more {!Icons.ManaUp} this night.",
     RarityLevels = {
-        Common = { Multiplier = 3},
-        Rare = { Multiplier = 5},
-        Epic = { Multiplier = 7},
-        Heroic = { Multiplier= 9},
+        Common = { Multiplier = 5},
+        Rare = { Multiplier = 7},
+        Epic = { Multiplier = 9},
+        Heroic = { Multiplier= 11},
     },
     ExtraFields = {
 		PropertyChanges =
@@ -996,10 +1038,10 @@ gods.CreateBoon({
     description =
     "Gain bonus {!Icons.Currency} this night.",
     RarityLevels = {
-        Common = { Multiplier = 1},
-        Rare = { Multiplier = 1.5 },
-        Epic = { Multiplier = 2},
-        Heroic = { Multiplier= 2.5},
+        Common = { Multiplier = 1.5},
+        Rare = { Multiplier = 2 },
+        Epic = { Multiplier = 2.5},
+        Heroic = { Multiplier= 3},
     },
     ExtraFields = {
 		AcquireFunctionName = _PLUGIN.guid .. ".FoodGrantMoney",
@@ -1037,10 +1079,10 @@ gods.CreateBoon({
     description =
     "Whenever you defeat a {$Keywords.Boss} this night, gain {!Icons.CosmeticsPoints}.",
     RarityLevels = {
-        Common = { Multiplier = 1},
-        Rare = { Multiplier = 2 },
-        Epic = { Multiplier = 3},
-        Heroic = { Multiplier= 4},
+        Common = { Multiplier = 2},
+        Rare = { Multiplier = 3 },
+        Epic = { Multiplier = 4},
+        Heroic = { Multiplier= 5},
     },
     ExtraFields = {
 		OnRoomRewardSpawnedFunctionName = _PLUGIN.guid ..".AwardKudosForBoss",
@@ -1120,10 +1162,10 @@ gods.CreateBoon({
     description =
     "Any {$Keywords.GodBoonPlural} you find have an increased chance to include {$Keywords.Legendary} blessings.",
     RarityLevels = {
-        Common = { Multiplier = 2},
-        Rare = { Multiplier = 3 },
-        Epic = { Multiplier = 4},
-        Heroic = { Multiplier= 5},
+        Common = { Multiplier = 1},
+        Rare = { Multiplier = 2 },
+        Epic = { Multiplier = 3},
+        Heroic = { Multiplier= 4},
     },
     ExtraFields = {
 		RarityBonus =
@@ -1158,14 +1200,14 @@ gods.CreateBoon({
     BlockStacking = true,
     reuseBaseIcons = true,
     boonIconPath = "GUI\\Screens\\ShopIcons\\Shop_35",
-    displayName = "Salted Ambrosia",
+    displayName = "Luxury Loukoumi",
     description =
     "Any {$Keywords.GodBoonPlural} you find have an increased chance to include {$Keywords.Epic} blessings.",
     RarityLevels = {
-        Common = { Multiplier = 5},
-        Rare = { Multiplier = 10},
-        Epic = { Multiplier = 15},
-        Heroic = { Multiplier= 20},
+        Common = { Multiplier = 3},
+        Rare = { Multiplier = 6},
+        Epic = { Multiplier = 9},
+        Heroic = { Multiplier= 12},
     },
     ExtraFields = {
 		RarityBonus =
@@ -1204,10 +1246,10 @@ gods.CreateBoon({
     description =
     "Whenever you pass through enough {$Keywords.RoomPlural}, a random {$Keywords.GodBoon} will gain a {$Keywords.PomLevel}",
     RarityLevels = {
-        Common = { Multiplier = 1},
-        Rare = { Multiplier = 7/8 },
-        Epic = { Multiplier = 6/8},
-        Heroic = { Multiplier= 5/8},
+        Common = { Multiplier = 9/8},
+        Rare = { Multiplier = 1 },
+        Epic = { Multiplier = 7/8},
+        Heroic = { Multiplier= 6/8},
     },
     ExtraFields = {
 		RoomsPerUpgrade = {
@@ -1399,10 +1441,10 @@ gods.CreateBoon({
     description =
     "Gain a random assortment of {$Keywords.AllElements} this night.",
     RarityLevels = {
-        Common = { Multiplier = 3},
-        Rare = { Multiplier = 5},
-        Epic = { Multiplier = 7},
-        Heroic = { Multiplier= 9},
+        Common = { Multiplier = 1},
+        Rare = { Multiplier = 3},
+        Epic = { Multiplier = 5},
+        Heroic = { Multiplier= 7},
     },
     ExtraFields = {
 		AcquireFunctionName = _PLUGIN.guid .. ".GrantRandomElementSelection",

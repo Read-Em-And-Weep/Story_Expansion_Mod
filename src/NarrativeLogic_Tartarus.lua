@@ -97,7 +97,7 @@ function mod.NoStoryProgressionInUnderworld()
                     PreLineWait = 0.5,
 PostLineThreadedFunctionName = "KillHero",
 					PostLineFunctionArgs = { WaitTime = 5, MusicEndTime = 60 },
-					Text = "It doesn't appear there's anything left for me to do here in the Underworld. Perhaps more trips to the surface are required for me to understand how to defeat my foe here. But for now, I should return to the Crossroads." },
+					Text = "It doesn't appear there's anything left for me to do in the Underworld. Perhaps more trips to the surface are required for me to understand how to defeat my foe here. But for now, I should return to the Crossroads." },
 EndVoiceLines = {
 {
 						PreLineWait = 0.35,
@@ -1413,7 +1413,7 @@ EnemyData.NPC_Zagreus_01.InteractTextLineSets = {
 					Text = "Of that I have no doubt. I'm eager to test myself against you, Brother, and see whether the stories I've heard of your combat abilities are true." },
 				{ 
 					-- Portrait = "Portrait_Zag_Serious_01",
-					Text = "And I look forward to ending your nights early! But until then, we have plenty of things of things to occupy ourselves with in the meantime. Hypnos still sleeps, the Underworld is still in disarray, and many members of the House are still missing." },
+					Text = "And I look forward to ending your nights early! But until then, we have plenty of things to occupy ourselves with in the meantime. Hypnos still sleeps, the Underworld is still in disarray, and many members of the House are still missing." },
 
 				{ UsePlayerSource = true,
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
@@ -1894,7 +1894,7 @@ EncounterData.Story_EndCredits.UnthreadedEvents =
 								Source = "NPC_Selene_01",
 								Portrait = "Portrait_Selene_InPerson_01",
 								PortraitExitAnimation = "Portrait_Selene_InPerson_01_Exit",
-									Text = "...I suppose I have grown used to it, doing this journey every night. I find the company on this trip far more charming then the sky." },
+									Text = "...I suppose I have grown used to it, doing this journey every night. I find the company on this trip far more charming than the sky." },
 							
 									{ UsePlayerSource = true,
 									PreLineWait = 0.35,

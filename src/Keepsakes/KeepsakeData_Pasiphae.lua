@@ -11,7 +11,7 @@ gods.CreateKeepsake({
     },
 
     Keepsake = {
-        displayName = "Untested Invocation",
+        displayName = "Untested Grimoire",
         description = "{$Keywords.ReserveMana} {#BoldFormat} all {#Prev} {!Icons.Mana}. In exchange, your {$Keywords.Attack} and {$Keywords.Special} deal {#UpgradeFormat} {$TooltipData.ExtractData.TooltipPercentIncrease:P} {#Prev} more damage for each primed {!Icons.Mana}. {#ItalicFormat}Currently: {#Prev}{#BoldFormatGraft}{$TooltipData.ExtractData.TooltipCurrentBonus:P}",
         signoffMax = "From {#AwardMaxFormat}Pasiphaë{#Prev}{!Icons.ObjectiveSeparatorDark}You cannot move forward in relationships without accepting looking back.",
         trayExpired = "This {$Keywords.KeepsakeAlt}'s effect has expired for this night."

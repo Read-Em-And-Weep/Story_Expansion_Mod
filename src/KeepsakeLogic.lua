@@ -4,30 +4,86 @@ import 'Keepsakes/KeepsakeData_Achilles.lua'
 import 'Keepsakes/KeepsakeData_Orpheus.lua'
 import 'Keepsakes/KeepsakeData_Dusa.lua'
 import 'Keepsakes/KeepsakeData_Nyx.lua'
-import 'Keepsakes/KeepsakeData_Sisyphus.lua'
-import 'Keepsakes/KeepsakeData_Patroclus.lua'
-import 'Keepsakes/KeepsakeData_Minotaur.lua'
+import 'Keepsakes/KeepsakeData_Eurydice.lua'
+import 'Keepsakes/KeepsakeData_Penelope.lua'
+import 'Keepsakes/KeepsakeData_Andromache.lua'
+import 'Keepsakes/KeepsakeData_Iris.lua'
+import 'Keepsakes/KeepsakeData_Hypnos.lua'
+
+import 'Keepsakes/KeepsakeData_Hector.lua'
 import 'Keepsakes/KeepsakeData_Ariadne.lua'
 import 'Keepsakes/KeepsakeData_Pasiphae.lua'
 import 'Keepsakes/KeepsakeData_Arke.lua'
-import 'Keepsakes/KeepsakeData_Eurydice.lua'
-import 'Keepsakes/KeepsakeData_Hypnos.lua'
+import 'Keepsakes/KeepsakeData_Cassandra.lua'
+import 'Keepsakes/KeepsakeData_Calypso.lua'
+--import 'Keepsakes/KeepsakeData_Ganymede.lua'
+import 'Keepsakes/KeepsakeData_Sisyphus.lua'
+import 'Keepsakes/KeepsakeData_Theseus.lua'
+import 'Keepsakes/KeepsakeData_Minotaur.lua'
+import 'Keepsakes/KeepsakeData_Patroclus.lua'
+
+import 'Keepsakes/KeepsakeData_Telemachus.lua'
+import 'Keepsakes/KeepsakeData_Triton.lua'
+import 'Keepsakes/KeepsakeData_Iphigenia.lua'
+--import 'Keepsakes/KeepsakeData_Jetty.lua'
+--import 'Keepsakes/KeepsakeData_Prometheus.lua'
+--import 'Keepsakes/KeepsakeData_Epimetheus.lua'
 import 'Keepsakes/KeepsakeData_Hades.lua'
+import 'Keepsakes/KeepsakeData_Cerberus.lua'
 import 'Keepsakes/KeepsakeData_Alecto.lua'
 import 'Keepsakes/KeepsakeData_Tisiphone.lua'
+--import 'Keepsakes/KeepsakeData_Rhea.lua'
 
 
-modutil.mod.Path.Wrap("CanFreeSwapKeepsakes", function(base)
-	if ( CurrentHubRoom ~= nil and CurrentHubRoom.KeepsakeFreeSwap ) then return true end
-	if not CurrentRun or CurrentRun.CurrentRoom then return false end
-	return base()
-end)
+function mod.ResetKeepsakeOrder()
+	local addedKeepsakes = {
+		gods.GetInternalKeepsakeName("StoryExpansionSummonThanatosKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionDodgeShieldKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionBossShieldsKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionMaxHealthKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionBackstabKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionFreeMealKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionBossPreDamageKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionExtraRerollKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionGoldRarifyKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionFreeTemporaryDuosKeepsake"),
 
---[[modutil.mod.Path.Wrap( "KeepsakeScreenClose", function(base, screen, button )
-	CurrentRun = CurrentRun or {}
-	CurrentRun.CurrentRoom = CurrentRun.CurrentRoom or {}
-	return base(screen, button)
-end)]]
+		gods.GetInternalKeepsakeName("StoryExpansionDDHealthKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionBoonRarityBoostKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionPrimeDamageKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionBonusPowerKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionRandomElementsKeepsake"),
+		--Ganymede
+		gods.GetInternalKeepsakeName("StoryExpansionDecayingDamageProtectionKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionGodsentHexKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionAllySummonKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionCharonWellKeepsake"),
+
+		gods.GetInternalKeepsakeName("StoryExpansionExtraWellPurchaseKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionRemoveShrineKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake"),
+		--Jetty
+		--Prometheus
+		--Epimetheus
+		gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionPerfectMaxHealthKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"),
+		gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake"),
+		--Rhea
+	}
+	for _, name in ipairs(addedKeepsakes) do
+		RemoveValue(ScreenData.KeepsakeRack.ItemOrder, name)
+	end
+	local count = 0
+	for _, name in ipairs(addedKeepsakes) do
+		table.insert(ScreenData.KeepsakeRack.ItemOrder, 34 + count, name)
+		count = count + 1
+	end
+end
+
+mod.ResetKeepsakeOrder()
 
 modutil.mod.Path.Wrap("HandleUpgradeChoiceSelection", function(base, screen, button, args)
     if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionBoonRarityBoostKeepsake")) and (button.LootData.GodLoot or button.LootData.TreatAsGodLootByShops) then
@@ -223,7 +279,7 @@ function mod.GrantRandomFoodOfRarity(args)
 	local rarityToAdd = rarityTable[args.Rarity]
 	local eligibleFoods = {}
 	for i, option in ipairs(PresetEventArgs["StoryExpansionEurydiceFoodChoices"]) do
-		if option.GameStateRequirements == nil or IsGameStateEligible(option, option.GameStateRequirements) then
+		if option.GameStateRequirements == nil or IsGameStateEligible(option, option.GameStateRequirements) and not Contains(args.BannedTraits, option.Name) then
             table.insert(eligibleFoods, option)
 		end
 	end
@@ -250,27 +306,27 @@ modutil.mod.Path.Wrap("UnequipKeepsake", function(base, heroUnit, traitName, arg
 			AddMaxHealth( -trait.AcquireFunctionArgs.Amount, {}, {Silent = true})
 		end
 	end
-	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake") and not CurrentHubRoom and not args.AdvanceKeepsakeMoment then
 		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"))
 		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastMegKeepsakePermanent"), Rarity =trait.Rarity }) 
 		AddTraitToHero({ TraitData = processedData })
 	end
-	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake") and not CurrentHubRoom and not args.AdvanceKeepsakeMoment then
 		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"))
 		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastAlectoKeepsakePermanent"), Rarity =trait.Rarity }) 
 		AddTraitToHero({ TraitData = processedData })
 	end
-	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake") and not CurrentHubRoom and not args.AdvanceKeepsakeMoment then
 		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake"))
 		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionExtraCastTisiphoneKeepsakePermanent"), Rarity =trait.Rarity }) 
 		AddTraitToHero({ TraitData = processedData })
 	end
-	if traitName == gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake") and not CurrentHubRoom and not args.AdvanceKeepsakeMoment then
 		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionFearForDamageKeepsake"))
 		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionFearForDamageKeepsakePermanent"), Rarity =trait.Rarity }) 
 		AddTraitToHero({ TraitData = processedData })
 	end
-	if traitName == gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake") and not CanFreeSwapKeepsakes() and not args.AdvanceKeepsakeMoment then
+	if traitName == gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake") and not CurrentHubRoom and not args.AdvanceKeepsakeMoment then
 		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionChthonicBoonKeepsake"))
 		local processedData = GetProcessedTraitData({ Unit = CurrentRun.Hero, TraitName = gods.GetInternalBoonName("StoryExpansionChthonicBoonKeepsakePermanent"), Rarity =trait.Rarity }) 
 		AddTraitToHero({ TraitData = processedData })
@@ -314,6 +370,12 @@ function mod.CheckPerfectClear(traitData, args)
     end
 end
 
+function mod.AwardPerfectBonusHealth(trait, args)
+	AddMaxHealth(args.HealthPerClear, trait, {})
+	PlaySound({ Name =  "/Leftovers/Menu Sounds/TalismanPowderUpLEGENDARY", DestinationId = CurrentRun.Hero.ObjectId })
+end
+
+
 function mod.SummonExtraReward(trait, args)
 	if trait.RemainingUses <= 0 then
 		return
@@ -340,7 +402,7 @@ function mod.SummonExtraReward(trait, args)
 		end
 end
 modutil.mod.Path.Wrap("TraitUIAdd", function(base,trait, args)
-if trait.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, trait.Name) and not CanFreeSwapKeepsakes() then
+if trait.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, trait.Name) and not CurrentHubRoom then
         TraitUIRemove(trait)
         trait.Slot = nil
         trait.AnchorId = nil
@@ -377,11 +439,11 @@ local currentTraits = ShallowCopyTable( CurrentRun.Hero.Traits )
 	currentTraits = CollapseTableOrdered( currentTraits )
 	if currentTraits == nil then return base(args) end 
 	for i, trait in ipairs( currentTraits ) do
-		if trait.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, trait.Name) and not CanFreeSwapKeepsakes() then
+		if trait.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, trait.Name) and not CurrentHubRoom then
 			TraitUIRemove(trait)
 		local reAddTraitToUI = UnequipKeepsake( CurrentRun.Hero, trait.Name )
 		            reAddTraitToUI.ShowInHUD = false
-		if reAddTraitToUI.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, reAddTraitToUI.Name) and not CanFreeSwapKeepsakes() then
+		if reAddTraitToUI.Slot and Contains(CurrentRun.StoryExpansionPermanentKeepsakesUsed, reAddTraitToUI.Name) and not CurrentHubRoom then
 			trait.ShowInHUD = false
 			reAddTraitToUI.Slot = nil
 			        reAddTraitToUI.AnchorId = nil
@@ -399,7 +461,6 @@ local currentTraits = ShallowCopyTable( CurrentRun.Hero.Traits )
 return base(args)
 end)
 
--- Hypnos has been moved to TraitLogic_Shrine
 
 modutil.mod.Path.Wrap("TriggerPostBossEvents", function(base, eventSource,args)
 	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) and IsTraitActive( gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) then
@@ -408,6 +469,23 @@ modutil.mod.Path.Wrap("TriggerPostBossEvents", function(base, eventSource,args)
 		trait.CustomName = trait.ZeroBonusTrayText
 		ValidateMaxMana()
 	end
+	return base(eventSource, args)
+end)
+
+modutil.mod.Path.Wrap("PostCombatAudio", function(base,eventSource)
+	local currentRun = CurrentRun or {}
+	local currentRoom = currentRun.CurrentRoom
+	local currentEncounter = eventSource or currentRoom.Encounter
+
+	if currentEncounter and currentEncounter.EncounterType == "Boss" and not currentEncounter.SkipBossTraits then
+		if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) and IsTraitActive( gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake")) then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionCritOmegaKeepsake"))
+		ReduceTraitUses(trait,{ Force = true })
+		trait.CustomName = trait.ZeroBonusTrayText
+		ValidateMaxMana()
+	end
+	end
+	return base(eventSource)
 end)
 
 modutil.mod.Path.Wrap("GetExpectedMaxMana", function(base)
@@ -486,7 +564,7 @@ modutil.mod.Path.Wrap("EquipKeepsake", function(base, heroUnit, traitName, args)
 		traitData.CurrentStoryExpansionProtection = traitData.InitialStoryExpansionProtection
 		UpdateTraitNumber(traitData)
 	end
-	if Contains({gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake")}, traitName) and not CanFreeSwapKeepsakes() then
+	if Contains({gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"), gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake")}, traitName) and not CurrentHubRoom then
 		table.insert(CurrentRun.BlockedKeepsakes, gods.GetInternalKeepsakeName("StoryExpansionExtraCastMegKeepsake"))
 		table.insert(CurrentRun.BlockedKeepsakes, gods.GetInternalKeepsakeName("StoryExpansionExtraCastAlectoKeepsake"))
 		table.insert(CurrentRun.BlockedKeepsakes, gods.GetInternalKeepsakeName("StoryExpansionExtraCastTisiphoneKeepsake"))
@@ -580,7 +658,7 @@ modutil.mod.Path.Wrap("CreateKeepsakeIcon", function(base,screen, components, ar
 		if TraitData[upgradeData.Gift].BlockedByEnding and not IsGameStateEligible( upgradeData, { NamedRequirementsFalse = {"SurfaceRouteLockedByTyphonKill"}} ) then
 			blockedByEnding = true
 		end
-		if locked and not ((not CanFreeSwapKeepsakes() and blocked) or blockedByEnding) then 
+		if locked and not ((not CurrentHubRoom and blocked) or blockedByEnding) then 
 		components[buttonKey.."Lock"] = CreateScreenComponent({ Name = "BlankObstacle", X = localx, Y = localy, Group = "Combat_Menu_Overlay", Animation = "LockedKeepsakeIcon" })
 			SetColor({ Id = components[buttonKey].Id, Color = Color.DarkSlateGray })
 			if components[buttonKey.."Sticker"] then
@@ -591,3 +669,194 @@ modutil.mod.Path.Wrap("CreateKeepsakeIcon", function(base,screen, components, ar
 		end
 	end
 end)
+
+modutil.mod.Path.Wrap("AddResource", function(base, name, amount, source, args)
+	if name == "Money" and HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionGoldRarifyKeepsake")) then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionGoldRarifyKeepsake"))
+		trait.CurrentGoldCount = trait.CurrentGoldCount + amount
+		while trait.CurrentGoldCount >= trait.GoldForRarify do
+			AddRarityToTraits(trait, { NumTraits = 1,})
+			trait.CurrentGoldCount = trait.CurrentGoldCount - trait.GoldForRarify
+		end
+		UpdateTraitNumber(trait)
+	end
+	return base(name, amount, source, args)
+end)
+
+function mod.AddRandomElements(args, trait)
+	if CurrentHubRoom then return end
+	local elementsToAdd = args.ElementsToAdd
+	local elementsAdded = 0 
+	local eligibleEssence = {"FireEssence", "WaterEssence","EarthEssence", "AirEssence"}
+	local essenceToAdd = GetRandomValue(eligibleEssence)
+	while elementsAdded < elementsToAdd do
+		AddTraitToHero({TraitName = essenceToAdd})
+		elementsAdded = elementsAdded + 1
+		essenceToAdd = GetRandomValue(eligibleEssence)
+	end
+end
+
+modutil.mod.Path.Wrap("HandleStorePurchase", function(base, screen, button)
+	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraWellPurchaseKeepsake")) then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraWellPurchaseKeepsake"))
+		if trait.RemainingDuplications <= 0 then
+			return base(screen, button)
+		end
+	local upgradeData = button.Data
+	local canAfford = true
+	if upgradeData.HealthCost and CurrentRun.Hero.Health <= upgradeData.HealthCost then
+		canAfford = false
+	end
+	
+	local costAmount = 0
+	if upgradeData.ResourceCosts then
+		for name, amount in pairs( upgradeData.ResourceCosts) do
+			if name == "Money" then
+				costAmount = amount 
+			end
+		end
+	end
+
+	if GetResourceAmount( "Money" ) < costAmount then
+		canAfford = false
+	end
+
+	if costAmount ~= nil and costAmount > 0 and upgradeData.PurchaseRequirements ~= nil and not IsGameStateEligible( upgradeData, upgradeData.PurchaseRequirements ) then
+		canAfford = false
+	end
+
+	if upgradeData.Type == "Trait" then
+		if upgradeData.MakePermanent and HeroHasTrait("ExtendedShopTrait") then
+			local trait = GetHeroTrait("ExtendedShopTrait")
+			upgradeData.UsesAsEncounters = false
+			upgradeData.UsesAsRooms = false
+			upgradeData.UsesAsBosses = true
+			upgradeData.RemainingUses = trait.BossExtension
+			upgradeData.StatLines = {"ExtendedStoreUsesRemainingDisplay1"}
+			if upgradeData.CustomStatLinesWithShrineUpgrade and GetNumShrineUpgrades( upgradeData.CustomStatLinesWithShrineUpgrade.ShrineUpgradeName ) > 0 then
+				upgradeData.CustomStatLinesWithShrineUpgrade.StatLines[1] = "ExtendedStoreUsesRemainingDisplay1"
+			end
+			UseHeroTraitsWithValue( "BossExtension", true )
+		end
+		if upgradeData.IncreaseUsesOnStack and HeroHasTrait(upgradeData.Name) then
+			local trait = GetHeroTrait( upgradeData.Name )
+			trait.RemainingUses = trait.RemainingUses + upgradeData.RemainingUses
+			UpdateTraitNumber( trait )
+		else
+			AddTraitToHero({ TraitData = upgradeData, SkipQuestStatusCheck = true, SkipAddToHUD = true})
+		end
+		IncrementTableValue( GameState.ItemInteractions, upgradeData.Name )
+		CheckCodexUnlock( "Items", upgradeData.Name )
+	elseif upgradeData.Type == "Consumable" then
+		local consumableName = upgradeData.Name
+		local consumableId = SpawnObstacle({ Name = consumableName, DestinationId = CurrentRun.Hero.ObjectId, Group = "Standing" })
+		local consumable = CreateConsumableItemFromData( consumableId, upgradeData, 0 )
+		consumable.CanDuplicate = false
+	end	
+	trait.RemainingDuplications = trait.RemainingDuplications - 1
+	end 
+	return base(screen, button)
+end)
+
+modutil.mod.Path.Wrap("HandleSurfaceShopAction", function(base,screen, button)
+	if HeroHasTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraWellPurchaseKeepsake")) then
+		local trait = GetHeroTrait(gods.GetInternalKeepsakeName("StoryExpansionExtraWellPurchaseKeepsake"))
+		if trait.RemainingDuplications <= 0 then
+			return base(screen, button)
+		end
+	local components = screen.Components
+	local upgradeData = button.Data
+	local costAmount = 0
+	local speedUpDelivery = false
+	local itemData = nil
+	local itemIndex = nil
+	local canAfford = true
+	for i, value in pairs (CurrentRun.CurrentRoom.Store.StoreOptions) do
+		if value.Name == upgradeData.Name then
+			itemData = value	
+			itemIndex = i
+			if value.Purchased then
+				speedUpDelivery = true
+			end
+		end
+	end
+
+	if speedUpDelivery then
+		if not HasResources( upgradeData.SpeedUpResourceCosts ) then
+			canAfford = false
+		end
+	else
+		if not HasResources( upgradeData.ResourceCosts ) then
+			canAfford= false
+			return
+		else
+		end
+	end
+
+	if upgradeData.PurchaseRequirements ~= nil and not IsGameStateEligible( upgradeData, upgradeData.PurchaseRequirements ) then
+		canAfford = false
+	end
+
+
+
+	if not speedUpDelivery and canAfford then
+		local shopTrait = DeepCopyTable(TraitData.StorePendingDeliveryItem)
+		shopTrait.RemainingUses = itemData.RoomDelay 
+		shopTrait.OnExpire = { SpawnShopItem = DeepCopyTable( itemData  ) }
+		if shopTrait.OnExpire.SpawnShopItem.Args then
+			shopTrait.OnExpire.SpawnShopItem.Args.ResourceCosts = { Money = 0 }
+		else
+			shopTrait.OnExpire.SpawnShopItem.ResourceCosts = { Money = 0 }
+			shopTrait.OnExpire.SpawnShopItem.CostOverride = 0
+		end
+		shopTrait.OnExpire.SpawnShopItem.PendingShopItem = true
+		shopTrait.AcquiredDepth = CurrentRun.RunDepthCache
+		shopTrait.ShopItemName = itemData.Name 
+		shopTrait.ItemDisplayName = GetSurfaceShopText(itemData, {ForTraitTray = true })
+		if itemData.Name == "SpellDrop" then
+			CurrentRun.PendingSpellDrop = true
+		end
+		AddTraitToHero({ TraitData =  shopTrait, SkipUIUpdate = true })
+		trait.RemainingDuplications = trait.RemainingDuplications - 1
+		UpdateTraitNumber(trait)
+	end
+end
+	return base(screen, button)
+end)
+
+
+
+function mod.TritonRemoveShrine(args, trait)
+	if CurrentHubRoom then return end
+	local additionalSuccessChance = args.AdditionalShrineBanishChance
+	local count = 1
+	if RandomChance(additionalSuccessChance * GetTotalHeroTraitValue( "LuckMultiplier", { IsMultiplier = true })) then
+		count = count + 1
+	end
+	local shrineOptions = {}
+	for name, rank in pairs( GameState.ShrineUpgrades ) do
+		if rank > 0 and not MetaUpgradeData[name].IneligibleForCirceRemoval and not CurrentRun.ShrineUpgradesDisabled[name] then
+			shrineOptions[name] = true
+		end
+	end
+	local presentationIncrement = 0
+	while count > 0 and not IsEmpty( shrineOptions ) do
+		local shrineKey = GetRandomKey( shrineOptions )
+		shrineOptions[shrineKey] = nil
+		CurrentRun.ShrineUpgradesDisabled[shrineKey] = true
+		if MetaUpgradeData[shrineKey].OnDisabledFunctionName ~= nil then
+			CallFunctionName( MetaUpgradeData[shrineKey].OnDisabledFunctionName )
+		end
+		count = count - 1
+		presentationIncrement = presentationIncrement + 1
+		ShrineUpgradeExtractValues( shrineKey )
+		thread( CirceRemoveShrinePresentation, shrineKey, 1 + presentationIncrement * 1.1  )
+	end
+end
+
+function mod.AddExtraRerolls(args, trait)
+	if not CurrentRun or not CurrentRun.NumRerolls then return end
+	if CurrentHubRoom then return end
+	local rerollsToAdd = trait.RerollCount
+	AddRerolls(trait, {Amount = rerollsToAdd})
+end

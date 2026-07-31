@@ -208,7 +208,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat01",
 				UseableOffSource = true,
 				{
-					Text = "The Music Maker you summoned is great, Your Royal Majesty. Do you think that shade would be willing to do a sing off?"
+					Text = "The Music Maker you summoned is great, Your Royal Majesty. Do you think that shade would be willing to do a duet?"
 				},
 				GameStateRequirements = {
 					{
@@ -373,7 +373,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat17",
 				UseableOffSource = true,
 				{
-					Text = "You look like you haven't eaten since you were here last! We better fix that now, right hon?"
+					Text = "You look like you haven't eaten since you were here last! We'd better fix that now, right hon?"
 				},
 				GameStateRequirements = {
 					{
@@ -384,7 +384,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat18",
 				UseableOffSource = true,
 				{
-					Text = "Been trying to perfect these recipes for I don't know how long! Maybe this will be the time, right hon?"
+					Text = "Been trying to perfect these recipes forever! Maybe this will be the time, right hon?"
 				},
 				GameStateRequirements = {
 					{
@@ -404,7 +404,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat20",
 				UseableOffSource = true,
 				{
-					Text = "Now Orphy is feeling better, I have a bunch of new songs I want his opinion on. Do you think he'll like them?"
+					Text = "Now Orphy is feeling better, I have a bunch of new songs I want his opinion on. Do you think he'll like 'em'?"
 				},
 				GameStateRequirements = {
 					{
@@ -428,7 +428,7 @@ mod.EurydiceNPCData = {
 				Name = "StoryExpansion_EurydiceChat22",
 				UseableOffSource = true,
 				{
-					Text = "I'd ask you to bring one of my meals to Orpheus, but I think he'll appreciate it if I personally give it to him."
+					Text = "I'd ask you to bring one of my meals to Orphy, but I think he'll appreciate it if I personally give it."
 				},
 				GameStateRequirements = {
 					{

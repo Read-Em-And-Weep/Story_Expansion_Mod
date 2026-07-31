@@ -324,6 +324,56 @@ local newHelpTextData = {
       DisplayName = "Rush Boons",
       Description = "Blessings from Olympians that strongly influence your {RU} {$Keywords.Dash} or {$Keywords.Sprint}."
     },
+    {
+      Id = "StoryExpansionTeleportCastEffect",
+      DisplayName = "Apparition",
+      Description = "A brief period where you are {$Keywords.Invulnerable} for {#BoldFormatGraft}{$TooltipData.ExtractData.Duration} Sec.{#Prev}"
+    },
+    {
+      Id = "StoryExpansionAllyEnhancements",
+      DisplayName = "Enhancements",
+      Description = "Various boons, blessings, and enchantments offered by {$Keywords.StoryExpansionRunAllies} to strengthen you."
+    },
+    {
+      Id = "StoryExpansionRunAllies",
+      DisplayName = "Run Allies",
+      Description = "Various gods, shades, mortals and others who offer their assistance to you during the night, such as {#BoldFormat} Echo{#Prev}, {#BoldFormat} Icarus{#Prev}, and {#BoldFormat} Athena{#Prev}."
+    },
+    {
+      Id = "StoryExpansionDreamDuo_Lost",
+      DisplayName = "{#CombatTextHighlightFormat}{$TempTextData.Name} {#Prev}Lost!"
+    },
+    {
+      Id = "StoryExpansionForetoldEnd",
+      DisplayName = "Foretold End",
+      Description = "Accrued damage for a foe, dealt after 2 seconds. Reapplying {#BoldFormat} Foretold End {#Prev} will increase the total damage, but reset the countdown.",
+    },
+    --REGIONS: QUESTS
+    {
+      Id = "StoryExpansionQuestThanatosUpgrades",
+      DisplayName = "Master of Death",
+      Description = "The daughter of the god of the dead shall earn a variety of {#Emph}{$Keywords.GodBoonPlural} {#Prev}from {#Emph}Thanatos{#Prev}.",
+    },
+    {
+      Id = "StoryExpansionQuestMegCurses",
+      DisplayName = "The Fury's Failings",
+      Description = "The daughter of the god of the dead shall swear a variety of {#Emph}Oaths {#Prev}with {#Emph}Megaera{#Prev}.",
+    },
+    {
+      Id = "StoryExpansionQuestMegBlessings",
+      DisplayName = "The Fury's Favors",
+      Description = "The daughter of the god of the dead shall recieve a variety of {#Emph}Spoils {#Prev}from {#Emph}Megaera{#Prev}.",
+    },
+    {
+      Id = "StoryExpansionQuestPatroclusUpgrades",
+      DisplayName = "Filcher of Foes",
+      Description = "The daughter of the god of the dead shall take advantage of various pilfered goods offered by the Shade called {#Emph}Patroclus{#Prev}.",
+    },
+    {
+      Id = "StoryExpansionQuestEurydiceUpgrades",
+      DisplayName = "A Well-Balanced Meal",
+      Description = "The daughter of the god of the dead shall someday taste all the meals prepared by the Shade called {#Emph}Eurydice{#Prev}.",
+    },
 }
 
 
@@ -350,7 +400,10 @@ table.insert(game.KeywordList, "BlockedByStoryExpansionThanatosCaptured")
 table.insert(game.KeywordList, "StoryExpansionButterfly")
 table.insert(game.KeywordList, "StoryExpansionGainGodBoonPlural")
 table.insert(game.KeywordList, "StoryExpansionRushGodBoonPlural")
-
+table.insert(game.KeywordList, "StoryExpansionTeleportCastEffect")
+table.insert(game.KeywordList, "StoryExpansionAllyEnhancements")
+table.insert(game.KeywordList, "StoryExpansionRunAllies")
+table.insert(game.KeywordList, "StoryExpansionForetoldEnd")
 
 ResetKeywords()
 

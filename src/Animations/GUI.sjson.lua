@@ -8,7 +8,22 @@ local newAnimations  = {
         EditorOutlineDrawBounds = false,
         Graphic = "StoryExpansionEurydiceOfferFoodIn",
       }
-    }
+    },
+    { 
+      Name = "StoryExpansionButtonFateItem",
+      InheritFrom = "BaseInteractableButton",
+      DisplayInEditor = true,
+      Thing =
+      {
+        Points =
+        {
+		    { X = -50, Y = 50 },
+		    { X = 50, Y = 50 },
+		    { X = 50, Y = -50 },
+		    { X = -50, Y = -50 },
+        }
+      }
+    },
 }
 
 local AnimationFile = rom.path.combine(rom.paths.Content(), 'Game\\Obstacles\\GUI.sjson')

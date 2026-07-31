@@ -310,6 +310,24 @@ mod.MegaeraNPCData = {
 			"StoryExpansionPatroclusChoiceMenu_FlavorText01",
 		},
 
+
+		SetupEvents =
+		{
+			{
+				FunctionName = "SilenceForDreamRun",
+				Args =
+				{
+					ForceTextLines = "StoryExpansionMegaeraDreamRun",
+				},
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "CurrentRun", "IsDreamRun" },
+					},
+				},
+			},
+		},
+
         Traits =
 		{
 
@@ -461,7 +479,22 @@ mod.MegaeraNPCData = {
 				PrePortraitExitFunctionName = _PLUGIN.guid .. ".MegaeraOathChoice",
 				PrePortraitExitFunctionArgs = PresetEventArgs.StoryExpansionMegaeraOathChoices,
 			},
-        }
+        },
+		StoryExpansionMegaeraDreamRun =
+			{
+				UseableOffSource = true,
+				GameStateRequirements =
+				{
+					{
+						PathTrue = { "CurrentRun", "IsDreamRun" },
+					},
+				},
+
+				{ SkipDialogue = true, PostLineWait = 0, InputDelay = 0, BoxAnimation = "BlankObstacle", BoxExitAnimation = "Blank" },
+
+				PrePortraitExitFunctionName = _PLUGIN.guid .. ".MegaeraOathChoice",
+				PrePortraitExitFunctionArgs = PresetEventArgs.StoryExpansionMegaeraOathChoices,
+			},
     },
 	NPC_Megaera_Frozen_StoryExpansion = {
 		Name = "NPC_Megaera_Frozen_StoryExpansion",
@@ -505,16 +538,16 @@ mod.MegaeraNPCData = {
 					PreLineWait = 2.8,
 					SecretMusicMutedStems = { "Drums" },
 					Portrait = "StoryExpansion_Megaera_Default",
-					Text = "{#Emp} Ugh... {#Prev} What happened? Who are you? Stand back. I am armed and ready to attack. You will answer my questions or face my whip." },
+					Text = "{#Emp} Ugh... {#Prev} What happened? Who are you? Stand back. You will answer my questions or face my whip. Answer. Quickly." },
 				{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Intense_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "Lady Megaera, it is truly an honour to meet you. I am Melinoë, daughter of Hades, and I am here to free you and destroy the Titan Chronos." },
+					Text = "Lady Megaera, it is an honour to meet you. I am Melinoë, daughter of Hades, and I am here to free you and destroy the Titan Chronos." },
 				{ 
 					Portrait = "StoryExpansion_Megaera_Standoffish",
 
-					Text = "You do have the flaming feet of the Hades line. But with much greater bloodlust than your brother. I can certainly get behind that. Now, let us slay the Usurper for the glory of the House." },
+					Text = "You do have the flaming feet of the Hades line. But with much greater steel than your brother. I can certainly get behind that. Now, let us slay the Usurper to restore the House." },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Vulnerable_01",
@@ -523,16 +556,16 @@ mod.MegaeraNPCData = {
 					Text = "{#Emph}<Sigh> {#Prev}Would that we could, O Fury, but I do not yet have a weapon powerful enough to strike down the Titan permanently. It is Headmistress Hecate's belief that rescuing the members of the House and learning more about our enemy is essential to our victory." },
 { 
 					Portrait = "StoryExpansion_Megaera_Pleased",
-					Text = "There is no-one I know more skilled in witchcraft than Hecate. I will place my trust in her plan, as your mother and Nyx often did. Does she have need for my wrath?" },
+					Text = "No-one is more skilled in witchcraft than Hecate. If it's good enough for her, then I'll trust her plan. Does she have need for my wrath?" },
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Proud_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
 												PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 2.8, UseChronosSound = true },
-					Text = "I am certain that the Headmistress has a role for you battlefield skill already planned. But for now, we must escape back to the Crossroads before Chronos wakes."},
+					Text = "I am certain that the Headmistress has a role for your skills already planned. But for now, we must escape back to the Crossroads, where the other rescued House members hide, before Chronos wakes."},
 					{ 
 					Portrait = "StoryExpansion_Megaera_Pleased",
-					Text = "Chronos should be glad that we are retreating and that he is not tasting my whip. The next time we meet, I shall not be as merciful.",
+					Text = "Chronos should consider himself fortunate we are retreating and that he won't feel my whip. The next time we meet, he won't get the better of me so easily.",
 				PostLineThreadedFunctionName = "KillHero",
 					PostLineFunctionArgs = { WaitTime = 5, MusicEndTime = 60 },},
 EndVoiceLines = {

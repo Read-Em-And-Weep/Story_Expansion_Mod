@@ -101,13 +101,13 @@ mod.DusaNPCData = {
 					Text = "Head Custodian Dusa, I am Princess Melinoë, but I probably look much older than you remember." },
 				{
 					Portrait = "StoryExpansion_Dusa_Default",
-					Text = "Oh, {#Emph} Ah{#Prev}, Princess Melinoë? You do look much older than I last remember you, and in such a strange place too. Is this a dream or something?" },
+					Text = "Oh, {#Emph} Ah{#Prev}, Princess Melinoë? You do look older than I last remember you - almost as grown as Prince Zagreus! Is this a dream? Is something wrong?" },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Empathetic_01",
 					PreLineAnim = "MelTalkExplaining01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "Well it is a dream of a sort. It's a magick dream that I've created to free you after Chronos invaded the House and captured its members." },
+					Text = "Well it is a dream of a sort. It's a magick dream that I've created to free you after Chronos invaded the House and trapped its members." },
 { 
 					Portrait = "StoryExpansion_Dusa_Empathetic",
 					Text = "Chr-Chronos? In the House of Hades? But the Olympians slew him eons ago! H-How is it possible that he's risen again? And what has happened to the other members of the House?" },
@@ -116,11 +116,11 @@ mod.DusaNPCData = {
 					Portrait = "Portrait_Mel_Vulnerable_01",
 					PreLineAnim = "MelTalkBrooding01", PreLineAnimTarget = "Hero",
 					PostLineAnim = "MelinoeIdleWeaponless", PostLineAnimTarget = "Hero",
-					Text = "I believe it was my brother's sacrificing of Titan's Blood that enabled Chronos to regain his strength. As for the other members of the House, I have rescued all but Nyx and yourself."},
+					Text = "He's regained his strength, and my father's throne too. As for the other members of the House, I have rescued all but Nyx and yourself."},
 					{ 
 					Portrait = "StoryExpansion_Dusa_Empathetic",
-																											PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.1, UseChronosSound = false },
-					Text = "What is that noise? Is it Chronos? Has he come to capture us again?" },
+																											PreLineThreadedFunctionName = "PowerWordPresentation", PreLineThreadedFunctionArgs = { WaitTime = 0.24, UseChronosSound = false },
+					Text = "Thank the gods they're all safe. ...What was that noise? Is it Chronos? Has he come to take us again?" },
 
 							{UsePlayerSource = true,
 					Portrait = "Portrait_Mel_Intense_01",
